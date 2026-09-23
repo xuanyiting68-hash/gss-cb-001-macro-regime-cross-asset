@@ -55,4 +55,5 @@ jobs:
             exit 0
           fi
           git commit -m "Run ENERGY-PRICE-WF-001 [skip ci]"
+          git pull --rebase origin main
           git push
