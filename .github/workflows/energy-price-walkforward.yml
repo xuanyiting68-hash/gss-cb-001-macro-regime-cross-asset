@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - "scripts/run_energy_price_walkforward.py"
+      - "scripts/audit_energy_price_wf_results.py"
       - "research/ENERGY_PRICE_WALKFORWARD_V1_LOCK.md"
       - ".github/workflows/energy-price-walkforward.yml"
   workflow_dispatch:
@@ -30,6 +31,9 @@ jobs:
       - name: Run frozen walk-forward
         run: python scripts/run_energy_price_walkforward.py
 
+      - name: Run robustness audit
+        run: python scripts/audit_energy_price_wf_results.py
+
       - name: Commit QC-passed public-safe outputs
         run: |
           git config user.name "github-actions[bot]"
@@ -40,6 +44,9 @@ jobs:
           git add results/energy_price_wf_v1/PRIMARY_TESTS.csv
           git add results/energy_price_wf_v1/SIMPLE_WTI_ROLLOVER_BENCHMARK.csv
           git add results/energy_price_wf_v1/QC.json
+          git add results/energy_price_wf_v1/ROBUSTNESS_LEAVE_ONE_OUT.csv
+          git add results/energy_price_wf_v1/ROBUSTNESS_ERA_AND_2008.csv
+          git add results/energy_price_wf_v1/ROBUSTNESS_AUDIT.md
           git add results/energy_price_wf_v1/ENERGY_PRICE_WF_001_REPORT.md
           git add results/energy_price_wf_v1/01_event_wti_3m_returns.png
           git add results/energy_price_wf_v1/02_confirmed_vs_veto_medians.png
