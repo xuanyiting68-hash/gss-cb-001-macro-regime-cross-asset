@@ -4,19 +4,21 @@
   "strict_pit_unavailable": 1,
   "p4a_data_only": 3,
   "physical_veto_data_only": 9,
-  "p4b_refinery_drop_candidate": 1,
-  "release_registry_rows": 202,
+  "p4b_refinery_drop_candidate": 0,
+  "release_registry_rows": 24,
   "price_event_set_preserved": true,
   "duplicate_event_s3_dates": 0,
   "release_registry_duplicate_week_end": 0,
-  "twip_registry": {
+  "event_release_registry": {
     "source_url": "https://www.eia.gov/petroleum/weekly/",
-    "sha256": "df14ba4540383aaafc332624d477aedf9c5842750815239382c00bbb42365c3c",
-    "rows": 200,
-    "first_week_end": "2002-01-25",
-    "last_week_end": "2017-12-22",
-    "retrieved_utc": "2026-09-23T17:35:20.802224+00:00"
+    "registry_path": "data/public/ENERGY_PHYSICAL_EVENT_RELEASE_REGISTRY_V1.csv",
+    "registry_sha256": "affab39c8fa8709189bfa48f4017991f81c9788de5b1c5b7c1fea70eb273ecb7",
+    "rows": 24,
+    "first_week_end": "2002-06-21",
+    "last_week_end": "2026-07-31",
+    "method": "EVENT_SCOPED_MANUAL_TRANSCRIPTION_FROM_OFFICIAL_EIA_RELEASE_TABLES"
   },
+  "timing_qc_bad": 0,
   "geopolitical_shock_veto": "NOT_YET_FROZEN",
   "primary_evidence_status": "EXPLORATORY_DATA_ONLY",
   "qc_gate": "PASS"
