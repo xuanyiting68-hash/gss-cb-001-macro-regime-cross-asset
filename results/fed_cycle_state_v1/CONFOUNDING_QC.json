@@ -1,0 +1,12 @@
+{
+  "qc_gate": "PASS",
+  "module": "FED-CYCLE-STATE-001-CONFOUNDING-DIAGNOSTIC",
+  "usd_bridge_sign_agreement": 0.9573863636363636,
+  "usd_n_rising": 5,
+  "usd_n_falling_or_flat": 5,
+  "usd_perfect_time_separation": true,
+  "usd_time_separation_direction": "B_ALL_BEFORE_A",
+  "usd_interpretation": "ERA_CONFOUNDED_DESCRIPTIVE_DIAGNOSTIC",
+  "causal_status": "NONE",
+  "fdr_status": "NOT_RUN"
+}
