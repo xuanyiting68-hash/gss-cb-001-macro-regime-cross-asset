@@ -30,6 +30,7 @@ OUT = ROOT / "results" / "energy_physical_wf_v1_1"
 OUT.mkdir(parents=True, exist_ok=True)
 
 PRICE_EVENTS = ROOT / "results" / "energy_price_wf_v1" / "EVENTS.csv"
+CURATED_RELEASES = ROOT / "data" / "public" / "ENERGY_PHYSICAL_EVENT_RELEASE_REGISTRY_V1.csv"
 
 EIA_SERIES = {
     "CRUDE": {
@@ -387,18 +388,36 @@ def main():
         physical[name]=z
         source_rows.append({**meta,**m})
 
-    twip,twip_meta=build_twip_release_registry()
+    if not CURATED_RELEASES.exists():
+        raise SystemExit("Curated event-scoped release registry missing")
+    release_events=pd.read_csv(
+        CURATED_RELEASES,
+        parse_dates=["event_s3_date","week_end","release_date"]
+    )
+    release_events=release_events.sort_values(["event_s3_date","role"]).reset_index(drop=True)
 
-    # Use crude week-end calendar for 2026 schedule construction.
-    r2026=build_2026_release_registry(physical["CRUDE"].week_end)
-    release=pd.concat([twip,r2026],ignore_index=True)
-    release=release.drop_duplicates(["week_end"],keep="last").sort_values("week_end").reset_index(drop=True)
-
-    # Restrict release rows to week-ends present in all physical series.
+    # Restrict curated week-ends to dates present in all physical series.
     common_we=set(physical["CRUDE"].week_end)
     for k in ["GASOLINE","DISTILLATE","REFINERY_UTIL"]:
         common_we &= set(physical[k].week_end)
-    release=release[release.week_end.isin(common_we)].copy()
+    missing_curated=release_events[~release_events.week_end.isin(common_we)].copy()
+    if len(missing_curated):
+        raise RuntimeError("Curated release registry contains week-ends missing from physical series")
+
+    release=release_events[["week_end","release_date","source_method","source_url"]].drop_duplicates().copy()
+    release=release.rename(columns={"source_method":"release_method"})
+    release=release.sort_values("week_end").reset_index(drop=True)
+
+    curated_sha=hashlib.sha256(CURATED_RELEASES.read_bytes()).hexdigest()
+    twip_meta={
+        "source_url":"https://www.eia.gov/petroleum/weekly/",
+        "registry_path":str(CURATED_RELEASES.relative_to(ROOT)),
+        "registry_sha256":curated_sha,
+        "rows":int(len(release_events)),
+        "first_week_end":str(release.week_end.min().date()),
+        "last_week_end":str(release.week_end.max().date()),
+        "method":"EVENT_SCOPED_MANUAL_TRANSCRIPTION_FROM_OFFICIAL_EIA_RELEASE_TABLES",
+    }
 
     wti,wti_meta=fetch_wti_daily()
     source_rows.append({
@@ -411,8 +430,7 @@ def main():
         s3_end=ev.s3_date+pd.offsets.MonthEnd(0)
         conf_end=ev.anchor_date+pd.offsets.MonthEnd(0)
 
-        prior=release[release.release_date<=s3_end]
-        after=release[release.release_date>conf_end]
+        rel_ev=release_events[release_events.event_s3_date==ev.s3_date].copy()
 
         row={
             "s3_date":ev.s3_date,
@@ -422,8 +440,8 @@ def main():
             "confirmation_month_end":conf_end,
         }
 
-        # Strict PIT unavailable for pre-2002 event under current official archive.
-        if ev.s3_date.year < 2002 or prior.empty or after.empty:
+        # 1999 does not have an event-scoped exact official release mapping in v1.
+        if len(rel_ev)!=2 or set(rel_ev.role)!={"baseline","decision"}:
             row.update({
                 "strict_pit":"UNAVAILABLE",
                 "physical_classification":"STRICT_PIT_UNAVAILABLE",
@@ -431,8 +449,31 @@ def main():
             rows.append(row)
             continue
 
-        base=prior.iloc[-1]
-        dec=after.iloc[0]
+        base_row=rel_ev[rel_ev.role=="baseline"].iloc[0]
+        dec_row=rel_ev[rel_ev.role=="decision"].iloc[0]
+        base=pd.Series({
+            "week_end":base_row.week_end,
+            "release_date":base_row.release_date,
+            "release_method":base_row.source_method,
+        })
+        dec=pd.Series({
+            "week_end":dec_row.week_end,
+            "release_date":dec_row.release_date,
+            "release_method":dec_row.source_method,
+        })
+
+        baseline_gap_days=(s3_end-base.release_date).days
+        decision_gap_days=(dec.release_date-conf_end).days
+        timing_valid=(0 <= baseline_gap_days <= 14) and (1 <= decision_gap_days <= 14)
+        if not timing_valid:
+            row.update({
+                "strict_pit":"UNAVAILABLE_TIMING_QC",
+                "baseline_release_date":base.release_date,
+                "decision_date":dec.release_date,
+                "physical_classification":"STRICT_PIT_UNAVAILABLE",
+            })
+            rows.append(row)
+            continue
         row.update({
             "strict_pit":"AVAILABLE",
             "baseline_release_date":base.release_date,
@@ -441,6 +482,8 @@ def main():
             "decision_date":dec.release_date,
             "decision_week_end":dec.week_end,
             "decision_release_method":dec.release_method,
+            "baseline_release_gap_days":baseline_gap_days,
+            "decision_release_gap_days":decision_gap_days,
         })
 
         improve_count=0
@@ -539,12 +582,19 @@ def main():
         "release_registry_rows":int(len(release)),
     }
 
+    timing_qc_bad = 0
+    if "baseline_release_gap_days" in out:
+        timing_qc_bad += int(((out["baseline_release_gap_days"].dropna() < 0) | (out["baseline_release_gap_days"].dropna() > 14)).sum())
+    if "decision_release_gap_days" in out:
+        timing_qc_bad += int(((out["decision_release_gap_days"].dropna() < 1) | (out["decision_release_gap_days"].dropna() > 14)).sum())
+
     qc={
         **counts,
         "price_event_set_preserved":bool(len(out)==len(events)),
         "duplicate_event_s3_dates":int(out.s3_date.duplicated().sum()),
         "release_registry_duplicate_week_end":int(release.week_end.duplicated().sum()),
-        "twip_registry":twip_meta,
+        "event_release_registry":twip_meta,
+        "timing_qc_bad":timing_qc_bad,
         "geopolitical_shock_veto":"NOT_YET_FROZEN",
         "primary_evidence_status":"EXPLORATORY_DATA_ONLY",
     }
@@ -552,6 +602,7 @@ def main():
         qc["price_event_set_preserved"]
         and qc["duplicate_event_s3_dates"]==0
         and qc["release_registry_duplicate_week_end"]==0
+        and qc["timing_qc_bad"]==0
     ) else "FAIL"
 
     source=pd.DataFrame(source_rows)
