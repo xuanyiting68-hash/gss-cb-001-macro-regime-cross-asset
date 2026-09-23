@@ -1,0 +1,9 @@
+evidence_id,module,evidence_class,status,public_claim_boundary
+P0A_V3,Gold 8-regime statistical re-audit,ASSOCIATIONAL,NOT_DEPLOYABLE,"Descriptive conditional structure only; no confirmed regime-excess FDR survivor in the audited family"
+P0B_POINT_TREND,Point-vs-trend macro information,ASSOCIATIONAL,NOT_SUPPORTED,"Do not say trend is useless; the preregistered specifications did not establish robust economically meaningful superiority"
+P0C_FED_CHINA,Fed action and A-share exploratory panel,QUARANTINED,HYPOTHESIS_GENERATING,"Realized action is not an identified policy shock; formal China-state layer incomplete; no causal language"
+FED_CYCLE_PATH,Fed-cycle drawdown/recovery research,DESCRIPTIVE,NEED_LONGER_HISTORY,"Modern-cycle results are illustrative; do not generalize small-n turning-point patterns into universal rules"
+HICP_ENERGY_002,Crude and refined-product pass-through,MECHANISM_CANDIDATE,PASS_WITH_BOUNDARIES,"Useful household-fuel pressure mapping; not a validated next-month cross-asset trading signal"
+COMMODITY_REVERSAL,Commodity turning-point state machine,MECHANISM_CANDIDATE,NOT_CONFIRMATORY,"Pilot transitions are hypothesis-generating; long-history walk-forward required"
+GOLD_STATE_DEP,Energy x rates x USD x Gold state work,ASSOCIATIONAL,NEED_ROBUSTNESS,"Plausible mechanism is not a stable Gold timing rule without OOS support"
+SOCIAL_CONTENT,Public educational content,DESCRIPTIVE,REQUIRES_EVIDENCE_LINK,"Posts must inherit evidence status and limitations from the underlying research"
