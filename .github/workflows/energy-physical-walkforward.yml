@@ -54,4 +54,5 @@ jobs:
             exit 0
           fi
           git commit -m "Run ENERGY-PHYSICAL-WF-001 v1.1 [skip ci]"
+          git pull --rebase origin main
           git push
