@@ -37,10 +37,12 @@ Status: **MECHANISM CANDIDATE / NOT A TRADING SIGNAL**
 
 The public work distinguishes crude shocks from downstream refined-product amplification. Refined-product pressure is useful as a household-energy pressure monitor but is not yet a validated next-month cross-asset predictor.
 
-### Commodity reversal
-Status: **LONG-HISTORY PRICE LAYER RUN / PRIMARY FAMILY NOT CONFIRMED / NOT DEPLOYABLE**
+### Commodity reversal / physical energy
+Status: **RISK-STATE RESEARCH USEFUL / DIRECTIONAL EDGE NOT ESTABLISHED / NOT DEPLOYABLE**
 
-The first exhaustive public-source monthly walk-forward now covers 1990-04 to 2026-08.
+#### Price/product layer
+
+The exhaustive public-source monthly walk-forward covers 1990-04 to 2026-08.
 
 QC:
 - 437 complete common months;
@@ -48,26 +50,49 @@ QC:
 - 6 price/product-confirmed events;
 - 7 false-relief veto events.
 
-Primary four-test family:
-- WTI 3M return;
-- WTI 6M return;
-- short-side MAE 3M;
-- short-side MAE 6M.
+Primary result: **0/4 pass BH-FDR 10%**; adjusted q≈0.224.
 
-Result: **0/4 pass BH-FDR 10%**; all adjusted q-values are approximately 0.224.
+The strongest descriptive use remains asymmetric: the price/product filter looks more promising as a **false-relief / no-short risk veto** than as a positive short signal.
 
-Descriptively, completed veto events were followed by positive WTI returns at both 3M and 6M, while the confirmed group was heterogeneous. The current interpretation is therefore asymmetric:
+#### Release-aware physical-stock layer
 
-**the price/product filter looks more promising as a false-relief / no-short risk veto than as a positive short signal.**
+The first release parser was found to be invalid because it truncated the historical registry and produced impossible 2017→2026 mappings for some later events. That execution is quarantined.
 
-Leave-one-event-out keeps the descriptive difference direction, but pre-2008 and post-2008 behavior differs materially. Broad-era stability is not established.
+The corrected event-scoped EIA release registry preserves:
+- 13 frozen price events;
+- 12 strict-PIT physical events;
+- zero bad timing mappings.
 
-Next frozen gate: release-aware EIA inventories/refinery utilization under `ENERGY-PHYSICAL-WF-001`.
+Corrected P4A_DATA_ONLY support:
+- 3 P4A events;
+- 9 physical-veto events;
+- 1 strict-PIT unavailable event.
+
+Frozen four-test family: **0/4 pass BH-FDR 10%; q=1.00**.
+
+Within the six completed strict-PIT PRICE_PRODUCT_CONFIRMED episodes, all three P4A_DATA_ONLY episodes had positive WTI returns at both 3M and 6M. This falsifies the narrow idea that the current inventory-normalization rule is a reliable falling-WTI confirmation. It does not establish the opposite rule because n is only 3.
+
+#### Stock-flow mechanism map
+
+FLOW-002 adds product supplied, refinery crude inputs, field production and crude imports.
+
+Among strict-PIT price-confirmed episodes:
+- complete flow support: 4;
+- FLOW_DD: 0;
+- FLOW_SN: 1;
+- FLOW_MIXED: 3.
+
+The single FLOW_SN episode was not bearish. 2008 was still FLOW_MIXED at the release-aware decision date before its large later collapse; 2022 and 2023 show that weaker product-supplied components can coexist with different subsequent WTI directions.
+
+Current conclusion:
+
+**stocks and flows improve mechanism understanding, but do not yet provide a validated directional timing signal.**
 
 ## Immediate public queue
 
-1. Execute the frozen release-aware physical-energy extension using EIA inventories/refinery utilization.
-2. Preserve the null 0/4 FDR result from the price-only walk-forward; do not tune its thresholds.
-3. Expand Fed-cycle risk-path research to more historical cycles.
-4. Add provenance-safe public charts/tables and tie every social-media claim to the evidence ledger.
-5. Keep paper-specific identification work behind the firewall.
+1. Preserve the failed stock-only rule and FLOW-002 as negative/mechanism evidence; do not retune them.
+2. Design a genuinely weekly/daily PIT commodity event engine to remove monthly-average timing limitations and increase event support.
+3. Freeze an independent geopolitical/physical shock registry before any full P4A claim.
+4. Expand Fed-cycle risk-path research to more historical cycles, including Gold drawdown/recovery paths.
+5. Add provenance-safe public charts/tables and tie every social-media claim to the evidence ledger.
+6. Keep paper-specific identification work behind the firewall.
