@@ -32,3 +32,28 @@ results/energy_price_wf_v1/QC.json,QC gate result,QC_PASS,PUBLIC_SAFE
 results/energy_price_wf_v1/ENERGY_PRICE_WF_001_REPORT.md,Reproducible walk-forward report,QC_PASS,PUBLIC_SAFE
 results/energy_price_wf_v1/01_event_wti_3m_returns.png,Event outcome figure,EXPLORATORY,PUBLIC
 results/energy_price_wf_v1/02_confirmed_vs_veto_medians.png,Confirmed-vs-veto median figure,EXPLORATORY,PUBLIC
+data/public/ENERGY_PHYSICAL_EVENT_RELEASE_REGISTRY_V1.csv,Event-scoped official EIA release registry,CANONICAL,PUBLIC_SAFE
+research/ENERGY_PHYSICAL_WF_001_V1_1_TIMING_AMENDMENT.md,Pre-result PIT timing correction,CANONICAL,PUBLIC_SAFE
+research/ENERGY_PHYSICAL_WF_001_V1_1_CLOSEOUT.md,Corrected physical-stock research closeout,CANONICAL,PUBLIC_SAFE
+research/ENERGY_FLOW_DECOMPOSITION_V2_LOCK.md,Post-falsification stock-flow mechanism lock,CANONICAL,PUBLIC_SAFE
+research/ENERGY_FLOW_002_CLOSEOUT.md,Stock-flow mechanism-map closeout,CANONICAL,PUBLIC_SAFE
+scripts/run_energy_physical_walkforward_v1_1.py,Release-aware physical walk-forward runner,CANONICAL,PUBLIC_SAFE
+scripts/audit_energy_physical_wf_v1_1.py,Post-result physical mechanism diagnostic runner,CANONICAL,PUBLIC_SAFE
+scripts/run_energy_flow_decomposition_v2.py,Stock-flow mechanism-map runner,CANONICAL,PUBLIC_SAFE
+.github/workflows/energy-physical-walkforward.yml,Automated physical-energy QC workflow,CANONICAL,PUBLIC
+.github/workflows/energy-flow-decomposition.yml,Automated flow-decomposition QC workflow,CANONICAL,PUBLIC
+results/energy_physical_wf_v1_1/SOURCE_REGISTRY.csv,Physical EIA source registry and hashes,QC_PASS,PUBLIC_SAFE
+results/energy_physical_wf_v1_1/RELEASE_DATE_REGISTRY.csv,Corrected event release-date registry,QC_PASS,PUBLIC_SAFE
+results/energy_physical_wf_v1_1/PHYSICAL_EVENT_PANEL.csv,Corrected strict-PIT physical event panel,QC_PASS,PUBLIC_SAFE
+results/energy_physical_wf_v1_1/PRIMARY_DATA_ONLY_TESTS.csv,Frozen physical four-test family,QC_PASS_NULL,PUBLIC_SAFE
+results/energy_physical_wf_v1_1/QC.json,Physical timing and schema QC,QC_PASS,PUBLIC_SAFE
+results/energy_physical_wf_v1_1/ENERGY_PHYSICAL_WF_001_V1_1_REPORT.md,Physical data-only run report,QC_PASS_NULL,PUBLIC_SAFE
+results/energy_physical_wf_v1_1/MECHANISM_DIAGNOSTIC.md,Post-result stock-rule diagnostic,HYPOTHESIS_GENERATING,PUBLIC_SAFE
+results/energy_physical_wf_v1_1/DIAGNOSTIC_WITHIN_PRICE_CONFIRMED.csv,Within-price-confirmed diagnostic,HYPOTHESIS_GENERATING,PUBLIC_SAFE
+results/energy_physical_wf_v1_1/DIAGNOSTIC_INVENTORY_COUNT.csv,Inventory-count diagnostic,HYPOTHESIS_GENERATING,PUBLIC_SAFE
+results/energy_physical_wf_v1_1/DIAGNOSTIC_PRICE_CONFIRMED_EVENTS.csv,Price-confirmed event diagnostic,HYPOTHESIS_GENERATING,PUBLIC_SAFE
+results/energy_flow_v2/SOURCE_REGISTRY.csv,Flow EIA source registry and hashes,QC_PASS,PUBLIC_SAFE
+results/energy_flow_v2/FLOW_EVENT_PANEL.csv,Strict-PIT stock-flow event map,HYPOTHESIS_GENERATING,PUBLIC_SAFE
+results/energy_flow_v2/FLOW_GROUP_DESCRIPTIVES.csv,Flow-group descriptive outcomes,HYPOTHESIS_GENERATING,PUBLIC_SAFE
+results/energy_flow_v2/QC.json,Flow-map QC gate,QC_PASS,PUBLIC_SAFE
+results/energy_flow_v2/ENERGY_FLOW_002_REPORT.md,Stock-flow mechanism report,HYPOTHESIS_GENERATING,PUBLIC_SAFE
