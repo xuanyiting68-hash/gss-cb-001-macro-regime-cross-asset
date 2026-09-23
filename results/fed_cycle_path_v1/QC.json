@@ -1,0 +1,30 @@
+{
+  "qc_gate": "PASS",
+  "policy_rows": 16068,
+  "policy_change_rows": 185,
+  "duplicate_policy_dates": 0,
+  "scheduled_meeting_dates": 331,
+  "qualifying_tightening_cycles": 10,
+  "cycle_start_years": [
+    1983,
+    1984,
+    1987,
+    1987,
+    1988,
+    1994,
+    1999,
+    2004,
+    2015,
+    2022
+  ],
+  "outcome_event_rows": 103,
+  "asset_metric_rows": 594,
+  "gold_first_hike_rows": 3,
+  "gold_daily_proxy": "GC=F_COMEX_CONTINUOUS_FUTURES_NOT_SPOT",
+  "sp500_first_hike_rows": 10,
+  "mdd_identity_violations": 0,
+  "recovery_order_violations": 0,
+  "raw_redistribution_uncertain_market_files_committed": false,
+  "data_source_amendment_2": "Daily Gold uses GC=F futures proxy; minimum Gold FIRST_HIKE support gate is 3 independent cycles.",
+  "soft_warning": "Coverage differs by asset; DFII10/T5YIE and DTWEXBGS start materially later than Gold/equities/rates."
+}

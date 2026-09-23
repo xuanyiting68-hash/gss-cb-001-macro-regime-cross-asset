@@ -1,0 +1,10 @@
+asset,kind,first_date,last_date,rows,usable_event_rows,source
+GOLD,price,2000-08-30,2026-09-23,6541,29,Yahoo Finance public chart history
+SP500,price,1970-01-02,2026-09-23,14302,103,Yahoo Finance public chart history
+NASDAQ,price,1971-02-05,2026-09-22,14025,103,"Nasdaq, Inc. via FRED"
+WTI,price,1986-01-02,2026-09-22,9506,80,U.S. Energy Information Administration via FRED
+USD_BROAD,price,2006-01-02,2026-09-18,5193,23,Board of Governors of the Federal Reserve System via FRED
+DGS2,rate,1976-06-01,2026-09-21,12573,103,Board of Governors of the Federal Reserve System via FRED
+DGS10,rate,1962-01-02,2026-09-21,16165,103,Board of Governors of the Federal Reserve System via FRED
+DFII10,rate,2003-01-02,2026-09-21,5934,25,Board of Governors of the Federal Reserve System via FRED
+T5YIE,rate,2003-01-02,2026-09-22,5935,25,Federal Reserve Bank of St. Louis via FRED
