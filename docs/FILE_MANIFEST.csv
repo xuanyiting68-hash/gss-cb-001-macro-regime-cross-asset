@@ -15,3 +15,20 @@ research/FED_CYCLE_DRAWDOWN_RECOVERY_PREREG.md,Fed-cycle path-risk preregistrati
 research/HICP_ENERGY_002_PUBLIC_CLOSEOUT.md,Refined-product household-inflation public closeout,CANONICAL,PUBLIC_SAFE
 research/ENERGY_REVERSAL_STATE_MACHINE_V2.md,Commodity/energy turning-point protocol,CANONICAL,PUBLIC_SAFE
 content/README.md,Social-content evidence rules,CANONICAL,PUBLIC
+research/ENERGY_PRICE_WALKFORWARD_V1_LOCK.md,Price/product long-history frozen specification,CANONICAL,PUBLIC_SAFE
+research/ENERGY_PRICE_WF_001_CLOSEOUT.md,Price/product long-history result closeout,CANONICAL,PUBLIC_SAFE
+research/ENERGY_PHYSICAL_WALKFORWARD_V1_LOCK.md,Release-aware physical-energy extension lock,CANONICAL,PUBLIC_SAFE
+scripts/run_energy_price_walkforward.py,Reproducible public-source walk-forward runner,CANONICAL,PUBLIC_SAFE
+scripts/audit_energy_price_wf_results.py,Leave-one-out and era robustness runner,CANONICAL,PUBLIC_SAFE
+.github/workflows/energy-price-walkforward.yml,Automated QC research workflow,CANONICAL,PUBLIC
+results/energy_price_wf_v1/SOURCE_REGISTRY.csv,Official source registry and hashes,QC_PASS,PUBLIC_SAFE
+results/energy_price_wf_v1/EVENTS.csv,De-clustered event-level derived results,EXPLORATORY,PUBLIC_SAFE
+results/energy_price_wf_v1/GROUP_DESCRIPTIVES.csv,Group-level derived statistics,EXPLORATORY,PUBLIC_SAFE
+results/energy_price_wf_v1/PRIMARY_TESTS.csv,Primary four-test family with FDR,QC_PASS,PUBLIC_SAFE
+results/energy_price_wf_v1/ROBUSTNESS_LEAVE_ONE_OUT.csv,Leave-one-event-out robustness,EXPLORATORY,PUBLIC_SAFE
+results/energy_price_wf_v1/ROBUSTNESS_ERA_AND_2008.csv,Era and 2008 influence robustness,EXPLORATORY,PUBLIC_SAFE
+results/energy_price_wf_v1/ROBUSTNESS_AUDIT.md,Robustness interpretation,EXPLORATORY,PUBLIC_SAFE
+results/energy_price_wf_v1/QC.json,QC gate result,QC_PASS,PUBLIC_SAFE
+results/energy_price_wf_v1/ENERGY_PRICE_WF_001_REPORT.md,Reproducible walk-forward report,QC_PASS,PUBLIC_SAFE
+results/energy_price_wf_v1/01_event_wti_3m_returns.png,Event outcome figure,EXPLORATORY,PUBLIC
+results/energy_price_wf_v1/02_confirmed_vs_veto_medians.png,Confirmed-vs-veto median figure,EXPLORATORY,PUBLIC
