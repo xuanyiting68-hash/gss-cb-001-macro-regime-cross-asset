@@ -9,7 +9,7 @@ Public-source data:
 - MHOILNYH
 - MJFUELUSGULF
 
-The script follows the frozen ENERGY_PRICE_WALKFORWARD_V1_LOCK specification.
+The script follows the frozen ENERGY_PRICE_WALKFORWARD_V1_LOCK specification.\nGitHub Actions is the reference execution environment for the public run.
 Raw downloaded bytes are used locally for computation and are not written
 into the repository output directory.
 """
