@@ -1,0 +1,17 @@
+{
+  "qc_gate": "PASS",
+  "module": "FED-CYCLE-GOLD-LONGHIST-MONTHLY-001",
+  "source_commit": "95bfea9197222dcda13d8c4d9928fb631fe745aa",
+  "eligible_monthly_start": "1960-01",
+  "eligible_monthly_end": "2026-08",
+  "eligible_monthly_rows": 800,
+  "first_hike_support": 10,
+  "expected_first_hike_support": 10,
+  "event_month_omission_violations": 0,
+  "mdd_identity_violations": 0,
+  "recovery_order_violations": 0,
+  "cross_frequency_overlap_rows": 3,
+  "raw_source_committed": false,
+  "pre1960_rows_excluded": true,
+  "evidence_status": "DESCRIPTIVE_NOT_CAUSAL_NOT_DEPLOYABLE"
+}
