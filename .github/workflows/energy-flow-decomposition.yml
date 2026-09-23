@@ -1,0 +1,47 @@
+name: energy-flow-decomposition
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "scripts/run_energy_flow_decomposition_v2.py"
+      - "research/ENERGY_FLOW_DECOMPOSITION_V2_LOCK.md"
+      - ".github/workflows/energy-flow-decomposition.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: python -m pip install --upgrade pip pandas numpy xlrd tabulate
+
+      - name: Run frozen flow mechanism map
+        run: python scripts/run_energy_flow_decomposition_v2.py
+
+      - name: Commit QC-passed public-safe outputs
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add results/energy_flow_v2/SOURCE_REGISTRY.csv
+          git add results/energy_flow_v2/FLOW_EVENT_PANEL.csv
+          git add results/energy_flow_v2/FLOW_GROUP_DESCRIPTIVES.csv
+          git add results/energy_flow_v2/QC.json
+          git add results/energy_flow_v2/ENERGY_FLOW_002_REPORT.md
+          if git diff --cached --quiet; then
+            echo "No result changes"
+            exit 0
+          fi
+          git commit -m "Run ENERGY-FLOW-002 [skip ci]"
+          git push
