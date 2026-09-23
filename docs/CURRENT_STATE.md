@@ -38,16 +38,36 @@ Status: **MECHANISM CANDIDATE / NOT A TRADING SIGNAL**
 The public work distinguishes crude shocks from downstream refined-product amplification. Refined-product pressure is useful as a household-energy pressure monitor but is not yet a validated next-month cross-asset predictor.
 
 ### Commodity reversal
-Status: **PROMISING PILOT / NOT CONFIRMATORY**
+Status: **LONG-HISTORY PRICE LAYER RUN / PRIMARY FAMILY NOT CONFIRMED / NOT DEPLOYABLE**
 
-Current state-machine:
-Pressure Building → Pressure Extreme → Initial Rollover → Supply Normalization or Demand Destruction, with a False-Relief veto.
+The first exhaustive public-source monthly walk-forward now covers 1990-04 to 2026-08.
+
+QC:
+- 437 complete common months;
+- 13 de-clustered rollover events;
+- 6 price/product-confirmed events;
+- 7 false-relief veto events.
+
+Primary four-test family:
+- WTI 3M return;
+- WTI 6M return;
+- short-side MAE 3M;
+- short-side MAE 6M.
+
+Result: **0/4 pass BH-FDR 10%**; all adjusted q-values are approximately 0.224.
+
+Descriptively, completed veto events were followed by positive WTI returns at both 3M and 6M, while the confirmed group was heterogeneous. The current interpretation is therefore asymmetric:
+
+**the price/product filter looks more promising as a false-relief / no-short risk veto than as a positive short signal.**
+
+Leave-one-event-out keeps the descriptive difference direction, but pre-2008 and post-2008 behavior differs materially. Broad-era stability is not established.
+
+Next frozen gate: release-aware EIA inventories/refinery utilization under `ENERGY-PHYSICAL-WF-001`.
 
 ## Immediate public queue
 
-1. Import QC-passed public research protocols and summaries.
-2. Add provenance-safe derived tables and charts; avoid redistribution-uncertain raw vendor data.
-3. Build a long-history public-source energy/refining walk-forward panel.
-4. Expand Fed-cycle risk-path research to more historical cycles.
-5. Tie each social-media claim to the evidence ledger.
-6. Keep paper-specific identification work behind the firewall.
+1. Execute the frozen release-aware physical-energy extension using EIA inventories/refinery utilization.
+2. Preserve the null 0/4 FDR result from the price-only walk-forward; do not tune its thresholds.
+3. Expand Fed-cycle risk-path research to more historical cycles.
+4. Add provenance-safe public charts/tables and tie every social-media claim to the evidence ledger.
+5. Keep paper-specific identification work behind the firewall.
