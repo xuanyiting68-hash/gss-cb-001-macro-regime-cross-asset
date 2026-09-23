@@ -1,0 +1,14 @@
+{
+  "qc_gate": "PASS",
+  "module": "FED-CYCLE-GOLD-LONGHIST-MONTHLY-001-RECOVERY-SURVIVAL",
+  "recovery_order_violations": 0,
+  "first_hike_50_n": 10,
+  "first_hike_50_observed": 8,
+  "first_hike_50_censored": 2,
+  "first_hike_50_km_median_months": 8,
+  "first_hike_100_n": 10,
+  "first_hike_100_observed": 6,
+  "first_hike_100_censored": 4,
+  "first_hike_100_km_median_months": 19,
+  "evidence_status": "DESCRIPTIVE_RIGHT_CENSORING_AWARE_NOT_CAUSAL_NOT_DEPLOYABLE"
+}
