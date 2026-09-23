@@ -62,3 +62,17 @@
 - Gold 2015 and 2022 differ materially under one frozen specification; this remains descriptive and non-causal.
 - Added an evidence-linked content card on why endpoint return alone is an incomplete risk statistic.
 - Next research priority is a native-frequency openly licensed long-history Gold layer before state-dependent Gold claims.
+
+## 2026-09-24 — FED-CYCLE-GOLD-LONGHIST-MONTHLY-001
+
+- Froze a native-frequency monthly Gold extension before inspecting long-history cycle outcomes.
+- Pinned the public `datasets/gold-prices` source at commit `95bfea9197222dcda13d8c4d9928fb631fe745aa`; used only 1960+ monthly observations sourced by the package from World Bank Commodity Markets under ODC-PDDL-1.0.
+- Excluded 1833-1959 rows because the source package states those are annual averages repeated across months.
+- Omitted the event month from clean outcome measurement to avoid mixing pre-event and post-event monthly prices.
+- QC passed with 800 eligible months and clean FIRST_HIKE coverage for all 10 frozen tightening legs.
+- FIRST_HIKE +12M median is +0.24% and +24M median +0.58%, while 24M MDD median is 16.64% with a 3.83%-39.10% range. A stable directional Gold rule is not established.
+- Cross-frequency audit agrees in endpoint sign for 2004 and 2015 but not 2022; monthly and daily/futures layers remain separate and are never pooled.
+- Added a post-run recovery-statistics amendment after recognizing that observed-only recovery medians were inappropriate under right-censoring.
+- Kaplan-Meier survival QC passed: FIRST_HIKE 50% recovery median 8 months (8 observed/2 censored); full recovery median 19 months (6 observed/4 censored).
+- Added an evidence-linked public content card: “加息后黄金到底怎么走？长历史答案不是简单涨跌”.
+- Next Fed-cycle priority is a predetermined/PIT state-dependence design; revised macro series must not be mislabeled as real-time information.
