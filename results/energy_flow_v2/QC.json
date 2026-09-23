@@ -1,0 +1,12 @@
+{
+  "events_total": 13,
+  "strict_pit_available": 12,
+  "price_confirmed_strict_pit_complete": 4,
+  "flow_dd": 0,
+  "flow_sn": 1,
+  "flow_mixed": 3,
+  "all_flow_series_loaded": true,
+  "duplicate_s3_dates": 0,
+  "statistical_status": "DESCRIPTIVE_POST_LOCK_NO_NEW_PVALUE_FAMILY",
+  "qc_gate": "PASS"
+}
