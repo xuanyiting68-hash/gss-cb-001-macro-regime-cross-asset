@@ -57,3 +57,4 @@ results/energy_flow_v2/FLOW_EVENT_PANEL.csv,Strict-PIT stock-flow event map,HYPO
 results/energy_flow_v2/FLOW_GROUP_DESCRIPTIVES.csv,Flow-group descriptive outcomes,HYPOTHESIS_GENERATING,PUBLIC_SAFE
 results/energy_flow_v2/QC.json,Flow-map QC gate,QC_PASS,PUBLIC_SAFE
 results/energy_flow_v2/ENERGY_FLOW_002_REPORT.md,Stock-flow mechanism report,HYPOTHESIS_GENERATING,PUBLIC_SAFE
+content/ENERGY_STOCK_FLOW_CONTENT_CARD_001.md,Evidence-linked energy stock-flow social content card,CANONICAL,PUBLIC_SAFE
