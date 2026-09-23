@@ -32,3 +32,16 @@
 - Added leave-one-event-out and broad-era robustness. The descriptive separation survives leave-one-out but is not stable across pre-2008 vs later eras.
 - Closed the price layer as NOT CONFIRMED / NOT DEPLOYABLE. The false-relief veto remains a promising risk-filter hypothesis.
 - Froze the next release-aware EIA inventory/refinery extension before running it.
+
+## 2026-09-24 — ENERGY-PHYSICAL-WF-001 v1.1 and FLOW-002
+
+- Added a pre-result timing amendment after identifying that monthly-average price data cannot be treated as observable at month start.
+- Built an official event-scoped EIA release registry and daily-WTI decision-date outcome convention.
+- The first physical execution was quarantined after audit found a brittle archive parser had truncated release history and generated impossible timing matches for later events.
+- Re-ran with explicit event-scoped official release dates and hard timing QC. Corrected physical QC passed: 12/13 strict-PIT events available, zero bad timing mappings.
+- Corrected P4A_DATA_ONLY support: n=3. The frozen four-test family produced 0/4 BH-FDR survivors; q=1.00 for the family.
+- Within the six completed strict-PIT price-confirmed episodes, all three P4A_DATA_ONLY events had positive WTI at both 3M and 6M. The stock-normalization-as-bearish-confirmation hypothesis is therefore not supported.
+- Added a post-result mechanism diagnostic; preserved the failed v1.1 rule rather than tuning thresholds.
+- Froze and executed ENERGY-FLOW-002 using EIA product supplied, refinery crude inputs, field production and crude imports.
+- FLOW-002 has four complete strict-PIT price-confirmed events: FLOW_DD=0, FLOW_SN=1, FLOW_MIXED=3. It is mechanism-building only and does not establish a directional edge.
+- Improved automated research workflows to rebase before push after a concurrent-write rejection exposed GitHub Actions race risk.
