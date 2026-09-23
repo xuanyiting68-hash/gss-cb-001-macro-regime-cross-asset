@@ -1,0 +1,78 @@
+# FED-CYCLE-STATE-001 — Predetermined-State Gold Heterogeneity Map
+
+**DESCRIPTIVE / ASSOCIATIONAL MECHANISM MAP / NOT CAUSAL / NOT A FORECASTING MODEL / NOT DEPLOYABLE**
+
+## Information timing
+
+- Yield curve and WTI states use observations strictly dated before FIRST_HIKE.
+- CPI and industrial-production states use M-2 to reduce release-timing ambiguity but are current-vintage historical values, not ALFRED vintages.
+- NFCI uses the last weekly observation strictly before the event but remains a current-vintage factor estimate.
+- No current-vintage macro variable is labeled strict PIT.
+
+## FIRST_HIKE state panel
+
+| cycle_id   |   cycle_start_year | event_date          |   gold_ret_6m |   gold_ret_12m |   gold_ret_24m |   gold_mdd_24m |   gold_mae |   gold_mfe | state_macro_period   |   CPI_YOY_LAG2 | INFLATION_LEVEL   |   CPI_YOY_CHANGE_3M | INFLATION_DIRECTION   |   INDPRO_YOY_LAG2 | GROWTH_STATE   | yield_curve_obs_date   |   DGS10 |   DGS2 |   curve_bp | YIELD_CURVE_STATE   |   REAL_RATE_PROXY_PP | REAL_RATE_PROXY_STATE   | wti_obs_date        |   WTI_126D_RETURN | ENERGY_DIRECTION_STATE   | ENERGY_SHOCK_STATE   | nfci_obs_date       |   NFCI | NFCI_STATE       | dfii10_obs_date     |   DFII10 | DFII10_STATE   | usd_obs_date        | USD_SOURCE_REGIME   |   USD_6M_RETURN | USD_DIRECTION_DIAGNOSTIC   | market_state_info_class      | macro_state_info_class                                  |
+|:-----------|-------------------:|:--------------------|--------------:|---------------:|---------------:|---------------:|-----------:|-----------:|:---------------------|---------------:|:------------------|--------------------:|:----------------------|------------------:|:---------------|:-----------------------|--------:|-------:|-----------:|:--------------------|---------------------:|:------------------------|:--------------------|------------------:|:-------------------------|:---------------------|:--------------------|-------:|:-----------------|:--------------------|---------:|:---------------|:--------------------|:--------------------|----------------:|:---------------------------|:-----------------------------|:--------------------------------------------------------|
+| T01_1983   |               1983 | 1983-03-31 00:00:00 |    -0.160896  |     -0.197556  |     -0.360489  |      0.391039  | -0.391039  |  0         | 1983-01              |     0.0371156  | HIGH              |        -0.0142763   | FALLING_OR_FLAT       |        -0.021386  | WEAK           | 1983-03-30 00:00:00    |   10.59 |   9.88 |         71 | POSITIVE            |              6.87844 | POSITIVE                | NaT                 |       nan         |                          |                      | 1983-03-25 00:00:00 |  0.014 | TIGHT            | NaT                 |   nan    |                | 1983-03-30 00:00:00 | TWEXM               |     -0.00993929 | FALLING_OR_FLAT            | PREDETERMINED_MARKET_HISTORY | RELEASE_LAG_AWARE_CURRENT_VINTAGE_NOT_STRICT_ALFRED_PIT |
+| T02_1984   |               1984 | 1984-03-29 00:00:00 |    -0.119171  |     -0.186528  |     -0.103627  |      0.225389  | -0.225389  |  0         | 1984-01              |     0.0419223  | HIGH              |         0.0134091   | RISING                |         0.110304  | STRONG         | 1984-03-28 00:00:00    |   12.42 |  11.48 |         94 | POSITIVE            |              8.22777 | POSITIVE                | NaT                 |       nan         |                          |                      | 1984-03-23 00:00:00 | -0.094 | LOOSE_OR_AVERAGE | NaT                 |   nan    |                | 1984-03-28 00:00:00 | TWEXM               |     -0.00586397 | FALLING_OR_FLAT            | PREDETERMINED_MARKET_HISTORY | RELEASE_LAG_AWARE_CURRENT_VINTAGE_NOT_STRICT_ALFRED_PIT |
+| T03_1987   |               1987 | 1987-01-05 00:00:00 |     0.153453  |      0.219949  |      0.0332481 |      0.168724  |  0         |  0.242967  | 1986-11              |     0.012844   | LOW_OR_MODERATE   |        -0.0028967   | FALLING_OR_FLAT       |         0.0153572 | WEAK           | 1987-01-02 00:00:00    |    7.18 |   6.3  |         88 | POSITIVE            |              5.8956  | POSITIVE                | 1987-01-02 00:00:00 |         0.424195  | RISING                   | SHOCK_UP             | 1987-01-02 00:00:00 | -0.501 | LOOSE_OR_AVERAGE | NaT                 |   nan    |                | 1986-12-31 00:00:00 | TWEXM               |     -0.0391835  | FALLING_OR_FLAT            | PREDETERMINED_MARKET_HISTORY | RELEASE_LAG_AWARE_CURRENT_VINTAGE_NOT_STRICT_ALFRED_PIT |
+| T04_1987   |               1987 | 1987-08-27 00:00:00 |    -0.0199557 |     -0.0443459 |     -0.190687  |      0.248971  | -0.190687  |  0.0776053 | 1987-06              |     0.0365297  | HIGH              |         0.0061988   | RISING                |         0.0551944 | STRONG         | 1987-08-26 00:00:00    |    8.79 |   7.87 |         92 | POSITIVE            |              5.13703 | POSITIVE                | 1987-08-26 00:00:00 |         0.0797784 | RISING                   | NEUTRAL              | 1987-08-21 00:00:00 | -0.001 | LOOSE_OR_AVERAGE | NaT                 |   nan    |                | 1987-08-26 00:00:00 | TWEXM               |     -0.0311409  | FALLING_OR_FLAT            | PREDETERMINED_MARKET_HISTORY | RELEASE_LAG_AWARE_CURRENT_VINTAGE_NOT_STRICT_ALFRED_PIT |
+| T05_1988   |               1988 | 1988-03-30 00:00:00 |    -0.0656109 |     -0.117647  |     -0.11086   |      0.199115  | -0.180995  |  0.0226244 | 1988-01              |     0.0404676  | HIGH              |        -0.00486329  | FALLING_OR_FLAT       |         0.0768326 | STRONG         | 1988-03-29 00:00:00    |    8.56 |   7.42 |        114 | POSITIVE            |              4.51324 | POSITIVE                | 1988-03-29 00:00:00 |        -0.117313  | FALLING_OR_FLAT          | NEUTRAL              | 1988-03-25 00:00:00 |  0.136 | TIGHT            | NaT                 |   nan    |                | 1988-03-23 00:00:00 | TWEXM               |     -0.0769012  | FALLING_OR_FLAT            | PREDETERMINED_MARKET_HISTORY | RELEASE_LAG_AWARE_CURRENT_VINTAGE_NOT_STRICT_ALFRED_PIT |
+| T06_1994   |               1994 | 1994-02-04 00:00:00 |    -0.0180879 |     -0.0258398 |      0.0465116 |      0.0382653 | -0.0258398 |  0.0465116 | 1993-12              |     0.0274841  | LOW_OR_MODERATE   |         0.000591009 | RISING                |         0.0340773 | STRONG         | 1994-02-03 00:00:00    |    5.81 |   4.28 |        153 | POSITIVE            |              3.06159 | POSITIVE                | 1994-02-02 00:00:00 |        -0.113197  | FALLING_OR_FLAT          | NEUTRAL              | 1994-01-28 00:00:00 | -1.011 | LOOSE_OR_AVERAGE | NaT                 |   nan    |                | 1994-02-02 00:00:00 | TWEXM               |      0.0172222  | RISING                     | PREDETERMINED_MARKET_HISTORY | RELEASE_LAG_AWARE_CURRENT_VINTAGE_NOT_STRICT_ALFRED_PIT |
+| T07_1999   |               1999 | 1999-06-30 00:00:00 |     0.0253623 |      0.0362319 |     -0.0217391 |      0.163987  | -0.0724638 |  0.126812  | 1999-04              |     0.0227692  | LOW_OR_MODERATE   |         0.00606131  | RISING                |         0.0430725 | STRONG         | 1999-06-29 00:00:00    |    5.93 |   5.68 |         25 | POSITIVE            |              3.65308 | POSITIVE                | 1999-06-23 00:00:00 |         0.287212  | RISING                   | SHOCK_UP             | 1999-06-25 00:00:00 | -0.33  | LOOSE_OR_AVERAGE | NaT                 |   nan    |                | 1999-06-23 00:00:00 | TWEXM               |      0.0419635  | RISING                     | PREDETERMINED_MARKET_HISTORY | RELEASE_LAG_AWARE_CURRENT_VINTAGE_NOT_STRICT_ALFRED_PIT |
+| T08_2004   |               2004 | 2004-06-30 00:00:00 |     0.151042  |      0.122396  |      0.552083  |      0.117037  |  0         |  0.757812  | 2004-04              |     0.0228509  | LOW_OR_MODERATE   |         0.0035884   | RISING                |         0.0261512 | STRONG         | 2004-06-29 00:00:00    |    4.7  |   2.83 |        187 | POSITIVE            |              2.41491 | POSITIVE                | 2004-06-29 00:00:00 |         0.115638  | RISING                   | NEUTRAL              | 2004-06-25 00:00:00 | -0.684 | LOOSE_OR_AVERAGE | 2004-06-29 00:00:00 |     2.2  | POSITIVE       | 2004-06-23 00:00:00 | TWEXM               |      0.0192586  | RISING                     | PREDETERMINED_MARKET_HISTORY | RELEASE_LAG_AWARE_CURRENT_VINTAGE_NOT_STRICT_ALFRED_PIT |
+| T09_2015   |               2015 | 2015-12-16 00:00:00 |     0.174954  |      0.0653775 |      0.163904  |      0.136567  |  0         |  0.233886  | 2015-10              |     0.00170574 | LOW_OR_MODERATE   |         1.00466e-05 | RISING                |        -0.0272507 | WEAK           | 2015-12-15 00:00:00    |    2.28 |   0.98 |        130 | POSITIVE            |              2.10943 | POSITIVE                | 2015-12-15 00:00:00 |        -0.376858  | FALLING_OR_FLAT          | SHOCK_DOWN           | 2015-12-11 00:00:00 | -0.401 | LOOSE_OR_AVERAGE | 2015-12-15 00:00:00 |     0.8  | POSITIVE       | 2015-12-09 00:00:00 | TWEXM               |      0.0414162  | RISING                     | PREDETERMINED_MARKET_HISTORY | RELEASE_LAG_AWARE_CURRENT_VINTAGE_NOT_STRICT_ALFRED_PIT |
+| T10_2022   |               2022 | 2022-03-16 00:00:00 |    -0.0942888 |      0.0307112 |      0.162716  |      0.14094   | -0.103448  |  0.162716  | 2022-01              |     0.0747987  | HIGH              |         0.01258     | RISING                |         0.0131813 | WEAK           | 2022-03-15 00:00:00    |    2.15 |   1.85 |         30 | POSITIVE            |             -5.32987 | NONPOSITIVE             | 2022-03-15 00:00:00 |         0.366884  | RISING                   | SHOCK_UP             | 2022-03-11 00:00:00 | -0.392 | LOOSE_OR_AVERAGE | 2022-03-15 00:00:00 |    -0.69 | NONPOSITIVE    | 2022-03-15 00:00:00 | DTWEXAFEGS          |      0.053165   | RISING                     | PREDETERMINED_MARKET_HISTORY | RELEASE_LAG_AWARE_CURRENT_VINTAGE_NOT_STRICT_ALFRED_PIT |
+
+## Supported primary state contrasts
+
+| state_var              | state_a   | state_b         | outcome      | outcome_class   |   n_a |   n_b |   median_a |      q25_a |      q75_a |   median_b |      q25_b |     q75_b |   oriented_median_diff_a_minus_b | status                |
+|:-----------------------|:----------|:----------------|:-------------|:----------------|------:|------:|-----------:|-----------:|-----------:|-----------:|-----------:|----------:|---------------------------------:|:----------------------|
+| INFLATION_LEVEL        | HIGH      | LOW_OR_MODERATE | gold_ret_12m | PRIMARY         |     5 |     5 | -0.117647  | -0.186528  | -0.0443459 |  0.0653775 |  0.0362319 | 0.122396  |                       -0.183025  | SUPPORTED_DESCRIPTIVE |
+| INFLATION_LEVEL        | HIGH      | LOW_OR_MODERATE | gold_mdd_24m | PRIMARY         |     5 |     5 |  0.225389  |  0.199115  |  0.248971  |  0.136567  |  0.117037  | 0.163987  |                        0.0888214 | SUPPORTED_DESCRIPTIVE |
+| INFLATION_DIRECTION    | RISING    | FALLING_OR_FLAT | gold_ret_12m | PRIMARY         |     7 |     3 |  0.0307112 | -0.0350928 |  0.0508047 | -0.117647  | -0.157602  | 0.0511509 |                        0.148358  | SUPPORTED_DESCRIPTIVE |
+| INFLATION_DIRECTION    | RISING    | FALLING_OR_FLAT | gold_mdd_24m | PRIMARY         |     7 |     3 |  0.14094   |  0.126802  |  0.194688  |  0.199115  |  0.18392   | 0.295077  |                       -0.0581754 | SUPPORTED_DESCRIPTIVE |
+| GROWTH_STATE           | STRONG    | WEAK            | gold_ret_12m | PRIMARY         |     6 |     4 | -0.0350928 | -0.0993218 |  0.020714  |  0.0480444 | -0.0263556 | 0.10402   |                       -0.0831372 | SUPPORTED_DESCRIPTIVE |
+| GROWTH_STATE           | STRONG    | WEAK            | gold_mdd_24m | PRIMARY         |     6 |     4 |  0.181551  |  0.128775  |  0.21882   |  0.154832  |  0.139846  | 0.224303  |                        0.0267192 | SUPPORTED_DESCRIPTIVE |
+| ENERGY_DIRECTION_STATE | RISING    | FALLING_OR_FLAT | gold_ret_12m | PRIMARY         |     5 |     3 |  0.0362319 |  0.0307112 |  0.122396  | -0.0258398 | -0.0717434 | 0.0197689 |                        0.0620717 | SUPPORTED_DESCRIPTIVE |
+| ENERGY_DIRECTION_STATE | RISING    | FALLING_OR_FLAT | gold_mdd_24m | PRIMARY         |     5 |     3 |  0.163987  |  0.14094   |  0.168724  |  0.136567  |  0.0874162 | 0.167841  |                        0.02742   | SUPPORTED_DESCRIPTIVE |
+
+## Leave-one-leg-out sign stability
+
+| state_var              | outcome      |   full_diff |   full_sign |   computable_loo |   same_sign_loo | loo_sign_stable   |
+|:-----------------------|:-------------|------------:|------------:|-----------------:|----------------:|:------------------|
+| INFLATION_LEVEL        | gold_ret_12m |  -0.183025  |          -1 |               10 |              10 | True              |
+| INFLATION_LEVEL        | gold_mdd_24m |   0.0888214 |           1 |               10 |              10 | True              |
+| INFLATION_DIRECTION    | gold_ret_12m |   0.148358  |           1 |                7 |               7 | True              |
+| INFLATION_DIRECTION    | gold_mdd_24m |  -0.0581754 |          -1 |                7 |               7 | True              |
+| GROWTH_STATE           | gold_ret_12m |  -0.0831372 |          -1 |               10 |              10 | True              |
+| GROWTH_STATE           | gold_mdd_24m |   0.0267192 |           1 |               10 |              10 | True              |
+| YIELD_CURVE_STATE      | gold_ret_12m | nan         |           0 |                0 |               0 | False             |
+| YIELD_CURVE_STATE      | gold_mdd_24m | nan         |           0 |                0 |               0 | False             |
+| REAL_RATE_PROXY_STATE  | gold_ret_12m | nan         |           0 |                0 |               0 | False             |
+| REAL_RATE_PROXY_STATE  | gold_mdd_24m | nan         |           0 |                0 |               0 | False             |
+| ENERGY_DIRECTION_STATE | gold_ret_12m |   0.0620717 |           1 |                7 |               7 | True              |
+| ENERGY_DIRECTION_STATE | gold_mdd_24m |   0.02742   |           1 |                7 |               7 | True              |
+| NFCI_STATE             | gold_ret_12m | nan         |           0 |                0 |               0 | False             |
+| NFCI_STATE             | gold_mdd_24m | nan         |           0 |                0 |               0 | False             |
+
+## USD bridge diagnostic
+
+- Legacy-vs-modern six-month return sign agreement in overlap: 0.9574
+- USD is not promoted to the primary state family unless bridge sign agreement >=90% and both outcome groups have n>=3.
+
+## Statistical status
+
+- No raw p-values are computed.
+- BH-FDR: not run / not applicable to this descriptive state map.
+- Leave-one-leg-out sign stability is a fragility diagnostic, not statistical significance.
+- The 10 mechanical tightening legs are not treated as 10 independent causal experiments.
+
+## Evidence boundary
+
+- DATA FACT: state timestamps and group support are auditable.
+- DESCRIPTIVE RESULT: supported group medians describe historical heterogeneity.
+- ASSOCIATIONAL EVIDENCE: only with explicit current-vintage and small-n limitations.
+- CAUSAL EVIDENCE: none.
+- OOS: not applicable; this is not a forecasting model.
+- DEPLOYMENT: none.

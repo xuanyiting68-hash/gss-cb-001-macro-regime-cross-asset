@@ -1,0 +1,26 @@
+{
+  "qc_gate": "PASS",
+  "module": "FED-CYCLE-STATE-001",
+  "first_hike_rows": 10,
+  "gold_outcome_source_sha256": "1d2a4776cd280f8b1e398e2c558e4da503d0d16ac5972f57c1e5436cd69a27f1",
+  "market_timing_violations": 0,
+  "macro_period_violations": 0,
+  "unsupported_presented_as_supported": 0,
+  "dfii10_first_hike_support": 3,
+  "usd_bridge_sign_agreement": 0.9573863636363636,
+  "usd_primary_promotable": true,
+  "primary_state_variables": [
+    "INFLATION_LEVEL",
+    "INFLATION_DIRECTION",
+    "GROWTH_STATE",
+    "YIELD_CURVE_STATE",
+    "REAL_RATE_PROXY_STATE",
+    "ENERGY_DIRECTION_STATE",
+    "NFCI_STATE"
+  ],
+  "supported_primary_outcome_contrasts": 8,
+  "fdr_status": "NOT_RUN_DESCRIPTIVE_STATE_MAP",
+  "oos_status": "NOT_A_FORECASTING_MODEL",
+  "causal_status": "NONE",
+  "raw_source_histories_committed": false
+}
