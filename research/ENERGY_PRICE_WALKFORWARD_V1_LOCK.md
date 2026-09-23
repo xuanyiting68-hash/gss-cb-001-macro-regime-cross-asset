@@ -48,7 +48,7 @@ Minimum prior history: 60 complete common months.
 
 `PRESSURE(t) = mean(z_WTI, z_gasoline, z_heating_oil, z_jet)`
 
-The extreme threshold at t is the 90th percentile of **prior** valid pressure scores.
+The extreme threshold at t is the 90th percentile of **prior** valid pressure scores. Require at least 24 prior valid pressure-score observations before this threshold is active.
 
 ### S2_PRICE_EXTREME
 
