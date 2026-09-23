@@ -48,6 +48,10 @@ See `docs/PAPER_FIREWALL.md`.
 - `research/FED_CYCLE_DRAWDOWN_RECOVERY_PREREG.md`
 - `research/HICP_ENERGY_002_PUBLIC_CLOSEOUT.md`
 - `research/ENERGY_REVERSAL_STATE_MACHINE_V2.md`
+- `research/ENERGY_PRICE_WALKFORWARD_V1_LOCK.md`
+- `research/ENERGY_PRICE_WF_001_CLOSEOUT.md`
+- `research/ENERGY_PHYSICAL_WALKFORWARD_V1_LOCK.md`
+- `results/energy_price_wf_v1/`
 - `content/README.md`
 
 The larger local social-content package is intentionally **not yet imported**. It should first pass a final claim/source audit so dated or exploratory statements cannot be separated from their evidence labels.
@@ -75,6 +79,8 @@ The energy workstream distinguishes crude-price shocks from downstream refined-p
 
 ### 6. Commodity turning points
 The Commodity Reversal workstream tests transition states rather than the naive rule “price is high, therefore short.”
+
+The first exhaustive 1990–2026 price/product walk-forward is now complete. It identifies 13 de-clustered rollover events, but **0/4 primary confirmed-vs-veto tests pass BH-FDR 10%**. The more promising descriptive use is a **false-relief veto / risk warning**, not a validated short signal. The next frozen gate adds release-aware EIA inventories and refinery utilization.
 
 ## Evidence labels
 
