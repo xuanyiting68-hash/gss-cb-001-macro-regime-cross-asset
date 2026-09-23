@@ -58,3 +58,30 @@ results/energy_flow_v2/FLOW_GROUP_DESCRIPTIVES.csv,Flow-group descriptive outcom
 results/energy_flow_v2/QC.json,Flow-map QC gate,QC_PASS,PUBLIC_SAFE
 results/energy_flow_v2/ENERGY_FLOW_002_REPORT.md,Stock-flow mechanism report,HYPOTHESIS_GENERATING,PUBLIC_SAFE
 content/ENERGY_STOCK_FLOW_CONTENT_CARD_001.md,Evidence-linked energy stock-flow social content card,CANONICAL,PUBLIC_SAFE
+research/FED_CYCLE_PATH_001_LOCK.md,Fed-cycle path-risk frozen specification,CANONICAL,PUBLIC_SAFE
+research/FED_CYCLE_PATH_001_DATA_SOURCE_AMENDMENT.md,Pre-outcome Stooq-to-Yahoo acquisition amendment,CANONICAL,PUBLIC_SAFE
+research/FED_CYCLE_PATH_001_DATA_SOURCE_AMENDMENT_2.md,Pre-outcome Gold futures-proxy amendment,CANONICAL,PUBLIC_SAFE
+research/FED_CYCLE_PATH_001_V1_QUARANTINE.md,Timing-ontology quarantine record for v1,QUARANTINED,PUBLIC_SAFE
+research/FED_CYCLE_PATH_001_V1_1_TIMING_LOCK.md,Timing-corrected event-ontology lock,CANONICAL,PUBLIC_SAFE
+research/FED_CYCLE_PATH_001_V1_1_CLOSEOUT.md,Timing-corrected Fed-cycle path closeout,CANONICAL,PUBLIC_SAFE
+scripts/run_fed_cycle_path_v1.py,Original Fed-cycle path runner retained for audit,QUARANTINED,PUBLIC_SAFE
+scripts/run_fed_cycle_path_v1_1.py,Timing-corrected Fed-cycle path runner,CANONICAL,PUBLIC_SAFE
+.github/workflows/fed-cycle-path-v1.yml,Original automated Fed-cycle workflow retained for audit,QUARANTINED,PUBLIC
+.github/workflows/fed-cycle-path-v1-1.yml,Timing-corrected automated Fed-cycle workflow,CANONICAL,PUBLIC
+results/fed_cycle_path_v1/,Original computed Fed-cycle outputs,QUARANTINED,PUBLIC_SAFE
+results/fed_cycle_path_v1_1/QC.json,Timing and computational QC gate,QC_PASS,PUBLIC_SAFE
+results/fed_cycle_path_v1_1/FED_TIGHTENING_CYCLES.csv,Mechanical tightening-leg registry,QC_PASS,PUBLIC_SAFE
+results/fed_cycle_path_v1_1/FED_CYCLE_EVENTS.csv,Timing-corrected event registry with unresolved emergency candidates,QC_PASS,PUBLIC_SAFE
+results/fed_cycle_path_v1_1/FED_POLICY_CHANGE_REGISTRY.csv,Policy source-effective and mapped decision-date registry,QC_PASS,PUBLIC_SAFE
+results/fed_cycle_path_v1_1/ASSET_COVERAGE.csv,Cross-asset sample coverage,QC_PASS,PUBLIC_SAFE
+results/fed_cycle_path_v1_1/EVENT_ASSET_METRICS.csv,Derived path-risk metrics by event and asset,DESCRIPTIVE,PUBLIC_SAFE
+results/fed_cycle_path_v1_1/DISTRIBUTION_SUMMARY.csv,Derived path-risk distribution summaries,DESCRIPTIVE,PUBLIC_SAFE
+results/fed_cycle_path_v1_1/GOLD_2015_2022_METRICS.csv,Frozen-framework Gold episode comparison,DESCRIPTIVE,PUBLIC_SAFE
+results/fed_cycle_path_v1_1/GOLD_EVENT_PATHS.csv,Normalized derived Gold event paths,DESCRIPTIVE,PUBLIC_SAFE
+results/fed_cycle_path_v1_1/GOLD_RECOVERY_KM.csv,Gold full-recovery survival curve data,DESCRIPTIVE,PUBLIC_SAFE
+results/fed_cycle_path_v1_1/FED_CYCLE_PATH_001_V1_1_REPORT.md,Reproducible timing-corrected report,QC_PASS_DESCRIPTIVE,PUBLIC_SAFE
+results/fed_cycle_path_v1_1/01_gold_first_hike_paths.png,Gold FIRST_HIKE normalized path figure,DESCRIPTIVE,PUBLIC
+results/fed_cycle_path_v1_1/02_gold_2015_2022_first_hike.png,Gold 2015-vs-2022 path figure,DESCRIPTIVE,PUBLIC
+results/fed_cycle_path_v1_1/03_gold_first_hike_mdd_by_cycle.png,Gold FIRST_HIKE MDD figure,DESCRIPTIVE,PUBLIC
+results/fed_cycle_path_v1_1/04_gold_first_hike_recovery_km.png,Gold recovery survival figure,DESCRIPTIVE,PUBLIC
+content/FED_CYCLE_PATH_CONTENT_001.md,Evidence-linked endpoint-return versus path-risk content card,CANONICAL,PUBLIC_SAFE
