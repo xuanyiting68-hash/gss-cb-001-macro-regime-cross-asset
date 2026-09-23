@@ -9,3 +9,9 @@ docs/EVIDENCE_LEDGER.csv,Public claim/evidence status ledger,CANONICAL,PUBLIC
 docs/CHANGELOG.md,Repository change history,CANONICAL,PUBLIC
 docs/FILE_MANIFEST.csv,Public file manifest,CANONICAL,PUBLIC
 prompts/START_NEXT_CHAT.md,Cross-chat continuation prompt,CANONICAL,PUBLIC
+research/P0A_V3_PUBLIC_REAUDIT_PROTOCOL.md,Gold regime public statistical re-audit protocol,CANONICAL,PUBLIC_SAFE
+research/P0B_P0C_PUBLIC_STATUS.md,Public evidence boundaries for P0-B/P0-C,CANONICAL,PUBLIC_SAFE
+research/FED_CYCLE_DRAWDOWN_RECOVERY_PREREG.md,Fed-cycle path-risk preregistration,CANONICAL,PUBLIC_SAFE
+research/HICP_ENERGY_002_PUBLIC_CLOSEOUT.md,Refined-product household-inflation public closeout,CANONICAL,PUBLIC_SAFE
+research/ENERGY_REVERSAL_STATE_MACHINE_V2.md,Commodity/energy turning-point protocol,CANONICAL,PUBLIC_SAFE
+content/README.md,Social-content evidence rules,CANONICAL,PUBLIC
