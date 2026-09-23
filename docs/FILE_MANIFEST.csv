@@ -1,0 +1,11 @@
+path,role,status,publishability
+README.md,Public repository overview,CANONICAL,PUBLIC
+AGENTS.md,Research-agent operating rules,CANONICAL,PUBLIC
+docs/CURRENT_STATE.md,Authoritative public-project state,CANONICAL,PUBLIC
+docs/RESEARCH_PROTOCOL.md,Public research and communication rules,CANONICAL,PUBLIC
+docs/PAPER_FIREWALL.md,Private-paper/public-companion boundary,CANONICAL,PUBLIC
+docs/TRANSFER_AUDIT_20260924.md,Repository transfer assessment,CANONICAL,PUBLIC
+docs/EVIDENCE_LEDGER.csv,Public claim/evidence status ledger,CANONICAL,PUBLIC
+docs/CHANGELOG.md,Repository change history,CANONICAL,PUBLIC
+docs/FILE_MANIFEST.csv,Public file manifest,CANONICAL,PUBLIC
+prompts/START_NEXT_CHAT.md,Cross-chat continuation prompt,CANONICAL,PUBLIC
