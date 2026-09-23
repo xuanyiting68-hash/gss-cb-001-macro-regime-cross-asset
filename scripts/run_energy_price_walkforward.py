@@ -407,7 +407,7 @@ def write_report(prov, qc, events, summary, tests, bench):
         "",
         prov[["series_id","title","source","unit","first_date","last_date","sha256"]].to_markdown(index=False),
     ])
-    (OUT / "ENERGY_PRICE_WF_001_REPORT.md").write_text("\\n".join(lines), encoding="utf-8")
+    (OUT / "ENERGY_PRICE_WF_001_REPORT.md").write_text("\n".join(lines), encoding="utf-8")
 
 def make_figures(events):
     if events.empty:
