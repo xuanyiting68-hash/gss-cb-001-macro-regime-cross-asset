@@ -81,18 +81,18 @@ FRED_ASSETS = {
     },
 }
 
-STOOQ_ASSETS = {
+YAHOO_ASSETS = {
     "GOLD": {
-        "symbol": "xauusd",
+        "symbol": "XAUUSD=X",
         "kind": "price",
-        "label": "Gold spot XAUUSD",
-        "source": "Stooq public historical download",
+        "label": "Gold 1 oz / USD spot-price proxy",
+        "source": "Yahoo Finance public chart history",
     },
     "SP500": {
-        "symbol": "^spx",
+        "symbol": "^GSPC",
         "kind": "price",
         "label": "S&P 500 cash index",
-        "source": "Stooq public historical download",
+        "source": "Yahoo Finance public chart history",
     },
 }
 
@@ -172,27 +172,44 @@ def fetch_fred(series_id: str):
     }
 
 
-def fetch_stooq(symbol: str):
+def fetch_yahoo_chart(symbol: str):
+    """Yahoo Finance chart-history endpoint; raw JSON bytes are not committed."""
     enc = quote(symbol, safe="")
-    url = f"https://stooq.com/q/d/l/?s={enc}&i=d"
-    raw = fetch_bytes(url, timeout=60)
-    if b"Exceeded" in raw or len(raw) < 100:
-        raise RuntimeError(f"Stooq response unusable for {symbol}")
-    df = pd.read_csv(io.BytesIO(raw))
-    cmap = {c.lower(): c for c in df.columns}
-    if "date" not in cmap or "close" not in cmap:
-        raise RuntimeError(f"Unexpected Stooq columns for {symbol}: {list(df.columns)}")
-    out = pd.DataFrame({
-        "date": pd.to_datetime(df[cmap["date"]], errors="coerce"),
-        "value": pd.to_numeric(df[cmap["close"]], errors="coerce"),
-    })
-    out = out.dropna(subset=["date", "value"]).sort_values("date")
-    return out, {
-        "url": url,
-        "acquisition_method": "STOOQ_PUBLIC_CSV",
-        "sha256": hashlib.sha256(raw).hexdigest(),
-        "raw_bytes": len(raw),
-    }
+    urls = [
+        f"https://query1.finance.yahoo.com/v8/finance/chart/{enc}?period1=0&period2=1893456000&interval=1d&events=history&includeAdjustedClose=true",
+        f"https://query2.finance.yahoo.com/v8/finance/chart/{enc}?period1=0&period2=1893456000&interval=1d&events=history&includeAdjustedClose=true",
+    ]
+    errors = []
+    for url in urls:
+        try:
+            raw = fetch_bytes(url, timeout=60)
+            obj = json.loads(raw.decode("utf-8"))
+            result = obj.get("chart", {}).get("result")
+            if not result:
+                raise RuntimeError(str(obj.get("chart", {}).get("error")))
+            block = result[0]
+            ts = block.get("timestamp") or []
+            quote_block = (block.get("indicators", {}).get("quote") or [{}])[0]
+            close = quote_block.get("close") or []
+            if len(ts) != len(close) or not ts:
+                raise RuntimeError("Yahoo timestamp/close length mismatch")
+            out = pd.DataFrame({
+                "date": pd.to_datetime(ts, unit="s", utc=True).tz_convert(None).normalize(),
+                "value": pd.to_numeric(close, errors="coerce"),
+            })
+            out = out.dropna(subset=["date", "value"]).sort_values("date")
+            out = out.drop_duplicates("date", keep="last").reset_index(drop=True)
+            if len(out) < 100:
+                raise RuntimeError(f"Yahoo history too short for {symbol}: {len(out)}")
+            return out, {
+                "url": url,
+                "acquisition_method": "YAHOO_FINANCE_CHART_JSON",
+                "sha256": hashlib.sha256(raw).hexdigest(),
+                "raw_bytes": len(raw),
+            }
+        except Exception as exc:
+            errors.append(f"{url}: {repr(exc)}")
+    raise RuntimeError(f"Yahoo chart history failed for {symbol}: {errors}")
 
 
 def provenance_row(name, meta, df, acquired, series_id=""):
@@ -437,8 +454,8 @@ def build_cycles(changes: pd.DataFrame, scheduled: pd.DatetimeIndex):
 def load_assets(prov_rows):
     assets = {}
 
-    for name, meta in STOOQ_ASSETS.items():
-        df, acq = fetch_stooq(meta["symbol"])
+    for name, meta in YAHOO_ASSETS.items():
+        df, acq = fetch_yahoo_chart(meta["symbol"])
         df = df[(df["value"] > 0) & df["date"].notna()].copy()
         assets[name] = {"df": df.reset_index(drop=True), **meta}
         prov_rows.append(provenance_row(name, meta, df, acq, meta["symbol"]))
@@ -941,7 +958,7 @@ def main():
         "sp500_first_hike_rows": int(len(sp_first)),
         "mdd_identity_violations": mdd_bad,
         "recovery_order_violations": recovery_order_bad,
-        "raw_stooq_files_committed": False,
+        "raw_redistribution_uncertain_market_files_committed": False,
         "soft_warning": "Coverage differs by asset; DFII10/T5YIE and DTWEXBGS start materially later than Gold/equities/rates.",
     }
 
