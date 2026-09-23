@@ -28,9 +28,22 @@ Status: **QUARANTINED / HYPOTHESIS-GENERATING**
 Existing Fed-only exploratory averages are not formal evidence because realized FOMC action is not an identified monetary-policy shock, the formal China predetermined-state layer is incomplete, and the exploratory testing family does not confirm a robust effect.
 
 ### Fed-cycle risk paths
-Status: **DESCRIPTIVE / NEEDS LONGER HISTORY**
+Status: **QC-PASSED DESCRIPTIVE FOUNDATION / GOLD DAILY LONG-HISTORY SUPPORT LIMITED / NOT DEPLOYABLE**
 
-Research object: endpoint return, maximum drawdown, time-to-trough, volatility, correlation shifts and 50%/100% recovery after First Hike, Last Hike, Pause, First Cut and Emergency Cut events.
+FED-CYCLE-PATH-001 v1 is quarantined after post-run readback found a timing-ontology defect: modern target effective dates were not consistently separated from FOMC decision dates, the scheduled calendar supplement stopped at 2024, and pre-1994 reconstructed target changes were being over-labeled as emergency cuts.
+
+v1.1 corrects those defects and passes hard timing QC. The mechanical registry contains 10 qualifying tightening legs beginning in 1983, 1984, 1987, 1987, 1988, 1994, 1999, 2004, 2015 and 2022. Pre-1994 anchors remain historical target reconstructions, not exact modern announcement timestamps.
+
+FIRST_HIKE path-risk descriptives:
+
+- S&P 500 n=10: 252D endpoint median +4.99%, MDD median 11.31%, full-recovery median 136 valid observations.
+- Nasdaq n=10: 252D endpoint median -0.82%, MDD median 20.67%; full recovery observed for 9/10, median 181 observations.
+- WTI n=8: 252D endpoint median +22.04%, MDD median 30.16%; full recovery observed for 7/8.
+- Gold daily layer uses `GC=F` continuous COMEX futures proxy, not XAUUSD spot. FIRST_HIKE support is only n=3; 252D endpoint median +6.81%, MDD median 17.37%, full-recovery median 150 observations.
+
+2015 vs 2022 Gold under the same frozen FIRST_HIKE specification differs materially: 2015 252D +6.81% versus 2022 -0.35%, while both had roughly 17-18% MDD. This is descriptive evidence that endpoint return alone is an incomplete risk statistic, not evidence that Fed hikes cause a particular Gold path.
+
+No confirmatory p-value/FDR family is run in this foundation module. OOS is not applicable because this is not a forecasting model. Emergency-cut candidates with unresolved announcement timing are registry-only and excluded from asset metrics.
 
 ### Household inflation / energy
 Status: **MECHANISM CANDIDATE / NOT A TRADING SIGNAL**
@@ -93,6 +106,8 @@ Current conclusion:
 1. Preserve the failed stock-only rule and FLOW-002 as negative/mechanism evidence; do not retune them.
 2. Design a genuinely weekly/daily PIT commodity event engine to remove monthly-average timing limitations and increase event support.
 3. Freeze an independent geopolitical/physical shock registry before any full P4A claim.
-4. Expand Fed-cycle risk-path research to more historical cycles, including Gold drawdown/recovery paths.
-5. Add provenance-safe public charts/tables and tie every social-media claim to the evidence ledger.
-6. Keep paper-specific identification work behind the firewall.
+4. Extend Gold backward with a native-frequency openly licensed long-history series; do not pool monthly history with daily `GC=F` as if they were identical.
+5. Freeze predetermined/PIT state dependence for Fed-cycle path risk only after long-history Gold support is expanded.
+6. Resolve official announcement timing for registry-only emergency-cut candidates before any emergency-event outcome study.
+7. Continue provenance-safe charts/content cards tied to the evidence ledger.
+8. Keep paper-specific identification work behind the firewall.
