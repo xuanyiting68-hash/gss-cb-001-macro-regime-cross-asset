@@ -51,7 +51,13 @@ See `docs/PAPER_FIREWALL.md`.
 - `research/ENERGY_PRICE_WALKFORWARD_V1_LOCK.md`
 - `research/ENERGY_PRICE_WF_001_CLOSEOUT.md`
 - `research/ENERGY_PHYSICAL_WALKFORWARD_V1_LOCK.md`
+- `research/ENERGY_PHYSICAL_WF_001_V1_1_TIMING_AMENDMENT.md`
+- `research/ENERGY_PHYSICAL_WF_001_V1_1_CLOSEOUT.md`
+- `research/ENERGY_FLOW_DECOMPOSITION_V2_LOCK.md`
+- `research/ENERGY_FLOW_002_CLOSEOUT.md`
 - `results/energy_price_wf_v1/`
+- `results/energy_physical_wf_v1_1/`
+- `results/energy_flow_v2/`
 - `content/README.md`
 
 The larger local social-content package is intentionally **not yet imported**. It should first pass a final claim/source audit so dated or exploratory statements cannot be separated from their evidence labels.
@@ -80,7 +86,11 @@ The energy workstream distinguishes crude-price shocks from downstream refined-p
 ### 6. Commodity turning points
 The Commodity Reversal workstream tests transition states rather than the naive rule “price is high, therefore short.”
 
-The first exhaustive 1990–2026 price/product walk-forward is now complete. It identifies 13 de-clustered rollover events, but **0/4 primary confirmed-vs-veto tests pass BH-FDR 10%**. The more promising descriptive use is a **false-relief veto / risk warning**, not a validated short signal. The next frozen gate adds release-aware EIA inventories and refinery utilization.
+The first exhaustive 1990–2026 price/product walk-forward is complete: 13 de-clustered rollover events and **0/4 primary confirmed-vs-veto tests pass BH-FDR 10%**. The more promising descriptive use is a **false-relief veto / risk warning**, not a validated short signal.
+
+The subsequent release-aware inventory/refinery layer also failed to establish downside timing: corrected P4A_DATA_ONLY n=3 and **0/4 tests pass FDR (q=1.00)**. A first stock-flow mechanism map then added product supplied, refinery inputs, production and imports; support remains too small for inference and no directional edge is established.
+
+Current product implication: the energy stack is a **risk-state / mechanism engine**, not a buy/sell engine.
 
 ## Evidence labels
 
