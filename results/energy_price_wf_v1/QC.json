@@ -1,0 +1,12 @@
+{
+  "common_sample_first": "1990-04-01",
+  "common_sample_last": "2026-08-01",
+  "common_rows": 437,
+  "common_missing_months": [],
+  "duplicate_dates": 0,
+  "nonpositive_price_cells": 0,
+  "s2_extreme_months": 34,
+  "s3_raw_months": 18,
+  "s3_selected_events": 13,
+  "qc_gate": "PASS"
+}
