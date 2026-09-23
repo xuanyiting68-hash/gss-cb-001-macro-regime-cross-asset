@@ -106,3 +106,27 @@ results/gold_long_history_monthly_v1/01_gold_monthly_first_hike_mdd.png,Long-his
 results/gold_long_history_monthly_v1/02_gold_monthly_endpoint_vs_mdd.png,Gold endpoint-versus-drawdown figure,DESCRIPTIVE,PUBLIC
 results/gold_long_history_monthly_v1/03_gold_first_hike_recovery_survival.png,Gold recovery Kaplan-Meier figure,DESCRIPTIVE,PUBLIC
 content/FED_CYCLE_GOLD_CONTENT_002.md,Evidence-linked long-history Gold cycle content card,CANONICAL,PUBLIC_SAFE
+research/FED_CYCLE_STATE_001_LOCK.md,Fed-cycle Gold predetermined-state frozen specification,CANONICAL,PUBLIC_SAFE
+research/FED_CYCLE_STATE_001_CONFOUNDING_DIAGNOSTIC.md,Post-run state era-confounding diagnostic protocol,CANONICAL,PUBLIC_SAFE
+research/FED_CYCLE_STATE_001_CLOSEOUT.md,Fed-cycle Gold state-map closeout,CANONICAL,PUBLIC_SAFE
+scripts/run_fed_cycle_state_v1.py,Fed-cycle Gold state-map runner,CANONICAL,PUBLIC_SAFE
+scripts/audit_fed_cycle_state_confounding.py,USD and chronological-confounding audit runner,CANONICAL,PUBLIC_SAFE
+.github/workflows/fed-cycle-state-v1.yml,Automated Fed-cycle state-map workflow,CANONICAL,PUBLIC
+.github/workflows/fed-cycle-state-confounding-audit.yml,Automated state confounding audit workflow,CANONICAL,PUBLIC
+results/fed_cycle_state_v1/SOURCE_REGISTRY.csv,State-source registry and hashes,QC_PASS,PUBLIC_SAFE
+results/fed_cycle_state_v1/QC.json,State timing/support QC gate,QC_PASS,PUBLIC_SAFE
+results/fed_cycle_state_v1/STATE_EVENT_PANEL.csv,FIRST_HIKE Gold outcomes and predetermined-state panel,DESCRIPTIVE_ASSOCIATIONAL,PUBLIC_SAFE
+results/fed_cycle_state_v1/STATE_CONTRASTS.csv,Predeclared state-conditioned Gold descriptives,DESCRIPTIVE_ASSOCIATIONAL,PUBLIC_SAFE
+results/fed_cycle_state_v1/STATE_LOO_STABILITY.csv,Leave-one-leg-out state contrast fragility summary,DESCRIPTIVE_ASSOCIATIONAL,PUBLIC_SAFE
+results/fed_cycle_state_v1/STATE_LOO_DETAIL.csv,Leave-one-leg-out state contrast detail,DESCRIPTIVE_ASSOCIATIONAL,PUBLIC_SAFE
+results/fed_cycle_state_v1/STATE_EPISODE_MAP.csv,Compact state/outcome episode map,DESCRIPTIVE,PUBLIC_SAFE
+results/fed_cycle_state_v1/USD_BRIDGE_AUDIT.csv,Legacy-modern USD direction bridge diagnostic,QC_PASS_DIAGNOSTIC,PUBLIC_SAFE
+results/fed_cycle_state_v1/USD_STATE_CONTRASTS.csv,Frozen-gate USD state contrast,ERA_CONFOUNDED_DIAGNOSTIC,PUBLIC_SAFE
+results/fed_cycle_state_v1/USD_STATE_LOO_DETAIL.csv,USD leave-one-leg-out diagnostic,ERA_CONFOUNDED_DIAGNOSTIC,PUBLIC_SAFE
+results/fed_cycle_state_v1/STATE_TEMPORAL_CONFOUNDING_AUDIT.csv,Chronological-separation audit of state groups,QC_PASS_DIAGNOSTIC,PUBLIC_SAFE
+results/fed_cycle_state_v1/STATE_SUPPORT_MAP.csv,Exact state support and event years,QC_PASS_DIAGNOSTIC,PUBLIC_SAFE
+results/fed_cycle_state_v1/CONFOUNDING_QC.json,State confounding QC gate,QC_PASS,PUBLIC_SAFE
+results/fed_cycle_state_v1/FED_CYCLE_STATE_001_REPORT.md,Reproducible state-map report,QC_PASS_DESCRIPTIVE,PUBLIC_SAFE
+results/fed_cycle_state_v1/STATE_CONFOUNDING_DIAGNOSTIC.md,USD and era-confounding interpretation,QC_PASS_DIAGNOSTIC,PUBLIC_SAFE
+results/fed_cycle_state_v1/01_gold_12m_state_contrasts.png,Gold +12M predeclared-state contrast figure,DESCRIPTIVE,PUBLIC
+content/FED_CYCLE_STATE_CONTENT_003.md,Evidence-linked Gold state-mechanism content card,CANONICAL,PUBLIC_SAFE
