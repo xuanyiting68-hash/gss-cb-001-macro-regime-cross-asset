@@ -2,7 +2,7 @@ evidence_id,module,evidence_class,status,public_claim_boundary
 P0A_V3,Gold 8-regime statistical re-audit,ASSOCIATIONAL,NOT_DEPLOYABLE,"Descriptive conditional structure only; no confirmed regime-excess FDR survivor in the audited family"
 P0B_POINT_TREND,Point-vs-trend macro information,ASSOCIATIONAL,NOT_SUPPORTED,"Do not say trend is useless; the preregistered specifications did not establish robust economically meaningful superiority"
 P0C_FED_CHINA,Fed action and A-share exploratory panel,QUARANTINED,HYPOTHESIS_GENERATING,"Realized action is not an identified policy shock; formal China-state layer incomplete; no causal language"
-FED_CYCLE_PATH,Fed-cycle drawdown/recovery research,DESCRIPTIVE,NEED_LONGER_HISTORY,"Modern-cycle results are illustrative; do not generalize small-n turning-point patterns into universal rules"
+FED_CYCLE_PATH,Fed-cycle drawdown/recovery research,DESCRIPTIVE,QC_PASSED_FOUNDATION_LIMITED_GOLD_HISTORY,"v1.1: 10 mechanical tightening legs; S&P/Nasdaq/WTI path-risk foundation passes timing QC; Gold daily FIRST_HIKE n=3 using GC=F futures proxy; no causal/FDR/OOS/deployment claim"
 HICP_ENERGY_002,Crude and refined-product pass-through,MECHANISM_CANDIDATE,PASS_WITH_BOUNDARIES,"Useful household-fuel pressure mapping; not a validated next-month cross-asset trading signal"
 COMMODITY_REVERSAL,Commodity turning-point state machine,MECHANISM_CANDIDATE,NOT_CONFIRMATORY,"Pilot transitions are hypothesis-generating; long-history walk-forward required"
 GOLD_STATE_DEP,Energy x rates x USD x Gold state work,ASSOCIATIONAL,NEED_ROBUSTNESS,"Plausible mechanism is not a stable Gold timing rule without OOS support"
@@ -10,3 +10,4 @@ SOCIAL_CONTENT,Public educational content,DESCRIPTIVE,REQUIRES_EVIDENCE_LINK,"Po
 ENERGY_PRICE_WF_001,Long-history WTI and refined-product rollover walk-forward,ASSOCIATIONAL,NOT_CONFIRMED_FDR,"1990-04 to 2026-08; 13 events; 0/4 primary tests pass BH-FDR 10%; false-relief veto is a promising risk-filter hypothesis, not a short signal"
 ENERGY_PHYSICAL_WF_001,Release-aware EIA inventory and refinery extension,ASSOCIATIONAL,NOT_SUPPORTED_DATA_ONLY,"Corrected strict-PIT run: 12/13 events available; P4A_DATA_ONLY n=3; 0/4 tests pass BH-FDR 10% with q=1.00; inventory normalization alone is not a validated WTI downside confirmation"
 ENERGY_FLOW_002,Release-aware stock-flow mechanism decomposition,MECHANISM_CANDIDATE,INSUFFICIENT_SUPPORT,"Post-v1.1 hypothesis-generating only; 4 complete price-confirmed events; FLOW_DD=0 FLOW_SN=1 FLOW_MIXED=3; no directional edge claim"
+FED_CYCLE_PATH_V1_QUARANTINE,Fed-cycle timing-ontology v1 audit,QUARANTINED,DO_NOT_CITE,"Computational QC passed but event timing ontology failed post-run audit; retained for reproducibility only"
