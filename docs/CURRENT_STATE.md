@@ -45,6 +45,34 @@ FIRST_HIKE path-risk descriptives:
 
 No confirmatory p-value/FDR family is run in this foundation module. OOS is not applicable because this is not a forecasting model. Emergency-cut candidates with unresolved announcement timing are registry-only and excluded from asset metrics.
 
+
+#### Gold long-history native-frequency layer
+
+Status: **QC-PASSED DESCRIPTIVE LONG-HISTORY / DIRECTIONAL RULE NOT ESTABLISHED / NOT DEPLOYABLE**
+
+A separate monthly Gold layer uses a pinned `datasets/gold-prices` source commit, 1960-01 through 2026-08, whose 1960+ data are sourced from World Bank Commodity Markets. Pre-1960 repeated annual averages are excluded. The event month is omitted from clean endpoints to avoid mixing pre/post-event prices.
+
+All 10 frozen FIRST_HIKE tightening legs have clean monthly support.
+
+FIRST_HIKE Gold descriptives:
+- +1M median +1.55%;
+- +3M +0.51%;
+- +6M -1.90%;
+- +12M +0.24%;
+- +24M +0.58%;
+- 24M MDD median 16.64%, range 3.83% to 39.10%.
+
+This longer-history layer does **not** establish a stable directional Gold rule after the first hike. The stronger descriptive finding is wide endpoint dispersion combined with material path drawdown.
+
+Recovery is handled with right-censoring:
+- 50% recovery: 8/10 observed, 2/10 censored; Kaplan-Meier median 8 months;
+- 100% recovery: 6/10 observed, 4/10 censored; Kaplan-Meier median 19 months;
+- at 24 months, KM survival implies 50% of episodes had not yet fully recovered.
+
+Cross-frequency diagnostics are not pooled. For 2004 and 2015, monthly +12M and daily `GC=F` +252-observation endpoint signs agree. For 2022 they differ: monthly +3.07% versus daily -0.35%, reinforcing that instrument/frequency/endpoint definitions can change endpoint narratives.
+
+No confirmatory p-value/FDR family is run in the monthly foundation; OOS is not applicable; there is no causal or deployment claim.
+
 ### Household inflation / energy
 Status: **MECHANISM CANDIDATE / NOT A TRADING SIGNAL**
 
@@ -106,8 +134,8 @@ Current conclusion:
 1. Preserve the failed stock-only rule and FLOW-002 as negative/mechanism evidence; do not retune them.
 2. Design a genuinely weekly/daily PIT commodity event engine to remove monthly-average timing limitations and increase event support.
 3. Freeze an independent geopolitical/physical shock registry before any full P4A claim.
-4. Extend Gold backward with a native-frequency openly licensed long-history series; do not pool monthly history with daily `GC=F` as if they were identical.
-5. Freeze predetermined/PIT state dependence for Fed-cycle path risk only after long-history Gold support is expanded.
+4. Freeze and run a predetermined/PIT state-dependence layer for Fed-cycle path risk now that Gold long-history support covers all 10 FIRST_HIKE legs.
+5. Keep revised macro data explicitly separate from true real-time/vintage information; do not label revised historical values PIT.
 6. Resolve official announcement timing for registry-only emergency-cut candidates before any emergency-event outcome study.
 7. Continue provenance-safe charts/content cards tied to the evidence ledger.
 8. Keep paper-specific identification work behind the firewall.
