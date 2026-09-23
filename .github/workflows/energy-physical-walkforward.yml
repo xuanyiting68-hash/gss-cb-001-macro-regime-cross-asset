@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - "scripts/run_energy_physical_walkforward_v1_1.py"
+      - "scripts/audit_energy_physical_wf_v1_1.py"
       - "research/ENERGY_PHYSICAL_WALKFORWARD_V1_LOCK.md"
       - "research/ENERGY_PHYSICAL_WF_001_V1_1_TIMING_AMENDMENT.md"
       - ".github/workflows/energy-physical-walkforward.yml"
@@ -31,6 +32,9 @@ jobs:
       - name: Run physical walk-forward
         run: python scripts/run_energy_physical_walkforward_v1_1.py
 
+      - name: Run mechanism diagnostic
+        run: python scripts/audit_energy_physical_wf_v1_1.py
+
       - name: Commit QC-passed public-safe outputs
         run: |
           git config user.name "github-actions[bot]"
@@ -40,6 +44,10 @@ jobs:
           git add results/energy_physical_wf_v1_1/PHYSICAL_EVENT_PANEL.csv
           git add results/energy_physical_wf_v1_1/PRIMARY_DATA_ONLY_TESTS.csv
           git add results/energy_physical_wf_v1_1/QC.json
+          git add results/energy_physical_wf_v1_1/DIAGNOSTIC_WITHIN_PRICE_CONFIRMED.csv
+          git add results/energy_physical_wf_v1_1/DIAGNOSTIC_INVENTORY_COUNT.csv
+          git add results/energy_physical_wf_v1_1/DIAGNOSTIC_PRICE_CONFIRMED_EVENTS.csv
+          git add results/energy_physical_wf_v1_1/MECHANISM_DIAGNOSTIC.md
           git add results/energy_physical_wf_v1_1/ENERGY_PHYSICAL_WF_001_V1_1_REPORT.md
           if git diff --cached --quiet; then
             echo "No result changes"
