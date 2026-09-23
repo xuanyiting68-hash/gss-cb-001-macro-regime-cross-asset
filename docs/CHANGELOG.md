@@ -76,3 +76,15 @@
 - Kaplan-Meier survival QC passed: FIRST_HIKE 50% recovery median 8 months (8 observed/2 censored); full recovery median 19 months (6 observed/4 censored).
 - Added an evidence-linked public content card: “加息后黄金到底怎么走？长历史答案不是简单涨跌”.
 - Next Fed-cycle priority is a predetermined/PIT state-dependence design; revised macro series must not be mislabeled as real-time information.
+
+## 2026-09-24 — FED-CYCLE-STATE-001
+
+- Froze seven state variables before conditioning the 10 FIRST_HIKE Gold outcomes.
+- Separated strictly pre-event market history from release-lag-aware current-vintage macro history; current-vintage CPI/INDPRO/NFCI are not labeled ALFRED PIT.
+- QC passed with zero market-timing or macro-period violations and zero unsupported contrasts promoted as supported.
+- Supported n>=3/group primary contrasts exist for inflation level, inflation direction, growth and WTI direction; their +12M Gold and 24M MDD median-difference signs remain stable in computable leave-one-leg-out checks.
+- Yield curve has no FIRST_HIKE cross-sectional variation (0 inverted/10 positive); the real-rate proxy is 9/1 and TIPS real-yield support is only n=3; NFCI is 2/8. No claims are made from those splits.
+- The USD source bridge passes with 95.74% six-month direction-sign agreement and 5/5 event support, but the USD groups are perfectly chronologically separated: 1983-1988 falling/flat versus 1994-2022 rising. The apparent USD contrast is therefore classified as era-confounded.
+- No p-values or BH-FDR are run; STATE-001 is a small-n mechanism map, not a confirmatory or forecasting model.
+- Added an evidence-linked content card on why Real Yield, USD and Oil cannot yet be ranked as the dominant Gold driver.
+- Next priority is a within-cycle monthly continuous-state design with cycle-aware dependence handling rather than more binary event splits.
