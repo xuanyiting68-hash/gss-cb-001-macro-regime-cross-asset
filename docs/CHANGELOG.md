@@ -45,3 +45,4 @@
 - Froze and executed ENERGY-FLOW-002 using EIA product supplied, refinery crude inputs, field production and crude imports.
 - FLOW-002 has four complete strict-PIT price-confirmed events: FLOW_DD=0, FLOW_SN=1, FLOW_MIXED=3. It is mechanism-building only and does not establish a directional edge.
 - Improved automated research workflows to rebase before push after a concurrent-write rejection exposed GitHub Actions race risk.
+- Added an evidence-linked public content card: “库存增加，为什么油价不一定跌？”, with explicit n/FDR/causal-language boundaries.
