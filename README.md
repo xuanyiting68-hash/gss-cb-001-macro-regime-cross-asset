@@ -38,7 +38,19 @@ See `docs/PAPER_FIREWALL.md`.
 2. Read `docs/CURRENT_STATE.md`.
 3. Read `docs/RESEARCH_PROTOCOL.md`.
 4. Read `docs/EVIDENCE_LEDGER.csv`.
-5. Read `prompts/START_NEXT_CHAT.md` before continuing research in a new session.
+5. Read `docs/TRANSFER_AUDIT_20260924.md`.
+6. Read `prompts/START_NEXT_CHAT.md` before continuing research in a new session.
+
+## Public-safe research already imported
+
+- `research/P0A_V3_PUBLIC_REAUDIT_PROTOCOL.md`
+- `research/P0B_P0C_PUBLIC_STATUS.md`
+- `research/FED_CYCLE_DRAWDOWN_RECOVERY_PREREG.md`
+- `research/HICP_ENERGY_002_PUBLIC_CLOSEOUT.md`
+- `research/ENERGY_REVERSAL_STATE_MACHINE_V2.md`
+- `content/README.md`
+
+The larger local social-content package is intentionally **not yet imported**. It should first pass a final claim/source audit so dated or exploratory statements cannot be separated from their evidence labels.
 
 ## Current public research tracks
 
