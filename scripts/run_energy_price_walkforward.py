@@ -59,19 +59,63 @@ SERIES = {
 }
 
 def fetch_series(series_id: str):
-    url = f"https://fred.stlouisfed.org/graph/fredgraph.csv?id={series_id}"
-    req = Request(url, headers={"User-Agent": "gss-cb-001-public-research/1.0"})
+    """
+    Prefer direct FRED CSV bytes. GitHub-hosted runners have intermittently
+    timed out against fredgraph.csv, so DBnomics/FRED is an explicitly
+    recorded acquisition fallback, not a silent source substitution.
+    Official FRED/EIA table metadata remains the provenance authority.
+    """
+    import json as _json
+    import time
+
+    fred_url = f"https://fred.stlouisfed.org/graph/fredgraph.csv?id={series_id}"
+    last_error = None
+    for attempt in range(2):
+        try:
+            req = Request(
+                fred_url,
+                headers={
+                    "User-Agent": "Mozilla/5.0 gss-cb-001-public-research/1.0",
+                    "Accept": "text/csv,*/*;q=0.8",
+                },
+            )
+            with urlopen(req, timeout=20) as resp:
+                raw = resp.read()
+            sha = hashlib.sha256(raw).hexdigest()
+            df = pd.read_csv(io.BytesIO(raw))
+            date_col = df.columns[0]
+            value_col = series_id if series_id in df.columns else df.columns[1]
+            df = df.rename(columns={date_col: "date", value_col: "value"})
+            df["date"] = pd.to_datetime(df["date"], errors="coerce")
+            df["value"] = pd.to_numeric(df["value"], errors="coerce")
+            df = df.dropna(subset=["date"]).sort_values("date")
+            return df, sha, fred_url, "FRED_DIRECT_CSV"
+        except Exception as exc:
+            last_error = repr(exc)
+            time.sleep(2 * (attempt + 1))
+
+    mirror_url = f"https://api.db.nomics.world/v22/series/FRED/{series_id}?observations=1"
+    req = Request(
+        mirror_url,
+        headers={"User-Agent": "Mozilla/5.0 gss-cb-001-public-research/1.0"},
+    )
     with urlopen(req, timeout=60) as resp:
         raw = resp.read()
-    sha = hashlib.sha256(raw).hexdigest()
-    df = pd.read_csv(io.BytesIO(raw))
-    date_col = df.columns[0]
-    value_col = series_id if series_id in df.columns else df.columns[1]
-    df = df.rename(columns={date_col: "date", value_col: "value"})
+    obj = _json.loads(raw.decode("utf-8"))
+    docs = obj["series"]["docs"]
+    if not docs:
+        raise RuntimeError(f"No DBnomics/FRED data for {series_id}; FRED error={last_error}")
+    doc = docs[0]
+    periods = doc.get("period") or doc.get("period_start_day")
+    values = doc.get("value")
+    if periods is None or values is None or len(periods) != len(values):
+        raise RuntimeError(f"Unexpected DBnomics payload for {series_id}")
+    df = pd.DataFrame({"date": periods, "value": values})
     df["date"] = pd.to_datetime(df["date"], errors="coerce")
     df["value"] = pd.to_numeric(df["value"], errors="coerce")
     df = df.dropna(subset=["date"]).sort_values("date")
-    return df, sha, url
+    sha = hashlib.sha256(raw).hexdigest()
+    return df, sha, mirror_url, "DBNOMICS_FRED_MIRROR"
 
 def bh_adjust(pvals):
     p = np.asarray(pvals, dtype=float)
@@ -110,14 +154,14 @@ def build_panel():
     fetched_at = datetime.now(timezone.utc).isoformat()
 
     for name, meta in SERIES.items():
-        df, sha, url = fetch_series(meta["id"])
+        df, sha, url, acquisition_method = fetch_series(meta["id"])
         provenance.append({
             "name": name,
             "series_id": meta["id"],
             "title": meta["title"],
             "source": meta["source"],
             "unit": meta["unit"],
-            "url": url,
+            "url": url,\n            "acquisition_method": acquisition_method,\n            "primary_provenance_url": f"https://fred.stlouisfed.org/data/{meta[\"id\"]}",
             "retrieved_utc": fetched_at,
             "sha256": sha,
             "rows_total": int(len(df)),
