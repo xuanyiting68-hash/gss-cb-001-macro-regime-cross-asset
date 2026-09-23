@@ -44,4 +44,5 @@ jobs:
             exit 0
           fi
           git commit -m "Run ENERGY-FLOW-002 [skip ci]"
+          git pull --rebase origin main
           git push
