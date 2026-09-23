@@ -73,6 +73,31 @@ Cross-frequency diagnostics are not pooled. For 2004 and 2015, monthly +12M and 
 
 No confirmatory p-value/FDR family is run in the monthly foundation; OOS is not applicable; there is no causal or deployment claim.
 
+
+#### Fed-cycle Gold state-dependence map
+
+Status: **QC-PASSED DESCRIPTIVE / SMALL-N MECHANISM CANDIDATES / NOT CONFIRMATORY / NOT DEPLOYABLE**
+
+FED-CYCLE-STATE-001 freezes seven state variables before conditioning Gold outcomes and keeps information timing explicit. Yield curve and WTI use strictly pre-event market history; CPI/INDPRO/NFCI use release-lag-aware current-vintage histories and are not labeled strict ALFRED PIT.
+
+Supported FIRST_HIKE primary contrasts (n>=3 on both sides):
+
+- inflation level HIGH vs LOW_OR_MODERATE: n=5/5; +12M Gold medians -11.76% vs +6.54%, 24M MDD 22.54% vs 13.66%; LOO contrast sign stable;
+- inflation direction RISING vs FALLING_OR_FLAT: n=7/3; +12M +3.07% vs -11.76%, MDD 14.09% vs 19.91%; LOO sign stable;
+- growth STRONG vs WEAK: n=6/4; +12M -3.51% vs +4.80%, MDD 18.16% vs 15.48%; LOO sign stable;
+- WTI direction RISING vs FALLING_OR_FLAT: n=5/3; +12M +3.62% vs -2.58%, MDD 16.40% vs 13.66%; LOO sign stable.
+
+These are hypothesis-generating state contrasts, not statistical significance or causal mechanism estimates.
+
+Unsupported/identified limitations:
+
+- 10Y-2Y curve: 0 inverted vs 10 positive — no cross-event contrast;
+- nominal-10Y-minus-CPI real-rate proxy: 9 positive vs 1 nonpositive; `DFII10` support only n=3;
+- NFCI: 2 tight vs 8 loose/average;
+- USD direction passes the frozen source bridge (95.74% sign agreement) and has 5/5 support, but the groups are perfectly time-separated: all falling/flat cases are 1983-1988 and all rising cases are 1994-2022. USD is therefore `ERA-CONFOUNDED DESCRIPTIVE DIAGNOSTIC`, not a Gold-driver finding.
+
+No p-values or BH-FDR are run in STATE-001; OOS is not applicable and no state is ranked as dominant.
+
 ### Household inflation / energy
 Status: **MECHANISM CANDIDATE / NOT A TRADING SIGNAL**
 
@@ -134,8 +159,8 @@ Current conclusion:
 1. Preserve the failed stock-only rule and FLOW-002 as negative/mechanism evidence; do not retune them.
 2. Design a genuinely weekly/daily PIT commodity event engine to remove monthly-average timing limitations and increase event support.
 3. Freeze an independent geopolitical/physical shock registry before any full P4A claim.
-4. Freeze and run a predetermined/PIT state-dependence layer for Fed-cycle path risk now that Gold long-history support covers all 10 FIRST_HIKE legs.
-5. Keep revised macro data explicitly separate from true real-time/vintage information; do not label revised historical values PIT.
+4. Move from the n=10 event cross-section to a within-cycle monthly continuous-state panel with cycle clustering / block-bootstrap inference; do not multiply binary regimes.
+5. Keep revised macro data explicitly separate from true real-time/vintage information; obtain vintage data where feasible before any stronger state claim.
 6. Resolve official announcement timing for registry-only emergency-cut candidates before any emergency-event outcome study.
 7. Continue provenance-safe charts/content cards tied to the evidence ledger.
 8. Keep paper-specific identification work behind the firewall.
