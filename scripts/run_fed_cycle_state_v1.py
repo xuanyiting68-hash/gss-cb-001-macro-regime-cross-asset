@@ -388,7 +388,7 @@ def contrast_for(panel, state_var, state_a, state_b, outcome):
         "state_a": state_a,
         "state_b": state_b,
         "outcome": outcome,
-        "outcome_class": OUTCOME_FIELDS[outcome],
+        "outcome_class": OUTCOME_FIELDS[outcome.removeprefix("gold_")],
         "n_a": int(n_a),
         "n_b": int(n_b),
         "median_a": ma,
@@ -563,13 +563,8 @@ def main():
     loo_detail = []
     for state_var, (state_a, state_b) in PRIMARY_STATES.items():
         for outcome in OUTCOME_FIELDS:
-            r = contrast_for(panel, state_var, state_a, state_b, f"gold_{outcome}" if not outcome.startswith("gold_") else outcome)
-            # OUTCOME_FIELDS keys are raw metric names; panel uses gold_ prefix.
-            # Fix metadata lookup while preserving frozen outcome class.
-            raw_outcome = outcome
-            panel_outcome = f"gold_{raw_outcome}"
+            panel_outcome = f"gold_{outcome}"
             r = contrast_for(panel, state_var, state_a, state_b, panel_outcome)
-            r["outcome_class"] = OUTCOME_FIELDS[raw_outcome]
             contrast_rows.append(r)
             stab, detail = loo_stability(panel, r)
             stability_rows.append(stab)
