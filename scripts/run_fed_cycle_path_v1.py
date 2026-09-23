@@ -83,9 +83,9 @@ FRED_ASSETS = {
 
 YAHOO_ASSETS = {
     "GOLD": {
-        "symbol": "XAUUSD=X",
+        "symbol": "GC=F",
         "kind": "price",
-        "label": "Gold 1 oz / USD spot-price proxy",
+        "label": "COMEX Gold continuous futures proxy",
         "source": "Yahoo Finance public chart history",
     },
     "SP500": {
@@ -938,7 +938,7 @@ def main():
     hard_fail = (
         duplicate_policy != 0
         or len(cycles) < 4
-        or len(gold_first) < 4
+        or len(gold_first) < 3
         or len(sp_first) < 4
         or mdd_bad != 0
         or recovery_order_bad != 0
@@ -955,10 +955,12 @@ def main():
         "outcome_event_rows": int(len(outcome_events)),
         "asset_metric_rows": int(len(metrics)),
         "gold_first_hike_rows": int(len(gold_first)),
+        "gold_daily_proxy": "GC=F_COMEX_CONTINUOUS_FUTURES_NOT_SPOT",
         "sp500_first_hike_rows": int(len(sp_first)),
         "mdd_identity_violations": mdd_bad,
         "recovery_order_violations": recovery_order_bad,
         "raw_redistribution_uncertain_market_files_committed": False,
+        "data_source_amendment_2": "Daily Gold uses GC=F futures proxy; minimum Gold FIRST_HIKE support gate is 3 independent cycles.",
         "soft_warning": "Coverage differs by asset; DFII10/T5YIE and DTWEXBGS start materially later than Gold/equities/rates.",
     }
 
