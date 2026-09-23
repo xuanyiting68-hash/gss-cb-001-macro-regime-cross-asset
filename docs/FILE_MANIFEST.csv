@@ -85,3 +85,24 @@ results/fed_cycle_path_v1_1/02_gold_2015_2022_first_hike.png,Gold 2015-vs-2022 p
 results/fed_cycle_path_v1_1/03_gold_first_hike_mdd_by_cycle.png,Gold FIRST_HIKE MDD figure,DESCRIPTIVE,PUBLIC
 results/fed_cycle_path_v1_1/04_gold_first_hike_recovery_km.png,Gold recovery survival figure,DESCRIPTIVE,PUBLIC
 content/FED_CYCLE_PATH_CONTENT_001.md,Evidence-linked endpoint-return versus path-risk content card,CANONICAL,PUBLIC_SAFE
+research/FED_CYCLE_GOLD_LONGHIST_MONTHLY_001_LOCK.md,Native-frequency long-history Gold frozen specification,CANONICAL,PUBLIC_SAFE
+research/FED_CYCLE_GOLD_LONGHIST_MONTHLY_001_RECOVERY_AMENDMENT.md,Right-censoring recovery-statistics amendment,CANONICAL,PUBLIC_SAFE
+research/FED_CYCLE_GOLD_LONGHIST_MONTHLY_001_CLOSEOUT.md,Long-history Gold cycle closeout,CANONICAL,PUBLIC_SAFE
+scripts/run_fed_cycle_gold_longhist_monthly_v1.py,Long-history monthly Gold cycle runner,CANONICAL,PUBLIC_SAFE
+scripts/audit_fed_cycle_gold_longhist_monthly_survival.py,Censoring-aware Gold recovery survival audit,CANONICAL,PUBLIC_SAFE
+.github/workflows/fed-cycle-gold-longhist-monthly-v1.yml,Automated long-history monthly Gold workflow,CANONICAL,PUBLIC
+.github/workflows/fed-cycle-gold-longhist-monthly-survival.yml,Automated Gold recovery survival audit,CANONICAL,PUBLIC
+results/gold_long_history_monthly_v1/SOURCE_REGISTRY.csv,Pinned Gold source provenance and hashes,QC_PASS,PUBLIC_SAFE
+results/gold_long_history_monthly_v1/QC.json,Monthly Gold timing and schema QC,QC_PASS,PUBLIC_SAFE
+results/gold_long_history_monthly_v1/GOLD_MONTHLY_EVENT_METRICS.csv,Derived monthly Gold path-risk event metrics,DESCRIPTIVE,PUBLIC_SAFE
+results/gold_long_history_monthly_v1/DISTRIBUTION_SUMMARY.csv,Monthly Gold event distribution summaries,DESCRIPTIVE,PUBLIC_SAFE
+results/gold_long_history_monthly_v1/CROSS_FREQUENCY_AUDIT.csv,Monthly World Bank versus daily COMEX proxy diagnostic,DESCRIPTIVE,PUBLIC_SAFE
+results/gold_long_history_monthly_v1/RECOVERY_SURVIVAL_KM.csv,Kaplan-Meier Gold recovery survival curve data,DESCRIPTIVE,PUBLIC_SAFE
+results/gold_long_history_monthly_v1/RECOVERY_SURVIVAL_SUMMARY.csv,Right-censoring-aware Gold recovery summary,QC_PASS_DESCRIPTIVE,PUBLIC_SAFE
+results/gold_long_history_monthly_v1/SURVIVAL_QC.json,Gold recovery survival QC gate,QC_PASS,PUBLIC_SAFE
+results/gold_long_history_monthly_v1/RECOVERY_SURVIVAL_AUDIT.md,Gold recovery censoring audit,QC_PASS_DESCRIPTIVE,PUBLIC_SAFE
+results/gold_long_history_monthly_v1/FED_CYCLE_GOLD_LONGHIST_MONTHLY_001_REPORT.md,Reproducible long-history Gold report,QC_PASS_DESCRIPTIVE,PUBLIC_SAFE
+results/gold_long_history_monthly_v1/01_gold_monthly_first_hike_mdd.png,Long-history Gold MDD figure,DESCRIPTIVE,PUBLIC
+results/gold_long_history_monthly_v1/02_gold_monthly_endpoint_vs_mdd.png,Gold endpoint-versus-drawdown figure,DESCRIPTIVE,PUBLIC
+results/gold_long_history_monthly_v1/03_gold_first_hike_recovery_survival.png,Gold recovery Kaplan-Meier figure,DESCRIPTIVE,PUBLIC
+content/FED_CYCLE_GOLD_CONTENT_002.md,Evidence-linked long-history Gold cycle content card,CANONICAL,PUBLIC_SAFE
