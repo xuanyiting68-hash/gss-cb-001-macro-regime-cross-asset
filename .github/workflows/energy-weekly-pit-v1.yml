@@ -1,0 +1,40 @@
+name: energy-weekly-pit-v1
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "research/ENERGY_WEEKLY_PIT_003_LOCK.md"
+      - "scripts/run_energy_weekly_pit_v1.py"
+      - ".github/workflows/energy-weekly-pit-v1.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-release-clock:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install dependencies
+        run: python -m pip install --upgrade pip pandas numpy beautifulsoup4 openpyxl xlrd tabulate
+      - name: Build and audit full WPSR release clock
+        run: python scripts/run_energy_weekly_pit_v1.py
+      - name: Commit QC-passed release-clock artifacts
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add results/energy_weekly_pit_v1
+          if git diff --cached --quiet; then
+            echo "No weekly PIT result changes"
+            exit 0
+          fi
+          git commit -m "Run ENERGY-WEEKLY-PIT-003 [skip ci]"
+          git pull --rebase origin main
+          git push
