@@ -82,7 +82,7 @@ For forecast month M:
 
 - `GOLD_RET_3M_LAGGED = Gold(M-1)/Gold(M-4)-1`;
 - `GOLD_RET_6M_LAGGED = Gold(M-1)/Gold(M-7)-1`;
-- `GOLD_VOL_6M_LAGGED` = standard deviation of the six monthly log changes ending at M-1.
+- `GOLD_VOL_6M_LAGGED` = sample standard deviation (ddof=1) of the six monthly log changes ending at M-1.
 
 No M or later Gold price enters a predictor.
 
