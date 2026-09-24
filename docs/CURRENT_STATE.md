@@ -232,6 +232,43 @@ Together with PHASE-CLOCK-004, this is consistent with FIRST_CUT often occurring
 
 This is **mechanism context, not causal evidence**: the Fed can cut in response to worsening conditions, making endogeneity/reverse causality central. No optimized stress thresholds, p-value/FDR family, OOS forecast or deployment claim are produced.
 
+
+#### Asia equity + high-yield credit diagnostics
+
+Status: **QC-PASSED DESCRIPTIVE / ASIA DIAGNOSTIC SUPPORT / HY CREDIT LIMITED OR INSUFFICIENT / NOT CAUSAL / NOT DEPLOYABLE**
+
+ASIA-CREDIT-DIAG-006 extends the four-phase map to Hang Seng, Shanghai Composite, Nikkei 225, KOSPI and high-yield credit context.
+
+Asia support:
+- Nikkei: FIRST_HIKE/LAST_HIKE/FIRST_CUT 10 mechanical legs / 7 broad episodes; PAUSE_START 7/7;
+- Hang Seng: 8/6 for FIRST_HIKE/LAST_HIKE/FIRST_CUT and 6/6 for PAUSE_START;
+- Shanghai Composite: 4/4 broad episodes per phase under the available Yahoo history;
+- KOSPI: 4/4 per phase.
+
+Across all four Asia indices, the broad-episode-weighted median 12M MDD after FIRST_CUT is higher than after PAUSE_START:
+
+- Hang Seng: 13.03% -> **15.62%**;
+- Nikkei 225: 8.37% -> **12.61%**;
+- KOSPI: 7.67% -> **16.40%**;
+- Shanghai Composite: 6.39% -> **8.59%**.
+
+FIRST_CUT +12M endpoint signs remain heterogeneous:
+- Hang Seng -8.67%;
+- Shanghai -28.73%;
+- Nikkei +9.60%;
+- KOSPI +4.31%.
+
+Thus higher path risk does not imply a universal negative endpoint.
+
+High-yield credit:
+- current FRED `BAMLH0A0HYM2` distribution exposes only recent history and yields only 1/1 FIRST_CUT support in this frozen run -> **INSUFFICIENT_SUPPORT**;
+- a separately frozen HYG ETF price proxy has only 2-3 broad episodes -> **LIMITED_SUPPORT**;
+- HYG is not pooled with OAS and is not treated as an OAS substitute.
+
+The existing P0-C China identification quarantine remains unchanged. These are realized-Fed-cycle path diagnostics, not Fed-to-China causal estimates.
+
+No p-value/FDR family, OOS forecast or deployment claim.
+
 ### Household inflation / energy
 Status: **MECHANISM CANDIDATE / NOT A TRADING SIGNAL**
 
@@ -293,8 +330,7 @@ Current conclusion:
 1. Preserve the failed stock-only rule and FLOW-002 as negative/mechanism evidence; do not retune them.
 2. Design a genuinely weekly/daily PIT commodity event engine to remove monthly-average timing limitations and increase event support.
 3. Freeze an independent geopolitical/physical shock registry before any full P4A claim.
-4. Extend the public cross-asset layer only where support is credible: consider China/Asia indices and high-yield credit as limited-support diagnostics rather than forcing them into the long-history primary sample.
-5. Keep revised macro data explicitly separate from true real-time/vintage information; obtain vintage data where feasible before any stronger state claim.
-6. Resolve official announcement timing for registry-only emergency-cut candidates before any emergency-event outcome study.
-7. Continue provenance-safe charts/content cards tied to the evidence ledger.
-8. Keep paper-specific identification work behind the firewall.
+4. Build a vintage-safe macro-state layer where feasible before any stronger state-dependent claim; keep current-vintage histories explicitly separate from true real-time information.
+5. Resolve official announcement timing for registry-only emergency-cut candidates before any emergency-event outcome study.
+6. Continue provenance-safe charts/content cards tied to the evidence ledger.
+7. Keep paper-specific identification work behind the firewall.
