@@ -211,3 +211,20 @@
 - Exact same-definition daily Gold replacement is nontrivial because FRED removed IBA/LBMA Gold Price data in 2022 and benchmark use/licensing constraints remain.
 - Next task: pre-freeze a Gold live-source feature-equivalence bridge before any prospective B08 issuance.
 
+## 2026-09-24 — FED-CYCLE-GOLD-LIVE-BRIDGE-011
+
+- Froze a feature-only transport audit for GC=F before examining bridge results.
+- Candidate is continuous COMEX Gold futures daily close from Yahoo public chart history, aggregated to monthly mean; raw JSON is not committed.
+- Reference remains the pinned World Bank Gold monthly series used by OOS-008.
+- No calibration/regression bridge, forecast target, M3 forecast error or outcome-based tuning is used.
+- Feature-complete overlap is 306 months from 2001-03 through 2026-08; minimum accepted proxy month has 16 daily observations.
+- All 17/17 frozen engineering gates pass.
+- Monthly level median absolute gap is 0.13% and p95 is 0.71%.
+- 3M return correlation is 0.99839, median absolute difference 0.19pp and sign agreement 99.02%.
+- 6M return correlation is 0.99939, median absolute difference 0.17pp and sign agreement 99.02%.
+- 6M volatility correlation is 0.99280 with median absolute difference 0.000855.
+- 3M/6M sign agreement remains at least 98.11% in each frozen era.
+- Bridge status: PROXY_FEATURE_BRIDGE_CANDIDATE; this is measurement transport evidence only and does not revalidate or inherit OOS-008 performance.
+- First workflow attempt failed before research execution because beautifulsoup4 was absent; dependency was added and the exact frozen specification reran successfully without changing any research threshold.
+- Next task: freeze a separately versioned prospective measurement amendment that uses the bridge only for live Gold features while preserving outcome isolation and no-backfill rules.
+

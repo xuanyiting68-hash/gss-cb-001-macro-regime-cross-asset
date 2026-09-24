@@ -310,3 +310,16 @@ results/fed_cycle_prospective_input_timing_v1/RTDSM_READINESS.csv,Current real-t
 results/fed_cycle_prospective_input_timing_v1/SOURCE_REGISTRY.csv,Timing-audit source registry,QC_PASS,PUBLIC_SAFE
 results/fed_cycle_prospective_input_timing_v1/QC.json,Prospective input timing QC and transport status,QC_PASS_NEGATIVE,PUBLIC_SAFE
 results/fed_cycle_prospective_input_timing_v1/FED_CYCLE_PROSPECTIVE_INPUT_TIMING_010_REPORT.md,Reproducible prospective input timing report,QC_PASS_NEGATIVE,PUBLIC_SAFE
+research/FED_CYCLE_GOLD_LIVE_BRIDGE_011_LOCK.md,GC=F live Gold feature-transport audit lock,CANONICAL,PUBLIC_SAFE
+research/FED_CYCLE_GOLD_LIVE_BRIDGE_011_CLOSEOUT.md,GC=F feature-transport audit closeout,CANONICAL,PUBLIC_SAFE
+scripts/run_fed_cycle_gold_live_bridge_v1.py,GC=F versus World Bank Gold feature bridge runner,CANONICAL,PUBLIC_SAFE
+.github/workflows/fed-cycle-gold-live-bridge-v1.yml,Automated Gold live-source bridge workflow,CANONICAL,PUBLIC
+results/fed_cycle_gold_live_bridge_v1/MONTHLY_FEATURE_BRIDGE_PANEL.csv,Derived monthly reference/proxy feature bridge panel,QC_PASS,PUBLIC_SAFE
+results/fed_cycle_gold_live_bridge_v1/BRIDGE_METRICS.csv,Aggregate feature-equivalence metrics,QC_PASS,PUBLIC_SAFE
+results/fed_cycle_gold_live_bridge_v1/ERA_STABILITY.csv,Era-specific return-sign bridge stability,QC_PASS,PUBLIC_SAFE
+results/fed_cycle_gold_live_bridge_v1/ENGINEERING_GATES.csv,Frozen bridge gate outcomes 17/17 pass,QC_PASS,PUBLIC_SAFE
+results/fed_cycle_gold_live_bridge_v1/SOURCE_REGISTRY.csv,Bridge source hashes and provenance,QC_PASS,PUBLIC_SAFE
+results/fed_cycle_gold_live_bridge_v1/QC.json,Gold live bridge computational QC and status,QC_PASS,PUBLIC_SAFE
+results/fed_cycle_gold_live_bridge_v1/FED_CYCLE_GOLD_LIVE_BRIDGE_011_REPORT.md,Reproducible feature-transport report,QC_PASS,PUBLIC_SAFE
+results/fed_cycle_gold_live_bridge_v1/01_ret3_feature_bridge.png,3M Gold feature bridge diagnostic figure,DESCRIPTIVE,PUBLIC
+results/fed_cycle_gold_live_bridge_v1/02_ret6_feature_bridge.png,6M Gold feature bridge diagnostic figure,DESCRIPTIVE,PUBLIC

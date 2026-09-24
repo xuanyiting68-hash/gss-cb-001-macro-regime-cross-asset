@@ -402,6 +402,37 @@ Result:
 
 No forecast is issued, no forecast performance is evaluated, OOS-008 is unchanged and B04-B07 remain consumed. The next research task is a separately frozen Gold live-source bridge audit; any proxy specification starts without inherited prospective validation evidence.
 
+#### Gold live-source feature bridge
+
+Status: **QC-PASSED PROXY FEATURE BRIDGE CANDIDATE / NO FORECAST PERFORMANCE EVIDENCE / NOT DEPLOYABLE**
+
+GOLD-LIVE-BRIDGE-011 tests whether a same-month observable `GC=F` continuous COMEX Gold futures proxy can reproduce the Gold input features used by OOS-008 closely enough for a separately versioned prospective measurement specification.
+
+Frozen construction:
+- daily `GC=F` closes;
+- calendar-month arithmetic mean;
+- minimum 10 daily observations;
+- no scaling/calibration/regression mapping;
+- no forecast targets or M3 errors loaded.
+
+Feature-complete overlap: **306 months, 2001-03 to 2026-08**.
+
+Key source-equivalence diagnostics:
+- monthly level median absolute gap **0.13%**, p95 **0.71%**;
+- 3M return correlation **0.99839**, median absolute difference **0.19pp**, sign agreement **99.02%**;
+- 6M return correlation **0.99939**, median absolute difference **0.17pp**, sign agreement **99.02%**;
+- 6M volatility correlation **0.99280**, median absolute difference **0.000855**;
+- era-specific 3M/6M sign agreement is at least **98.11%** in every frozen era.
+
+All **17/17** predeclared engineering gates pass.
+
+Result:
+
+**PROXY_FEATURE_BRIDGE_CANDIDATE.**
+
+This does not revalidate OOS-008 with futures data and does not transfer its historical OOS label automatically. It only supports building a separately versioned prospective measurement amendment. Yahoo/raw market-data licensing is also not treated as resolved for production deployment.
+
+
 
 
 ### Household inflation / energy
@@ -465,7 +496,7 @@ Current conclusion:
 1. Preserve the failed stock-only rule and FLOW-002 as negative/mechanism evidence; do not retune them.
 2. Design a genuinely weekly/daily PIT commodity event engine to remove monthly-average timing limitations and increase event support.
 3. Freeze an independent geopolitical/physical shock registry before any full P4A claim.
-4. Keep PROSPECTIVE-SHADOW-009 armed but do not issue a forecast yet. INPUT-TIMING-010 shows the exact World-Bank-monthly Gold input contract arrives 51.7-107.7 hours after the target month begins in all 6 recent audited releases. Freeze and test a separate live Gold source bridge before any B08 issuance; never backfill earlier months or tune on B04-B07.
+4. GOLD-LIVE-BRIDGE-011 passes all 17/17 frozen feature-equivalence gates for the GC=F monthly-mean proxy. Freeze a separately versioned prospective measurement amendment using this bridge, with no inherited OOS label, no backfill, no B04-B07 tuning and an explicit source/license boundary before any B08 issuance.
 5. Resolve official announcement timing for registry-only emergency-cut candidates before any emergency-event outcome study.
 6. Continue provenance-safe charts/content cards tied to the evidence ledger.
 7. Keep paper-specific identification work behind the firewall.
