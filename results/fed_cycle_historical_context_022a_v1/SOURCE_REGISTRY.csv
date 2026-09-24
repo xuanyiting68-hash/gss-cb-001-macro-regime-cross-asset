@@ -1,0 +1,22 @@
+claim_id,broad_episode_id,source_index,source_institution,source_title,source_url,source_publication_or_announcement_date,source_audit_date
+B02_CTX_01,B02,1,Federal Reserve History,Stock Market Crash of 1987,https://www.federalreservehistory.org/essays/stock-market-crash-of-1987,2013-11-22,2026-09-25
+B02_CTX_02,B02,1,Federal Reserve History,Stock Market Crash of 1987,https://www.federalreservehistory.org/essays/stock-market-crash-of-1987,2013-11-22,2026-09-25
+B02_CTX_03,B02,1,Federal Reserve History / NBER,Stock Market Crash of 1987; Business Cycle Dating,https://www.federalreservehistory.org/essays/stock-market-crash-of-1987,SOURCE_AUDIT_2026-09-25,2026-09-25
+B02_CTX_03,B02,2,Federal Reserve History / NBER,Stock Market Crash of 1987; Business Cycle Dating,https://www.nber.org/research/business-cycle-dating,SOURCE_AUDIT_2026-09-25,2026-09-25
+B03_CTX_01,B03,1,Federal Reserve Board,"FOMC Meeting Transcript, July 5-6 1995 (contains released statement text)",https://www.federalreserve.gov/monetarypolicy/files/FOMC19950706meeting.pdf,EVENT_1995-07-06,2026-09-25
+B03_CTX_02,B03,1,NBER,Business Cycle Dating,https://www.nber.org/research/business-cycle-dating,SOURCE_AUDIT_2026-09-25,2026-09-25
+B03_CTX_03,B03,1,Federal Reserve Board,Transcripts and other historical materials,https://www.federalreserve.gov/monetarypolicy/fomc_historical.htm,SOURCE_AUDIT_2026-09-25,2026-09-25
+B04_CTX_01,B04,1,Federal Reserve Board,"Monetary Policy Report to the Congress, February 2001",https://www.federalreserve.gov/boarddocs/hh/2001/February/FullReport.pdf,2001-02,2026-09-25
+B04_CTX_02,B04,1,NBER,Business Cycle Dating Procedure: Frequently Asked Questions,https://www.nber.org/research/business-cycle-dating/business-cycle-dating-procedure-frequently-asked-questions,2001-11-26_PEAK_ANNOUNCEMENT,2026-09-25
+B04_CTX_03,B04,1,Federal Reserve History,The Federal Reserve's Response to the September 11 Terrorist Attacks,https://www.federalreservehistory.org/essays/september-11,2024_RETROSPECTIVE_PAGE,2026-09-25
+B05_CTX_01,B05,1,Federal Reserve Board,"FOMC statement, September 18 2007",https://www.federalreserve.gov/newsevents/pressreleases/monetary20070918a.htm,2007-09-18,2026-09-25
+B05_CTX_02,B05,1,Federal Reserve History,Subprime Mortgage Crisis,https://www.federalreservehistory.org/essays/subprime-mortgage-crisis,2013-11-22,2026-09-25
+B05_CTX_03,B05,1,NBER,Business Cycle Dating Procedure: Frequently Asked Questions,https://www.nber.org/research/business-cycle-dating/business-cycle-dating-procedure-frequently-asked-questions,2008-12-01_PEAK_ANNOUNCEMENT,2026-09-25
+B06_CTX_01,B06,1,Federal Reserve Board,"FOMC statement, July 31 2019",https://www.federalreserve.gov/newsevents/pressreleases/monetary20190731a.htm,2019-07-31,2026-09-25
+B06_CTX_02,B06,1,NBER,Business Cycle Dating Committee Announcement June 8 2020; July 19 2021,https://www.nber.org/news/business-cycle-dating-committee-announcement-june-8-2020,2020-06-08_PEAK_ANNOUNCEMENT,2026-09-25
+B06_CTX_02,B06,2,NBER,Business Cycle Dating Committee Announcement June 8 2020; July 19 2021,https://www.nber.org/news/business-cycle-dating-committee-announcement-july-19-2021,2020-06-08_PEAK_ANNOUNCEMENT,2026-09-25
+B06_CTX_03,B06,1,Federal Reserve Board,"FOMC statement and minutes, March 15 2020",https://www.federalreserve.gov/newsevents/pressreleases/monetary20200315a.htm,2020-03-15,2026-09-25
+B06_CTX_03,B06,2,Federal Reserve Board,"FOMC statement and minutes, March 15 2020",https://www.federalreserve.gov/monetarypolicy/fomcminutes20200315.htm,2020-03-15,2026-09-25
+B07_CTX_01,B07,1,Federal Reserve Board,"FOMC statement, September 18 2024",https://www.federalreserve.gov/newsevents/pressreleases/monetary20240918a.htm,2024-09-18,2026-09-25
+B07_CTX_02,B07,1,NBER,Business Cycle Dating,https://www.nber.org/research/business-cycle-dating,SOURCE_AUDIT_2026-09-25,2026-09-25
+B07_CTX_03,B07,1,Federal Reserve Board,"FOMC Minutes, September 17-18 2024",https://www.federalreserve.gov/monetarypolicy/fomcminutes20240918.htm,2024-10-09,2026-09-25

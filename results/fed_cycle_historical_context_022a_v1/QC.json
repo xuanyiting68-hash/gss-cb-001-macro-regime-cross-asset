@@ -1,0 +1,35 @@
+{
+  "qc_gate": "PASS",
+  "module": "FED-CYCLE-HISTORICAL-CONTEXT-022A",
+  "upstream_022_qc": "PASS",
+  "context_claim_rows": 18,
+  "broad_episodes": 6,
+  "claims_per_episode": {
+    "B02": 3,
+    "B03": 3,
+    "B04": 3,
+    "B05": 3,
+    "B06": 3,
+    "B07": 3
+  },
+  "normalized_source_links": 21,
+  "claim_time_classes": [
+    "CONTEMPORANEOUS_POLICY_CONTEXT",
+    "POST_ANCHOR_SHOCK",
+    "RETROSPECTIVE_DATING",
+    "RETROSPECTIVE_EVENT_CONTEXT"
+  ],
+  "blank_required_fields": 0,
+  "duplicate_claim_ids": 0,
+  "b04_september11_post_anchor_guardrail": true,
+  "b06_covid_post_anchor_guardrail": true,
+  "b04_b05_recession_dating_retrospective": true,
+  "b07_current_nber_chronology_audit": true,
+  "private_paper_inputs_used": false,
+  "new_price_estimation": false,
+  "new_inference": false,
+  "pvalues_generated": false,
+  "causal_status": "NONE",
+  "oos_status": "NOT_A_FORECASTING_MODEL",
+  "deployment_status": "NOT_DEPLOYABLE"
+}
