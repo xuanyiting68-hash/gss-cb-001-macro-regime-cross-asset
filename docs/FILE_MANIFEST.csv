@@ -152,3 +152,21 @@ results/fed_cycle_state_panel_v2/FED_CYCLE_STATE_PANEL_002_REPORT.md,Reproducibl
 results/fed_cycle_state_panel_v2/01_primary_gold_fwd6m_return.png,Primary within-cycle Gold-return coefficient figure,DESCRIPTIVE,PUBLIC
 results/fed_cycle_state_panel_v2/02_primary_gold_fwd6m_mdd.png,Primary within-cycle Gold-MDD coefficient figure,DESCRIPTIVE,PUBLIC
 content/FED_CYCLE_STATE_PANEL_CONTENT_004.md,Evidence-linked state-panel null-result content card,CANONICAL,PUBLIC_SAFE
+research/FED_CYCLE_CROSS_ASSET_RISK_CLOCK_003_LOCK.md,Cross-asset FIRST_HIKE risk-clock frozen specification,CANONICAL,PUBLIC_SAFE
+research/FED_CYCLE_CROSS_ASSET_RISK_CLOCK_003_CLOSEOUT.md,Cross-asset FIRST_HIKE risk-clock closeout,CANONICAL,PUBLIC_SAFE
+scripts/run_fed_cycle_cross_asset_risk_clock_v1.py,Cross-asset FIRST_HIKE risk-clock runner,CANONICAL,PUBLIC_SAFE
+.github/workflows/fed-cycle-cross-asset-risk-clock-v1.yml,Automated cross-asset risk-clock workflow,CANONICAL,PUBLIC
+results/fed_cycle_risk_clock_v1/SOURCE_REGISTRY.csv,Risk-clock source registry and hashes,QC_PASS,PUBLIC_SAFE
+results/fed_cycle_risk_clock_v1/QC.json,Risk-clock timing/weight/recovery QC gate,QC_PASS,PUBLIC_SAFE
+results/fed_cycle_risk_clock_v1/RISK_CLOCK_PATHS.csv,Derived monthly cross-asset FIRST_HIKE paths,DESCRIPTIVE,PUBLIC_SAFE
+results/fed_cycle_risk_clock_v1/CYCLE_ASSET_METRICS.csv,Derived cycle-asset timing and recovery metrics,DESCRIPTIVE,PUBLIC_SAFE
+results/fed_cycle_risk_clock_v1/RISK_CLOCK_SUMMARY.csv,Month-by-month drawdown/trough/hazard timing map,DESCRIPTIVE,PUBLIC_SAFE
+results/fed_cycle_risk_clock_v1/MDD_TIMING_SUMMARY.csv,Early-mid-late MDD-trough timing distribution,QC_PASS_DESCRIPTIVE,PUBLIC_SAFE
+results/fed_cycle_risk_clock_v1/RECOVERY_KM.csv,Broad-episode-weighted recovery survival curves,DESCRIPTIVE,PUBLIC_SAFE
+results/fed_cycle_risk_clock_v1/RECOVERY_SUMMARY.csv,Broad-episode-weighted recovery medians and censoring,QC_PASS_DESCRIPTIVE,PUBLIC_SAFE
+results/fed_cycle_risk_clock_v1/FED_CYCLE_CROSS_ASSET_RISK_CLOCK_003_REPORT.md,Reproducible cross-asset risk-clock report,QC_PASS_DESCRIPTIVE,PUBLIC_SAFE
+results/fed_cycle_risk_clock_v1/01_cross_asset_running_mdd_clock.png,Cross-asset running-MDD risk-clock figure,DESCRIPTIVE,PUBLIC
+results/fed_cycle_risk_clock_v1/02_cross_asset_mdd_trough_hazard.png,Cross-asset MDD-trough hazard figure,DESCRIPTIVE,PUBLIC
+results/fed_cycle_risk_clock_v1/03_cross_asset_full_recovery_survival.png,Cross-asset full-recovery survival figure,DESCRIPTIVE,PUBLIC
+results/fed_cycle_risk_clock_v1/04_gold_2015_2022_monthly_risk_clock.png,Gold 2015-vs-2022 monthly risk-clock figure,DESCRIPTIVE,PUBLIC
+content/FED_CYCLE_RISK_CLOCK_CONTENT_005.md,Evidence-linked FIRST_HIKE risk-clock content card,CANONICAL,PUBLIC_SAFE
