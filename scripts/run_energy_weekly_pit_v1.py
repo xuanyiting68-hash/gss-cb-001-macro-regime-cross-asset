@@ -56,23 +56,24 @@ def build_full_twip_registry(common_week_ends):
     raw=fetch_bytes(PHYS.TWIP_URL,timeout=90)
     soup=BeautifulSoup(raw,"html.parser")
     releases={}
-    pat=re.compile(r"/petroleum/weekly/archive/(20\\d{2})/(\\d{6})(?:/|$)",re.I)
+    pat=re.compile(r"/petroleum/weekly/archive/(?:(20\d{2})/)?(\d{6})(?:/|$)",re.I)
 
     for a in soup.find_all("a",href=True):
         href=str(a.get("href",""))
         m=pat.search(href)
         if not m:
             continue
-        year=int(m.group(1))
+        year_dir=int(m.group(1)) if m.group(1) else None
         code=m.group(2)
-        if not (2002<=year<=2025):
-            continue
         try:
             yy=int(code[:2]); mm=int(code[2:4]); dd=int(code[4:6])
-            release=pd.Timestamp(2000+yy,mm,dd).normalize()
+            year=2000+yy
+            release=pd.Timestamp(year,mm,dd).normalize()
         except Exception:
             continue
-        if release.year!=year:
+        if not (2002<=year<=2025):
+            continue
+        if year_dir is not None and year_dir!=year:
             continue
         releases[release]=href
 
