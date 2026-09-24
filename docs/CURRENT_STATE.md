@@ -98,6 +98,40 @@ Unsupported/identified limitations:
 
 No p-values or BH-FDR are run in STATE-001; OOS is not applicable and no state is ranked as dominant.
 
+
+#### Fed-cycle within-cycle continuous-state panel
+
+Status: **QC-PASSED / PRIMARY ASSOCIATIONS NOT CONFIRMED / USD SECONDARY CANDIDATE ONLY / NOT DEPLOYABLE**
+
+STATE-PANEL-002 replaces the n=10 event-level binary split with 165 monthly rows inside 10 mechanical tightening legs and 7 conservative broad episode clusters. The estimator uses cycle fixed effects, equal total weight per mechanical cycle and exact whole-episode sign-flip inference for overlapping forward outcomes.
+
+Frozen primary family:
+
+- CPI YoY × next-6M Gold return/MDD;
+- CPI momentum × next-6M return/MDD;
+- INDPRO YoY × next-6M return/MDD;
+- WTI 6M return × next-6M return/MDD.
+
+Result:
+
+- **0/8 survive BY-FDR 10%;**
+- **0/8 survive BH-FDR 10% diagnostic.**
+
+This materially weakens the visually large binary STATE-001 contrasts. Those event-level patterns should not be upgraded into robust Gold regime rules.
+
+Secondary USD diagnostic:
+
+- full-sample coefficient ≈ +1.83 percentage points next-6M Gold return per within-cycle USD-return SD;
+- broad-cluster exact p=0.03125;
+- sign remains positive after excluding 2022 and in 1994+ restrictions;
+- however the full 12-test secondary family has 0 BH/BY FDR survivors; USD BH q=0.375 and BY q=1.00.
+
+USD therefore remains a **mechanism candidate / not multiplicity-confirmed**.
+
+Yield curve, nominal 10Y, simple real-rate proxy and NFCI show no confirmatory secondary evidence; actual DFII10 support remains only 3 cycles.
+
+No causal/OOS/deployment claim.
+
 ### Household inflation / energy
 Status: **MECHANISM CANDIDATE / NOT A TRADING SIGNAL**
 
@@ -159,7 +193,7 @@ Current conclusion:
 1. Preserve the failed stock-only rule and FLOW-002 as negative/mechanism evidence; do not retune them.
 2. Design a genuinely weekly/daily PIT commodity event engine to remove monthly-average timing limitations and increase event support.
 3. Freeze an independent geopolitical/physical shock registry before any full P4A claim.
-4. Move from the n=10 event cross-section to a within-cycle monthly continuous-state panel with cycle clustering / block-bootstrap inference; do not multiply binary regimes.
+4. Build the cross-asset FIRST_HIKE risk clock: month-by-month trough incidence, MDD accumulation, time-to-trough hazard and recovery hazard.
 5. Keep revised macro data explicitly separate from true real-time/vintage information; obtain vintage data where feasible before any stronger state claim.
 6. Resolve official announcement timing for registry-only emergency-cut candidates before any emergency-event outcome study.
 7. Continue provenance-safe charts/content cards tied to the evidence ledger.
