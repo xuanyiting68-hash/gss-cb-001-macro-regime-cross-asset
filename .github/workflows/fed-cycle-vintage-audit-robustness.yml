@@ -23,7 +23,7 @@ jobs:
         with:
           python-version: "3.12"
       - name: Install dependencies
-        run: python -m pip install --upgrade pip pandas numpy
+        run: python -m pip install --upgrade pip pandas numpy matplotlib tabulate
       - name: Run post-run vintage robustness audit
         run: python scripts/audit_fed_cycle_vintage_v1_robustness.py
       - name: Commit robustness outputs
