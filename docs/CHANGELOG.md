@@ -339,3 +339,14 @@
 - Confirmation registry remains empty and current state is WAITING_NEXT_WPSR_RELEASE.
 - No prospective WTI outcome is used and no threshold is changed.
 
+## 2026-09-24 — ENERGY-PORTWATCH-RESOLUTION-010
+
+- Froze a conservative external-maritime shock-resolution state machine before any future recovery snapshot.
+- Reuses the exact 006 traffic-stress definitions and does not load WTI outcomes.
+- CRITICAL_TRAFFIC_STRESS applies whenever any petroleum chokepoint retains acute or structural stress.
+- Traffic recovery with an active relevant RED PortWatch disruption remains TRAFFIC_RECOVERED_ALERT_ACTIVE.
+- A first fully clean snapshot is only RESOLUTION_CANDIDATE.
+- RESOLVED requires two fully clean snapshots with latest-settled dates at least seven days apart.
+- First snapshot is CRITICAL_TRAFFIC_STRESS with two active RED disruptions, petroleum traffic stress true and clean streak zero.
+- External supply-shock context remains active.
+

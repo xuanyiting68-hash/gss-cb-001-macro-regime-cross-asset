@@ -744,6 +744,29 @@ First execution:
 
 The original ENERGY005 event remains permanently TIGHT_OR_MIXED; later weekly releases create a separate confirmation path rather than rewriting history.
 
+#### External maritime shock-resolution state machine
+
+Status: **QC PASS / CRITICAL_TRAFFIC_STRESS / CLEAN STREAK 0 / EXTERNAL CONTEXT ACTIVE**
+
+ENERGY-PORTWATCH-RESOLUTION-010 freezes in advance how the 006 external-risk veto can be downgraded.
+
+State hierarchy:
+- traffic stress present -> `CRITICAL_TRAFFIC_STRESS`;
+- traffic recovered but relevant RED alert remains -> `TRAFFIC_RECOVERED_ALERT_ACTIVE`;
+- first fully clean snapshot -> `RESOLUTION_CANDIDATE`;
+- two fully clean snapshots at least 7 days apart -> `RESOLVED`.
+
+First snapshot reproduces the current 006 evidence:
+- latest settled date 2026-09-20;
+- 2 relevant active RED disruptions;
+- petroleum traffic stress True;
+- current state `CRITICAL_TRAFFIC_STRESS`;
+- clean streak 0;
+- external supply-shock context active True.
+
+WTI outcomes are not loaded. One clean snapshot is explicitly insufficient to declare resolution.
+
+
 
 
 
@@ -754,7 +777,7 @@ The original ENERGY005 event remains permanently TIGHT_OR_MIXED; later weekly re
 
 1. Preserve the failed stock-only rule and FLOW-002 as negative/mechanism evidence; do not retune them.
 2. ENERGY-WEEKLY-STATE-004 is now the weekly/daily strict-PIT engine. Do not loosen its mechanism thresholds on the consumed 17 events. Freeze the still-unrealized 2026-09-23 TIGHT_OR_MIXED event prospectively and track future selected events append-only.
-3. ENERGY-WEEKLY-CONFIRMATION-009 now separately tracks future physical confirmation under a pre-frozen two-release rule and currently has zero post-event releases. Preserve the 007 state until new official WPSR information or matured 008 outcomes legitimately change the evidence set.
+3. ENERGY-WEEKLY-CONFIRMATION-009 and PORTWATCH-RESOLUTION-010 now freeze both domestic physical confirmation and external-shock resolution paths. Current states are WAITING_NEXT_WPSR_RELEASE and CRITICAL_TRAFFIC_STRESS. Do not downgrade the 007 veto without new frozen-path evidence.
 4. PROSPECTIVE-ISSUANCE-013 v1.1 now has a QC-passed cryptographic genesis/hash chain around the still-empty registry. Keep the system armed but unchanged: no prediction until a genuinely eligible new cycle, complete pre-target GC=F/RTDSM inputs, valid issue timing and all immutable hash checks coexist.
 5. Resolve official announcement timing for registry-only emergency-cut candidates before any emergency-event outcome study.
 6. Continue provenance-safe charts/content cards tied to the evidence ledger.

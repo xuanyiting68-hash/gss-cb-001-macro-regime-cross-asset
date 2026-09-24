@@ -401,3 +401,11 @@ results/energy_weekly_confirmation_v1/POST_EVENT_CONFIRMATION_REGISTRY.csv,Appen
 results/energy_weekly_confirmation_v1/REGISTRY_INTEGRITY.json,Post-event confirmation registry integrity state,CANONICAL,PUBLIC_SAFE
 results/energy_weekly_confirmation_v1/QC.json,Post-event weekly confirmation QC,QC_PASS,PUBLIC_SAFE
 results/energy_weekly_confirmation_v1/ENERGY_WEEKLY_CONFIRMATION_009_STATUS.md,Post-event physical confirmation status,QC_PASS,PUBLIC_SAFE
+research/ENERGY_PORTWATCH_RESOLUTION_010_LOCK.md,External maritime shock-resolution state-machine lock,CANONICAL,PUBLIC_SAFE
+research/ENERGY_PORTWATCH_RESOLUTION_010_CLOSEOUT.md,External maritime shock-resolution closeout,CANONICAL,PUBLIC_SAFE
+scripts/run_energy_portwatch_resolution_v1.py,Append-only PortWatch resolution-state tracker,CANONICAL,PUBLIC_SAFE
+.github/workflows/energy-portwatch-resolution-v1.yml,PortWatch resolution-state workflow,CANONICAL,PUBLIC
+results/energy_portwatch_resolution_v1/PORTWATCH_STATE_REGISTRY.csv,Append-only external-shock resolution snapshots,CANONICAL_APPEND_ONLY,PUBLIC_SAFE
+results/energy_portwatch_resolution_v1/REGISTRY_INTEGRITY.json,External-shock state registry integrity,CANONICAL,PUBLIC_SAFE
+results/energy_portwatch_resolution_v1/QC.json,External-shock resolution-state QC,QC_PASS,PUBLIC_SAFE
+results/energy_portwatch_resolution_v1/ENERGY_PORTWATCH_RESOLUTION_010_STATUS.md,External-shock resolution status,QC_PASS,PUBLIC_SAFE
