@@ -280,3 +280,17 @@
 - DEMAND_DESTRUCTION is descriptively weaker at 13W (median -7.07%, 75% negative), but this was observed after execution and is not promoted as a confirmatory result.
 - The newest selected event, release date 2026-09-23, is TIGHT_OR_MIXED and still has blank 4/8/13-week outcomes, creating a clean prospective follow-up opportunity.
 
+## 2026-09-24 — ENERGY-WEEKLY-STATE-004A / ENERGY-WEEKLY-PROSPECTIVE-005
+
+- Added a transparent post-run descriptive robustness audit without creating any new p-value family or changing 004 thresholds.
+- TIGHT_OR_MIXED has 10 completed historical events; its 8W WTI median is +7.08% and only 20% are negative.
+- The 8W median remains positive in every leave-one-out run, after excluding all 2004 events, and in the 2018-present subset (+6.61%).
+- The 13W pattern weakens materially in 2018-present: median +1.26%, negative share 50%.
+- The most defensible product/research interpretation is therefore an 8W bearish-confirmation veto, not a long-horizon bullish signal.
+- DEMAND_DESTRUCTION is descriptively weaker at 13W (n=4, median -7.07%, 75% negative) but remains a post-run hypothesis, not confirmatory evidence.
+- Froze the first genuinely prospective weekly energy event before any of its 4W/8W/13W outcomes were observed.
+- ENERGY005_2026-09-23 is TIGHT_OR_MIXED / ROLLOVER_WITHOUT_CLEAN_PHYSICAL_CONFIRMATION.
+- Its frozen state has 2/3 inventories improving, 1/3 demand weakness, refinery throughput weakness and 1/2 upstream supply blocks improving.
+- Historical same-class reference distribution (n=10) was frozen at registration and the event was added to a SHA256 append-only chain.
+- Current prospective energy registry contains one event and zero realized outcomes.
+

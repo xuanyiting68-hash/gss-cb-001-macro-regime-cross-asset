@@ -598,12 +598,61 @@ Descriptively:
 
 The 2026-09-23 selected event is currently TIGHT_OR_MIXED and has no realized 4/8/13-week outcomes in the canonical panel. It should be frozen prospectively rather than used for retrospective tuning.
 
+#### Weekly energy post-run veto robustness
+
+Status: **QC PASS / POST-RUN DESCRIPTIVE / 8W VETO ROBUST / 13W MODERN DECAY / NOT DEPLOYABLE**
+
+ENERGY-WEEKLY-STATE-004A does not create a new p-value family and does not alter any 004 threshold.
+
+For completed TIGHT_OR_MIXED events:
+- full-sample 8W median WTI +7.08%, only 20% negative;
+- 8W median remains positive in every leave-one-out run;
+- excluding all 2004 events, 8W median remains +6.61%;
+- 2018-present 8W median remains +6.61% with 33.3% negative;
+- 2018-present 13W median falls to only +1.26% with 50% negative.
+
+Therefore the most defensible descriptive use of TIGHT_OR_MIXED is an **8-week bearish-confirmation veto**, not a durable 13-week bullish signal.
+
+DEMAND_DESTRUCTION remains a post-run mechanism candidate:
+- n=4;
+- 13W median WTI -7.07%;
+- 75% negative at 13W.
+
+Because this pattern was observed after 004, it is not promoted to confirmatory evidence.
+
+#### Prospective weekly energy event registry
+
+Status: **QC PASS / FIRST LIVE EVENT FROZEN / ZERO REALIZED LIVE OUTCOMES / NOT DEPLOYABLE**
+
+ENERGY-WEEKLY-PROSPECTIVE-005 freezes selected 004 events only while all 4W/8W/13W outcomes remain blank.
+
+First live event:
+- ID `ENERGY005_2026-09-23`;
+- week end 2026-09-18;
+- release date 2026-09-23;
+- price as of 2026-09-22;
+- mechanism TIGHT_OR_MIXED;
+- interpretation `ROLLOVER_WITHOUT_CLEAN_PHYSICAL_CONFIRMATION`;
+- inventories improving 2/3;
+- demand weak 1/3;
+- throughput weak True;
+- upstream supply improvement 1/2.
+
+Historical same-class distribution was frozen at registration using 10 completed prior events:
+- median WTI 8W +7.08%;
+- median WTI 13W +6.70%;
+- median short MAE 8W +15.24%;
+- median short MAE 13W +17.92%.
+
+The prospective registry has one row, one SHA256 chain row and **zero realized outcomes**. The event classification cannot be rewritten after outcome maturity.
+
+
 
 ## Immediate public queue
 
 1. Preserve the failed stock-only rule and FLOW-002 as negative/mechanism evidence; do not retune them.
 2. ENERGY-WEEKLY-STATE-004 is now the weekly/daily strict-PIT engine. Do not loosen its mechanism thresholds on the consumed 17 events. Freeze the still-unrealized 2026-09-23 TIGHT_OR_MIXED event prospectively and track future selected events append-only.
-3. Freeze an independent geopolitical/physical shock registry before any full P4A claim.
+3. ENERGY-WEEKLY-PROSPECTIVE-005 has frozen the first live 2026-09-23 TIGHT_OR_MIXED event with zero outcomes and an integrity chain. Keep it outcome-isolated; next build an independent geopolitical/physical shock-veto registry without retuning 004.
 4. PROSPECTIVE-ISSUANCE-013 v1.1 now has a QC-passed cryptographic genesis/hash chain around the still-empty registry. Keep the system armed but unchanged: no prediction until a genuinely eligible new cycle, complete pre-target GC=F/RTDSM inputs, valid issue timing and all immutable hash checks coexist.
 5. Resolve official announcement timing for registry-only emergency-cut candidates before any emergency-event outcome study.
 6. Continue provenance-safe charts/content cards tied to the evidence ledger.

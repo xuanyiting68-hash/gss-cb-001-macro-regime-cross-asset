@@ -357,3 +357,14 @@ results/energy_weekly_state_v1/SELECTED_EVENT_PANEL.csv,De-clustered strict-PIT 
 results/energy_weekly_state_v1/PRIMARY_TESTS.csv,Frozen weekly primary-family support/test table,QC_PASS_INSUFFICIENT_SUPPORT,PUBLIC_SAFE
 results/energy_weekly_state_v1/MECHANISM_DESCRIPTIVES.csv,Weekly mechanism-state outcome descriptives,DESCRIPTIVE,PUBLIC_SAFE
 results/energy_weekly_state_v1/QC.json,Weekly strict-PIT event-engine QC,QC_PASS,PUBLIC_SAFE
+research/ENERGY_WEEKLY_STATE_004A_POSTRUN_DIAGNOSTIC.md,Transparent post-run weekly veto robustness specification,CANONICAL,PUBLIC_SAFE
+scripts/run_energy_weekly_veto_diagnostic_v1.py,Post-run TIGHT_OR_MIXED robustness runner,CANONICAL,PUBLIC_SAFE
+results/energy_weekly_state_veto_diag_v1/SAMPLE_ROBUSTNESS.csv,Era/exclusion descriptive robustness summaries,QC_PASS_DESCRIPTIVE,PUBLIC_SAFE
+results/energy_weekly_state_veto_diag_v1/MIXED_LEAVE_ONE_OUT.csv,TIGHT_OR_MIXED leave-one-out descriptive audit,QC_PASS_DESCRIPTIVE,PUBLIC_SAFE
+results/energy_weekly_state_veto_diag_v1/QC.json,Post-run weekly veto diagnostic QC,QC_PASS,PUBLIC_SAFE
+research/ENERGY_WEEKLY_PROSPECTIVE_005_LOCK.md,Prospective weekly energy event registry lock,CANONICAL,PUBLIC_SAFE
+scripts/run_energy_weekly_prospective_v1.py,Append-only still-unrealized weekly energy event registrar,CANONICAL,PUBLIC_SAFE
+results/energy_weekly_prospective_v1/PROSPECTIVE_EVENT_REGISTRY.csv,Append-only prospective energy event registry,CANONICAL_APPEND_ONLY,PUBLIC_SAFE
+results/energy_weekly_prospective_v1/EVENT_CHAIN.csv,Prospective energy event SHA256 chain,CANONICAL_APPEND_ONLY,PUBLIC_SAFE
+results/energy_weekly_prospective_v1/REGISTRY_INTEGRITY.json,Prospective energy registry integrity state,CANONICAL,PUBLIC_SAFE
+results/energy_weekly_prospective_v1/QC.json,Prospective live energy event QC,QC_PASS,PUBLIC_SAFE
