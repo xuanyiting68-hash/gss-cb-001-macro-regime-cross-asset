@@ -24,7 +24,7 @@ jobs:
         with:
           python-version: "3.12"
       - name: Install dependencies
-        run: python -m pip install --upgrade pip pandas numpy scipy beautifulsoup4 openpyxl xlrd
+        run: python -m pip install --upgrade pip pandas numpy scipy matplotlib beautifulsoup4 openpyxl xlrd
       - name: Mature eligible prospective horizons
         run: python scripts/run_energy_weekly_outcome_v1.py
       - name: Commit prospective outcome state
