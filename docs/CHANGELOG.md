@@ -481,3 +481,12 @@
 - FIRST_CUT core medians: DXY -1.33% endpoint / 5.18% MDD / 13m anchor-to-full-recovery; Gold +4.06% / 5.43% / 22m; Nasdaq +6.04% / 17.48% / 15m; S&P 500 +10.98% / 13.99% / 14m; WTI -16.94% / 22.23% / 20m.
 - Added machine-readable PandaAI risk-distribution JSON with explicit causal/OOS/deployment boundaries and a deterministic FIRST_CUT timing guardrail inherited from negative 019/020 evidence.
 - Initial workflow exposed strict JSON NaN serialization; fixed without changing empirical inputs or specification. Second run passed and committed canonical outputs.
+
+## 2026-09-25 — FED-CYCLE-HISTORICAL-CASEBOOK-022
+
+- Froze six primary broad episodes B02-B07 for case-oriented research/media reuse; B02 is explicitly COMPOSITE_MULTI_LEG and preserves T03_1987/T04_1987/T05_1988 separately.
+- Added three evidence-time classes: REALTIME_KNOWABLE, DESCRIPTIVE_PATH and EXPOST_ONLY.
+- Produced 30 policy chronology rows, 120 Gold/S&P/Nasdaq/WTI phase-path rows, 8 pre-FIRST_CUT timing-audited context rows, 72 stress/trough alignment rows and 90 rate/cash rows.
+- Generated machine-readable `CASEBOOK_REFERENCE.json` and mechanically grounded `CASEBOOK_CONTENT_BRIEFS.md` without external narrative facts.
+- Preserved the negative 019/020 result: pre-cut curve/NFCI/RT-IPT context cannot be promoted into a deterministic bottom-timing score.
+- Workflow passed on the first run and committed canonical outputs.
