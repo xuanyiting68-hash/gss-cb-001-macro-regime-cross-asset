@@ -108,7 +108,7 @@ def main():
         common &= set(pdata[sid].week_end)
     common=sorted(pd.to_datetime(list(common)))
 
-    r2026,schedule_sha,exceptions=parse_2026_exceptions()
+    exceptions,schedule_sha=parse_2026_exceptions()
     # Rebuild 2026 only on exact common physical grid.
     r2026_rows=[]
     exc_map={} if exceptions.empty else dict(zip(exceptions.week_end,exceptions.release_date))
