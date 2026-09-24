@@ -130,3 +130,25 @@ results/fed_cycle_state_v1/FED_CYCLE_STATE_001_REPORT.md,Reproducible state-map 
 results/fed_cycle_state_v1/STATE_CONFOUNDING_DIAGNOSTIC.md,USD and era-confounding interpretation,QC_PASS_DIAGNOSTIC,PUBLIC_SAFE
 results/fed_cycle_state_v1/01_gold_12m_state_contrasts.png,Gold +12M predeclared-state contrast figure,DESCRIPTIVE,PUBLIC
 content/FED_CYCLE_STATE_CONTENT_003.md,Evidence-linked Gold state-mechanism content card,CANONICAL,PUBLIC_SAFE
+research/FED_CYCLE_STATE_PANEL_002_LOCK.md,Within-cycle continuous-state frozen specification,CANONICAL,PUBLIC_SAFE
+research/FED_CYCLE_STATE_PANEL_002_USD_DIAGNOSTIC.md,Post-run secondary multiplicity and USD robustness audit protocol,CANONICAL,PUBLIC_SAFE
+research/FED_CYCLE_STATE_PANEL_002_CLOSEOUT.md,Within-cycle continuous-state panel closeout,CANONICAL,PUBLIC_SAFE
+scripts/run_fed_cycle_state_panel_v2.py,Within-cycle continuous-state panel runner,CANONICAL,PUBLIC_SAFE
+scripts/audit_fed_cycle_state_panel_v2_usd.py,Secondary-family multiplicity and USD robustness audit,CANONICAL,PUBLIC_SAFE
+.github/workflows/fed-cycle-state-panel-v2.yml,Automated within-cycle state panel workflow,CANONICAL,PUBLIC
+.github/workflows/fed-cycle-state-panel-v2-usd-audit.yml,Automated USD secondary audit workflow,CANONICAL,PUBLIC
+results/fed_cycle_state_panel_v2/SOURCE_REGISTRY.csv,Panel source registry and hashes,QC_PASS,PUBLIC_SAFE
+results/fed_cycle_state_panel_v2/CYCLE_REGISTRY_WITH_BROAD_EPISODES.csv,Mechanical cycles with broad episode assignments,QC_PASS,PUBLIC_SAFE
+results/fed_cycle_state_panel_v2/BROAD_EPISODE_REGISTRY.csv,Conservative broad episode clustering,QC_PASS,PUBLIC_SAFE
+results/fed_cycle_state_panel_v2/MONTHLY_STATE_PANEL.csv,Derived within-cycle monthly state/outcome panel,ASSOCIATIONAL,PUBLIC_SAFE
+results/fed_cycle_state_panel_v2/PRIMARY_TESTS.csv,Frozen 8-test dependence-aware primary family,QC_PASS_NULL,PUBLIC_SAFE
+results/fed_cycle_state_panel_v2/SECONDARY_DIAGNOSTICS.csv,Predeclared secondary continuous-state diagnostics,HYPOTHESIS_GENERATING,PUBLIC_SAFE
+results/fed_cycle_state_panel_v2/SECONDARY_MULTIPLICITY_AUDIT.csv,Secondary-family BH/BY multiplicity audit,QC_PASS_NULL,PUBLIC_SAFE
+results/fed_cycle_state_panel_v2/USD_ROBUSTNESS_AUDIT.csv,USD source/era restriction diagnostic,HYPOTHESIS_GENERATING,PUBLIC_SAFE
+results/fed_cycle_state_panel_v2/USD_DIAGNOSTIC_QC.json,USD diagnostic QC gate,QC_PASS,PUBLIC_SAFE
+results/fed_cycle_state_panel_v2/USD_SECONDARY_DIAGNOSTIC.md,USD secondary interpretation report,HYPOTHESIS_GENERATING,PUBLIC_SAFE
+results/fed_cycle_state_panel_v2/QC.json,Within-cycle panel timing/weight/inference QC,QC_PASS,PUBLIC_SAFE
+results/fed_cycle_state_panel_v2/FED_CYCLE_STATE_PANEL_002_REPORT.md,Reproducible within-cycle panel report,QC_PASS_NULL,PUBLIC_SAFE
+results/fed_cycle_state_panel_v2/01_primary_gold_fwd6m_return.png,Primary within-cycle Gold-return coefficient figure,DESCRIPTIVE,PUBLIC
+results/fed_cycle_state_panel_v2/02_primary_gold_fwd6m_mdd.png,Primary within-cycle Gold-MDD coefficient figure,DESCRIPTIVE,PUBLIC
+content/FED_CYCLE_STATE_PANEL_CONTENT_004.md,Evidence-linked state-panel null-result content card,CANONICAL,PUBLIC_SAFE
