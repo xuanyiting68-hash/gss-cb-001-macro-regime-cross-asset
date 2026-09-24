@@ -269,6 +269,46 @@ The existing P0-C China identification quarantine remains unchanged. These are r
 
 No p-value/FDR family, OOS forecast or deployment claim.
 
+
+#### Real-time macro vintage audit
+
+Status: **QC-PASSED REVISION AUDIT / GOLD RETURN ASSOCIATION STRENGTHENED UNDER REAL-TIME IPT / MDD NOT CONFIRMED / NOT CAUSAL / NOT A FORECAST / NOT DEPLOYABLE**
+
+VINTAGE-AUDIT-007 replaces current-revised industrial production with Federal Reserve Bank of Philadelphia RTDSM monthly `IPT` vintages under a conservative rule: for information month M, use only a vintage no later than M-1, while keeping the original M-2/M-14 YoY definition and the frozen 2% STRONG/WEAK threshold.
+
+Official workbook QC:
+- 477,136 parsed cells;
+- 766 vintages from 1962-11 through 2026-08;
+- 10/10 FIRST_HIKE events supported;
+- 165/165 within-cycle monthly rows supported;
+- zero vintage-timing, target-period or weighting violations.
+
+Event-level revisions:
+- 1/10 growth-state labels flips;
+- 2022 changes from current-revised WEAK (+1.32% YoY) to real-time STRONG (+4.12%);
+- FIRST_HIKE-event median absolute YoY revision gap = 2.225pp, max = 4.035pp.
+
+Event-level Gold revision impact:
+- +12M STRONG-minus-WEAK median return contrast remains negative: -8.31pp current labels versus -9.12pp real-time labels;
+- +24M contrast weakens from -16.07pp to -5.50pp;
+- 24M MDD contrast changes from +2.67pp to -0.47pp, so the prior MDD separation is revision-fragile.
+
+Within-cycle same 165-row Gold next-6M return:
+- current-vintage INDPRO beta ≈ -1.27pp per within-cycle SD, broad exact p=0.125;
+- real-time IPT beta ≈ **-1.96pp**, broad exact p=**0.015625**;
+- all seven broad-episode score contributions are negative;
+- excluding 2022: beta ≈ -1.49pp, raw broad exact p=0.03125;
+- excluding early B01/B02: beta ≈ -2.99pp, p=0.0625 with only five broad episodes.
+
+The small full-sample exact p largely reflects 7/7 broad-cluster sign unanimity. This is a **revision-robust associational mechanism candidate**, not a retroactive confirmatory discovery, not an OOS forecast, and not a trading signal.
+
+Gold next-6M MDD remains unsupported under real-time IPT.
+
+CPI boundary:
+- original inflation state uses `CPIAUCNS` (not seasonally adjusted);
+- Philadelphia Fed `PCPI` is seasonally adjusted and is not substituted;
+- CPI is therefore not upgraded to a strict real-time-vintage object by this module.
+
 ### Household inflation / energy
 Status: **MECHANISM CANDIDATE / NOT A TRADING SIGNAL**
 
@@ -330,7 +370,7 @@ Current conclusion:
 1. Preserve the failed stock-only rule and FLOW-002 as negative/mechanism evidence; do not retune them.
 2. Design a genuinely weekly/daily PIT commodity event engine to remove monthly-average timing limitations and increase event support.
 3. Freeze an independent geopolitical/physical shock registry before any full P4A claim.
-4. Build a vintage-safe macro-state layer where feasible before any stronger state-dependent claim; keep current-vintage histories explicitly separate from true real-time information.
+4. Freeze a time-ordered OOS test for real-time IPT incremental forecasting value versus simple Gold-history / policy-phase benchmarks; do not reuse in-sample p-values as forecasting proof.
 5. Resolve official announcement timing for registry-only emergency-cut candidates before any emergency-event outcome study.
 6. Continue provenance-safe charts/content cards tied to the evidence ledger.
 7. Keep paper-specific identification work behind the firewall.
