@@ -267,3 +267,28 @@ results/fed_cycle_vintage_audit_v1/EVENT_CONTRAST_IMPACT_QC.json,Event contrast 
 results/fed_cycle_vintage_audit_v1/EVENT_CONTRAST_IMPACT_REPORT.md,Event growth-label revision impact report,POSTRUN_DESCRIPTIVE,PUBLIC_SAFE
 results/fed_cycle_vintage_audit_v1/FED_CYCLE_VINTAGE_AUDIT_007_REPORT.md,Reproducible real-time industrial-production revision report,QC_PASS_ASSOCIATIONAL,PUBLIC_SAFE
 content/FED_CYCLE_VINTAGE_CONTENT_009.md,Evidence-linked real-time macro revision content card,CANONICAL,PUBLIC_SAFE
+research/FED_CYCLE_GOLD_OOS_008_LOCK.md,Episode-forward Gold real-time growth OOS frozen specification,CANONICAL,PUBLIC_SAFE
+research/FED_CYCLE_GOLD_OOS_008_POSTRUN_BENCHMARK_AUDIT.md,Post-run benchmark/loss-function sanity audit protocol,POSTRUN_DIAGNOSTIC,PUBLIC_SAFE
+research/FED_CYCLE_GOLD_OOS_008_CLOSEOUT.md,Gold real-time growth OOS closeout,CANONICAL,PUBLIC_SAFE
+scripts/run_fed_cycle_gold_oos_v1.py,Episode-forward Gold OOS forecast audit runner,CANONICAL,PUBLIC_SAFE
+scripts/audit_fed_cycle_gold_oos_benchmarks.py,Post-run OOS benchmark sanity runner,POSTRUN_DIAGNOSTIC,PUBLIC_SAFE
+.github/workflows/fed-cycle-gold-oos-v1.yml,Automated episode-forward Gold OOS workflow,CANONICAL,PUBLIC
+.github/workflows/fed-cycle-gold-oos-benchmark-audit.yml,Automated post-run OOS benchmark audit workflow,CANONICAL,PUBLIC
+results/fed_cycle_gold_oos_v1/SOURCE_REGISTRY.csv,OOS Gold/real-time IPT provenance registry,QC_PASS,PUBLIC_SAFE
+results/fed_cycle_gold_oos_v1/OOS_FEATURE_PANEL.csv,Derived point-in-time OOS feature panel,QC_PASS,PUBLIC_SAFE
+results/fed_cycle_gold_oos_v1/FOLD_QC.csv,OOS fold leakage/timing/weight QC,QC_PASS,PUBLIC_SAFE
+results/fed_cycle_gold_oos_v1/OOS_PREDICTIONS.csv,Time-ordered OOS predictions by row,PRELIMINARY_OOS,PUBLIC_SAFE
+results/fed_cycle_gold_oos_v1/FOLD_COEFFICIENTS.csv,Expanding-fold standardized model coefficients,PRELIMINARY_OOS,PUBLIC_SAFE
+results/fed_cycle_gold_oos_v1/EPISODE_METRICS.csv,Per-future-episode OOS MSE/MAE,PRELIMINARY_OOS,PUBLIC_SAFE
+results/fed_cycle_gold_oos_v1/MODEL_SUMMARY.csv,Episode-equal OOS model comparison,PRELIMINARY_OOS,PUBLIC_SAFE
+results/fed_cycle_gold_oos_v1/PRIMARY_OOS_COMPARISON.csv,Frozen M3-vs-B2 evidence-gate calculation,QC_PASS_PRELIMINARY_OOS,PUBLIC_SAFE
+results/fed_cycle_gold_oos_v1/QC.json,OOS leakage/timing/specification/evidence-gate QC,QC_PASS,PUBLIC_SAFE
+results/fed_cycle_gold_oos_v1/POSTRUN_BENCHMARK_COMPARISON.csv,Post-run benchmark/loss-function sensitivity,POSTRUN_DIAGNOSTIC,PUBLIC_SAFE
+results/fed_cycle_gold_oos_v1/POSTRUN_M3_BIAS_BY_EPISODE.csv,Post-run M3 signed calibration bias by episode,POSTRUN_DIAGNOSTIC,PUBLIC_SAFE
+results/fed_cycle_gold_oos_v1/POSTRUN_PREDICTION_RANGE.csv,Post-run forecast-versus-realized range audit,POSTRUN_DIAGNOSTIC,PUBLIC_SAFE
+results/fed_cycle_gold_oos_v1/POSTRUN_BENCHMARK_QC.json,Post-run benchmark sanity audit QC,QC_PASS,PUBLIC_SAFE
+results/fed_cycle_gold_oos_v1/POSTRUN_BENCHMARK_AUDIT.md,OOS benchmark sensitivity interpretation,POSTRUN_DIAGNOSTIC,PUBLIC_SAFE
+results/fed_cycle_gold_oos_v1/FED_CYCLE_GOLD_OOS_008_REPORT.md,Reproducible episode-forward OOS report,QC_PASS_PRELIMINARY_OOS,PUBLIC_SAFE
+results/fed_cycle_gold_oos_v1/01_oos_episode_mse_b2_vs_m3.png,OOS per-episode B2-vs-M3 MSE figure,DESCRIPTIVE,PUBLIC
+results/fed_cycle_gold_oos_v1/02_oos_r2_by_model.png,OOS model R-squared comparison figure,DESCRIPTIVE,PUBLIC
+content/FED_CYCLE_GOLD_OOS_CONTENT_010.md,Evidence-linked OOS benchmark-discipline content card,CANONICAL,PUBLIC_SAFE
