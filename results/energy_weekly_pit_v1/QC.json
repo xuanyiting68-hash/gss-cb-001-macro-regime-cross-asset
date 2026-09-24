@@ -10,7 +10,7 @@
   "release_lag_bad_rows": 0,
   "release_lag_min_days": 5,
   "release_lag_median_days_2002_2025": 5.0,
-  "release_lag_max_days": 7,
+  "release_lag_max_days": 10,
   "common_physical_week_ends_2002_2025": 1252,
   "common_physical_release_mapping_coverage": 0.9984025559105432,
   "curated_release_rows_checked": 22,
@@ -29,7 +29,13 @@
   "historical_archive_ambiguous_mappings": 0,
   "historical_archive_unmapped_release_links": 0,
   "schedule_2026_sha256": "8e9da9482a110845964e5dd0ac3c5adb03ba9be958b920aca46675d03a614d09",
-  "schedule_exception_rows_2025_2026": 0,
+  "schedule_exception_rows_2025_2026": 14,
+  "schedule_anchor_matches": {
+    "2025-11-07": true,
+    "2025-12-19": true,
+    "2026-09-04": true
+  },
+  "schedule_anchor_all_pass": true,
   "final_twip_week_end": "2025-10-24",
   "post_twip_2025_common_week_ends": 9,
   "post_twip_2025_coverage": 1.0,
