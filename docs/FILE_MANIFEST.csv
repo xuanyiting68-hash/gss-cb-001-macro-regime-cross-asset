@@ -378,3 +378,10 @@ results/energy_portwatch_v1/EXTERNAL_CONTEXT_SNAPSHOT.csv,External supply-shock 
 results/energy_portwatch_v1/SOURCE_REGISTRY.csv,PortWatch raw-hash provenance registry,QC_PASS,PUBLIC_SAFE
 results/energy_portwatch_v1/QC.json,Prospective PortWatch context QC,QC_PASS,PUBLIC_SAFE
 results/energy_portwatch_v1/ENERGY_PORTWATCH_006_REPORT.md,Prospective external maritime context report,QC_PASS,PUBLIC_SAFE
+research/ENERGY_RISK_SYNTHESIS_007_LOCK.md,Current integrated energy evidence-state lock,CANONICAL,PUBLIC_SAFE
+research/ENERGY_RISK_SYNTHESIS_007_CLOSEOUT.md,Current integrated energy evidence-state closeout,CANONICAL,PUBLIC_SAFE
+scripts/run_energy_risk_synthesis_v1.py,Deterministic frozen-evidence energy state synthesizer,CANONICAL,PUBLIC_SAFE
+.github/workflows/energy-risk-synthesis-v1.yml,Automated current energy evidence synthesis workflow,CANONICAL,PUBLIC
+results/energy_risk_synthesis_v1/CURRENT_STATE.json,Machine-readable integrated current energy state,CANONICAL_SNAPSHOT,PUBLIC_SAFE
+results/energy_risk_synthesis_v1/QC.json,Integrated energy evidence-state QC,QC_PASS,PUBLIC_SAFE
+results/energy_risk_synthesis_v1/CURRENT_STATE_REPORT.md,Human-readable integrated current energy state,QC_PASS,PUBLIC_SAFE

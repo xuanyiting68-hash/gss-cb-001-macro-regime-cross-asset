@@ -306,3 +306,15 @@
 - Integrated current state is TIGHT_OR_MIXED + EXTERNAL_SUPPLY_SHOCK_CONTEXT_PRESENT.
 - The result blocks a clean global supply-normalization interpretation of the current price rollover but does not generate a directional WTI forecast.
 
+## 2026-09-24 — ENERGY-RISK-SYNTHESIS-007
+
+- Froze a deterministic current energy evidence synthesis using only already-frozen 004A, 005 and 006 artifacts.
+- No new model was fitted, no threshold was retuned and no prospective WTI outcome was used.
+- Current live event remains ENERGY005_2026-09-23 / TIGHT_OR_MIXED / UNREALIZED.
+- Current event is not clean supply normalization and not broad demand destruction under the frozen 004 rules.
+- PortWatch external supply-shock context remains active with two relevant RED disruptions and severe Hormuz traffic stress.
+- Historical TIGHT_OR_MIXED n=10 has median WTI +7.08% at 8W and median short MAE +15.24%; the 8W median remains positive across leave-one-out and 2018+ diagnostics.
+- Integrated state is ROLLOVER_NOT_CONFIRMED__EXTERNAL_SUPPLY_RISK_ACTIVE.
+- Bearish-reversal confirmation state is VETO.
+- This blocks overconfident bearish-normalization language but is not a bullish forecast, causal claim or trading signal.
+

@@ -675,6 +675,39 @@ Combined with the frozen current U.S. state:
 
 the evidence does **not** support calling the current price rollover a clean global supply-normalization regime. This is a mechanism/risk veto, not a directional WTI forecast.
 
+#### Current integrated energy evidence state
+
+Status: **QC PASS / ROLLOVER NOT BEARISH-CONFIRMED / EXTERNAL SUPPLY RISK ACTIVE / CURRENT OUTCOME UNREALIZED**
+
+ENERGY-RISK-SYNTHESIS-007 combines only already-frozen 004A, 005 and 006 evidence. It fits no model, retunes no threshold and uses no prospective WTI outcome.
+
+Current state:
+
+`ROLLOVER_NOT_CONFIRMED__EXTERNAL_SUPPLY_RISK_ACTIVE`
+
+with:
+
+`BEARISH_REVERSAL_CONFIRMATION = VETO`.
+
+Evidence:
+- current price rollover: True;
+- frozen mechanism: TIGHT_OR_MIXED;
+- clean supply normalization: False;
+- broad demand destruction: False;
+- external supply-shock context: True;
+- robust descriptive 8W bearish-confirmation veto: True.
+
+Historical same-class n=10:
+- median WTI 8W +7.08%;
+- median short MAE 8W +15.24%.
+
+Modern 2018+ same-class:
+- median WTI 8W +6.61%;
+- median WTI 13W +1.26%.
+
+The synthesis therefore blocks an overconfident durable-bearish interpretation of the current rollover. It does not create a bullish forecast or trading instruction.
+
+
 
 
 
@@ -682,7 +715,7 @@ the evidence does **not** support calling the current price rollover a clean glo
 
 1. Preserve the failed stock-only rule and FLOW-002 as negative/mechanism evidence; do not retune them.
 2. ENERGY-WEEKLY-STATE-004 is now the weekly/daily strict-PIT engine. Do not loosen its mechanism thresholds on the consumed 17 events. Freeze the still-unrealized 2026-09-23 TIGHT_OR_MIXED event prospectively and track future selected events append-only.
-3. ENERGY-PORTWATCH-006 now independently confirms an active external maritime supply-shock context for the still-unrealized 2026-09-23 TIGHT_OR_MIXED event, driven by severe Hormuz traffic stress. Preserve this snapshot and do not reinterpret the rollover as clean global supply normalization; keep outcome tracking prospective.
+3. ENERGY-RISK-SYNTHESIS-007 now freezes the integrated current state as ROLLOVER_NOT_CONFIRMED__EXTERNAL_SUPPLY_RISK_ACTIVE with bearish-reversal confirmation VETO. Do not retune this state. Keep ENERGY005 outcome tracking prospective and update only realized 4W/8W/13W fields when they mature.
 4. PROSPECTIVE-ISSUANCE-013 v1.1 now has a QC-passed cryptographic genesis/hash chain around the still-empty registry. Keep the system armed but unchanged: no prediction until a genuinely eligible new cycle, complete pre-target GC=F/RTDSM inputs, valid issue timing and all immutable hash checks coexist.
 5. Resolve official announcement timing for registry-only emergency-cut candidates before any emergency-event outcome study.
 6. Continue provenance-safe charts/content cards tied to the evidence ledger.
