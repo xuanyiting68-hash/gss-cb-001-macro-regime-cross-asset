@@ -282,7 +282,7 @@ def main():
     recmap = master[recovery_cols].copy()
     recmap.to_csv(OUT / "RECOVERY_RISK_CLOCK_MAP.csv", index=False)
 
-    records = master.where(pd.notna(master), None).to_dict(orient="records")
+    records = json.loads(master.to_json(orient="records"))
     ref = {
         "module": "FED-CYCLE-CROSS-ASSET-MASTER-SYNTHESIS-021",
         "as_of": "2026-09-25",
