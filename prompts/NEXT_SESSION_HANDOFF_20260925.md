@@ -226,3 +226,18 @@ Updated next priority:
 1. **022A Historical Context Registry** — independently source recession/macro/stress/policy-context facts and tag contemporaneous vs hindsight;
 2. then build a Claim Registry + Figure Registry + Content Evidence Library from 021 + 022/022A;
 3. maintain prospective Fed/energy registries append-only under frozen gates.
+
+## Post-handoff update — 022A completed
+
+FED-CYCLE-HISTORICAL-CONTEXT-022A is complete and QC-passed.
+
+Coverage: 18 official-source context claims across B02-B07 and 21 normalized source links.
+
+Anti-hindsight rules are now machine-checked: 2001/2007 recession dating is retrospective; September 11 is post-Jan-2001; COVID is post-Jul-2019; current B07 NBER status is as-of audit only.
+
+022 remains canonical for policy chronology/asset metrics; 022A is context enrichment only.
+
+Updated next priority:
+1. **022B Content Claim Registry** from 021 + 022 + 022A, with stable CLAIM_ID, exact wording, support/sample, source modules, evidence-time, allowed/prohibited wording, figure dependency and freshness rule;
+2. **023 Real-Time Regime Dashboard** for current state versus historical distributions without current-cycle analog overclaiming;
+3. then Figure Registry + Content Evidence Library / Myth-vs-Evidence packages.
