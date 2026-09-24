@@ -223,9 +223,9 @@ def main():
     ]
     (OUT/"ENERGY_WEEKLY_PIT_003_REPORT.md").write_text("\n".join(lines)+"\n",encoding="utf-8")
 
+    print(json.dumps(qc,indent=2,default=str))
     if hard_fail:
         raise SystemExit("ENERGY-WEEKLY-PIT-003 QC failed")
-    print(json.dumps(qc,indent=2,default=str))
 
 if __name__=="__main__":
     main()
