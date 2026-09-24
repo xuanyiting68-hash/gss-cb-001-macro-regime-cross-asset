@@ -1,0 +1,34 @@
+# FED-CYCLE-STRESS-TROUGH-ALIGNMENT-018
+
+**POST-ANCHOR MECHANISM TIMING / NOT A REAL-TIME SIGNAL**
+
+- QC: **PASS**
+
+## Supported asset × stress timing pairs
+
+| asset   | stress_observable   |   n_legs |   n_broad_episodes | support_status               |   weighted_median_asset_trough_month |   weighted_median_stress_peak_month |   weighted_median_lead_months |   weighted_median_abs_gap_months |   weighted_stress_before_share |   weighted_same_month_share |   weighted_before_or_same_share |   weighted_near_2m_share |   weighted_both_late_7plus_share |
+|:--------|:--------------------|---------:|-------------------:|:-----------------------------|-------------------------------------:|------------------------------------:|------------------------------:|---------------------------------:|-------------------------------:|----------------------------:|--------------------------------:|-------------------------:|---------------------------------:|
+| GOLD    | BAA10Y_SPREAD       |       10 |                  7 | SUPPORTED_TIMING_DESCRIPTIVE |                                    5 |                                   7 |                            -3 |                                5 |                       0.357143 |                    0.142857 |                        0.5      |                 0.142857 |                         0.190476 |
+| GOLD    | COPPER              |        5 |                  5 | SUPPORTED_TIMING_DESCRIPTIVE |                                    4 |                                   9 |                             0 |                                0 |                       0        |                    0.6      |                        0.6      |                 0.6      |                         0.4      |
+| GOLD    | VIX                 |        5 |                  5 | SUPPORTED_TIMING_DESCRIPTIVE |                                    4 |                                   8 |                            -4 |                                4 |                       0        |                    0.4      |                        0.4      |                 0.4      |                         0.4      |
+| NASDAQ  | BAA10Y_SPREAD       |       10 |                  7 | SUPPORTED_TIMING_DESCRIPTIVE |                                    8 |                                   7 |                             0 |                                1 |                       0.333333 |                    0.285714 |                        0.619048 |                 0.714286 |                         0.642857 |
+| NASDAQ  | COPPER              |        5 |                  5 | SUPPORTED_TIMING_DESCRIPTIVE |                                    8 |                                   9 |                             0 |                                1 |                       0.2      |                    0.4      |                        0.6      |                 0.8      |                         0.8      |
+| NASDAQ  | VIX                 |        5 |                  5 | SUPPORTED_TIMING_DESCRIPTIVE |                                    8 |                                   8 |                             0 |                                0 |                       0        |                    1        |                        1        |                 1        |                         1        |
+| SP500   | BAA10Y_SPREAD       |       10 |                  7 | SUPPORTED_TIMING_DESCRIPTIVE |                                    8 |                                   7 |                             0 |                                1 |                       0.333333 |                    0.285714 |                        0.619048 |                 0.714286 |                         0.642857 |
+| SP500   | COPPER              |        5 |                  5 | SUPPORTED_TIMING_DESCRIPTIVE |                                    8 |                                   9 |                             0 |                                1 |                       0.2      |                    0.4      |                        0.6      |                 0.8      |                         0.8      |
+| SP500   | VIX                 |        5 |                  5 | SUPPORTED_TIMING_DESCRIPTIVE |                                    8 |                                   8 |                             0 |                                0 |                       0        |                    1        |                        1        |                 1        |                         1        |
+| WTI     | BAA10Y_SPREAD       |        8 |                  6 | SUPPORTED_TIMING_DESCRIPTIVE |                                   11 |                                   7 |                             1 |                                1 |                       0.666667 |                    0.333333 |                        1        |                 0.666667 |                         0.722222 |
+| WTI     | COPPER              |        5 |                  5 | SUPPORTED_TIMING_DESCRIPTIVE |                                   11 |                                   9 |                             0 |                                1 |                       0.4      |                    0.4      |                        0.8      |                 0.8      |                         0.8      |
+| WTI     | VIX                 |        5 |                  5 | SUPPORTED_TIMING_DESCRIPTIVE |                                   11 |                                   8 |                             1 |                                1 |                       0.6      |                    0.2      |                        0.8      |                 0.8      |                         1        |
+
+## Stress-observable synthesis
+
+| stress_observable   |   supported_asset_pairs |   median_of_pair_median_leads |   median_near_2m_share |   median_before_or_same_share |   median_both_late_share |
+|:--------------------|------------------------:|------------------------------:|-----------------------:|------------------------------:|-------------------------:|
+| BAA10Y_SPREAD       |                       4 |                             0 |               0.690476 |                      0.619048 |                 0.642857 |
+| COPPER              |                       4 |                             0 |               0.8      |                      0.6      |                 0.8      |
+| VIX                 |                       4 |                             0 |               0.9      |                      0.9      |                 1        |
+
+Positive lead means the stress maximum occurs before the asset MDD trough.
+Near-coincidence means the two occur within two months.
+Because both stress peak and trough are future-window statistics, this module is explanatory timing evidence only.

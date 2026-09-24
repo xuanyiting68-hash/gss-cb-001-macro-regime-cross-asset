@@ -1,0 +1,4 @@
+stress_observable,supported_asset_pairs,median_of_pair_median_leads,median_near_2m_share,median_before_or_same_share,median_both_late_share
+BAA10Y_SPREAD,4,0.0,0.6904761904761905,0.619047619047619,0.6428571428571429
+COPPER,4,0.0,0.8,0.6,0.8
+VIX,4,0.0,0.9,0.9,1.0

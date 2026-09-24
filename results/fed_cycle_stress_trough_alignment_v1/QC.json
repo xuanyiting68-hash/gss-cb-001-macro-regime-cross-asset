@@ -1,0 +1,14 @@
+{
+  "qc_gate": "PASS",
+  "module": "FED-CYCLE-STRESS-TROUGH-ALIGNMENT-018",
+  "pair_rows": 78,
+  "pair_cells": 12,
+  "supported_pair_cells": 12,
+  "duplicate_cycle_violations": 0,
+  "identifier_mismatch_violations": 0,
+  "timing_range_violations": 0,
+  "pvalues_generated": false,
+  "real_time_signal_status": "NOT_A_REAL_TIME_SIGNAL",
+  "causal_status": "NONE",
+  "deployment_status": "NOT_DEPLOYABLE"
+}
