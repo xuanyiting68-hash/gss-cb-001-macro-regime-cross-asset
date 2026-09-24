@@ -490,3 +490,11 @@
 - Generated machine-readable `CASEBOOK_REFERENCE.json` and mechanically grounded `CASEBOOK_CONTENT_BRIEFS.md` without external narrative facts.
 - Preserved the negative 019/020 result: pre-cut curve/NFCI/RT-IPT context cannot be promoted into a deterministic bottom-timing score.
 - Workflow passed on the first run and committed canonical outputs.
+
+## 2026-09-25 — FED-CYCLE-HISTORICAL-CONTEXT-022A
+
+- Added an official-source enrichment layer over the six-case 022 historical casebook.
+- Registered 18 context claims and 21 normalized source links from Federal Reserve Board, NBER and Federal Reserve History sources.
+- Added explicit claim-time taxonomy: CONTEMPORANEOUS_POLICY_CONTEXT, RETROSPECTIVE_DATING, RETROSPECTIVE_EVENT_CONTEXT and POST_ANCHOR_SHOCK.
+- Enforced anti-hindsight guardrails: 2001/2007 NBER recession dates are later determinations; September 11 is post-January-2001; COVID is post-July-2019; B07 NBER status is only as-of the 2026-09-25 source audit.
+- No market metrics were changed and no new inference was added.
