@@ -1,0 +1,37 @@
+{
+  "qc_gate": "PASS",
+  "module": "FED-CYCLE-HISTORICAL-CASEBOOK-022",
+  "upstream_qc_modules": [
+    "FED-CYCLE-PATH-001-v1.1",
+    "FED-CYCLE-PHASE-CLOCK-004",
+    "FED-CYCLE-STRESS-LAYER-005",
+    "FED-CYCLE-STRESS-TROUGH-ALIGNMENT-018",
+    "FED-CYCLE-PRECUT-STATE-019",
+    "FED-CYCLE-CROSS-ASSET-EXPANSION-014"
+  ],
+  "new_price_estimation": false,
+  "new_inference": false,
+  "pvalues_generated": false,
+  "primary_broad_episodes": [
+    "B02",
+    "B03",
+    "B04",
+    "B05",
+    "B06",
+    "B07"
+  ],
+  "n_primary_broad_episodes": 6,
+  "b02_mechanical_cycles": 3,
+  "b03_b07_single_cycle_violations": 0,
+  "policy_sequence_rows": 30,
+  "asset_phase_rows": 120,
+  "precut_realtime_rows": 8,
+  "expost_alignment_rows": 72,
+  "rate_cash_rows": 90,
+  "evidence_time_nulls": 0,
+  "private_paper_inputs_used": false,
+  "timing_rule_guardrail_preserved": true,
+  "causal_status": "NONE",
+  "oos_status": "NOT_A_FORECASTING_MODEL",
+  "deployment_status": "NOT_DEPLOYABLE"
+}
