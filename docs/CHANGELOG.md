@@ -88,3 +88,17 @@
 - No p-values or BH-FDR are run; STATE-001 is a small-n mechanism map, not a confirmatory or forecasting model.
 - Added an evidence-linked content card on why Real Yield, USD and Oil cannot yet be ranked as the dominant Gold driver.
 - Next priority is a within-cycle monthly continuous-state design with cycle-aware dependence handling rather than more binary event splits.
+
+## 2026-09-24 — FED-CYCLE-STATE-PANEL-002
+
+- Froze and ran a 165-row within-cycle monthly Gold state panel across 10 mechanical tightening legs.
+- Grouped nearby early legs into 7 broad macro episode clusters for more conservative dependence-aware inference.
+- Used cycle fixed effects and equal total regression weight per mechanical cycle so long cycles did not dominate.
+- Primary inference enumerated exact whole-broad-episode sign flips rather than row-level IID errors.
+- Frozen primary family contained 8 tests: CPI level, CPI momentum, INDPRO YoY and WTI 6M return against forward 6M Gold endpoint return and MDD.
+- 0/8 primary tests survived BY-FDR 10%; 0/8 survived BH-FDR 10% diagnostic.
+- This weakens the visually strong STATE-001 binary event-level splits and argues against promoting them into deterministic Gold regime rules.
+- A predeclared secondary USD-return diagnostic had raw broad-cluster p=0.03125 with stable sign, but the full 12-test secondary family had 0 BH/BY FDR survivors; USD BH q=0.375 and BY q=1.00.
+- USD remains hypothesis-generating only. Yield curve, nominal 10Y, simple real-rate proxy and NFCI did not provide confirmatory secondary evidence; DFII10 still has insufficient cycle support.
+- Added an evidence-linked content card explaining why attractive binary macro-state patterns can disappear under a stronger within-cycle design.
+- Next priority is a cross-asset event-time risk clock for trough timing, MDD accumulation and recovery hazard.
