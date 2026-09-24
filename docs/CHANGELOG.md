@@ -421,3 +421,17 @@
 - Full-recovery phase ordering is strongly asset-specific: Gold is slowest after FIRST_HIKE; S&P after FIRST_CUT; WTI after LAST_HIKE; DXY after LAST_HIKE.
 - Next step is the total anchor-to-trough-to-recovery clock, preserving event-level censoring rather than adding medians mechanically.
 
+## 2026-09-24 — FED-CYCLE-TOTAL-RISK-CLOCK-017
+
+- Built the event-level total risk clock from policy anchor to maximum-drawdown trough to 50%/100% recovery using only recovery-supported cells.
+- Durations are computed per episode before aggregation; separately calculated medians are never added together.
+- QC passes on 21 supported asset-anchor cells with zero total-duration/trough or recovery-order violations.
+- Five assets have full four-phase support: DXY, Gold, Nasdaq, S&P 500 and WTI.
+- FIRST_CUT total full recovery is slower than PAUSE_START in 3/5 assets, equal in 2/5 and faster in 0/5.
+- Anchor-to-full-recovery medians are DXY 17/15/13/13m, Gold 30/11/15/22m, Nasdaq 14/11/10/15m, S&P 12/12/14/14m and WTI 12/29/17/20m across FIRST_HIKE/LAST_HIKE/PAUSE/FIRST_CUT.
+- Delayed troughs are central: FIRST_CUT trough medians are 8m for DXY/Nasdaq/S&P and 11m for WTI.
+- Gold FIRST_HIKE reaches its median trough at month 11 and median full recovery at month 30.
+- WTI LAST_HIKE reaches trough around month 7 but full recovery around month 29, showing a slow-repair rather than merely late-trough mechanism.
+- Supported national housing LAST_HIKE cell reaches median trough at 17m and prior-peak recovery at 20m.
+- Result is descriptive and does not imply that the first cut causes slower recovery.
+

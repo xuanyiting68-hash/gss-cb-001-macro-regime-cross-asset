@@ -850,7 +850,7 @@ Thus the frozen 012 benchmark is structurally stable rather than a one-feature a
 3. ENERGY-WEEKLY-ANALOG-012A confirms the frozen analog structure is stable under all 13 leave-one-feature-out perturbations. Do not refit it; keep 009/010/008 as mechanism/external-risk/outcome paths.
 4. PROSPECTIVE-ISSUANCE-013 v1.1 now has a QC-passed cryptographic genesis/hash chain around the still-empty registry. Keep the system armed but unchanged: no prediction until a genuinely eligible new cycle, complete pre-target GC=F/RTDSM inputs, valid issue timing and all immutable hash checks coexist.
 5. Resolve official announcement timing for registry-only emergency-cut candidates before any emergency-event outcome study.
-6. SUPPORTED-RECOVERY-MAP-016 shows FIRST_CUT is not universally faster than PAUSE_START. Next compute the full anchor-to-trough-to-50%/100% recovery clock from event-level supported cells, preserving censoring.
+6. TOTAL-RISK-CLOCK-017 now shows FIRST_CUT total full recovery is slower than PAUSE_START in 3/5 supported assets, equal in 2/5 and faster in 0/5. Next explanatory work must focus on predetermined macro state behind late troughs rather than adding more endpoint summaries.
 7. Keep paper-specific identification work behind the firewall.
 
 ## FED-CYCLE-CROSS-ASSET-EXPANSION-014 — duration / REIT / crypto / housing / rates / cash
@@ -990,5 +990,46 @@ Frozen synthesis result:
 - FIRST_CUT is slower than PAUSE_START for 3/5, equal for 1/5 and faster for 1/5.
 
 Therefore **FIRST_CUT does not universally accelerate recovery**. Recovery must remain asset-specific and phase-conditioned.
+
+## FED-CYCLE-TOTAL-RISK-CLOCK-017 — anchor-to-trough-to-recovery
+
+Status: **QC PASS / FIRST_CUT NEVER FASTER THAN PAUSE IN SUPPORTED SET / DESCRIPTIVE**
+
+017 computes total time event-by-event from each policy anchor to the maximum-drawdown trough and then to 50%/100% prior-peak recovery. It does not add separately calculated medians.
+
+Fully supported four-phase assets remain:
+- DXY;
+- GOLD;
+- NASDAQ;
+- SP500;
+- WTI.
+
+Anchor→full-recovery KM medians (FIRST_HIKE / LAST_HIKE / PAUSE_START / FIRST_CUT):
+- DXY: **17 / 15 / 13 / 13m**;
+- GOLD: **30 / 11 / 15 / 22m**;
+- NASDAQ: **14 / 11 / 10 / 15m**;
+- SP500: **12 / 12 / 14 / 14m**;
+- WTI: **12 / 29 / 17 / 20m**.
+
+FIRST_CUT versus PAUSE_START:
+- slower: **3/5**;
+- equal: **2/5**;
+- faster: **0/5**.
+
+A major reason is delayed trough risk. FIRST_CUT median troughs occur around:
+- DXY month 8;
+- Gold month 5;
+- Nasdaq month 8;
+- S&P month 8;
+- WTI month 11.
+
+Thus many “recovery after cuts” narratives miss the fact that the eventual maximum drawdown can occur well after the first cut.
+
+Supported housing LAST_HIKE risk is even slower:
+- median trough 17m;
+- anchor→full recovery 20m.
+
+This remains descriptive phase evidence, not a causal effect of policy easing.
+
 
 

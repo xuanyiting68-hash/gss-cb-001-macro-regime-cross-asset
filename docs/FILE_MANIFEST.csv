@@ -480,3 +480,13 @@ results/fed_cycle_supported_recovery_map_v1/FOUR_PHASE_SUPPORTED_COMPARISON.csv,
 results/fed_cycle_supported_recovery_map_v1/SYNTHESIS_SUMMARY.json,Support-filtered recovery synthesis result,CANONICAL,PUBLIC_SAFE
 results/fed_cycle_supported_recovery_map_v1/QC.json,Supported recovery synthesis QC,QC_PASS,PUBLIC_SAFE
 results/fed_cycle_supported_recovery_map_v1/FED_CYCLE_SUPPORTED_RECOVERY_MAP_016_REPORT.md,Supported recovery synthesis report,QC_PASS_DESCRIPTIVE,PUBLIC_SAFE
+research/FED_CYCLE_TOTAL_RISK_CLOCK_017_LOCK.md,Supported anchor-to-trough-to-recovery lock,CANONICAL,PUBLIC_SAFE
+research/FED_CYCLE_TOTAL_RISK_CLOCK_017_CLOSEOUT.md,Supported total risk-clock closeout,CANONICAL,PUBLIC_SAFE
+scripts/run_fed_cycle_total_risk_clock_v1.py,Event-level total risk-clock runner,CANONICAL,PUBLIC_SAFE
+.github/workflows/fed-cycle-total-risk-clock-v1.yml,Automated total risk-clock workflow,CANONICAL,PUBLIC
+results/fed_cycle_total_risk_clock_v1/SUPPORTED_EVENT_TOTAL_CLOCK.csv,Supported event-level trough and total recovery durations,DESCRIPTIVE,PUBLIC_SAFE
+results/fed_cycle_total_risk_clock_v1/SUPPORTED_TOTAL_CLOCK_SUMMARY.csv,Supported asset-phase total risk-clock summary,QC_PASS_DESCRIPTIVE,PUBLIC_SAFE
+results/fed_cycle_total_risk_clock_v1/SUPPORTED_TOTAL_CLOCK_KM.csv,Weighted total recovery survival curves,DESCRIPTIVE,PUBLIC_SAFE
+results/fed_cycle_total_risk_clock_v1/FOUR_PHASE_TOTAL_CLOCK_COMPARISON.csv,Four-phase supported total recovery comparison,QC_PASS_DESCRIPTIVE,PUBLIC_SAFE
+results/fed_cycle_total_risk_clock_v1/QC.json,Total risk-clock QC,QC_PASS,PUBLIC_SAFE
+results/fed_cycle_total_risk_clock_v1/FED_CYCLE_TOTAL_RISK_CLOCK_017_REPORT.md,Total risk-clock report,QC_PASS_DESCRIPTIVE,PUBLIC_SAFE
