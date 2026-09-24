@@ -102,3 +102,16 @@
 - USD remains hypothesis-generating only. Yield curve, nominal 10Y, simple real-rate proxy and NFCI did not provide confirmatory secondary evidence; DFII10 still has insufficient cycle support.
 - Added an evidence-linked content card explaining why attractive binary macro-state patterns can disappear under a stronger within-cycle design.
 - Next priority is a cross-asset event-time risk clock for trough timing, MDD accumulation and recovery hazard.
+
+## 2026-09-24 — FED-CYCLE-CROSS-ASSET-RISK-CLOCK-003
+
+- Froze and executed a 24-complete-month FIRST_HIKE risk clock for Gold, S&P 500, Nasdaq and WTI.
+- Omitted the event month to avoid mixed pre/post-event monthly averages and gave each broad episode total aggregate weight 1.
+- QC passed with 960 path rows, 40 cycle-asset rows and zero timing, MDD, recovery-order or weighting violations.
+- Weighted median MDD-trough month: Nasdaq 7, S&P 500 11, Gold 12, WTI 15.
+- Late-window (months 13-24) MDD-trough shares: Gold 50.0%, Nasdaq 26.2%, S&P 47.6%, WTI 61.1%.
+- Broad-episode-weighted median 24M MDD: Gold 14.09%, Nasdaq 12.18%, S&P 8.47%, WTI 20.65%.
+- Broad-episode-weighted full-recovery KM medians: Gold 13 months, Nasdaq 8, S&P 9, WTI 8.
+- Preserved the weighting sensitivity versus the earlier equal-mechanical-leg Gold full-recovery estimate of 19 months; the two summaries use different weighting conventions.
+- Added an evidence-linked content card: “第一次加息后，真正危险的是第几个月？”
+- Next risk-path priority is a phase clock spanning LAST_HIKE, PAUSE_START and FIRST_CUT under the same frozen conventions.
