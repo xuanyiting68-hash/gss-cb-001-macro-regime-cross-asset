@@ -193,3 +193,21 @@ results/fed_cycle_phase_clock_v1/02_sp500_phase_mdd_comparison.png,S&P phase MDD
 results/fed_cycle_phase_clock_v1/02_nasdaq_phase_mdd_comparison.png,Nasdaq phase MDD comparison figure,DESCRIPTIVE,PUBLIC
 results/fed_cycle_phase_clock_v1/02_wti_phase_mdd_comparison.png,WTI phase MDD comparison figure,DESCRIPTIVE,PUBLIC
 content/FED_CYCLE_PHASE_CLOCK_CONTENT_006.md,Evidence-linked first-cut phase-risk content card,CANONICAL,PUBLIC_SAFE
+research/FED_CYCLE_STRESS_LAYER_005_LOCK.md,VIX credit-spread copper phase diagnostics frozen specification,CANONICAL,PUBLIC_SAFE
+research/FED_CYCLE_STRESS_LAYER_005_CLOSEOUT.md,Fed-cycle stress-state layer closeout,CANONICAL,PUBLIC_SAFE
+scripts/run_fed_cycle_stress_layer_v1.py,VIX credit-spread copper phase runner,CANONICAL,PUBLIC_SAFE
+.github/workflows/fed-cycle-stress-layer-v1.yml,Automated Fed-cycle stress-layer workflow,CANONICAL,PUBLIC
+results/fed_cycle_stress_layer_v1/SOURCE_REGISTRY.csv,Stress-layer source registry and hashes,QC_PASS,PUBLIC_SAFE
+results/fed_cycle_stress_layer_v1/QC.json,Stress-layer timing/support/weight QC gate,QC_PASS,PUBLIC_SAFE
+results/fed_cycle_stress_layer_v1/STRESS_PATHS.csv,Derived monthly stress paths by phase,DESCRIPTIVE,PUBLIC_SAFE
+results/fed_cycle_stress_layer_v1/STRESS_CYCLE_PHASE_METRICS.csv,Derived stress metrics by cycle and phase,DESCRIPTIVE,PUBLIC_SAFE
+results/fed_cycle_stress_layer_v1/STRESS_PATH_SUMMARY.csv,Month-by-month weighted stress summaries,DESCRIPTIVE,PUBLIC_SAFE
+results/fed_cycle_stress_layer_v1/STRESS_PHASE_SUMMARY.csv,Phase-level VIX credit and copper stress comparison,QC_PASS_DESCRIPTIVE,PUBLIC_SAFE
+results/fed_cycle_stress_layer_v1/FED_CYCLE_STRESS_LAYER_005_REPORT.md,Reproducible Fed-cycle stress-layer report,QC_PASS_DESCRIPTIVE,PUBLIC_SAFE
+results/fed_cycle_stress_layer_v1/01_vix_phase_stress.png,VIX phase stress-accumulation figure,DESCRIPTIVE,PUBLIC
+results/fed_cycle_stress_layer_v1/01_baa10y_spread_phase_stress.png,Credit-spread phase stress-accumulation figure,DESCRIPTIVE,PUBLIC
+results/fed_cycle_stress_layer_v1/01_copper_phase_stress.png,Copper phase stress-accumulation figure,DESCRIPTIVE,PUBLIC
+results/fed_cycle_stress_layer_v1/02_vix_max_stress_comparison.png,VIX maximum-stress phase comparison figure,DESCRIPTIVE,PUBLIC
+results/fed_cycle_stress_layer_v1/02_baa10y_spread_max_stress_comparison.png,Credit-spread maximum-widening phase comparison figure,DESCRIPTIVE,PUBLIC
+results/fed_cycle_stress_layer_v1/02_copper_max_stress_comparison.png,Copper maximum-drawdown phase comparison figure,DESCRIPTIVE,PUBLIC
+content/FED_CYCLE_STRESS_CONTENT_007.md,Evidence-linked first-cut stress content card,CANONICAL,PUBLIC_SAFE
