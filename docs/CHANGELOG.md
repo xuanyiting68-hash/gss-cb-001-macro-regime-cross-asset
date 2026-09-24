@@ -154,3 +154,20 @@
 - Existing P0-C China causal/interaction quarantine remains unchanged.
 - Added an evidence-linked content card: “第一次降息后，亚洲市场就安全了吗？”
 - Next Fed-cycle research priority is a vintage-safe macro-state layer before stronger state-dependent claims.
+
+## 2026-09-24 — FED-CYCLE-VINTAGE-AUDIT-007
+
+- Froze a real-time industrial-production revision audit using official Philadelphia Fed RTDSM `IPT` monthly vintages.
+- Kept the original M-2/M-14 YoY definition and frozen 2% growth threshold; selected only vintages no later than the month before each information month.
+- Parsed 477,136 workbook cells across 766 vintages from 1962-11 through 2026-08; 10/10 FIRST_HIKE events and all 165 panel rows have real-time support.
+- Event-level growth state flips in 1/10 cases: 2022 changes from current-revised WEAK (+1.32%) to real-time STRONG (+4.12%).
+- Median absolute event-level YoY revision gap is 2.225pp; maximum 4.035pp.
+- The event-level +12M Gold STRONG-minus-WEAK return contrast remains negative (-8.31pp current labels versus -9.12pp real-time), while the 24M MDD contrast disappears/reverses slightly (+2.67pp to -0.47pp).
+- On the exact same 165 within-cycle rows, current-vintage INDPRO has beta -1.27pp/SD and broad exact p=0.125 for next-6M Gold return; real-time IPT has beta -1.96pp/SD and raw broad exact p=0.015625.
+- All seven broad-episode real-time return score contributions are negative; this exact p-value largely reflects 7/7 sign unanimity rather than high-precision forecast evidence.
+- A transparently post-run restriction audit shows the negative real-time coefficient persists after excluding 2022 (-1.49pp, p=0.03125) and after excluding early B01/B02 (-2.99pp, p=0.0625 with five broad episodes).
+- The combined later/no-2022 sample has only four cycles and remains LIMITED_SUPPORT with no promoted exact p-value.
+- Real-time IPT does not support a Gold MDD relation.
+- Preserved CPI series-definition integrity: did not substitute seasonally adjusted Philadelphia Fed PCPI for the original not-seasonally-adjusted CPIAUCNS state.
+- Added an evidence-linked content card on real-time-vintage versus revised-history bias.
+- Next priority is a separately frozen time-ordered OOS test; in-sample exact p-values are not forecasting proof.
