@@ -1,0 +1,4 @@
+series_id,label,url,acquisition_method,retrieved_utc,sha256,raw_bytes,rows_total,rows_nonmissing,first_date,last_date,raw_committed
+VIXCLS,CBOE VIX via FRED,https://fred.stlouisfed.org/graph/fredgraph.csv?id=VIXCLS,FRED_DIRECT_CSV,2026-09-24T04:17:57.164892+00:00,675f9bcb86ee88799f8f7a8b7ee9c30f7a0be26a26df8f9549bddf9e84c4a598,161323,9581,9279,1990-01-02,2026-09-22,False
+BAA10YM,Moody's Baa minus 10Y Treasury via FRED,https://fred.stlouisfed.org/graph/fredgraph.csv?id=BAA10YM,FRED_DIRECT_CSV,2026-09-24T04:17:57.371392+00:00,16a8eb8a1493ca0c251fd724d953897508d802f009c92ec91ee5317e518f1391,14121,881,881,1953-04-01,2026-08-01,False
+PCOPPUSDM,Global price of Copper via FRED,https://fred.stlouisfed.org/graph/fredgraph.csv?id=PCOPPUSDM,FRED_DIRECT_CSV,2026-09-24T04:17:57.433099+00:00,1a88147fbf2a2b63d9c9f0c7e9486361940ff090c0bc460908f75d458223b859,12076,415,415,1992-01-01,2026-07-01,False
