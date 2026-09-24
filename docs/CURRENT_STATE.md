@@ -791,6 +791,32 @@ The remains-mixed/incomplete group had median WTI -1.12% at 8W and -7.19% at 13W
 
 Therefore 009 is retained strictly as a **physical-mechanism confirmation path**, not a directional price-confirmation rule.
 
+#### Prospective historical analog benchmark
+
+Status: **QC PASS / TOP-3 FROZEN BEFORE CURRENT OUTCOME / NOT A FORECAST**
+
+ENERGY-WEEKLY-ANALOG-012 compares the still-unrealized `ENERGY005_2026-09-23` event with the 10 completed historical TIGHT_OR_MIXED events using 13 frozen pre-outcome price/mechanism features.
+
+Top 3:
+1. 2004-11-03 — distance 0.776;
+2. 2017-09-13 — distance 1.395;
+3. 2018-05-31 — distance 1.493.
+
+Historical top-3 outcomes:
+- all three positive at 8W;
+- all three positive at 13W;
+- frozen top-3 median WTI 8W **+8.18%**;
+- frozen top-3 median WTI 13W **+14.90%**;
+- 8W range +6.82% to +14.64%;
+- 13W range +6.09% to +23.75%;
+- median short MAE 8W +15.48%;
+- median short MAE 13W +18.21%.
+
+The closest 2004-11-03 analog exactly matches the current event's four mechanism-count fields and has a nearly identical pressure score.
+
+This is a genuinely prospective historical reference because current ENERGY005 outcomes remain blank. It strengthens the descriptive bearish-confirmation veto but is not a validated directional forecast.
+
+
 
 
 
@@ -803,7 +829,7 @@ Therefore 009 is retained strictly as a **physical-mechanism confirmation path**
 
 1. Preserve the failed stock-only rule and FLOW-002 as negative/mechanism evidence; do not retune them.
 2. ENERGY-WEEKLY-STATE-004 is now the weekly/daily strict-PIT engine. Do not loosen its mechanism thresholds on the consumed 17 events. Freeze the still-unrealized 2026-09-23 TIGHT_OR_MIXED event prospectively and track future selected events append-only.
-3. ENERGY-WEEKLY-TRANSITION-011 shows that later clean physical confirmation is not itself directional price evidence. Keep 009 strictly as mechanism tracking, 010 as external-risk tracking, and 008 as the only prospective WTI outcome ledger.
+3. ENERGY-WEEKLY-ANALOG-012 now freezes a genuinely prospective top-3 historical benchmark before current outcomes mature. Treat it as a reference distribution only; keep 009 as mechanism tracking, 010 as external-risk tracking, and 008 as the realized-price ledger.
 4. PROSPECTIVE-ISSUANCE-013 v1.1 now has a QC-passed cryptographic genesis/hash chain around the still-empty registry. Keep the system armed but unchanged: no prediction until a genuinely eligible new cycle, complete pre-target GC=F/RTDSM inputs, valid issue timing and all immutable hash checks coexist.
 5. Resolve official announcement timing for registry-only emergency-cut candidates before any emergency-event outcome study.
 6. Continue provenance-safe charts/content cards tied to the evidence ledger.

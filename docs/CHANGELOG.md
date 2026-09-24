@@ -362,3 +362,15 @@
 - The four remains-mixed/incomplete events had median WTI -1.12% at 8W and -7.19% at 13W, but were highly heterogeneous.
 - Consequence: 009 remains mechanism tracking only; prospective price evidence must come from 008.
 
+## 2026-09-24 — ENERGY-WEEKLY-ANALOG-012
+
+- Froze a prospective historical analog benchmark before any ENERGY005 4W/8W/13W outcome matured.
+- Historical pool is the 10 completed TIGHT_OR_MIXED events; current event is excluded from scaling.
+- Frozen distance uses 13 pre-outcome price/mechanism features, historical median/MAD scaling and equal-weight RMS standardized distance.
+- Top K was frozen at three.
+- Top analogs are 2004-11-03, 2017-09-13 and 2018-05-31.
+- All three top analogs had positive WTI returns at both 8W and 13W.
+- Frozen top-3 medians are +8.18% at 8W and +14.90% at 13W; ranges are +6.82% to +14.64% and +6.09% to +23.75%.
+- Median historical short MAE is +15.48% at 8W and +18.21% at 13W.
+- This strengthens the prospective reference behind the bearish-confirmation veto but is explicitly not a validated forecast.
+

@@ -418,3 +418,14 @@ results/energy_weekly_transition_v1/TRANSITION_SUMMARY.csv,Outcome descriptives 
 results/energy_weekly_transition_v1/TIMING_SUMMARY.csv,Historical clean/confirmed transition timing summary,DESCRIPTIVE,PUBLIC_SAFE
 results/energy_weekly_transition_v1/QC.json,Historical transition diagnostic QC,QC_PASS,PUBLIC_SAFE
 results/energy_weekly_transition_v1/ENERGY_WEEKLY_TRANSITION_011_REPORT.md,Historical transition diagnostic report,QC_PASS_DESCRIPTIVE,PUBLIC_SAFE
+research/ENERGY_WEEKLY_ANALOG_012_LOCK.md,Prospective historical energy analog benchmark lock,CANONICAL,PUBLIC_SAFE
+research/ENERGY_WEEKLY_ANALOG_012_CLOSEOUT.md,Prospective energy analog benchmark closeout,CANONICAL,PUBLIC_SAFE
+scripts/run_energy_weekly_analog_v1.py,Prospective same-class historical analog runner,CANONICAL,PUBLIC_SAFE
+.github/workflows/energy-weekly-analog-v1.yml,Prospective energy analog workflow,CANONICAL,PUBLIC
+results/energy_weekly_analog_v1/TOP3_ANALOGS.csv,Frozen prospective top-three historical analog set,CANONICAL_SNAPSHOT,PUBLIC_SAFE
+results/energy_weekly_analog_v1/ALL_ANALOG_DISTANCES.csv,Historical same-class analog distance ranking,DESCRIPTIVE,PUBLIC_SAFE
+results/energy_weekly_analog_v1/SCALING.csv,Frozen historical-only analog scaling parameters,CANONICAL_SNAPSHOT,PUBLIC_SAFE
+results/energy_weekly_analog_v1/CURRENT_EVENT_FEATURES.csv,Frozen current pre-outcome event feature vector,CANONICAL_SNAPSHOT,PUBLIC_SAFE
+results/energy_weekly_analog_v1/ANALOG_REFERENCE.json,Frozen top-three prospective analog outcome reference,CANONICAL_SNAPSHOT,PUBLIC_SAFE
+results/energy_weekly_analog_v1/QC.json,Prospective analog benchmark QC,QC_PASS,PUBLIC_SAFE
+results/energy_weekly_analog_v1/ENERGY_WEEKLY_ANALOG_012_REPORT.md,Prospective analog benchmark report,QC_PASS,PUBLIC_SAFE
