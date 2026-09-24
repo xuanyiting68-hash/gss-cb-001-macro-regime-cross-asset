@@ -429,3 +429,20 @@ results/energy_weekly_analog_v1/CURRENT_EVENT_FEATURES.csv,Frozen current pre-ou
 results/energy_weekly_analog_v1/ANALOG_REFERENCE.json,Frozen top-three prospective analog outcome reference,CANONICAL_SNAPSHOT,PUBLIC_SAFE
 results/energy_weekly_analog_v1/QC.json,Prospective analog benchmark QC,QC_PASS,PUBLIC_SAFE
 results/energy_weekly_analog_v1/ENERGY_WEEKLY_ANALOG_012_REPORT.md,Prospective analog benchmark report,QC_PASS,PUBLIC_SAFE
+
+research/FED_CYCLE_CROSS_ASSET_EXPANSION_014_LOCK.md,Cross-asset expansion frozen specification,CANONICAL,PUBLIC_SAFE
+research/FED_CYCLE_CROSS_ASSET_EXPANSION_014_CLOSEOUT.md,Cross-asset expansion closeout,CANONICAL,PUBLIC_SAFE
+scripts/run_fed_cycle_cross_asset_expansion_v1.py,Cross-asset expansion runner,CANONICAL,PUBLIC_SAFE
+.github/workflows/fed-cycle-cross-asset-expansion-v1.yml,Automated cross-asset expansion workflow,CANONICAL,PUBLIC
+results/fed_cycle_cross_asset_expansion_v1/SOURCE_REGISTRY.csv,Cross-asset expansion source registry and hashes,QC_PASS,PUBLIC_SAFE
+results/fed_cycle_cross_asset_expansion_v1/ACQUISITION_FAILURES.csv,Cross-asset acquisition-failure registry,QC_PASS_EMPTY,PUBLIC_SAFE
+results/fed_cycle_cross_asset_expansion_v1/MARKET_PHASE_METRICS.csv,Derived TLT VNQ BTC DXY cycle-phase metrics,DESCRIPTIVE,PUBLIC_SAFE
+results/fed_cycle_cross_asset_expansion_v1/MARKET_PHASE_SUMMARY.csv,TLT VNQ BTC DXY phase summary,QC_PASS_DESCRIPTIVE,PUBLIC_SAFE
+results/fed_cycle_cross_asset_expansion_v1/HOUSING_PHASE_METRICS.csv,Derived Case-Shiller cycle-phase metrics,DESCRIPTIVE,PUBLIC_SAFE
+results/fed_cycle_cross_asset_expansion_v1/HOUSING_PHASE_SUMMARY.csv,Case-Shiller phase summary,QC_PASS_DESCRIPTIVE,PUBLIC_SAFE
+results/fed_cycle_cross_asset_expansion_v1/RATE_PHASE_METRICS.csv,Derived DGS2 DGS10 cycle-phase yield metrics,DESCRIPTIVE,PUBLIC_SAFE
+results/fed_cycle_cross_asset_expansion_v1/RATE_PHASE_SUMMARY.csv,DGS2 DGS10 phase summary,QC_PASS_DESCRIPTIVE,PUBLIC_SAFE
+results/fed_cycle_cross_asset_expansion_v1/CASH_PHASE_METRICS.csv,Derived mechanical DFF cash-carry metrics,DESCRIPTIVE,PUBLIC_SAFE
+results/fed_cycle_cross_asset_expansion_v1/CASH_PHASE_SUMMARY.csv,Mechanical DFF cash-carry phase summary,QC_PASS_DESCRIPTIVE,PUBLIC_SAFE
+results/fed_cycle_cross_asset_expansion_v1/QC.json,Cross-asset expansion QC gate,QC_PASS,PUBLIC_SAFE
+results/fed_cycle_cross_asset_expansion_v1/FED_CYCLE_CROSS_ASSET_EXPANSION_014_REPORT.md,Reproducible cross-asset expansion report,QC_PASS_DESCRIPTIVE,PUBLIC_SAFE
