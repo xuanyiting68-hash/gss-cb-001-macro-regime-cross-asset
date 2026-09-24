@@ -766,6 +766,32 @@ First snapshot reproduces the current 006 evidence:
 
 WTI outcomes are not loaded. One clean snapshot is explicitly insufficient to declare resolution.
 
+#### Historical post-event mechanism-transition diagnostic
+
+Status: **QC PASS / POST-RUN DESCRIPTIVE / CLEAN CONFIRMATION NOT A DIRECTIONAL SIGNAL**
+
+ENERGY-WEEKLY-TRANSITION-011 applies the already-frozen 009 two-release confirmation rule descriptively to the 10 completed historical events that were TIGHT_OR_MIXED at rollover.
+
+Within four later WPSR releases:
+- 6/10 reached a clean class at least once;
+- only 2/10 achieved two consecutive clean releases;
+- 1 DD confirmation and 1 SN confirmation;
+- none confirmed by T+2;
+- both confirmed at T+3;
+- 4 candidate-only;
+- 4 remained mixed/incomplete.
+
+Crucially, the two confirmed cases were **not bearish**:
+- the DD-confirmed case had WTI +7.33% at 8W and +7.30% at 13W;
+- the SN-confirmed case had +8.18% at 8W and +6.09% at 13W.
+
+Candidate-only events also had positive median 8W/13W outcomes.
+
+The remains-mixed/incomplete group had median WTI -1.12% at 8W and -7.19% at 13W, but was highly heterogeneous, ranging from large gains to large declines.
+
+Therefore 009 is retained strictly as a **physical-mechanism confirmation path**, not a directional price-confirmation rule.
+
+
 
 
 
@@ -777,7 +803,7 @@ WTI outcomes are not loaded. One clean snapshot is explicitly insufficient to de
 
 1. Preserve the failed stock-only rule and FLOW-002 as negative/mechanism evidence; do not retune them.
 2. ENERGY-WEEKLY-STATE-004 is now the weekly/daily strict-PIT engine. Do not loosen its mechanism thresholds on the consumed 17 events. Freeze the still-unrealized 2026-09-23 TIGHT_OR_MIXED event prospectively and track future selected events append-only.
-3. ENERGY-WEEKLY-CONFIRMATION-009 and PORTWATCH-RESOLUTION-010 now freeze both domestic physical confirmation and external-shock resolution paths. Current states are WAITING_NEXT_WPSR_RELEASE and CRITICAL_TRAFFIC_STRESS. Do not downgrade the 007 veto without new frozen-path evidence.
+3. ENERGY-WEEKLY-TRANSITION-011 shows that later clean physical confirmation is not itself directional price evidence. Keep 009 strictly as mechanism tracking, 010 as external-risk tracking, and 008 as the only prospective WTI outcome ledger.
 4. PROSPECTIVE-ISSUANCE-013 v1.1 now has a QC-passed cryptographic genesis/hash chain around the still-empty registry. Keep the system armed but unchanged: no prediction until a genuinely eligible new cycle, complete pre-target GC=F/RTDSM inputs, valid issue timing and all immutable hash checks coexist.
 5. Resolve official announcement timing for registry-only emergency-cut candidates before any emergency-event outcome study.
 6. Continue provenance-safe charts/content cards tied to the evidence ledger.

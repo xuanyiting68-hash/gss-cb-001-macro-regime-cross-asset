@@ -350,3 +350,15 @@
 - First snapshot is CRITICAL_TRAFFIC_STRESS with two active RED disruptions, petroleum traffic stress true and clean streak zero.
 - External supply-shock context remains active.
 
+## 2026-09-24 — ENERGY-WEEKLY-TRANSITION-011
+
+- Ran a transparent post-run historical transition diagnostic on the 10 completed TIGHT_OR_MIXED events.
+- Reused the exact 004 mechanism rule and the already-frozen 009 two-release confirmation concept.
+- Six of ten events reached a clean class at least once within four later WPSR releases, but only two reached two consecutive clean releases.
+- No event was confirmed by T+2; both confirmations first occurred at T+3.
+- There was one DD-confirmed case and one SN-confirmed case.
+- Both confirmed cases had positive 8W and 13W WTI returns, so clean physical confirmation is not validated directional price confirmation.
+- The four candidate-only events had median WTI +10.73% at 8W and +19.12% at 13W.
+- The four remains-mixed/incomplete events had median WTI -1.12% at 8W and -7.19% at 13W, but were highly heterogeneous.
+- Consequence: 009 remains mechanism tracking only; prospective price evidence must come from 008.
+
