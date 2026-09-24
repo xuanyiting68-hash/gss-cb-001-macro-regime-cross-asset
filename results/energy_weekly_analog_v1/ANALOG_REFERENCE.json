@@ -1,0 +1,29 @@
+{
+  "top_k": 3,
+  "historical_pool_n": 10,
+  "active_feature_n": 13,
+  "active_features": [
+    "WTI_r5",
+    "WTI_r63",
+    "GAS_r5",
+    "GAS_r63",
+    "HEAT_r5",
+    "HEAT_r63",
+    "JET_r5",
+    "JET_r63",
+    "pressure_score",
+    "inventory_improving_count",
+    "demand_weak_count",
+    "throughput_weak",
+    "upstream_supply_up_count"
+  ],
+  "top3_median_wti_4w": 0.0150421179302044,
+  "top3_median_wti_8w": 0.0817504938459199,
+  "top3_median_wti_13w": 0.1490172482952265,
+  "top3_median_short_mae_8w": 0.1547861507128309,
+  "top3_median_short_mae_13w": 0.1821099077416765,
+  "top3_min_wti_8w": 0.0682281059063136,
+  "top3_max_wti_8w": 0.146409947853991,
+  "top3_min_wti_13w": 0.0609329889074607,
+  "top3_max_wti_13w": 0.2374745417515273
+}
