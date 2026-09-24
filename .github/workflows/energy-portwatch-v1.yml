@@ -1,0 +1,36 @@
+name: energy-portwatch-v1
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "research/ENERGY_PORTWATCH_006_LOCK.md"
+      - "scripts/run_energy_portwatch_v1.py"
+      - "results/energy_weekly_prospective_v1/PROSPECTIVE_EVENT_REGISTRY.csv"
+      - ".github/workflows/energy-portwatch-v1.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m pip install --upgrade pip pandas numpy tabulate
+      - run: python scripts/run_energy_portwatch_v1.py
+      - name: Commit PortWatch context snapshot
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add results/energy_portwatch_v1
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Run ENERGY-PORTWATCH-006 [skip ci]"
+          git pull --rebase origin main
+          git push
