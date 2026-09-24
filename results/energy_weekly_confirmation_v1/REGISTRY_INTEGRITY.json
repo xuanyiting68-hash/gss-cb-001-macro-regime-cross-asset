@@ -1,0 +1,8 @@
+{
+  "schema_version": "ENERGY_WEEKLY_CONFIRMATION_009_V1",
+  "registry_sha256": "9161dd27da8ac8a508fb5b70b39906d30f211b405a47f416e98dadb73b3627b9",
+  "registry_rows": 0,
+  "genesis_hash": "88ddac96c9d6e628cf74b6c9925241d991b5551b2db4460f7d6ae5ea176d5766",
+  "tail_hash": "88ddac96c9d6e628cf74b6c9925241d991b5551b2db4460f7d6ae5ea176d5766",
+  "current_confirmation_state": "WAITING_NEXT_WPSR_RELEASE"
+}

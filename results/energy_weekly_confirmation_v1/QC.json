@@ -1,0 +1,16 @@
+{
+  "qc_gate": "PASS",
+  "module": "ENERGY-WEEKLY-CONFIRMATION-009",
+  "event_id": "ENERGY005_2026-09-23",
+  "event_original_class": "TIGHT_OR_MIXED",
+  "fresh_common_week_ends_after_pit_base": 0,
+  "observed_post_event_releases": 0,
+  "new_rows_appended": 0,
+  "registry_rows": 0,
+  "current_confirmation_state": "WAITING_NEXT_WPSR_RELEASE",
+  "two_release_confirmation_rule": true,
+  "prospective_wti_outcomes_used": false,
+  "thresholds_changed": false,
+  "causal_status": "NONE",
+  "deployment_status": "NOT_DEPLOYABLE"
+}

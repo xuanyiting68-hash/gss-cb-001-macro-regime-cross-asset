@@ -1,0 +1,1 @@
+sequence,event_id,week_end,release_date,appended_utc,mechanism_class,inventory_improving_count,demand_weak_count,throughput_weak,upstream_supply_up_count,mechanism_complete,confirmation_state_after_release,source_hash_bundle,previous_hash,row_hash
