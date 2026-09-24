@@ -471,3 +471,13 @@
 - Curve stress looks stronger only on B03-B07 (rho about -0.738), but restoring B02 changes the full-sample rho to about +0.029.
 - Final conclusion: continuous pre-cut levels do not rescue the 019 timing-rule hypothesis.
 - Per the frozen stopping rule, the small-sample FIRST_CUT timing-rule branch is closed rather than expanded.
+
+## 2026-09-25 — FED-CYCLE-CROSS-ASSET-MASTER-SYNTHESIS-021
+
+- Froze 021 as an integration-only milestone: no new price estimation, p-values, threshold search, asset ranking or predictive fitting.
+- Harmonized PHASE-CLOCK-004, STRESS-LAYER-005, ASIA-CREDIT-DIAG-006, CROSS-ASSET-EXPANSION-014, SUPPORTED-RECOVERY-MAP-016 and TOTAL-RISK-CLOCK-017 into a canonical evidence layer.
+- Produced 52 price-asset x phase rows covering 13 assets, plus 12 cash/rate context rows and 12 phase-stress context rows.
+- Preserved five fully supported four-phase core assets: DXY, GOLD, NASDAQ, SP500 and WTI; limited and diagnostic extensions retain their upstream support labels.
+- FIRST_CUT core medians: DXY -1.33% endpoint / 5.18% MDD / 13m anchor-to-full-recovery; Gold +4.06% / 5.43% / 22m; Nasdaq +6.04% / 17.48% / 15m; S&P 500 +10.98% / 13.99% / 14m; WTI -16.94% / 22.23% / 20m.
+- Added machine-readable PandaAI risk-distribution JSON with explicit causal/OOS/deployment boundaries and a deterministic FIRST_CUT timing guardrail inherited from negative 019/020 evidence.
+- Initial workflow exposed strict JSON NaN serialization; fixed without changing empirical inputs or specification. Second run passed and committed canonical outputs.
