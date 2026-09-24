@@ -160,3 +160,26 @@ For every QC-passed public-safe milestone:
 - read GitHub back after the commit.
 
 Preserve null results and failed hypotheses.
+
+## Post-handoff update — 020 completed
+
+The earlier recommendation to run 020 is now superseded.
+
+FED-CYCLE-PRECUT-STRESS-LEVEL-020 status:
+
+**QC PASS / CONTINUOUS PRE-CUT LEVEL RULE NOT SUPPORTED / BRANCH STOP.**
+
+Key facts:
+- 8 mechanical cycles / 6 broad episodes;
+- VIX support = 5 broad episodes;
+- full-sample trough-month rho: Baa +0.075, VIX -0.211, curve stress +0.029, real-time growth stress -0.177;
+- every full-sample predictor fails composition robustness;
+- late-trough share has only two unique values and is constant in the VIX sample;
+- the stronger B03-B07 curve result is sample-composition sensitive and disappears when B02 is restored.
+
+Do not add variables or fit a multivariate FIRST_CUT timing score on this sample.
+
+Updated next priority:
+1. prospective append-only evidence maturation in the already-frozen Fed/energy registries;
+2. evidence-linked PandaAI risk-distribution integration rather than deterministic timing signals;
+3. never reuse consumed OOS-008 B04-B07 evidence to tune M3.
