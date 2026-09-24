@@ -1,0 +1,6 @@
+asset,recovery50_first_hike,recovery50_last_hike,recovery50_pause_start,recovery50_first_cut,recovery100_first_hike,recovery100_last_hike,recovery100_pause_start,recovery100_first_cut,fastest_full_recovery_phase,slowest_full_recovery_phase,first_hike_minus_pause_full_months,first_cut_minus_pause_full_months
+DXY,6.0,4.0,4.0,5.0,11.0,12.0,8.0,6.0,FIRST_CUT,LAST_HIKE,3.0,-2.0
+GOLD,4.0,3.0,1.0,2.0,19.0,6.0,5.0,12.0,PAUSE_START,FIRST_HIKE,14.0,7.0
+NASDAQ,2.0,1.0,1.0,2.0,8.0,3.0,3.0,3.0,LAST_HIKE,FIRST_HIKE,5.0,0.0
+SP500,2.0,1.0,2.0,3.0,4.0,1.0,3.0,5.0,LAST_HIKE,FIRST_CUT,1.0,2.0
+WTI,2.0,5.0,5.0,3.0,3.0,19.0,8.0,9.0,FIRST_HIKE,LAST_HIKE,-5.0,1.0

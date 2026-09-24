@@ -1,0 +1,15 @@
+{
+  "fully_supported_four_phase_assets": [
+    "DXY",
+    "GOLD",
+    "NASDAQ",
+    "SP500",
+    "WTI"
+  ],
+  "n_fully_supported_four_phase_assets": 5,
+  "universal_first_cut_accelerates_vs_pause": false,
+  "pause_full_recovery_faster_than_first_hike_count": 4,
+  "first_cut_slower_than_pause_count": 3,
+  "first_cut_equal_pause_count": 1,
+  "first_cut_faster_than_pause_count": 1
+}
