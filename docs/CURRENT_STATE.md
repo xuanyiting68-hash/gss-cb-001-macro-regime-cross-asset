@@ -175,6 +175,38 @@ The main descriptive conclusion is asset-specific timing: Nasdaq is more front-l
 
 No p-value/FDR family is run; no causal/OOS/deployment claim.
 
+
+#### Multi-anchor Fed-cycle phase clock
+
+Status: **QC-PASSED DESCRIPTIVE PHASE MAP / NOT CAUSAL / NOT A FORECAST / NOT DEPLOYABLE**
+
+PHASE-CLOCK-004 applies one common 12-complete-month convention to FIRST_HIKE, LAST_HIKE, PAUSE_START and FIRST_CUT across Gold, S&P 500, Nasdaq and WTI. All **16/16 primary asset × phase cells** satisfy the frozen support rule.
+
+Selected broad-episode-weighted medians:
+
+- Gold FIRST_HIKE / LAST_HIKE / PAUSE_START / FIRST_CUT 12M MDD: 11.58% / 9.09% / 7.57% / 5.43%;
+- S&P 500: 5.86% / 4.22% / 4.22% / **13.99%**;
+- Nasdaq: 12.18% / 4.00% / 4.00% / **17.48%**;
+- WTI: 18.79% / 19.60% / 17.99% / **22.23%**.
+
+FIRST_CUT late-window MDD-trough shares (months 7-12):
+
+- Gold 50.0%;
+- S&P 500 90.48%;
+- Nasdaq 90.48%;
+- WTI 100%.
+
+Median +12M endpoints after FIRST_CUT:
+
+- Gold +4.06%;
+- S&P +10.98%;
+- Nasdaq +6.04%;
+- WTI -16.94%.
+
+The phase map therefore does **not** support a universal "first cut = risk is over" narrative. Gold differs from equities/WTI, and positive endpoints can coexist with deep later drawdowns.
+
+The same cycles can appear under multiple anchors and windows overlap, so no independent cross-phase p-value/FDR ranking is performed. Realized anchors remain descriptive cycle markers, not identified monetary-policy shocks.
+
 ### Household inflation / energy
 Status: **MECHANISM CANDIDATE / NOT A TRADING SIGNAL**
 
@@ -236,7 +268,7 @@ Current conclusion:
 1. Preserve the failed stock-only rule and FLOW-002 as negative/mechanism evidence; do not retune them.
 2. Design a genuinely weekly/daily PIT commodity event engine to remove monthly-average timing limitations and increase event support.
 3. Freeze an independent geopolitical/physical shock registry before any full P4A claim.
-4. Extend the risk clock across policy-cycle phases: LAST_HIKE, PAUSE_START and FIRST_CUT, using the same monthly path-risk convention and broad-episode weighting.
+4. Add modern stress-state diagnostics where coverage permits: VIX, credit spreads and copper, with explicit support limits and no retrofitted trading thresholds.
 5. Keep revised macro data explicitly separate from true real-time/vintage information; obtain vintage data where feasible before any stronger state claim.
 6. Resolve official announcement timing for registry-only emergency-cut candidates before any emergency-event outcome study.
 7. Continue provenance-safe charts/content cards tied to the evidence ledger.
