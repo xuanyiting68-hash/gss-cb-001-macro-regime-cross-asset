@@ -1,0 +1,35 @@
+name: energy-weekly-analog-v1
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "research/ENERGY_WEEKLY_ANALOG_012_LOCK.md"
+      - "scripts/run_energy_weekly_analog_v1.py"
+      - ".github/workflows/energy-weekly-analog-v1.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  analog:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m pip install --upgrade pip pandas numpy tabulate
+      - run: python scripts/run_energy_weekly_analog_v1.py
+      - name: Commit analog benchmark
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add results/energy_weekly_analog_v1
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Run ENERGY-WEEKLY-ANALOG-012 [skip ci]"
+          git pull --rebase origin main
+          git push
