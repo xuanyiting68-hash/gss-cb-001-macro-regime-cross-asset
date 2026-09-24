@@ -170,3 +170,26 @@ results/fed_cycle_risk_clock_v1/02_cross_asset_mdd_trough_hazard.png,Cross-asset
 results/fed_cycle_risk_clock_v1/03_cross_asset_full_recovery_survival.png,Cross-asset full-recovery survival figure,DESCRIPTIVE,PUBLIC
 results/fed_cycle_risk_clock_v1/04_gold_2015_2022_monthly_risk_clock.png,Gold 2015-vs-2022 monthly risk-clock figure,DESCRIPTIVE,PUBLIC
 content/FED_CYCLE_RISK_CLOCK_CONTENT_005.md,Evidence-linked FIRST_HIKE risk-clock content card,CANONICAL,PUBLIC_SAFE
+research/FED_CYCLE_PHASE_CLOCK_004_LOCK.md,Multi-anchor Fed-cycle phase-clock frozen specification,CANONICAL,PUBLIC_SAFE
+research/FED_CYCLE_PHASE_CLOCK_004_CLOSEOUT.md,Multi-anchor Fed-cycle phase-clock closeout,CANONICAL,PUBLIC_SAFE
+scripts/run_fed_cycle_phase_clock_v1.py,Multi-anchor Fed-cycle phase-clock runner,CANONICAL,PUBLIC_SAFE
+.github/workflows/fed-cycle-phase-clock-v1.yml,Automated multi-anchor phase-clock workflow,CANONICAL,PUBLIC
+results/fed_cycle_phase_clock_v1/SOURCE_REGISTRY.csv,Phase-clock source registry and hashes,QC_PASS,PUBLIC_SAFE
+results/fed_cycle_phase_clock_v1/QC.json,Phase-clock anchor/timing/weight/recovery QC gate,QC_PASS,PUBLIC_SAFE
+results/fed_cycle_phase_clock_v1/PHASE_PATHS.csv,Derived monthly cross-asset paths by policy-cycle anchor,DESCRIPTIVE,PUBLIC_SAFE
+results/fed_cycle_phase_clock_v1/PHASE_CYCLE_ASSET_METRICS.csv,Derived phase-cycle-asset return/drawdown/recovery metrics,DESCRIPTIVE,PUBLIC_SAFE
+results/fed_cycle_phase_clock_v1/PHASE_PATH_SUMMARY.csv,Month-by-month path summaries by asset and anchor,DESCRIPTIVE,PUBLIC_SAFE
+results/fed_cycle_phase_clock_v1/PHASE_TIMING_SUMMARY.csv,12M phase-specific MDD timing summaries,QC_PASS_DESCRIPTIVE,PUBLIC_SAFE
+results/fed_cycle_phase_clock_v1/PHASE_RECOVERY_KM.csv,Phase-specific weighted recovery survival curves,DESCRIPTIVE,PUBLIC_SAFE
+results/fed_cycle_phase_clock_v1/PHASE_RECOVERY_SUMMARY.csv,Phase-specific recovery medians and censoring,QC_PASS_DESCRIPTIVE,PUBLIC_SAFE
+results/fed_cycle_phase_clock_v1/PHASE_COMPARISON.csv,Common-window cross-phase comparison table,QC_PASS_DESCRIPTIVE,PUBLIC_SAFE
+results/fed_cycle_phase_clock_v1/FED_CYCLE_PHASE_CLOCK_004_REPORT.md,Reproducible multi-anchor phase-clock report,QC_PASS_DESCRIPTIVE,PUBLIC_SAFE
+results/fed_cycle_phase_clock_v1/01_gold_phase_running_mdd.png,Gold phase running-MDD figure,DESCRIPTIVE,PUBLIC
+results/fed_cycle_phase_clock_v1/01_sp500_phase_running_mdd.png,S&P phase running-MDD figure,DESCRIPTIVE,PUBLIC
+results/fed_cycle_phase_clock_v1/01_nasdaq_phase_running_mdd.png,Nasdaq phase running-MDD figure,DESCRIPTIVE,PUBLIC
+results/fed_cycle_phase_clock_v1/01_wti_phase_running_mdd.png,WTI phase running-MDD figure,DESCRIPTIVE,PUBLIC
+results/fed_cycle_phase_clock_v1/02_gold_phase_mdd_comparison.png,Gold phase MDD comparison figure,DESCRIPTIVE,PUBLIC
+results/fed_cycle_phase_clock_v1/02_sp500_phase_mdd_comparison.png,S&P phase MDD comparison figure,DESCRIPTIVE,PUBLIC
+results/fed_cycle_phase_clock_v1/02_nasdaq_phase_mdd_comparison.png,Nasdaq phase MDD comparison figure,DESCRIPTIVE,PUBLIC
+results/fed_cycle_phase_clock_v1/02_wti_phase_mdd_comparison.png,WTI phase MDD comparison figure,DESCRIPTIVE,PUBLIC
+content/FED_CYCLE_PHASE_CLOCK_CONTENT_006.md,Evidence-linked first-cut phase-risk content card,CANONICAL,PUBLIC_SAFE
