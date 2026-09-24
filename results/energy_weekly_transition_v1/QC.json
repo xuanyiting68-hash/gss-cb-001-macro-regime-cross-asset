@@ -1,0 +1,23 @@
+{
+  "qc_gate": "PASS",
+  "module": "ENERGY-WEEKLY-TRANSITION-011",
+  "post_run_diagnostic": true,
+  "historical_completed_mixed_events": 10,
+  "prospective_event_included": false,
+  "post_event_timing_violations": 0,
+  "duplicate_post_event_release_violations": 0,
+  "pvalues_generated": false,
+  "thresholds_changed": false,
+  "historical_mixed_events": 10,
+  "ever_clean_within_4": 6,
+  "ever_two_release_confirmed_within_4": 2,
+  "confirmed_by_t2": 0,
+  "confirmed_by_t3": 2,
+  "confirmed_by_t4": 2,
+  "dd_confirmed_within_4": 1,
+  "sn_confirmed_within_4": 1,
+  "candidate_only": 4,
+  "remains_mixed_or_incomplete": 4,
+  "causal_status": "NONE",
+  "deployment_status": "NOT_DEPLOYABLE"
+}
