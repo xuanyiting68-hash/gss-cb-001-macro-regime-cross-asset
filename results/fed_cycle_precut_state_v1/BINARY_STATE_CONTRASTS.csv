@@ -1,0 +1,6 @@
+state,state_value,n_cycles,n_broad_episodes,weighted_median_risk3_trough_month,weighted_median_late_trough_share,weighted_mean_late_trough_share
+REALTIME_GROWTH_CONTRACTION,False,8,6,8.0,1.0,0.9259259259259259
+CURVE_INVERTED,False,4,3,8.0,1.0,0.8333333333333334
+CURVE_INVERTED,True,4,4,8.0,1.0,1.0
+FINANCIAL_CONDITIONS_TIGHT,False,5,5,8.0,1.0,1.0
+FINANCIAL_CONDITIONS_TIGHT,True,3,1,5.0,0.3333333333333333,0.5555555555555556
