@@ -1,0 +1,39 @@
+{
+  "qc_gate": "PASS",
+  "module": "ENERGY-WEEKLY-STATE-004",
+  "pit_clock_qc": "PASS",
+  "release_rows_considered": 1288,
+  "rollover_raw_rows": 44,
+  "selected_events": 17,
+  "first_selected_release": "2004-02-11",
+  "last_selected_release": "2026-09-23",
+  "mechanism_counts": {
+    "TIGHT_OR_MIXED": 11,
+    "DEMAND_DESTRUCTION": 4,
+    "DATA_INCOMPLETE": 1,
+    "SUPPLY_NORMALIZATION": 1
+  },
+  "primary_tests_supported": 0,
+  "primary_bh_fdr_10pct_survivors": 0,
+  "price_timing_violations": 0,
+  "execution_timing_violations": 0,
+  "selected_event_duplicate_dates": 0,
+  "selected_event_spacing_violations": 0,
+  "release_registry_mapping_violations": 0,
+  "weekly_source_duplicate_dates": {
+    "CRUDE_STOCK": 0,
+    "GAS_STOCK": 0,
+    "DIST_STOCK": 0,
+    "REFINERY_UTIL": 0,
+    "GAS_DEMAND": 0,
+    "DIST_DEMAND": 0,
+    "JET_DEMAND": 0,
+    "REFINERY_INPUT": 0,
+    "FIELD_PROD": 0,
+    "CRUDE_IMPORTS": 0
+  },
+  "daily_price_duplicate_dates": 0,
+  "event_thresholds_tuned_after_results": false,
+  "causal_status": "NONE",
+  "deployment_status": "NOT_DEPLOYABLE"
+}

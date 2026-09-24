@@ -1,0 +1,5 @@
+metric,kind,n_supply_normalization,n_tight_or_mixed,status,median_supply_normalization,median_tight_or_mixed,median_difference_sn_minus_mixed,p_two_sided,permutation_method,loo_sign_stable,bh_q_10pct,bh_fdr_10pct_pass
+wti_fwd_8w,return,1,10,INSUFFICIENT_SUPPORT,-0.05748987854251009,0.07077521639882056,,,,False,,False
+wti_fwd_13w,return,1,10,INSUFFICIENT_SUPPORT,-0.13198380566801615,0.06698198440225911,,,,False,,False
+short_mae_8w,mae,1,10,INSUFFICIENT_SUPPORT,0.022186234817813677,0.15240310343503571,,,,False,,False
+short_mae_13w,mae,1,10,INSUFFICIENT_SUPPORT,0.022186234817813677,0.17918745653000856,,,,False,,False
