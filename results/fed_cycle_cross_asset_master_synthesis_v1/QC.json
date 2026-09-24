@@ -1,0 +1,36 @@
+{
+  "qc_gate": "PASS",
+  "module": "FED-CYCLE-CROSS-ASSET-MASTER-SYNTHESIS-021",
+  "upstream_qc_modules": [
+    "FED-CYCLE-PHASE-CLOCK-004",
+    "FED-CYCLE-STRESS-LAYER-005",
+    "FED-CYCLE-ASIA-CREDIT-DIAG-006",
+    "FED-CYCLE-CROSS-ASSET-EXPANSION-014",
+    "FED-CYCLE-SUPPORTED-RECOVERY-MAP-016",
+    "FED-CYCLE-TOTAL-RISK-CLOCK-017"
+  ],
+  "new_price_estimation": false,
+  "new_inference": false,
+  "pvalues_generated": false,
+  "master_asset_phase_rows": 52,
+  "unique_assets": 13,
+  "core_supported_assets": [
+    "DXY",
+    "GOLD",
+    "NASDAQ",
+    "SP500",
+    "WTI"
+  ],
+  "core_supported_asset_phase_rows": 20,
+  "policy_rate_cash_context_rows": 12,
+  "stress_context_rows": 12,
+  "duplicate_asset_phase_rows": 0,
+  "noncanonical_phase_violations": 0,
+  "causal_status_violations": 0,
+  "deployment_status_violations": 0,
+  "deterministic_first_cut_timing_guardrail": true,
+  "private_paper_inputs_used": false,
+  "causal_status": "NONE",
+  "oos_status": "NOT_A_FORECASTING_MODEL",
+  "deployment_status": "NOT_DEPLOYABLE"
+}
