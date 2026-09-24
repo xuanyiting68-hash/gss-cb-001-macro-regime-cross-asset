@@ -1,0 +1,40 @@
+name: fed-cycle-prospective-input-timing-v1
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "scripts/run_fed_cycle_prospective_input_timing_v1.py"
+      - "research/FED_CYCLE_PROSPECTIVE_INPUT_TIMING_010_LOCK.md"
+      - ".github/workflows/fed-cycle-prospective-input-timing-v1.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install dependencies
+        run: python -m pip install --upgrade pip pandas numpy matplotlib tabulate beautifulsoup4 openpyxl
+      - name: Run frozen prospective input timing audit
+        run: python scripts/run_fed_cycle_prospective_input_timing_v1.py
+      - name: Commit QC-passed timing audit outputs
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add results/fed_cycle_prospective_input_timing_v1
+          if git diff --cached --quiet; then
+            echo "No timing-audit result changes"
+            exit 0
+          fi
+          git commit -m "Run FED-CYCLE-PROSPECTIVE-INPUT-TIMING-010 [skip ci]"
+          git pull --rebase origin main
+          git push
