@@ -1,0 +1,2 @@
+anchor,cycle_id,broad_episode_id,cycle_start_year,anchor_date,episode_weight,change_3m_bp,change_6m_bp,change_12m_bp,max_widening_bp,max_tightening_bp,max_widening_month
+FIRST_CUT,T10_2022,B07,2022,2024-09-18,1.0,-61.084886128364424,-19.465838509316804,-57.79051383399212,66.86749482401657,-66.9723320158103,7
