@@ -242,3 +242,15 @@
 - OOS-008 performance is explicitly not inherited by the measurement-amended model.
 - Next step is a separate append-only issuance engine with hard duplicate, timing, input-readiness and no-backfill gates.
 
+## 2026-09-24 — FED-CYCLE-PROSPECTIVE-ISSUANCE-013
+
+- Froze and executed a fail-closed append-only forecast issuer for GCF-012.
+- Issuer requires exact frozen GCF-012 spec/model hashes and the BRIDGE-011 approved status.
+- First run evaluated candidate forecast month 2026-10.
+- Current 2026 edge run remains 1 hike / 25 bp, so the 2-hike / 50 bp activation gate fails.
+- Correct refusal state is WAITING_CYCLE_QUALIFICATION.
+- Because the structural gate failed, the issuer did not fetch live Gold/RTDSM inputs, did not fit a model and did not search backward for missed months.
+- Zero predictions were issued and the canonical prediction registry remains empty.
+- Append-only row-count identity passes.
+- Identified one remaining pre-issuance audit hardening task: add a cryptographic registry hash chain so any future external/manual rewrite of an already committed prediction row is detectable.
+

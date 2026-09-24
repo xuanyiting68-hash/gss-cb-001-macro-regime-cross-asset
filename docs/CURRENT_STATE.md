@@ -455,6 +455,31 @@ The current 2026 edge run is still 1 hike / 25 bp, below the frozen 2-hike / 50 
 
 012 does not inherit OOS-008's preliminary OOS label. Its evidence status is **PROXY_MEASUREMENT_SHADOW_READY_NO_PROSPECTIVE_EVIDENCE**.
 
+#### Append-only prospective issuance gate
+
+Status: **QC-PASSED FAIL-CLOSED ISSUER / WAITING CYCLE QUALIFICATION / ZERO PREDICTIONS / NOT DEPLOYABLE**
+
+PROSPECTIVE-ISSUANCE-013 loads the immutable GCF-012 spec/model hashes and can only append a prediction after every frozen eligibility, timing and input gate passes.
+
+First execution:
+- candidate forecast month: 2026-10;
+- GCF-012 spec hash: matched;
+- frozen training-model hash: matched;
+- BRIDGE-011 status: matched;
+- current 2026 cycle: 1 hike / 25 bp;
+- cycle eligibility: **False**;
+- refusal reason: `WAITING_CYCLE_QUALIFICATION`;
+- live Gold/RTDSM inputs were deliberately not fetched after the structural gate failed;
+- model fitting: none;
+- retroactive month search: none;
+- predictions issued: **0**;
+- registry rows after run: **0**.
+
+The issuer therefore behaves fail-closed rather than manufacturing a forecast before the frozen 2-hike / 50 bp condition is satisfied.
+
+Before a first real issuance, registry integrity should be strengthened with a cryptographic append-only hash chain; this is an audit-engineering amendment and does not alter the research specification.
+
+
 
 
 
@@ -520,7 +545,7 @@ Current conclusion:
 1. Preserve the failed stock-only rule and FLOW-002 as negative/mechanism evidence; do not retune them.
 2. Design a genuinely weekly/daily PIT commodity event engine to remove monthly-average timing limitations and increase event support.
 3. Freeze an independent geopolitical/physical shock registry before any full P4A claim.
-4. PROSPECTIVE-GCF-012 is now frozen and QC-passed with immutable spec/model hashes, but the 2026 edge run remains 1 hike / 25 bp and ineligible. Build the append-only issuance engine next; it must refuse duplicate, retroactive, late or input-incomplete forecasts and must create zero predictions until every frozen gate passes.
+4. PROSPECTIVE-ISSUANCE-013 is QC-passed and correctly refuses the current 1-hike/25bp candidate with zero predictions. Add a cryptographic registry integrity chain before any real issuance; after that, keep the system armed until a genuinely eligible new cycle and complete pre-target inputs coexist.
 5. Resolve official announcement timing for registry-only emergency-cut candidates before any emergency-event outcome study.
 6. Continue provenance-safe charts/content cards tied to the evidence ledger.
 7. Keep paper-specific identification work behind the firewall.

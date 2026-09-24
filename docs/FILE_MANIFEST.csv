@@ -333,3 +333,10 @@ results/fed_cycle_prospective_gcf_v1/CURRENT_CYCLE_GATE.csv,Current prospective-
 results/fed_cycle_prospective_gcf_v1/PREDICTION_REGISTRY.csv,Append-only proxy-measurement prediction registry,CANONICAL_EMPTY_APPEND_ONLY,PUBLIC_SAFE
 results/fed_cycle_prospective_gcf_v1/QC.json,Prospective proxy-model freeze QC,QC_PASS,PUBLIC_SAFE
 results/fed_cycle_prospective_gcf_v1/STATUS.md,Prospective proxy-model status report,QC_PASS,PUBLIC_SAFE
+research/FED_CYCLE_PROSPECTIVE_ISSUANCE_013_LOCK.md,Append-only prospective forecast issuance lock,CANONICAL,PUBLIC_SAFE
+research/FED_CYCLE_PROSPECTIVE_ISSUANCE_013_CLOSEOUT.md,Append-only issuance gate closeout,CANONICAL,PUBLIC_SAFE
+scripts/run_fed_cycle_prospective_issuance_v1.py,Fail-closed prospective forecast issuer,CANONICAL,PUBLIC_SAFE
+.github/workflows/fed-cycle-prospective-issuance-v1.yml,Automated prospective issuance gate workflow,CANONICAL,PUBLIC
+results/fed_cycle_prospective_gcf_v1/ISSUANCE_READINESS.csv,Current issuance eligibility/readiness state,QC_PASS_DESCRIPTIVE,PUBLIC_SAFE
+results/fed_cycle_prospective_gcf_v1/ISSUANCE_QC.json,Append-only issuance operational QC,QC_PASS,PUBLIC_SAFE
+results/fed_cycle_prospective_gcf_v1/ISSUANCE_STATUS.md,Prospective issuance status report,QC_PASS,PUBLIC_SAFE
