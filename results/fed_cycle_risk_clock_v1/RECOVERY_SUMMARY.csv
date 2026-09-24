@@ -1,0 +1,11 @@
+asset,recovery_level,n_legs,n_broad_episodes,observed_recoveries,right_censored,weighted_km_median_months
+GOLD,50%,10,7,8,2,8
+GOLD,100%,10,7,6,4,13
+NASDAQ,50%,10,7,9,1,2
+NASDAQ,100%,10,7,9,1,8
+SP500,50%,10,7,9,1,4
+SP500,100%,10,7,9,1,9
+USD_BROAD,50%,2,2,2,0,3
+USD_BROAD,100%,2,2,2,0,17
+WTI,50%,8,6,8,0,3
+WTI,100%,8,6,7,1,8
