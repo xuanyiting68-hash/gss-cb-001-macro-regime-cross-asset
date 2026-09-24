@@ -514,3 +514,13 @@ results/fed_cycle_precut_state_v1/COMPONENT_SENSITIVITY.csv,Post-run composite c
 results/fed_cycle_precut_state_v1/QC.json,Pre-cut state diagnostic QC,QC_PASS,PUBLIC_SAFE
 results/fed_cycle_precut_state_v1/FED_CYCLE_PRECUT_STATE_019_REPORT.md,Pre-cut state diagnostic report,QC_PASS_DESCRIPTIVE,PUBLIC_SAFE
 prompts/NEXT_SESSION_HANDOFF_20260925.md,Latest public-research session handoff,CANONICAL,PUBLIC_SAFE
+research/FED_CYCLE_PRECUT_STRESS_LEVEL_020_LOCK.md,Continuous predetermined pre-cut stress-level lock,CANONICAL,PUBLIC_SAFE
+research/FED_CYCLE_PRECUT_STRESS_LEVEL_020_CLOSEOUT.md,Continuous pre-cut stress-level closeout,CANONICAL,PUBLIC_SAFE
+scripts/run_fed_cycle_precut_stress_level_v1.py,Continuous pre-cut stress-level diagnostic runner,CANONICAL,PUBLIC_SAFE
+.github/workflows/fed-cycle-precut-stress-level-v1.yml,Automated continuous pre-cut stress-level workflow,CANONICAL,PUBLIC
+results/fed_cycle_precut_stress_level_v1/PRECUT_STRESS_LEVEL_CYCLE_PANEL.csv,Cycle-level continuous pre-cut predictors and risk3 outcomes,DESCRIPTIVE,PUBLIC_SAFE
+results/fed_cycle_precut_stress_level_v1/PRECUT_STRESS_LEVEL_BROAD_PANEL.csv,Broad-episode continuous pre-cut predictor panel,DESCRIPTIVE,PUBLIC_SAFE
+results/fed_cycle_precut_stress_level_v1/CONTINUOUS_RANK_DIAGNOSTICS.csv,Full-sample continuous rank and LOO diagnostics,QC_PASS_DESCRIPTIVE,PUBLIC_SAFE
+results/fed_cycle_precut_stress_level_v1/VIX_COMMON_SAMPLE_AUDIT.csv,VIX common-sample composition audit,QC_PASS_DESCRIPTIVE,PUBLIC_SAFE
+results/fed_cycle_precut_stress_level_v1/QC.json,Continuous pre-cut stress-level QC,QC_PASS,PUBLIC_SAFE
+results/fed_cycle_precut_stress_level_v1/FED_CYCLE_PRECUT_STRESS_LEVEL_020_REPORT.md,Continuous pre-cut stress-level report,QC_PASS_DESCRIPTIVE,PUBLIC_SAFE
