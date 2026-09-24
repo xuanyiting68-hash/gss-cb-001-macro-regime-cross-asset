@@ -1,0 +1,22 @@
+{
+  "qc_gate": "PASS",
+  "module": "FED-CYCLE-PROSPECTIVE-INPUT-TIMING-010",
+  "run_timestamp_utc": "2026-09-24T10:06:32.884777+00:00",
+  "gold_recent_introductions_audited": 6,
+  "gold_positive_release_lag_cases": 6,
+  "gold_all_strict_pre_target_ready": false,
+  "gold_min_release_lag_hours": 51.693888888888885,
+  "gold_max_release_lag_hours": 107.6675,
+  "gold_latest_observation_period": "2026-08",
+  "gold_required_period_for_next_month_probe": "2026-09",
+  "gold_next_month_probe_ready_now": false,
+  "rtdsm_last_vintage": "2026-08",
+  "rtdsm_required_observation_for_next_month_probe": "2026-08",
+  "rtdsm_next_month_probe_yoy_available": false,
+  "transport_status": "SOURCE_TIMING_REPAIR_REQUIRED",
+  "current_probe_status": "CURRENT_SOURCE_REFRESH_PENDING",
+  "prospective_predictions_created": 0,
+  "forecast_performance_evaluated": false,
+  "oos008_spec_changed": false,
+  "deployment_status": "NOT_DEPLOYABLE"
+}

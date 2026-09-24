@@ -1,0 +1,3 @@
+source_object,source,url,source_detail_url,raw_committed
+Gold monthly source and commit history,datasets/gold-prices / World Bank Commodity Markets,https://github.com/datasets/gold-prices,https://www.worldbank.org/en/research/commodity-markets,False
+Real-time industrial production vintages,Federal Reserve Bank of Philadelphia RTDSM IPT,https://www.philadelphiafed.org/surveys-and-data/real-time-data-research/ipt,https://www.philadelphiafed.org/-/media/FRBP/Assets/Surveys-And-Data/real-time-data/data-files/xlsx/iptMvMd.xlsx?sc_lang=en&hash=71A0CD9AD2C8828F0B041196CBFB7E5E,False
