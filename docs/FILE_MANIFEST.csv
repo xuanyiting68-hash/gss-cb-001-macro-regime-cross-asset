@@ -300,3 +300,13 @@ results/fed_cycle_prospective_shadow_v1/MODEL_SPEC.json,Frozen prospective B0/B1
 results/fed_cycle_prospective_shadow_v1/PROSPECTIVE_CYCLE_GATE.csv,Current edge-cycle eligibility gate,QC_PASS_DESCRIPTIVE,PUBLIC_SAFE
 results/fed_cycle_prospective_shadow_v1/PREDICTION_REGISTRY.csv,Append-only prospective prediction registry,CANONICAL_EMPTY_APPEND_ONLY,PUBLIC_SAFE
 results/fed_cycle_prospective_shadow_v1/STATUS.md,Prospective shadow current status report,QC_PASS,PUBLIC_SAFE
+research/FED_CYCLE_PROSPECTIVE_INPUT_TIMING_010_LOCK.md,Strict live-input timing audit lock,CANONICAL,PUBLIC_SAFE
+research/FED_CYCLE_PROSPECTIVE_INPUT_TIMING_010_CLOSEOUT.md,Prospective input timing audit closeout,CANONICAL,PUBLIC_SAFE
+scripts/run_fed_cycle_prospective_input_timing_v1.py,Gold/RTDSM source timing audit runner,CANONICAL,PUBLIC_SAFE
+.github/workflows/fed-cycle-prospective-input-timing-v1.yml,Automated prospective source-timing workflow,CANONICAL,PUBLIC
+results/fed_cycle_prospective_input_timing_v1/GOLD_SOURCE_RELEASE_AUDIT.csv,Recent Gold monthly first-seen timing audit,QC_PASS_NEGATIVE,PUBLIC_SAFE
+results/fed_cycle_prospective_input_timing_v1/GOLD_SOURCE_COMMIT_SNAPSHOTS.csv,Gold source commit/latest-period audit trail,QC_PASS,PUBLIC_SAFE
+results/fed_cycle_prospective_input_timing_v1/RTDSM_READINESS.csv,Current real-time IPT readiness probe,QC_PASS_DESCRIPTIVE,PUBLIC_SAFE
+results/fed_cycle_prospective_input_timing_v1/SOURCE_REGISTRY.csv,Timing-audit source registry,QC_PASS,PUBLIC_SAFE
+results/fed_cycle_prospective_input_timing_v1/QC.json,Prospective input timing QC and transport status,QC_PASS_NEGATIVE,PUBLIC_SAFE
+results/fed_cycle_prospective_input_timing_v1/FED_CYCLE_PROSPECTIVE_INPUT_TIMING_010_REPORT.md,Reproducible prospective input timing report,QC_PASS_NEGATIVE,PUBLIC_SAFE

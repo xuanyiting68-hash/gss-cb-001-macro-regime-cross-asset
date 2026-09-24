@@ -199,3 +199,15 @@
 - Added immutable model-spec hashing and an append-only prediction registry schema for issue timestamps, source/input provenance, predictions, realized targets and errors.
 - Current registry contains 0 predictions. Evidence status is PROSPECTIVE_ARCHITECTURE_FROZEN_ARMED_NO_NEW_FORECAST_EVIDENCE / NOT_DEPLOYABLE.
 
+## 2026-09-24 — FED-CYCLE-PROSPECTIVE-INPUT-TIMING-010
+
+- Froze and ran a strict live-input timing audit before any prospective Gold prediction.
+- Reconstructed recent first-seen availability from the public `datasets/gold-prices` monthly-file commit history.
+- All 6/6 recent uncensored monthly Gold observations arrived after the following target month had already begun.
+- Release lag is 51.7-107.7 hours after next-month start, so the exact OOS-008 World-Bank-monthly Gold feature contract cannot satisfy strict pre-target issuance.
+- Current RTDSM probe for a hypothetical 2026-10 forecast also remains incomplete: last vintage is 2026-08 and the frozen August IPT YoY input is not yet available under the same-vintage rule.
+- QC passes because the audit successfully identifies a negative transport result; no prediction or forecast-performance test is created.
+- OOS-008 and SHADOW-009 remain unchanged; B04-B07 remain consumed.
+- Exact same-definition daily Gold replacement is nontrivial because FRED removed IBA/LBMA Gold Price data in 2022 and benchmark use/licensing constraints remain.
+- Next task: pre-freeze a Gold live-source feature-equivalence bridge before any prospective B08 issuance.
+

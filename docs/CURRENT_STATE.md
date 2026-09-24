@@ -377,6 +377,32 @@ Model specification SHA256:
 
 This milestone is forecasting infrastructure, not new positive forecast evidence. No B08 forecast is issued yet.
 
+#### Prospective input timing audit
+
+Status: **QC-PASSED SOURCE-TIMING AUDIT / EXACT OOS-008 LIVE TRANSPORT FAILS / REPAIR REQUIRED / NOT DEPLOYABLE**
+
+INPUT-TIMING-010 tests whether the exact historical OOS-008 input contract can be used in SHADOW-009 before any part of the forecast target month is observed.
+
+Gold source audit:
+- 6 recent uncensored monthly introductions reconstructed from `datasets/gold-prices` commit history;
+- **6/6** first appear only after the following month has already begun;
+- release lag versus next-month start ranges from **51.7 to 107.7 hours**;
+- exact pre-target Gold input availability therefore fails.
+
+Current RTDSM probe:
+- next-month probe 2026-10;
+- required IPT observation 2026-08;
+- last workbook vintage 2026-08;
+- frozen RT-IPT YoY not yet computable for that probe;
+- classified as current source refresh pending, not yet a permanent RTDSM structural failure.
+
+Result:
+
+**SOURCE_TIMING_REPAIR_REQUIRED.**
+
+No forecast is issued, no forecast performance is evaluated, OOS-008 is unchanged and B04-B07 remain consumed. The next research task is a separately frozen Gold live-source bridge audit; any proxy specification starts without inherited prospective validation evidence.
+
+
 
 ### Household inflation / energy
 Status: **MECHANISM CANDIDATE / NOT A TRADING SIGNAL**
@@ -439,7 +465,7 @@ Current conclusion:
 1. Preserve the failed stock-only rule and FLOW-002 as negative/mechanism evidence; do not retune them.
 2. Design a genuinely weekly/daily PIT commodity event engine to remove monthly-average timing limitations and increase event support.
 3. Freeze an independent geopolitical/physical shock registry before any full P4A claim.
-4. Keep PROSPECTIVE-SHADOW-009 armed. The 2026 edge run is currently 1 hike / 25 bp and fails the frozen 2-hike / 50 bp eligibility rule, so no B08 forecast is issued. If a genuinely new cycle later qualifies, begin append-only prospective prediction issuance with the frozen M3 specification; never backfill earlier months or tune on B04-B07.
+4. Keep PROSPECTIVE-SHADOW-009 armed but do not issue a forecast yet. INPUT-TIMING-010 shows the exact World-Bank-monthly Gold input contract arrives 51.7-107.7 hours after the target month begins in all 6 recent audited releases. Freeze and test a separate live Gold source bridge before any B08 issuance; never backfill earlier months or tune on B04-B07.
 5. Resolve official announcement timing for registry-only emergency-cut candidates before any emergency-event outcome study.
 6. Continue provenance-safe charts/content cards tied to the evidence ledger.
 7. Keep paper-specific identification work behind the firewall.
