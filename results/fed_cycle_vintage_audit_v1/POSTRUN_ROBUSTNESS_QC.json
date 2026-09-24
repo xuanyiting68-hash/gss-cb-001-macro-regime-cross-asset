@@ -1,0 +1,21 @@
+{
+  "qc_gate": "PASS",
+  "module": "FED-CYCLE-VINTAGE-AUDIT-007-POSTRUN-ROBUSTNESS",
+  "panel_rows": 165,
+  "paired_rows": 165,
+  "pearson_corr_current_vs_realtime": 0.900119178505424,
+  "median_abs_revision_gap_pp": 1.0348704949608798,
+  "p90_abs_revision_gap_pp": 2.7358872025074117,
+  "max_abs_revision_gap_pp": 3.8947759998957094,
+  "full_realtime_beta": -0.019647250844761925,
+  "full_realtime_p_broad": 0.015625,
+  "exclude_2022_realtime_beta": -0.014870173234326822,
+  "exclude_2022_realtime_p_broad": 0.03125,
+  "later_realtime_beta": -0.029870692505882913,
+  "later_realtime_p_broad": 0.0625,
+  "all_full_broad_scores_same_sign": true,
+  "interpretation": "POST_RUN_ROBUSTNESS_ONLY",
+  "causal_status": "NONE",
+  "oos_status": "NOT_A_FORECASTING_MODEL",
+  "deployment_status": "NOT_DEPLOYABLE"
+}
