@@ -374,3 +374,16 @@
 - Median historical short MAE is +15.48% at 8W and +18.21% at 13W.
 - This strengthens the prospective reference behind the bearish-confirmation veto but is explicitly not a validated forecast.
 
+
+## 2026-09-24 — FED-CYCLE-CROSS-ASSET-EXPANSION-014
+
+- Froze the duration / REIT / Bitcoin / DXY / housing / Treasury-yield / cash-carry extension before execution.
+- Added a reproducible GitHub Actions runner; the first workflow attempt failed only because `matplotlib` was missing from the environment, then passed after the dependency-only repair. The frozen research design was unchanged.
+- QC passed on 10 mechanical tightening cycles / 7 broad episodes with zero current-2026 outcome leakage and zero weighting/support-label violations.
+- Added TLT and VNQ adjusted-close proxies, BTC-USD, DXY, Case-Shiller national house prices, DGS2/DGS10 and a mechanical DFF cash benchmark.
+- Long-history rates show the clearest phase structure: weighted median +12M DGS2/DGS10 changes are about +123/+56bp after FIRST_HIKE, -128/-108bp after PAUSE_START and -167/-20bp after FIRST_CUT.
+- Mechanical 12M cash carry is highest in the historical LAST_HIKE / PAUSE medians at about 5.9%.
+- TLT/VNQ/BTC remain limited to 2-3 broad episodes and are explicitly not promoted into universal cycle rules.
+- National nominal housing medians remain positive in most phase cells but the 2007 FIRST_CUT episode falls about 17% over 24 months with an 18.7% decline, so tail risk is preserved rather than hidden by the median.
+- No raw Yahoo or copyrighted Case-Shiller source history was committed.
+- Evidence class remains descriptive; no causal, FDR, OOS or deployment claim was made.
