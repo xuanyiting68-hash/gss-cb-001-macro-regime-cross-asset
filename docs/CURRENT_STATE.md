@@ -1171,3 +1171,26 @@ Content-ready case contrasts include:
 These are descriptive historical paths. They do not establish Fed causality or identify a current-cycle analog. The 019/020 timing-rule branch remains closed.
 
 Next priority: **022A Historical Context Registry** using independently sourced public historical macro/event context with source-level provenance. After 022A, combine 021 + 022/022A into the claim registry, figure registry and reusable content production library.
+
+## Historical Context Registry — 022A
+
+Status: **QC-PASSED OFFICIAL-SOURCE CONTEXT REGISTRY / ANTI-HINDSIGHT LAYER / NOT CAUSAL / NOT A FORECAST / NOT DEPLOYABLE**
+
+022A adds 18 source-audited context claims across the six 022 cases using 21 normalized official-source links. It does not alter the canonical policy chronology or market outcomes.
+
+Claim-time classes:
+- CONTEMPORANEOUS_POLICY_CONTEXT = 6;
+- RETROSPECTIVE_DATING = 6;
+- RETROSPECTIVE_EVENT_CONTEXT = 4;
+- POST_ANCHOR_SHOCK = 2.
+
+Binding anti-hindsight rules:
+- the March 2001 recession peak was later NBER dating and was not officially known at the January 2001 first cut;
+- the December 2007 recession peak was later NBER dating and was not officially known at the September 2007 first cut;
+- September 11 is a later shock inside the 2001 post-cut path;
+- COVID is a later shock inside the 2019 post-cut path and must not be inserted into the July 2019 policy rationale;
+- B07 NBER chronology is only an as-of-2026-09-25 official-source audit, not a forecast.
+
+The combined content-ready evidence object is now: `policy chronology -> what was known then -> asset path -> stress/trough path -> later official dating -> later shock context -> evidence boundary`.
+
+Next priority: **022B Content Claim Registry**, then **023 Real-Time Regime Dashboard**. The claim registry should be the single source of truth for reusable script/article/image-card claims. Prospective Fed/energy registries remain append-only under their frozen gates.
