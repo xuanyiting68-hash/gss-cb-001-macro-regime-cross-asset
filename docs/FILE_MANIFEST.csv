@@ -241,3 +241,29 @@ results/fed_cycle_asia_credit_diag_v1/01_kospi_phase_mdd.png,KOSPI phase MDD fig
 results/fed_cycle_asia_credit_diag_v1/02_us_high_yield_oas_phase_widening.png,Current-coverage HY OAS figure,INSUFFICIENT_SUPPORT,PUBLIC
 results/fed_cycle_asia_credit_diag_v1/03_hyg_price_proxy_phase_mdd.png,HYG limited-support MDD phase figure,LIMITED_SUPPORT,PUBLIC
 content/FED_CYCLE_ASIA_CREDIT_CONTENT_008.md,Evidence-linked Asia first-cut risk content card,CANONICAL,PUBLIC_SAFE
+research/FED_CYCLE_VINTAGE_AUDIT_007_LOCK.md,Real-time industrial-production revision audit frozen specification,CANONICAL,PUBLIC_SAFE
+research/FED_CYCLE_VINTAGE_AUDIT_007_POSTRUN_ROBUSTNESS.md,Post-run real-time IPT robustness protocol,POSTRUN_DIAGNOSTIC,PUBLIC_SAFE
+research/FED_CYCLE_VINTAGE_AUDIT_007_EVENT_CONTRAST_IMPACT.md,Post-run event growth-label revision impact protocol,POSTRUN_DIAGNOSTIC,PUBLIC_SAFE
+research/FED_CYCLE_VINTAGE_AUDIT_007_CLOSEOUT.md,Real-time industrial-production vintage audit closeout,CANONICAL,PUBLIC_SAFE
+scripts/run_fed_cycle_vintage_audit_v1.py,Official RTDSM industrial-production vintage audit runner,CANONICAL,PUBLIC_SAFE
+scripts/audit_fed_cycle_vintage_v1_robustness.py,Post-run real-time IPT restriction/score robustness runner,POSTRUN_DIAGNOSTIC,PUBLIC_SAFE
+scripts/audit_fed_cycle_vintage_event_contrast.py,Event-level real-time growth-label impact runner,POSTRUN_DIAGNOSTIC,PUBLIC_SAFE
+.github/workflows/fed-cycle-vintage-audit-v1.yml,Automated real-time IPT vintage audit workflow,CANONICAL,PUBLIC
+.github/workflows/fed-cycle-vintage-audit-robustness.yml,Automated post-run vintage robustness workflow,CANONICAL,PUBLIC
+.github/workflows/fed-cycle-vintage-event-contrast.yml,Automated event label-impact audit workflow,CANONICAL,PUBLIC
+results/fed_cycle_vintage_audit_v1/SOURCE_REGISTRY.csv,Philadelphia Fed RTDSM IPT provenance and workbook hash,QC_PASS,PUBLIC_SAFE
+results/fed_cycle_vintage_audit_v1/WORKBOOK_SCHEMA_AUDIT.csv,RTDSM IPT workbook schema/parser audit,QC_PASS,PUBLIC_SAFE
+results/fed_cycle_vintage_audit_v1/QC.json,Real-time IPT timing/parser/support QC gate,QC_PASS,PUBLIC_SAFE
+results/fed_cycle_vintage_audit_v1/EVENT_REVISION_AUDIT.csv,FIRST_HIKE current-versus-real-time growth revision audit,QC_PASS_DESCRIPTIVE,PUBLIC_SAFE
+results/fed_cycle_vintage_audit_v1/PANEL_REALTIME_IPT.csv,Derived 165-row real-time IPT panel,ASSOCIATIONAL,PUBLIC_SAFE
+results/fed_cycle_vintage_audit_v1/PANEL_REVISION_TESTS.csv,Same-sample current-versus-real-time Gold panel tests,ASSOCIATIONAL_ROBUSTNESS,PUBLIC_SAFE
+results/fed_cycle_vintage_audit_v1/POSTRUN_RESTRICTION_AUDIT.csv,Post-run 2022/era restriction robustness,POSTRUN_DIAGNOSTIC,PUBLIC_SAFE
+results/fed_cycle_vintage_audit_v1/REALTIME_RETURN_BROAD_SCORE_AUDIT.csv,Broad-episode real-time return score contributions,POSTRUN_DIAGNOSTIC,PUBLIC_SAFE
+results/fed_cycle_vintage_audit_v1/PANEL_REVISION_SIZE_AUDIT.csv,Monthly current-versus-real-time revision magnitude audit,QC_PASS_DESCRIPTIVE,PUBLIC_SAFE
+results/fed_cycle_vintage_audit_v1/POSTRUN_ROBUSTNESS_QC.json,Post-run robustness QC/summary,QC_PASS,PUBLIC_SAFE
+results/fed_cycle_vintage_audit_v1/POSTRUN_ROBUSTNESS_REPORT.md,Post-run real-time IPT robustness report,POSTRUN_DIAGNOSTIC,PUBLIC_SAFE
+results/fed_cycle_vintage_audit_v1/EVENT_GROWTH_CONTRAST_REVISION_AUDIT.csv,Current-versus-real-time event growth-state Gold medians,POSTRUN_DESCRIPTIVE,PUBLIC_SAFE
+results/fed_cycle_vintage_audit_v1/EVENT_CONTRAST_IMPACT_QC.json,Event contrast impact QC/summary,QC_PASS,PUBLIC_SAFE
+results/fed_cycle_vintage_audit_v1/EVENT_CONTRAST_IMPACT_REPORT.md,Event growth-label revision impact report,POSTRUN_DESCRIPTIVE,PUBLIC_SAFE
+results/fed_cycle_vintage_audit_v1/FED_CYCLE_VINTAGE_AUDIT_007_REPORT.md,Reproducible real-time industrial-production revision report,QC_PASS_ASSOCIATIONAL,PUBLIC_SAFE
+content/FED_CYCLE_VINTAGE_CONTENT_009.md,Evidence-linked real-time macro revision content card,CANONICAL,PUBLIC_SAFE
