@@ -1,0 +1,38 @@
+name: fed-cycle-precut-state-v1
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "research/FED_CYCLE_PRECUT_STATE_019_LOCK.md"
+      - "scripts/run_fed_cycle_precut_state_v1.py"
+      - "results/fed_cycle_state_panel_v2/MONTHLY_STATE_PANEL.csv"
+      - "results/fed_cycle_vintage_audit_v1/PANEL_REALTIME_IPT.csv"
+      - "results/fed_cycle_total_risk_clock_v1/SUPPORTED_EVENT_TOTAL_CLOCK.csv"
+      - ".github/workflows/fed-cycle-precut-state-v1.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  diagnostic:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m pip install --upgrade pip pandas numpy tabulate
+      - run: python scripts/run_fed_cycle_precut_state_v1.py
+      - name: Commit pre-cut state diagnostic
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add results/fed_cycle_precut_state_v1
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Run FED-CYCLE-PRECUT-STATE-019 [skip ci]"
+          git pull --rebase origin main
+          git push
