@@ -1,0 +1,17 @@
+{
+  "qc_gate": "PASS",
+  "module": "FED-CYCLE-ASIA-CREDIT-DIAG-006-HYG-PROXY",
+  "symbol": "HYG",
+  "source_first_date": "2007-04-11",
+  "source_last_date": "2026-09-23",
+  "cycle_phase_rows": 9,
+  "weight_violations": 0,
+  "anchor_violations": 0,
+  "negative_mdd_violations": 0,
+  "support_label_violations": 0,
+  "raw_source_history_committed": false,
+  "interpretation": "LIMITED_SUPPORT_HIGH_YIELD_PRICE_PROXY_NOT_OAS",
+  "causal_status": "NONE",
+  "oos_status": "NOT_A_FORECASTING_MODEL",
+  "deployment_status": "NOT_DEPLOYABLE"
+}

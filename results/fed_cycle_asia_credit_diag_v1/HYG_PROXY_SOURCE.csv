@@ -1,0 +1,2 @@
+name,series_id_or_symbol,source,url,acquisition_method,retrieved_utc,sha256,raw_bytes,rows_total,rows_nonmissing,first_date,last_date,raw_committed
+HYG_PRICE_PROXY,HYG,Yahoo Finance public chart history,https://query1.finance.yahoo.com/v8/finance/chart/HYG?period1=0&period2=1893456000&interval=1d&events=history&includeAdjustedClose=true,YAHOO_FINANCE_CHART_JSON,2026-09-24T05:37:37.172560+00:00,9b3d702353e498ca9572a3109eeac4c4e996175f87925cbd03df0583f641db99,518199,4894,4894,2007-04-11,2026-09-23,False
