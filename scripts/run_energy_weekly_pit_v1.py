@@ -210,7 +210,9 @@ def build_2026(common_week_ends):
 
 def main():
     hist,hist_meta=build_full_twip_registry()
-    if hist.empty or "week_end" not in hist.columns:\n        raise RuntimeError(f"TWIP year-section discovery returned no rows; meta={hist_meta}")\n    hist=hist[(hist.week_end.dt.year>=2002)&(hist.week_end.dt.year<=2025)].copy()
+    if hist.empty or "week_end" not in hist.columns:
+        raise RuntimeError(f"TWIP year-section discovery returned no rows; meta={hist_meta}")
+    hist=hist[(hist.week_end.dt.year>=2002)&(hist.week_end.dt.year<=2025)].copy()
 
     pdata={}
     pmeta=[]
