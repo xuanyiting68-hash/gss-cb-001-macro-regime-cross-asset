@@ -207,6 +207,31 @@ The phase map therefore does **not** support a universal "first cut = risk is ov
 
 The same cycles can appear under multiple anchors and windows overlap, so no independent cross-phase p-value/FDR ranking is performed. Realized anchors remain descriptive cycle markers, not identified monetary-policy shocks.
 
+
+#### Fed-cycle stress-state layer
+
+Status: **QC-PASSED DESCRIPTIVE STRESS MAP / MECHANISM CONTEXT ONLY / NOT DEPLOYABLE**
+
+STRESS-LAYER-005 adds VIX, Moody's Baa-minus-10Y spread and copper to the same four policy phases.
+
+All **12/12 observable × phase cells** pass the frozen support rule.
+
+FIRST_CUT versus FIRST_HIKE broad-episode-weighted median stress:
+
+- VIX maximum 12M increase: **+8.53 points vs +4.26**;
+- Baa–10Y maximum widening: **+38 bp vs +16 bp**;
+- copper 12M MDD: **19.96% vs 6.84%**.
+
+FIRST_CUT stress timing:
+
+- VIX median maximum-stress month 8;
+- Baa spread median maximum-widening month 7;
+- copper median MDD-trough month 9.
+
+Together with PHASE-CLOCK-004, this is consistent with FIRST_CUT often occurring around a broader deterioration/stress transition rather than an immediate all-clear state.
+
+This is **mechanism context, not causal evidence**: the Fed can cut in response to worsening conditions, making endogeneity/reverse causality central. No optimized stress thresholds, p-value/FDR family, OOS forecast or deployment claim are produced.
+
 ### Household inflation / energy
 Status: **MECHANISM CANDIDATE / NOT A TRADING SIGNAL**
 
@@ -268,7 +293,7 @@ Current conclusion:
 1. Preserve the failed stock-only rule and FLOW-002 as negative/mechanism evidence; do not retune them.
 2. Design a genuinely weekly/daily PIT commodity event engine to remove monthly-average timing limitations and increase event support.
 3. Freeze an independent geopolitical/physical shock registry before any full P4A claim.
-4. Add modern stress-state diagnostics where coverage permits: VIX, credit spreads and copper, with explicit support limits and no retrofitted trading thresholds.
+4. Extend the public cross-asset layer only where support is credible: consider China/Asia indices and high-yield credit as limited-support diagnostics rather than forcing them into the long-history primary sample.
 5. Keep revised macro data explicitly separate from true real-time/vintage information; obtain vintage data where feasible before any stronger state claim.
 6. Resolve official announcement timing for registry-only emergency-cut candidates before any emergency-event outcome study.
 7. Continue provenance-safe charts/content cards tied to the evidence ledger.
