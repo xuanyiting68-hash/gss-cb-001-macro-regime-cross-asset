@@ -1,0 +1,9 @@
+{
+  "schema_version": "ENERGY_PORTWATCH_RESOLUTION_010_V1",
+  "registry_sha256": "db346f5afe81c039fd416b5c22b65d20c8219571f6e6662d6d9aa91ebb1a6aad",
+  "registry_rows": 1,
+  "genesis_hash": "ca1e4ae3122570d35ab77f50ec54a2008bc619dcc472d732985cb56bd1b585ee",
+  "tail_hash": "b2bb693a91fca7f5e00c63c62f99b1cfa1b01a13545d42960d0cc03ce4643e25",
+  "current_state": "CRITICAL_TRAFFIC_STRESS",
+  "external_supply_shock_context_active": true
+}

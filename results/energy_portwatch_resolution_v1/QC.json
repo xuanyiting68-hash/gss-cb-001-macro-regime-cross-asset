@@ -1,0 +1,15 @@
+{
+  "qc_gate": "PASS",
+  "module": "ENERGY-PORTWATCH-RESOLUTION-010",
+  "new_snapshot_appended": true,
+  "registry_rows": 1,
+  "latest_settled_date": "2026-09-20",
+  "active_relevant_red_disruptions": 2,
+  "petroleum_traffic_stress": true,
+  "current_state": "CRITICAL_TRAFFIC_STRESS",
+  "clean_snapshot_streak": 0,
+  "external_supply_shock_context_active": true,
+  "first_snapshot_expected_state_pass": true,
+  "wti_outcomes_loaded": false,
+  "deployment_status": "NOT_DEPLOYABLE"
+}
