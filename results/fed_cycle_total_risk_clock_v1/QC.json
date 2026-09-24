@@ -1,0 +1,20 @@
+{
+  "qc_gate": "PASS",
+  "module": "FED-CYCLE-TOTAL-RISK-CLOCK-017",
+  "supported_asset_anchor_cells": 21,
+  "fully_supported_four_phase_assets": [
+    "DXY",
+    "GOLD",
+    "NASDAQ",
+    "SP500",
+    "WTI"
+  ],
+  "total_duration_before_trough_violations": 0,
+  "total_recovery_order_violations": 0,
+  "first_cut_slower_than_pause_total100_count": 3,
+  "first_cut_equal_pause_total100_count": 2,
+  "first_cut_faster_than_pause_total100_count": 0,
+  "new_price_estimation": false,
+  "causal_status": "NONE",
+  "deployment_status": "NOT_DEPLOYABLE"
+}
