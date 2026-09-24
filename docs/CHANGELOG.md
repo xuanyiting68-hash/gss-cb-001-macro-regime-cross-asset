@@ -128,3 +128,15 @@
 - No cross-phase significance test is run because the same cycles can enter multiple anchors and post-anchor windows can overlap.
 - Added an evidence-linked content card: “第一次降息，就代表风险结束了吗？”
 - Next public-safe extension is modern stress-state diagnostics such as VIX, credit spreads and copper where support permits.
+
+## 2026-09-24 — FED-CYCLE-STRESS-LAYER-005
+
+- Froze and executed VIX, Baa-minus-10Y credit-spread and copper stress paths under the same FIRST_HIKE/LAST_HIKE/PAUSE_START/FIRST_CUT phase ontology.
+- QC passed with 924 stress-path rows, 77 stress-cycle-phase rows and all 12 observable × phase cells supported.
+- FIRST_CUT has the largest median maximum monthly-average VIX increase (+8.53 points) versus +4.26 after FIRST_HIKE.
+- FIRST_CUT has the largest median maximum Baa-10Y widening (+38 bp) versus +16 bp after FIRST_HIKE.
+- Copper median 12M MDD is 19.96% after FIRST_CUT versus 6.84% after FIRST_HIKE.
+- Stress peaks are also relatively late after FIRST_CUT: median month 8 for VIX, 7 for credit widening and 9 for copper MDD.
+- Combined with PHASE-CLOCK-004, this supports a mechanism-context interpretation that first cuts often occur around broader stress/deterioration transitions; it does not identify a causal effect of the cut.
+- No optimized stress thresholds, p-value/FDR family, OOS forecast or deployment rule are produced.
+- Added an evidence-linked content card: “为什么第一次降息时，市场反而可能更危险？”
