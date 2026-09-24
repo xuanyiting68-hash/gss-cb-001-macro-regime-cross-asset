@@ -1,0 +1,2 @@
+candidate_first_hike,candidate_last_observed_hike,n_hikes,cumulative_hike_bp,target_before_first_hike,target_after_last_observed_hike,qualifies_frozen_cycle_rule,months_from_last_broad_first_hike,prospective_broad_episode_if_qualified,earliest_forecast_month_if_qualified_now,status
+2026-09-16,2026-09-16,1,25.000000,3.625,3.875,False,54,B08,,ARMED_WAITING_FROZEN_CYCLE_QUALIFICATION

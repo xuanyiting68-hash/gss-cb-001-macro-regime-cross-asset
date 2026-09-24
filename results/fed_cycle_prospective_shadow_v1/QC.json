@@ -1,0 +1,27 @@
+{
+  "qc_gate": "PASS",
+  "module": "FED-CYCLE-PROSPECTIVE-SHADOW-009",
+  "model_spec_sha256": "fcaebf36a65ccd12dd7aa1cbb83450589e37ea852b638ad0cb60f43f2d16558b",
+  "policy_rows": 185,
+  "duplicate_policy_event_dates": 0,
+  "unsorted_policy_registry": 0,
+  "direction_sign_violations": 0,
+  "current_candidate_first_hike": "2026-09-16",
+  "current_candidate_hikes": 1,
+  "current_candidate_cumulative_hike_bp": 25.0,
+  "current_candidate_qualifies": false,
+  "prospective_broad_episode_if_qualified": "B08",
+  "prediction_registry_rows": 0,
+  "automatic_prediction_rows_created": 0,
+  "retroactive_prediction_allowed": false,
+  "within_episode_refit_allowed": false,
+  "historical_oos_consumed": [
+    "B04",
+    "B05",
+    "B06",
+    "B07"
+  ],
+  "historical_oos_spec_tuning_allowed": false,
+  "evidence_status": "PROSPECTIVE_ARCHITECTURE_FROZEN_ARMED_NO_NEW_FORECAST_EVIDENCE",
+  "deployment_status": "NOT_DEPLOYABLE"
+}

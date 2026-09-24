@@ -1,0 +1,54 @@
+{
+  "active_episode_outcomes_in_training": false,
+  "cycle_eligibility": {
+    "min_cumulative_hike_bp": 50.0,
+    "min_positive_changes": 2,
+    "same_as": "FED-CYCLE-PATH-001"
+  },
+  "d4_live": false,
+  "deployment_status": "NOT_DEPLOYABLE",
+  "frozen_date": "2026-09-24",
+  "live_models": [
+    "B0_HIST_MEAN",
+    "B1_GOLD_HISTORY",
+    "B2_GOLD_PLUS_CYCLE_AGE",
+    "M3_PLUS_REALTIME_IPT"
+  ],
+  "model_spec_sha256": "fcaebf36a65ccd12dd7aa1cbb83450589e37ea852b638ad0cb60f43f2d16558b",
+  "models": {
+    "B0_HIST_MEAN": [],
+    "B1_GOLD_HISTORY": [
+      "GOLD_RET_3M_LAGGED",
+      "GOLD_RET_6M_LAGGED",
+      "GOLD_VOL_6M_LAGGED"
+    ],
+    "B2_GOLD_PLUS_CYCLE_AGE": [
+      "GOLD_RET_3M_LAGGED",
+      "GOLD_RET_6M_LAGGED",
+      "GOLD_VOL_6M_LAGGED",
+      "CYCLE_AGE_MONTHS"
+    ],
+    "M3_PLUS_REALTIME_IPT": [
+      "GOLD_RET_3M_LAGGED",
+      "GOLD_RET_6M_LAGGED",
+      "GOLD_VOL_6M_LAGGED",
+      "CYCLE_AGE_MONTHS",
+      "RT_IPT_YOY"
+    ]
+  },
+  "module": "FED-CYCLE-PROSPECTIVE-SHADOW-009",
+  "refit_policy": "FIT_ONCE_AT_NEW_ELIGIBLE_BROAD_EPISODE_USING_PRIOR_EPISODES_ONLY",
+  "retroactive_predictions": false,
+  "standardization": "TRAINING_ONLY",
+  "target": "GOLD_FWD_6M_RET",
+  "training_weights": "EACH_BROAD_EPISODE_TOTAL_1_THEN_EQUAL_CYCLE_TOTAL_THEN_EQUAL_ROWS",
+  "upstream_consumed_oos": [
+    "B04",
+    "B05",
+    "B06",
+    "B07"
+  ],
+  "upstream_module": "FED-CYCLE-GOLD-OOS-008",
+  "version": "v1",
+  "within_episode_refit": false
+}
