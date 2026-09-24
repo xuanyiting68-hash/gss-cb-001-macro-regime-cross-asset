@@ -37,6 +37,116 @@ PHYS=load_module(
 SCHEDULE_URL="https://www.eia.gov/petroleum/supply/weekly/schedule.php"
 SERIES=["WCESTUS1","WGTSTUS1","WDISTUS1","WPULEUS3"]
 
+MONTHS={
+    "January":1,"February":2,"March":3,"April":4,"May":5,"June":6,
+    "July":7,"August":8,"September":9,"October":10,"November":11,"December":12,
+}
+
+def build_full_twip_registry():
+    raw=fetch_bytes(PHYS.TWIP_URL,timeout=90)
+    soup=BeautifulSoup(raw,"html.parser")
+    sections={}
+    # Modern page uses a mixture of visible headings and anchor/id section markers.
+    for tag in soup.find_all(True):
+        candidates=[]
+        tid=str(tag.get("id","")).strip()
+        if re.fullmatch(r"20\\d{2}",tid):
+            candidates.append(int(tid))
+        if tag.name in {"h1","h2","h3","h4","h5","h6"}:
+            txt=tag.get_text(" ",strip=True)
+            if re.fullmatch(r"20\\d{2}",txt):
+                candidates.append(int(txt))
+        for year in candidates:
+            if 2002<=year<=2025 and year not in sections:
+                table=tag.find_next("table")
+                if table is not None:
+                    sections[year]=table
+
+    rows=[]
+    for year,table in sorted(sections.items()):
+        current_month=None
+        for tr in table.find_all("tr"):
+            cells=[c.get_text(" ",strip=True) for c in tr.find_all(["th","td"])]
+            if len(cells)<2:
+                continue
+            if any("Release date" in c for c in cells):
+                continue
+
+            if cells[0] in MONTHS and len(cells)>=3:
+                current_month=MONTHS[cells[0]]
+                rel_month=current_month
+                rel_day=cells[1]
+                week_txt=cells[2]
+            elif current_month is not None and len(cells)>=2:
+                rel_month=current_month
+                rel_day=cells[0]
+                week_txt=cells[1]
+            else:
+                continue
+
+            m=re.search(r"\\d+",str(rel_day))
+            if not m:
+                continue
+            try:
+                release=pd.Timestamp(year,rel_month,int(m.group(0)))
+            except Exception:
+                continue
+
+            parts=[int(x) for x in re.findall(r"\\d+",str(week_txt))]
+            if not parts:
+                continue
+
+            week_end=None
+            if "/" in str(week_txt) and len(parts)>=2:
+                wm,wd=parts[0],parts[1]
+                wy=year-1 if (rel_month==1 and wm==12) else year
+                try:
+                    week_end=pd.Timestamp(wy,wm,wd)
+                except Exception:
+                    week_end=None
+            else:
+                wd=parts[0]
+                # Search release month and prior month; accept only plausible WPSR lag.
+                candidates=[]
+                for delta in [0,-1]:
+                    cm=release+pd.DateOffset(months=delta)
+                    try:
+                        cand=pd.Timestamp(cm.year,cm.month,wd)
+                        lag=(release-cand).days
+                        if 3<=lag<=12:
+                            candidates.append((abs(lag-5),cand))
+                    except Exception:
+                        pass
+                if candidates:
+                    week_end=sorted(candidates,key=lambda x:x[0])[0][1]
+
+            if week_end is None:
+                continue
+            lag=(release-week_end).days
+            if not (3<=lag<=12):
+                continue
+
+            rows.append({
+                "week_end":week_end.normalize(),
+                "release_date":release.normalize(),
+                "release_method":"EIA_TWIP_ARCHIVE_EXPLICIT",
+                "source_url":PHYS.TWIP_URL,
+                "section_year":year,
+            })
+
+    out=pd.DataFrame(rows)
+    if len(out):
+        out=out.sort_values(["week_end","release_date"]).drop_duplicates("week_end",keep="last").reset_index(drop=True)
+    meta={
+        "source_url":PHYS.TWIP_URL,
+        "sha256":hashlib.sha256(raw).hexdigest(),
+        "rows":int(len(out)),
+        "years_found":sorted(sections.keys()),
+        "year_count":len(sections),
+    }
+    return out,meta
+
+
 def fetch_bytes(url,timeout=90):
     req=Request(url,headers={"User-Agent":"Mozilla/5.0 gss-cb-001-public-research/1.0"})
     with urlopen(req,timeout=timeout) as r:
@@ -93,7 +203,7 @@ def build_2026(common_week_ends):
     return pd.DataFrame(rows), schedule_sha, exc
 
 def main():
-    hist,hist_meta=PHYS.build_twip_release_registry()
+    hist,hist_meta=build_full_twip_registry()
     hist=hist[(hist.week_end.dt.year>=2002)&(hist.week_end.dt.year<=2025)].copy()
 
     pdata={}
@@ -184,6 +294,8 @@ def main():
         "registry_only_historical_week_ends":int(len(reg_only)),
         "physical_series_duplicate_dates":grid_dup,
         "historical_archive_sha256":hist_meta["sha256"],
+        "historical_year_sections_found":hist_meta.get("years_found",[]),
+        "historical_year_section_count":hist_meta.get("year_count",0),
         "schedule_2026_sha256":schedule_sha,
         "holiday_exception_rows_2026":int(len(exceptions)),
         "outcomes_loaded":False,
