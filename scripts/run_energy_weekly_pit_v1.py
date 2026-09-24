@@ -46,21 +46,27 @@ def build_full_twip_registry():
     raw=fetch_bytes(PHYS.TWIP_URL,timeout=90)
     soup=BeautifulSoup(raw,"html.parser")
     sections={}
-    # Modern page uses a mixture of visible headings and anchor/id section markers.
+    # The archive has top navigation year labels plus later year-section labels.
+    # Take the LAST exact year node in document order, which avoids the nav copy.
+    year_nodes={y:[] for y in range(2002,2026)}
     for tag in soup.find_all(True):
-        candidates=[]
+        txt=tag.get_text(" ",strip=True)
+        if re.fullmatch(r"20\\d{2}",txt):
+            year=int(txt)
+            if 2002<=year<=2025:
+                year_nodes[year].append(tag)
         tid=str(tag.get("id","")).strip()
         if re.fullmatch(r"20\\d{2}",tid):
-            candidates.append(int(tid))
-        if tag.name in {"h1","h2","h3","h4","h5","h6"}:
-            txt=tag.get_text(" ",strip=True)
-            if re.fullmatch(r"20\\d{2}",txt):
-                candidates.append(int(txt))
-        for year in candidates:
-            if 2002<=year<=2025 and year not in sections:
-                table=tag.find_next("table")
-                if table is not None:
-                    sections[year]=table
+            year=int(tid)
+            if 2002<=year<=2025:
+                year_nodes[year].append(tag)
+    for year,nodes in year_nodes.items():
+        if not nodes:
+            continue
+        tag=nodes[-1]
+        table=tag.find_next("table")
+        if table is not None:
+            sections[year]=table
 
     rows=[]
     for year,table in sorted(sections.items()):
@@ -204,7 +210,7 @@ def build_2026(common_week_ends):
 
 def main():
     hist,hist_meta=build_full_twip_registry()
-    hist=hist[(hist.week_end.dt.year>=2002)&(hist.week_end.dt.year<=2025)].copy()
+    if hist.empty or "week_end" not in hist.columns:\n        raise RuntimeError(f"TWIP year-section discovery returned no rows; meta={hist_meta}")\n    hist=hist[(hist.week_end.dt.year>=2002)&(hist.week_end.dt.year<=2025)].copy()
 
     pdata={}
     pmeta=[]
