@@ -6,6 +6,8 @@ on:
     paths:
       - "scripts/run_fed_cycle_prospective_issuance_v1.py"
       - "research/FED_CYCLE_PROSPECTIVE_ISSUANCE_013_LOCK.md"
+      - "research/FED_CYCLE_PROSPECTIVE_ISSUANCE_013_V1_1_INTEGRITY_AMENDMENT.md"
+      - "scripts/run_fed_cycle_prospective_issuance_v1_1.py"
       - "results/fed_cycle_prospective_gcf_v1/MODEL_SPEC.json"
       - "results/fed_cycle_prospective_gcf_v1/FROZEN_TRAINING_MODEL.json"
       - "results/fed_cycle_path_v1_1/FED_POLICY_CHANGE_REGISTRY.csv"
@@ -27,8 +29,8 @@ jobs:
           python-version: "3.12"
       - name: Install dependencies
         run: python -m pip install --upgrade pip pandas numpy matplotlib beautifulsoup4 openpyxl
-      - name: Run frozen append-only issuance gate
-        run: python scripts/run_fed_cycle_prospective_issuance_v1.py
+      - name: Run frozen append-only issuance gate with v1.1 integrity chain
+        run: python scripts/run_fed_cycle_prospective_issuance_v1_1.py
       - name: Commit issuance state
         run: |
           git config user.name "github-actions[bot]"
@@ -37,6 +39,9 @@ jobs:
           git add results/fed_cycle_prospective_gcf_v1/ISSUANCE_READINESS.csv
           git add results/fed_cycle_prospective_gcf_v1/ISSUANCE_QC.json
           git add results/fed_cycle_prospective_gcf_v1/ISSUANCE_STATUS.md
+          git add results/fed_cycle_prospective_gcf_v1/REGISTRY_CHAIN.csv
+          git add results/fed_cycle_prospective_gcf_v1/REGISTRY_INTEGRITY.json
+          git add results/fed_cycle_prospective_gcf_v1/REGISTRY_INTEGRITY_QC.json
           if git diff --cached --quiet; then
             echo "No issuance state changes"
             exit 0
