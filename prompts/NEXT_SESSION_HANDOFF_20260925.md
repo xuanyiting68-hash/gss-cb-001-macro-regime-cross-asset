@@ -183,3 +183,25 @@ Updated next priority:
 1. prospective append-only evidence maturation in the already-frozen Fed/energy registries;
 2. evidence-linked PandaAI risk-distribution integration rather than deterministic timing signals;
 3. never reuse consumed OOS-008 B04-B07 evidence to tune M3.
+
+## Post-handoff update — 021 completed
+
+FED-CYCLE-CROSS-ASSET-MASTER-SYNTHESIS-021 is now complete and QC-passed.
+
+Canonical outputs:
+- 52 price-asset x phase rows / 13 assets;
+- 12 policy/rate/cash context rows;
+- 12 stress-context rows;
+- machine-readable PandaAI risk-distribution reference;
+- five fully supported four-phase core assets: DXY, GOLD, NASDAQ, SP500, WTI.
+
+The synthesis introduces no new estimation or inference. Preserve upstream support labels. TLT/VNQ/BTC remain limited; Asia remains diagnostic; housing retains its slow-moving 24M ontology.
+
+FIRST_CUT is now especially content-ready because 021 puts endpoint, interim drawdown, trough timing and total recovery on one row. Do not infer that positive +12M endpoints mean risk ended at the cut.
+
+019 and 020 remain negative timing-rule guardrails. Do not fit a new small-sample FIRST_CUT score.
+
+Updated next priority:
+1. **022 Historical Fed Cycle Casebook** — episode timelines for representative cycles, with real-time-vs-ex-post separation;
+2. prospective append-only maturation of already-frozen Fed/energy registries when their gates genuinely become eligible;
+3. after 022, build the content evidence/claim registry and reusable chart library from 021 + casebook evidence.
