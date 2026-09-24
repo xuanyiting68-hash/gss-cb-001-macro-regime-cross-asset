@@ -1,0 +1,5 @@
+test_broad_episode,train_broad_episodes,train_rows,test_rows,max_train_target_end,min_test_panel_month,train_target_overlaps_test,later_or_same_episode_in_train,train_weight_violations,test_weight_violation
+B04,B01;B02;B03,46,18,1995-11,1999-07,False,False,0,False
+B05,B01;B02;B03;B04,64,36,2001-05,2004-07,False,False,0,False
+B06,B01;B02;B03;B04;B05,100,36,2007-11,2016-01,False,False,0,False
+B07,B01;B02;B03;B04;B05;B06,136,29,2019-05,2022-04,False,False,0,False

@@ -1,0 +1,25 @@
+{
+  "qc_gate": "PASS",
+  "module": "FED-CYCLE-GOLD-OOS-008",
+  "panel_rows": 165,
+  "oos_test_episodes": [
+    "B04",
+    "B05",
+    "B06",
+    "B07"
+  ],
+  "oos_prediction_rows": 119,
+  "fold_target_overlap_violations": 0,
+  "same_or_future_episode_train_violations": 0,
+  "hierarchical_weight_violations": 0,
+  "gold_feature_timing_violations": 0,
+  "realtime_vintage_timing_violations": 0,
+  "predictor_spec_violations": 0,
+  "m3_vs_b2_mse_reduction": 0.21269313376009255,
+  "m3_episode_wins_vs_b2": 3,
+  "m3_oos_r2_vs_b0": 0.03376539673678902,
+  "evidence_status": "PRELIMINARY_OOS_CANDIDATE",
+  "raw_source_histories_committed": false,
+  "causal_status": "NONE",
+  "deployment_status": "NOT_DEPLOYABLE"
+}

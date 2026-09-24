@@ -1,0 +1,2 @@
+comparison,b2_episode_equal_mse,m3_episode_equal_mse,mse_reduction_fraction,m3_episode_wins,total_oos_episodes,m3_oos_r2_vs_b0,evidence_status,m3_beats_b2_B04,m3_beats_b2_B05,m3_beats_b2_B06,m3_beats_b2_B07
+M3_PLUS_REALTIME_IPT vs B2_GOLD_PLUS_CYCLE_AGE,0.01701595117345704,0.013396775194465737,0.21269313376009255,3,4,0.03376539673678902,PRELIMINARY_OOS_CANDIDATE,True,True,False,True

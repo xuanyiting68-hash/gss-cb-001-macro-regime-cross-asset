@@ -1,0 +1,3 @@
+source_object,source,url,sha256,source_commit,raw_committed
+Gold monthly,datasets/gold-prices / World Bank Commodity Markets,https://raw.githubusercontent.com/datasets/gold-prices/95bfea9197222dcda13d8c4d9928fb631fe745aa/data/monthly.csv,6821c07f866d91cddc8beacd942d9548912216f816183565e47cef2c7add0b47,95bfea9197222dcda13d8c4d9928fb631fe745aa,False
+Real-time IPT derived panel,FED-CYCLE-VINTAGE-AUDIT-007,repository://results/fed_cycle_vintage_audit_v1/PANEL_REALTIME_IPT.csv,,,False
