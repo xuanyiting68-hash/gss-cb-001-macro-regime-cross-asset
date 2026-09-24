@@ -1,0 +1,44 @@
+name: fed-cycle-asia-credit-diag-v1
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "scripts/run_fed_cycle_asia_credit_diag_v1.py"
+      - "research/FED_CYCLE_ASIA_CREDIT_DIAG_006_LOCK.md"
+      - ".github/workflows/fed-cycle-asia-credit-diag-v1.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: python -m pip install --upgrade pip pandas numpy matplotlib tabulate beautifulsoup4
+
+      - name: Run frozen Asia-credit diagnostic
+        run: python scripts/run_fed_cycle_asia_credit_diag_v1.py
+
+      - name: Commit QC-passed public-safe diagnostic outputs
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add results/fed_cycle_asia_credit_diag_v1
+          if git diff --cached --quiet; then
+            echo "No Asia-credit diagnostic changes"
+            exit 0
+          fi
+          git commit -m "Run FED-CYCLE-ASIA-CREDIT-DIAG-006 [skip ci]"
+          git pull --rebase origin main
+          git push
