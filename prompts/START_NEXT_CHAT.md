@@ -45,3 +45,6 @@ GitHub 同步：
 - 限制；
 - GitHub commit/link；
 - 下一项具体研究任务。
+## Latest handoff
+
+Before substantive new work, also read `prompts/NEXT_SESSION_HANDOFF_20260925.md`. If GitHub `main` is newer than that handoff, the newer repository state overrides it.

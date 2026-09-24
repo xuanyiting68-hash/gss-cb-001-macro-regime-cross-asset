@@ -500,3 +500,17 @@ results/fed_cycle_stress_trough_alignment_v1/SUPPORTED_TIMING_PAIRS.csv,Supporte
 results/fed_cycle_stress_trough_alignment_v1/STRESS_SYNTHESIS.csv,Cross-asset stress timing synthesis,DESCRIPTIVE,PUBLIC_SAFE
 results/fed_cycle_stress_trough_alignment_v1/QC.json,Stress-trough alignment QC,QC_PASS,PUBLIC_SAFE
 results/fed_cycle_stress_trough_alignment_v1/FED_CYCLE_STRESS_TROUGH_ALIGNMENT_018_REPORT.md,Stress-trough timing report,QC_PASS_DESCRIPTIVE,PUBLIC_SAFE
+research/FED_CYCLE_PRECUT_STATE_019_LOCK.md,Predetermined FIRST_CUT state diagnostic lock,CANONICAL,PUBLIC_SAFE
+research/FED_CYCLE_PRECUT_STATE_019_V1_1_SUPPORT_AMENDMENT.md,Independent support and component-sensitivity amendment,CANONICAL,PUBLIC_SAFE
+research/FED_CYCLE_PRECUT_STATE_019_CLOSEOUT.md,Predetermined pre-cut state diagnostic closeout,CANONICAL,PUBLIC_SAFE
+scripts/run_fed_cycle_precut_state_v1.py,Predetermined pre-cut state diagnostic runner,CANONICAL,PUBLIC_SAFE
+.github/workflows/fed-cycle-precut-state-v1.yml,Automated pre-cut state diagnostic workflow,CANONICAL,PUBLIC
+results/fed_cycle_precut_state_v1/PRECUT_STATE_CYCLE_PANEL.csv,Cycle-level predetermined state and risk3 trough panel,DESCRIPTIVE,PUBLIC_SAFE
+results/fed_cycle_precut_state_v1/PRECUT_STATE_BROAD_PANEL.csv,Broad-episode pre-cut state and trough panel,DESCRIPTIVE,PUBLIC_SAFE
+results/fed_cycle_precut_state_v1/BINARY_STATE_SUPPORT.csv,Independent broad-episode binary state support audit,QC_PASS_DESCRIPTIVE,PUBLIC_SAFE
+results/fed_cycle_precut_state_v1/BINARY_STATE_CONTRASTS.csv,Support-labeled binary pre-cut state contrasts,DESCRIPTIVE,PUBLIC_SAFE
+results/fed_cycle_precut_state_v1/BROAD_RANK_DIAGNOSTICS.csv,Composite pre-cut state broad rank diagnostics,DESCRIPTIVE,PUBLIC_SAFE
+results/fed_cycle_precut_state_v1/COMPONENT_SENSITIVITY.csv,Post-run composite component sensitivity audit,DESCRIPTIVE,PUBLIC_SAFE
+results/fed_cycle_precut_state_v1/QC.json,Pre-cut state diagnostic QC,QC_PASS,PUBLIC_SAFE
+results/fed_cycle_precut_state_v1/FED_CYCLE_PRECUT_STATE_019_REPORT.md,Pre-cut state diagnostic report,QC_PASS_DESCRIPTIVE,PUBLIC_SAFE
+prompts/NEXT_SESSION_HANDOFF_20260925.md,Latest public-research session handoff,CANONICAL,PUBLIC_SAFE

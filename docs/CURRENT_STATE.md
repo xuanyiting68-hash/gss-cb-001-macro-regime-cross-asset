@@ -850,7 +850,7 @@ Thus the frozen 012 benchmark is structurally stable rather than a one-feature a
 3. ENERGY-WEEKLY-ANALOG-012A confirms the frozen analog structure is stable under all 13 leave-one-feature-out perturbations. Do not refit it; keep 009/010/008 as mechanism/external-risk/outcome paths.
 4. PROSPECTIVE-ISSUANCE-013 v1.1 now has a QC-passed cryptographic genesis/hash chain around the still-empty registry. Keep the system armed but unchanged: no prediction until a genuinely eligible new cycle, complete pre-target GC=F/RTDSM inputs, valid issue timing and all immutable hash checks coexist.
 5. Resolve official announcement timing for registry-only emergency-cut candidates before any emergency-event outcome study.
-6. STRESS-TROUGH-ALIGNMENT-018 shows FIRST_CUT equity/WTI troughs cluster around the broader VIX/credit/copper stress maximum, while Gold is a clear timing exception. Next real-time-oriented work should use predetermined pre-anchor state rather than ex-post stress peaks.
+6. PRECUT-STATE-019 is a negative result: simple pre-cut growth/curve/NFCI states do not provide a robust late-trough rule. Do not fit a predictive model on six broad episodes. If continuing, freeze an exploratory continuous pre-cut stress-level 020; otherwise prioritize prospective append-only evidence maturation.
 7. Keep paper-specific identification work behind the firewall.
 
 ## FED-CYCLE-CROSS-ASSET-EXPANSION-014 — duration / REIT / crypto / housing / rates / cash
@@ -1056,6 +1056,40 @@ Gold is the exception:
 - Gold often troughs before the later financial-stress maximum.
 
 Therefore the delayed FIRST_CUT equity/WTI troughs in 017 are consistent with a broader stress transition, while Gold follows a different timing channel. Because both stress peaks and troughs are future-window statistics, this is explanatory evidence only.
+
+## FED-CYCLE-PRECUT-STATE-019 — predetermined pre-cut state diagnostic
+
+Status: **QC PASS / SIMPLE STATE RULE NOT SUPPORTED / NEGATIVE DESCRIPTIVE RESULT**
+
+019 uses only pre-FIRST_CUT information:
+- real-time RTDSM industrial-production growth;
+- pre-cut 10Y–2Y curve;
+- pre-cut NFCI.
+
+Outcome:
+- supported FIRST_CUT SP500/NASDAQ/WTI trough timing and late-trough breadth.
+
+v1.1 corrects binary support to the independent broad-episode level.
+
+Results:
+- REALTIME_GROWTH_CONTRACTION: 0 True / 6 False broad episodes -> insufficient variation;
+- CURVE_INVERTED: 3 True / 3 False -> balanced support, but median risk-3 trough month is 8 in both groups and median late-trough share is 1 in both;
+- FINANCIAL_CONDITIONS_TIGHT: 1 True / 5 False -> insufficient variation.
+
+The naive composite PRE_CUT_STRESS_COUNT has negative broad-episode rank correlations:
+- trough month rho about -0.636;
+- late-trough share rho about -0.707.
+
+But component sensitivity shows the negative relation is largely driven by the single NFCI-tight broad episode:
+- drop NFCI -> trough rho about -0.127 and late-share rho +0.141;
+- NFCI-only -> -0.674 / -1.000.
+
+Therefore the composite is not a robust state rule and must not be promoted into a PandaAI timing score.
+
+Next work should either:
+1. test continuous pre-anchor stress levels under an explicitly exploratory 020 lock; or
+2. stop this small-sample explanatory branch and wait for prospective append-only evidence.
+
 
 
 

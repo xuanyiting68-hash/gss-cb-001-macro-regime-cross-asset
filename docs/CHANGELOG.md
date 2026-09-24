@@ -446,3 +446,17 @@
 - Cross-observable pair-level median lead is zero, but this aggregate masks the Gold timing difference.
 - Stress peaks and troughs are both ex-post future-window statistics, so the result is mechanism timing only and not a real-time bottoming signal.
 
+## 2026-09-24 — FED-CYCLE-PRECUT-STATE-019 / v1.1
+
+- Built a pre-FIRST_CUT state diagnostic using real-time RTDSM IPT growth, the pre-cut 10Y–2Y curve and pre-cut NFCI.
+- Outcome is the supported SP500/Nasdaq/WTI FIRST_CUT trough clock; no future state variable enters the pre-cut score.
+- QC passes on 8 mechanical cycles / 6 broad episodes with zero timing violations and no p-values.
+- v1.1 corrects binary evidence support at the independent broad-episode level rather than allowing one broad episode to appear on both sides.
+- Real-time growth contraction has 0 True / 6 False broad episodes and is non-informative in this sample.
+- Curve inversion is the only balanced binary state (3 True / 3 False), but both groups have median risk-3 trough month 8 and median late-trough share 1.
+- NFCI > 0 has only 1 True broad episode and cannot support a state rule.
+- The full composite stress count is negatively ranked with later troughs, contrary to the intuitive hypothesis.
+- Post-run sensitivity shows this negative association is largely driven by the single NFCI-tight broad episode: removing NFCI reduces trough-month rho from about -0.64 to -0.13.
+- Final conclusion: simple pre-cut state rule not supported; do not convert 019 into a PandaAI timing score.
+- A future 020, if run, must be exploratory and use continuous pre-anchor stress levels without threshold tuning; otherwise this branch should stop.
+
