@@ -1,0 +1,15 @@
+{
+  "qc_gate": "PASS",
+  "module": "FED-CYCLE-GOLD-OOS-008-POSTRUN-BENCHMARK-AUDIT",
+  "m3_vs_b0_mse_improvement": 0.033765396736786524,
+  "m3_vs_b0_mae_improvement": -0.027443399898816355,
+  "m3_vs_b0_mse_episode_wins": 2,
+  "m3_vs_b0_mae_episode_wins": 1,
+  "m3_vs_d4_mse_improvement": 0.06801511769042863,
+  "m3_vs_d4_mae_improvement": 0.035264619076739424,
+  "m3_vs_d4_mse_episode_wins": 3,
+  "m3_vs_d4_mae_episode_wins": 3,
+  "m3_episode_equal_signed_bias": -0.02838138985248064,
+  "frozen_gate_unchanged": true,
+  "interpretation": "POST_RUN_LANGUAGE_SANITY_AUDIT_ONLY"
+}
