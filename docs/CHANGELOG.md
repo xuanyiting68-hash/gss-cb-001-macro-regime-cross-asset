@@ -140,3 +140,17 @@
 - Combined with PHASE-CLOCK-004, this supports a mechanism-context interpretation that first cuts often occur around broader stress/deterioration transitions; it does not identify a causal effect of the cut.
 - No optimized stress thresholds, p-value/FDR family, OOS forecast or deployment rule are produced.
 - Added an evidence-linked content card: “为什么第一次降息时，市场反而可能更危险？”
+
+## 2026-09-24 — FED-CYCLE-ASIA-CREDIT-DIAG-006
+
+- Froze and executed limited-support phase diagnostics for Hang Seng, Shanghai Composite, Nikkei 225, KOSPI and U.S. high-yield credit.
+- All 4 requested Asia Yahoo symbols were acquired; Asia timing, MDD, support-label and broad-episode-weight QC passed.
+- Nikkei has 10/7 FIRST_HIKE/LAST_HIKE/FIRST_CUT support; Hang Seng 8/6; Shanghai and KOSPI 4/4 under the available Yahoo histories.
+- All four Asia indices have higher weighted median 12M MDD after FIRST_CUT than after PAUSE_START, while +12M endpoint return signs remain mixed.
+- Shanghai FIRST_CUT +12M median is -28.73% with 8.59% median MDD; Nikkei remains +9.60% with 12.61% MDD; the contrast illustrates that path risk and endpoint direction are distinct.
+- Current FRED ICE BofA High Yield OAS history is restricted to recent observations, leaving only 1/1 FIRST_CUT support; this is retained as INSUFFICIENT_SUPPORT rather than backfilled from an unlicensed source.
+- Froze a post-coverage-audit HYG price-proxy amendment before HYG outcomes. HYG has only 2-3 broad episodes, remains LIMITED_SUPPORT, and is explicitly not pooled with OAS.
+- HYG FIRST_CUT diagnostic: +12M median -3.42%, 12M MDD 11.19%, median trough month 8; PAUSE_START has only 2 broad episodes and 0.82% MDD.
+- Existing P0-C China causal/interaction quarantine remains unchanged.
+- Added an evidence-linked content card: “第一次降息后，亚洲市场就安全了吗？”
+- Next Fed-cycle research priority is a vintage-safe macro-state layer before stronger state-dependent claims.
