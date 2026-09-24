@@ -1,0 +1,27 @@
+{
+  "qc_gate": "PASS",
+  "module": "FED-CYCLE-PRECUT-STRESS-LEVEL-020",
+  "mechanical_cycles": 8,
+  "broad_episodes": 6,
+  "vix_broad_episodes": 5,
+  "predictor_set": [
+    "BAA_SPREAD_LEVEL",
+    "VIX_LEVEL",
+    "CURVE_STRESS_BP",
+    "GROWTH_STRESS"
+  ],
+  "outcome_set": [
+    "RISK3_MEDIAN_TROUGH_MONTH",
+    "RISK3_LATE_TROUGH_SHARE"
+  ],
+  "current_2026_cycle_leak_violations": 0,
+  "baa_anchor_mismatch_violations": 0,
+  "vix_anchor_mismatch_violations": 0,
+  "late_share_unique_values_full_sample": 2,
+  "late_share_unique_values_vix_common_sample": 1,
+  "pvalues_generated": false,
+  "causal_status": "NONE",
+  "oos_status": "NOT_A_FORECASTING_MODEL",
+  "deployment_status": "NOT_DEPLOYABLE",
+  "branch_decision": "STOP_SMALL_SAMPLE_TIMING_RULE_BRANCH"
+}
