@@ -211,3 +211,33 @@ results/fed_cycle_stress_layer_v1/02_vix_max_stress_comparison.png,VIX maximum-s
 results/fed_cycle_stress_layer_v1/02_baa10y_spread_max_stress_comparison.png,Credit-spread maximum-widening phase comparison figure,DESCRIPTIVE,PUBLIC
 results/fed_cycle_stress_layer_v1/02_copper_max_stress_comparison.png,Copper maximum-drawdown phase comparison figure,DESCRIPTIVE,PUBLIC
 content/FED_CYCLE_STRESS_CONTENT_007.md,Evidence-linked first-cut stress content card,CANONICAL,PUBLIC_SAFE
+research/FED_CYCLE_ASIA_CREDIT_DIAG_006_LOCK.md,Asia equity and high-yield credit phase diagnostic frozen specification,CANONICAL,PUBLIC_SAFE
+research/FED_CYCLE_ASIA_CREDIT_DIAG_006_HY_PROXY_AMENDMENT.md,Pre-outcome HYG price-proxy amendment after OAS coverage audit,CANONICAL,PUBLIC_SAFE
+research/FED_CYCLE_ASIA_CREDIT_DIAG_006_CLOSEOUT.md,Asia equity and high-yield credit diagnostic closeout,CANONICAL,PUBLIC_SAFE
+scripts/run_fed_cycle_asia_credit_diag_v1.py,Asia equity and high-yield credit diagnostic runner,CANONICAL,PUBLIC_SAFE
+scripts/audit_fed_cycle_hyg_proxy_v1.py,HYG limited-support price-proxy audit runner,CANONICAL,PUBLIC_SAFE
+.github/workflows/fed-cycle-asia-credit-diag-v1.yml,Automated Asia-credit diagnostic workflow,CANONICAL,PUBLIC
+.github/workflows/fed-cycle-hyg-proxy-v1.yml,Automated HYG price-proxy audit workflow,CANONICAL,PUBLIC
+results/fed_cycle_asia_credit_diag_v1/SOURCE_REGISTRY.csv,Asia and OAS source registry with hashes,QC_PASS,PUBLIC_SAFE
+results/fed_cycle_asia_credit_diag_v1/ACQUISITION_FAILURES.csv,Recorded source acquisition failures,QC_PASS_NONE,PUBLIC_SAFE
+results/fed_cycle_asia_credit_diag_v1/QC.json,Asia-credit timing/support/weight QC gate,QC_PASS,PUBLIC_SAFE
+results/fed_cycle_asia_credit_diag_v1/ASIA_PHASE_PATHS.csv,Derived monthly Asia equity paths by phase,DESCRIPTIVE,PUBLIC_SAFE
+results/fed_cycle_asia_credit_diag_v1/ASIA_CYCLE_PHASE_METRICS.csv,Derived Asia cycle-phase path-risk metrics,DESCRIPTIVE,PUBLIC_SAFE
+results/fed_cycle_asia_credit_diag_v1/ASIA_PHASE_SUMMARY.csv,Asia phase endpoint/MDD/timing summary,QC_PASS_DESCRIPTIVE,PUBLIC_SAFE
+results/fed_cycle_asia_credit_diag_v1/HY_OAS_PHASE_PATHS.csv,Current-coverage high-yield OAS phase paths,INSUFFICIENT_SUPPORT,PUBLIC_SAFE
+results/fed_cycle_asia_credit_diag_v1/HY_OAS_CYCLE_PHASE_METRICS.csv,Current-coverage high-yield OAS metrics,INSUFFICIENT_SUPPORT,PUBLIC_SAFE
+results/fed_cycle_asia_credit_diag_v1/HY_OAS_PHASE_SUMMARY.csv,Current-coverage high-yield OAS summary,INSUFFICIENT_SUPPORT,PUBLIC_SAFE
+results/fed_cycle_asia_credit_diag_v1/SUPPORT_MAP.csv,Frozen diagnostic support labels by market and phase,QC_PASS,PUBLIC_SAFE
+results/fed_cycle_asia_credit_diag_v1/HYG_PROXY_SOURCE.csv,HYG Yahoo provenance and source coverage,QC_PASS,PUBLIC_SAFE
+results/fed_cycle_asia_credit_diag_v1/HYG_PROXY_CYCLE_PHASE_METRICS.csv,HYG limited-support cycle-phase metrics,LIMITED_SUPPORT,PUBLIC_SAFE
+results/fed_cycle_asia_credit_diag_v1/HYG_PROXY_PHASE_SUMMARY.csv,HYG limited-support phase summary,LIMITED_SUPPORT,PUBLIC_SAFE
+results/fed_cycle_asia_credit_diag_v1/HYG_PROXY_QC.json,HYG proxy audit QC gate,QC_PASS,PUBLIC_SAFE
+results/fed_cycle_asia_credit_diag_v1/HYG_PROXY_AUDIT.md,HYG proxy interpretation audit,LIMITED_SUPPORT,PUBLIC_SAFE
+results/fed_cycle_asia_credit_diag_v1/FED_CYCLE_ASIA_CREDIT_DIAG_006_REPORT.md,Reproducible Asia-credit diagnostic report,QC_PASS_DESCRIPTIVE,PUBLIC_SAFE
+results/fed_cycle_asia_credit_diag_v1/01_hang_seng_phase_mdd.png,Hang Seng phase MDD figure,DESCRIPTIVE,PUBLIC
+results/fed_cycle_asia_credit_diag_v1/01_nikkei_225_phase_mdd.png,Nikkei phase MDD figure,DESCRIPTIVE,PUBLIC
+results/fed_cycle_asia_credit_diag_v1/01_shanghai_composite_phase_mdd.png,Shanghai phase MDD figure,DESCRIPTIVE,PUBLIC
+results/fed_cycle_asia_credit_diag_v1/01_kospi_phase_mdd.png,KOSPI phase MDD figure,DESCRIPTIVE,PUBLIC
+results/fed_cycle_asia_credit_diag_v1/02_us_high_yield_oas_phase_widening.png,Current-coverage HY OAS figure,INSUFFICIENT_SUPPORT,PUBLIC
+results/fed_cycle_asia_credit_diag_v1/03_hyg_price_proxy_phase_mdd.png,HYG limited-support MDD phase figure,LIMITED_SUPPORT,PUBLIC
+content/FED_CYCLE_ASIA_CREDIT_CONTENT_008.md,Evidence-linked Asia first-cut risk content card,CANONICAL,PUBLIC_SAFE
