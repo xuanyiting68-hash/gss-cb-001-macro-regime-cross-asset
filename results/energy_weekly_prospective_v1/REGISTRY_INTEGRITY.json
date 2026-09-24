@@ -1,0 +1,8 @@
+{
+  "schema_version": "ENERGY_WEEKLY_PROSPECTIVE_005_V1",
+  "registry_sha256": "7ba5ca3fba39de2326c5bd02d1ec5f3dfddb9b3253d6b086be3db403618f9c69",
+  "registry_rows": 1,
+  "chain_rows": 1,
+  "genesis_hash": "1066f6b8e32168c12c540cc153f7bdfcb61ecb26d323264caec9ca1b4d31e1b1",
+  "tail_hash": "e5c9a4ce7caafa72958de30ca1eacaddccbc26982d0c84f8538918724b7a3d0d"
+}

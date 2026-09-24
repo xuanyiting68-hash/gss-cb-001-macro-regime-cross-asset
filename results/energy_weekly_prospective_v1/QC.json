@@ -1,0 +1,23 @@
+{
+  "qc_gate": "PASS",
+  "module": "ENERGY-WEEKLY-PROSPECTIVE-005",
+  "upstream_qc": "PASS",
+  "upstream_selected_sha256": "a914273422e7a610f51d485f05f7c38a56e4ede3fbff0088c50dfbd90282fb31",
+  "new_events_appended": [
+    "ENERGY005_2026-09-23"
+  ],
+  "registry_rows": 1,
+  "chain_rows": 1,
+  "first_event_frozen_correctly": true,
+  "first_event_id": "ENERGY005_2026-09-23",
+  "first_event_class": "TIGHT_OR_MIXED",
+  "first_event_realization_status": "UNREALIZED",
+  "historical_reference_n": 10,
+  "historical_reference_median_wti_8w": 0.0707752163988205,
+  "historical_reference_median_wti_13w": 0.06698198440225905,
+  "historical_reference_median_short_mae_8w": 0.15240310343503566,
+  "historical_reference_median_short_mae_13w": 0.1791874565300085,
+  "prospective_outcomes_observed": 0,
+  "causal_status": "NONE",
+  "deployment_status": "NOT_DEPLOYABLE"
+}
