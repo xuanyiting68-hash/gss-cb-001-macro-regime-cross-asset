@@ -189,9 +189,17 @@ def main():
         })
         with REG.open("a",encoding="utf-8",newline="") as f:
             w=csv.DictWriter(f,fieldnames=REG_COLS); w.writerow(row)
-        h=row_hash(tail,row)
+
+        # Hash the canonical row exactly as it is serialized and read back
+        # from the CSV. This avoids Python scalar/string formatting
+        # differences between the in-memory row and the persisted registry.
+        persisted_rows=read_reg()
+        persisted_row=persisted_rows[-1]
+        if persisted_row["event_id"]!=event_id:
+            raise RuntimeError("persisted event ID mismatch after append")
+        h=row_hash(tail,persisted_row)
         with CHAIN.open("a",encoding="utf-8",newline="") as f:
-            csv.writer(f).writerow([len(read_reg()),event_id,tail,h])
+            csv.writer(f).writerow([len(persisted_rows),event_id,tail,h])
         tail=h
         existing.add(event_id)
         appended.append(event_id)
