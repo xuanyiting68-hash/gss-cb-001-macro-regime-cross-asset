@@ -1,0 +1,2 @@
+source,variable,landing_page,workbook_url,workbook_sha256,workbook_bytes,retrieved_utc,parsed_cells,vintage_count,first_vintage,last_vintage,raw_committed
+Federal Reserve Bank of Philadelphia RTDSM,IPT,https://www.philadelphiafed.org/surveys-and-data/real-time-data-research/ipt,https://www.philadelphiafed.org/-/media/FRBP/Assets/Surveys-And-Data/real-time-data/data-files/xlsx/iptMvMd.xlsx?sc_lang=en&hash=71A0CD9AD2C8828F0B041196CBFB7E5E,b4a6324162c8745d1a6d7740c936ae6502b00c39961e98370536c506ab55af99,2857241,2026-09-24T05:47:26.915704+00:00,477136,766,1962-11,2026-08,False
