@@ -1122,3 +1122,31 @@ Canonical conclusion: **continuous pre-cut levels do not rescue 019. Stop the sm
 Do not add predictors, optimize transformations or fit a multivariate score on these six broad episodes.
 
 Next priority is prospective append-only evidence maturation and evidence-linked PandaAI integration. B04-B07 remain consumed OOS evidence for OOS-008 M3 and must not be reused for tuning.
+
+## Cross-asset master synthesis — 021
+
+Status: **QC-PASSED CANONICAL DESCRIPTIVE EVIDENCE MAP / NOT CAUSAL / NOT A FORECAST / NOT DEPLOYABLE**
+
+FED-CYCLE-CROSS-ASSET-MASTER-SYNTHESIS-021 now provides the public canonical integration layer over the Fed-cycle research chain without new price estimation or inference.
+
+Coverage:
+- 52 price-asset x phase rows across 13 assets;
+- 20 core-supported asset x phase rows;
+- five fully supported four-phase core assets: DXY, GOLD, NASDAQ, SP500 and WTI;
+- 12 separate policy/rate/cash context rows;
+- 12 separate VIX/Baa/copper stress-context rows.
+
+FIRST_CUT core historical medians:
+- DXY: +12M -1.33%, 12M MDD 5.18%, trough month 8, anchor-to-full-recovery 13m;
+- GOLD: +12M +4.06%, MDD 5.43%, trough month 5, total full recovery 22m;
+- NASDAQ: +12M +6.04%, MDD 17.48%, trough month 8, total full recovery 15m;
+- SP500: +12M +10.98%, MDD 13.99%, trough month 8, total full recovery 14m;
+- WTI: +12M -16.94%, MDD 22.23%, trough month 11, total full recovery 20m.
+
+Canonical interpretation: endpoint return and path risk are different objects. A positive 12-month endpoint does not imply that drawdown risk ended at the first cut.
+
+PandaAI is allowed to consume 021 as: `policy phase + historical asset-specific path-risk distribution + recovery clock + support + evidence class + uncertainty`. It must not turn the map into a deterministic bottom date, causal Fed claim, best/worst ranking or trading recommendation.
+
+The 019/020 branch remains closed: simple predetermined FIRST_CUT bottom-timing rules are not supported in the available small sample.
+
+Next research/content priority: build **022 Historical Fed Cycle Casebook** from representative episodes and explicitly separate what was knowable in real time from ex-post stress peaks/troughs. Prospective Fed/energy registries remain append-only and should mature only under their frozen gates.
