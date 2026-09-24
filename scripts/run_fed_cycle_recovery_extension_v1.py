@@ -66,12 +66,23 @@ def generic_km(g, drawdown_col, level):
         })
     return pd.DataFrame(rows)
 
+def recovery_support_label(n_positive, n_positive_broad):
+    if n_positive >= 5 and n_positive_broad >= 4:
+        return "SUPPORTED_RECOVERY_DESCRIPTIVE"
+    if n_positive_broad >= 2:
+        return "LIMITED_RECOVERY_DESCRIPTIVE"
+    return "INSUFFICIENT_RECOVERY_SUPPORT"
+
+
 def recovery_summary(metrics, drawdown_col, asset_col="asset"):
     curves=[]; rows=[]
     for (asset,anchor),g in metrics.groupby([asset_col,"anchor"]):
         nlegs=int(g.cycle_id.nunique())
         nbroad=int(g.broad_episode_id.nunique())
-        positive=int((pd.to_numeric(g[drawdown_col],errors="coerce")>1e-15).sum())
+        positive_mask=pd.to_numeric(g[drawdown_col],errors="coerce")>1e-15
+        positive=int(positive_mask.sum())
+        positive_broad=int(g.loc[positive_mask,"broad_episode_id"].nunique())
+        recovery_support=recovery_support_label(positive,positive_broad)
         for level in (50,100):
             km=generic_km(g,drawdown_col,level)
             if km.empty:
@@ -91,6 +102,8 @@ def recovery_summary(metrics, drawdown_col, asset_col="asset"):
                 "n_broad_episodes":nbroad,
                 "support_status":CROSS.support_label(nlegs,nbroad),
                 "positive_drawdown_episodes":positive,
+                "positive_drawdown_broad_episodes":positive_broad,
+                "recovery_support_status":recovery_support,
                 "observed_recoveries":int(g[f"recovery{level}_observed"].astype(bool).sum()),
                 "right_censored":int((~g[f"recovery{level}_observed"].astype(bool)&(pd.to_numeric(g[drawdown_col],errors="coerce")>1e-15)).sum()),
                 "weighted_km_median_months":median,
@@ -217,10 +230,17 @@ def main():
         order_bad+=int((pd.to_numeric(z.recovery100_months)<pd.to_numeric(z.recovery50_months)).sum())
 
     support_bad=0
+    recovery_support_bad=0
     for df in [market_sum,housing_sum]:
         for _,r in df.iterrows():
             if r.support_status!=CROSS.support_label(int(r.n_legs),int(r.n_broad_episodes)):
                 support_bad+=1
+            expected=recovery_support_label(
+                int(r.positive_drawdown_episodes),
+                int(r.positive_drawdown_broad_episodes),
+            )
+            if r.recovery_support_status!=expected:
+                recovery_support_bad+=1
 
     hard_fail=(
         max(mdd_diff or [0])>1e-12
@@ -229,6 +249,7 @@ def main():
         or htrough_bad!=0
         or order_bad!=0
         or support_bad!=0
+        or recovery_support_bad!=0
     )
 
     qc={
@@ -245,6 +266,7 @@ def main():
         "housing_trough_reproduction_violations":htrough_bad,
         "recovery_order_violations":order_bad,
         "support_label_violations":support_bad,
+        "recovery_support_label_violations":recovery_support_bad,
         "current_2026_cycle_leak_violations":0,
         "raw_source_histories_committed":False,
         "evidence_class":"DESCRIPTIVE",
@@ -291,7 +313,8 @@ def main():
         "- Liquid assets use the exact PHASE-CLOCK-004 12M MDD definition and search recovery up to 60 months after trough.",
         "- Housing uses its predeclared 24M drawdown window and then the same prior-peak 50%/100% recovery logic.",
         "- Missing KM medians mean at least half the broad-episode-weighted risk set did not recover within observed/censored support.",
-        "- TLT/VNQ/BTC support remains limited where 014 labels it limited.",
+        "- support_status describes the full phase cell; recovery_support_status describes only the positive-drawdown recovery risk set.",
+        "- Recovery claims must use recovery_support_status. TLT/VNQ/BTC remain limited; housing support can differ by phase.",
     ]
     (OUT/"FED_CYCLE_RECOVERY_EXTENSION_015_REPORT.md").write_text("\n".join(lines)+"\n",encoding="utf-8")
 
