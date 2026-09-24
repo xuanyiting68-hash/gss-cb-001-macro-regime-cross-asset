@@ -1,0 +1,15 @@
+{
+  "qc_gate": "PASS",
+  "module": "ENERGY-WEEKLY-STATE-004A",
+  "post_run_diagnostic": true,
+  "new_pvalue_family": false,
+  "thresholds_changed": false,
+  "mixed_completed_events": 10,
+  "mixed_8w_loo_all_positive_median": true,
+  "mixed_8w_veto_robust_descriptively": true,
+  "mixed_2018_present_median_wti_8w": 0.0661164259549069,
+  "mixed_2018_present_median_wti_13w": 0.0125961469062815,
+  "demand_destruction_n": 4,
+  "demand_destruction_median_wti_13w": -0.07069660079567455,
+  "deployment_status": "NOT_DEPLOYABLE"
+}
