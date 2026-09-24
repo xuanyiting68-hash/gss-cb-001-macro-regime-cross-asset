@@ -1,0 +1,39 @@
+name: fed-cycle-prospective-shadow-v1
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "scripts/run_fed_cycle_prospective_shadow_v1.py"
+      - "research/FED_CYCLE_PROSPECTIVE_SHADOW_009_LOCK.md"
+      - "results/fed_cycle_path_v1_1/FED_POLICY_CHANGE_REGISTRY.csv"
+      - ".github/workflows/fed-cycle-prospective-shadow-v1.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  gate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Run frozen prospective-cycle gate
+        run: python scripts/run_fed_cycle_prospective_shadow_v1.py
+      - name: Commit QC-passed prospective-shadow artifacts
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add results/fed_cycle_prospective_shadow_v1
+          if git diff --cached --quiet; then
+            echo "No prospective-shadow result changes"
+            exit 0
+          fi
+          git commit -m "Run FED-CYCLE-PROSPECTIVE-SHADOW-009 [skip ci]"
+          git pull --rebase origin main
+          git push
