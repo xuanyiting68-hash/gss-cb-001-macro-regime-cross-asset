@@ -137,31 +137,35 @@ def fetch_bytes(url,timeout=90):
     with urlopen(req,timeout=timeout) as r:
         return r.read()
 
-def parse_2026_exceptions():
+def parse_schedule_exceptions(years=(2025,2026)):
     raw=fetch_bytes(SCHEDULE_URL)
     soup=BeautifulSoup(raw,"html.parser")
     rows=[]
+    years=set(int(y) for y in years)
     for tr in soup.find_all("tr"):
         cells=[c.get_text(" ",strip=True) for c in tr.find_all(["th","td"])]
         if len(cells)<2:
             continue
         joined=" ".join(cells)
-        if "2026" not in joined:
+        if not any(str(y) in joined for y in years):
             continue
-        # First two date-like cells are week ending and alternate release.
         dates=[]
-        for c in cells:
-            try:
-                d=pd.to_datetime(c,errors="raise")
-                if d.year==2026:
-                    dates.append(pd.Timestamp(d).normalize())
-            except Exception:
-                pass
-        if len(dates)>=2:
+        for cell in cells:
+            # Search date-like substrings rather than requiring the entire cell.
+            for m in re.finditer(
+                r"(January|February|March|April|May|June|July|August|September|October|November|December)\\s+\\d{1,2},\\s+20\\d{2}",
+                cell,
+            ):
+                try:
+                    d=pd.Timestamp(pd.to_datetime(m.group(0))).normalize()
+                    dates.append(d)
+                except Exception:
+                    pass
+        if len(dates)>=2 and dates[0].year in years:
             rows.append({
                 "week_end":dates[0],
                 "release_date":dates[1],
-                "release_method":"EIA_2026_HOLIDAY_EXCEPTION",
+                "release_method":"EIA_WPSR_HOLIDAY_EXCEPTION",
                 "source_url":SCHEDULE_URL,
             })
     out=pd.DataFrame(rows)
@@ -169,23 +173,14 @@ def parse_2026_exceptions():
         out=out.drop_duplicates("week_end").sort_values("week_end").reset_index(drop=True)
     return out, hashlib.sha256(raw).hexdigest()
 
-def build_2026(common_week_ends):
-    exc,schedule_sha=parse_2026_exceptions()
-    exc_map={} if exc.empty else dict(zip(exc.week_end,exc.release_date))
-    rows=[]
-    for we in sorted(pd.to_datetime(common_week_ends)):
-        if we.year!=2026:
-            continue
-        standard=we+pd.Timedelta(days=(2-we.weekday())%7 or 7)
-        rd=exc_map.get(pd.Timestamp(we).normalize(),standard)
-        method="EIA_2026_HOLIDAY_EXCEPTION" if pd.Timestamp(we).normalize() in exc_map else "EIA_2026_STANDARD_SCHEDULE"
-        rows.append({
-            "week_end":pd.Timestamp(we).normalize(),
-            "release_date":pd.Timestamp(rd).normalize(),
-            "release_method":method,
-            "source_url":SCHEDULE_URL,
-        })
-    return pd.DataFrame(rows), schedule_sha, exc
+def standard_wpsr_release(week_end):
+    we=pd.Timestamp(week_end).normalize()
+    days=(2-we.weekday())%7
+    if days==0:
+        days=7
+    return we+pd.Timedelta(days=days)
+
+
 
 def main():
     pdata={}
@@ -205,27 +200,28 @@ def main():
         raise RuntimeError(f"TWIP archive-link discovery returned no rows; meta={hist_meta}")
     hist=hist[(hist.week_end.dt.year>=2002)&(hist.week_end.dt.year<=2025)].copy()
 
-    exceptions,schedule_sha=parse_2026_exceptions()
-    # Rebuild 2026 only on exact common physical grid.
-    r2026_rows=[]
+    exceptions,schedule_sha=parse_schedule_exceptions((2025,2026))
     exc_map={} if exceptions.empty else dict(zip(exceptions.week_end,exceptions.release_date))
+
+    final_twip_we=pd.Timestamp(hist.week_end.max()).normalize()
+    post_rows=[]
     for we in common:
-        if we.year!=2026:
+        we=pd.Timestamp(we).normalize()
+        if we<=final_twip_we:
             continue
-        days=(2-we.weekday())%7
-        if days==0:
-            days=7
-        standard=we+pd.Timedelta(days=days)
-        rd=exc_map.get(pd.Timestamp(we).normalize(),standard)
-        r2026_rows.append({
-            "week_end":pd.Timestamp(we).normalize(),
+        if we.year not in (2025,2026):
+            continue
+        standard=standard_wpsr_release(we)
+        rd=exc_map.get(we,standard)
+        post_rows.append({
+            "week_end":we,
             "release_date":pd.Timestamp(rd).normalize(),
-            "release_method":"EIA_2026_HOLIDAY_EXCEPTION" if pd.Timestamp(we).normalize() in exc_map else "EIA_2026_STANDARD_SCHEDULE",
+            "release_method":"EIA_WPSR_HOLIDAY_EXCEPTION" if we in exc_map else "EIA_WPSR_STANDARD_SCHEDULE",
             "source_url":SCHEDULE_URL,
         })
-    r2026=pd.DataFrame(r2026_rows)
+    post=pd.DataFrame(post_rows)
 
-    registry=pd.concat([hist,r2026],ignore_index=True)
+    registry=pd.concat([hist,post],ignore_index=True)
     registry=registry.drop_duplicates("week_end",keep="last").sort_values("week_end").reset_index(drop=True)
     registry["release_lag_days"]=(registry.release_date-registry.week_end).dt.days
     registry["week_end_gap_days"]=registry.week_end.diff().dt.days
@@ -256,6 +252,13 @@ def main():
     curated_match_share=(curated_matches/curated_checked) if curated_checked else np.nan
     pd.DataFrame(curated_mismatch_rows).to_csv(OUT/"CURATED_RELEASE_CROSSCHECK_MISMATCHES.csv",index=False)
 
+    post_2025=post[post.week_end.dt.year==2025].copy() if len(post) else pd.DataFrame()
+    expected_post_2025=[pd.Timestamp(x).normalize() for x in common if pd.Timestamp(x).year==2025 and pd.Timestamp(x).normalize()>final_twip_we]
+    post_2025_coverage=(
+        float(sum(x in set(post_2025.week_end) for x in expected_post_2025)/len(expected_post_2025))
+        if expected_post_2025 else 1.0
+    )
+
     common_hist=pd.DatetimeIndex([x for x in common if 2002<=x.year<=2025])
     reg_hist=set(registry.loc[(registry.week_end.dt.year>=2002)&(registry.week_end.dt.year<=2025),"week_end"])
     mapped=sum(pd.Timestamp(x) in reg_hist for x in common_hist)
@@ -279,6 +282,7 @@ def main():
         or registry.loc[registry.week_end.dt.year<=2025,"week_end"].min().year!=2002
         or registry.loc[registry.week_end.dt.year<=2025,"week_end"].max().year!=2025
         or registry.loc[registry.week_end.dt.year<=2025,"week_end"].max().month!=12
+        or post_2025_coverage<1.0
         or duplicate_we!=0
         or duplicate_pair!=0
         or lag_bad!=0
@@ -316,7 +320,10 @@ def main():
         "historical_archive_ambiguous_mappings":hist_meta.get("ambiguous_mappings",0),
         "historical_archive_unmapped_release_links":hist_meta.get("unmapped_release_links",0),
         "schedule_2026_sha256":schedule_sha,
-        "holiday_exception_rows_2026":int(len(exceptions)),
+        "schedule_exception_rows_2025_2026":int(len(exceptions)),
+        "final_twip_week_end":str(final_twip_we.date()),
+        "post_twip_2025_common_week_ends":int(len(expected_post_2025)),
+        "post_twip_2025_coverage":post_2025_coverage,
         "outcomes_loaded":False,
         "deployment_status":"NOT_DEPLOYABLE",
     }
