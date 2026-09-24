@@ -1150,3 +1150,24 @@ PandaAI is allowed to consume 021 as: `policy phase + historical asset-specific 
 The 019/020 branch remains closed: simple predetermined FIRST_CUT bottom-timing rules are not supported in the available small sample.
 
 Next research/content priority: build **022 Historical Fed Cycle Casebook** from representative episodes and explicitly separate what was knowable in real time from ex-post stress peaks/troughs. Prospective Fed/energy registries remain append-only and should mature only under their frozen gates.
+
+## Historical Fed Cycle Casebook — 022
+
+Status: **QC-PASSED SIX-EPISODE HISTORICAL CASEBOOK / EVIDENCE-LINKED / NOT CAUSAL / NOT A FORECAST / NOT DEPLOYABLE**
+
+022 turns the canonical Fed-cycle evidence into six primary broad-episode cases: B02 1987-89, B03 1994-95, B04 1999-2001, B05 2004-07, B06 2015-19 and B07 2022-24. B02 remains a three-sub-cycle composite and is not collapsed into a fictitious single policy sequence.
+
+Evidence-time separation is now explicit:
+- REALTIME_KNOWABLE: 8 timing-audited pre-FIRST_CUT context rows from 019;
+- DESCRIPTIVE_PATH: 120 Gold/S&P/Nasdaq/WTI phase-path rows plus 90 rate/cash rows;
+- EXPOST_ONLY: 72 stress-peak versus asset-trough timing pairs from 018.
+
+Content-ready case contrasts include:
+- 2001 FIRST_CUT: Nasdaq +12M about -25.6%, 12M MDD about 40.8%, trough month 8;
+- 2007 FIRST_CUT: S&P 500 +12M about -16.3%, MDD about 21.0%, trough month 12;
+- 2019 FIRST_CUT: S&P 500 +12M about +11.0% while MDD was about 19.1%, trough month 8;
+- 2024 FIRST_CUT: S&P 500 +12M about +20.2%, MDD about 11.1%, trough month 7.
+
+These are descriptive historical paths. They do not establish Fed causality or identify a current-cycle analog. The 019/020 timing-rule branch remains closed.
+
+Next priority: **022A Historical Context Registry** using independently sourced public historical macro/event context with source-level provenance. After 022A, combine 021 + 022/022A into the claim registry, figure registry and reusable content production library.
