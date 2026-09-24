@@ -1,0 +1,2 @@
+common_feature_complete_months,first_common_month,last_common_month,min_proxy_daily_obs_per_month,level_median_abs_rel_gap,level_p95_abs_rel_gap,ret3_corr,ret3_median_abs_diff,ret3_sign_agreement,ret6_corr,ret6_median_abs_diff,ret6_sign_agreement,vol6_corr,vol6_median_abs_diff
+306,2001-03,2026-08,16,0.0013084027608570303,0.007103973789826967,0.9983859278542134,0.0018974463392556484,0.9901960784313726,0.9993938748585599,0.0017230899157720803,0.9901960784313726,0.9928025699730373,0.0008552016389176791

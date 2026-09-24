@@ -1,0 +1,20 @@
+{
+  "qc_gate": "PASS",
+  "module": "FED-CYCLE-GOLD-LIVE-BRIDGE-011",
+  "candidate_proxy": "GC=F_COMEX_CONTINUOUS_FUTURES_PROXY",
+  "reference": "WORLD_BANK_GOLD_MONTHLY_VIA_DATASETS_GOLD_PRICES",
+  "common_feature_complete_months": 306,
+  "first_common_month": "2001-03",
+  "last_common_month": "2026-08",
+  "min_proxy_daily_obs_per_month": 16,
+  "duplicate_proxy_daily_dates": 0,
+  "engineering_gates_total": 17,
+  "engineering_gates_passed": 17,
+  "bridge_status": "PROXY_FEATURE_BRIDGE_CANDIDATE",
+  "forecast_targets_loaded": false,
+  "forecast_performance_evaluated": false,
+  "proxy_to_reference_calibration_fitted": false,
+  "raw_yahoo_json_committed": false,
+  "oos008_evidence_inherited": false,
+  "deployment_status": "NOT_DEPLOYABLE"
+}

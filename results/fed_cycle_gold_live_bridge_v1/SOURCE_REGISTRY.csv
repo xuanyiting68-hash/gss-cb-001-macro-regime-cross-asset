@@ -1,0 +1,3 @@
+source_object,source,url,source_commit,sha256,raw_committed
+Reference Gold monthly,datasets/gold-prices / World Bank Commodity Markets,https://raw.githubusercontent.com/datasets/gold-prices/95bfea9197222dcda13d8c4d9928fb631fe745aa/data/monthly.csv,95bfea9197222dcda13d8c4d9928fb631fe745aa,6821c07f866d91cddc8beacd942d9548912216f816183565e47cef2c7add0b47,False
+Candidate daily Gold proxy,Yahoo Finance public chart history,https://query1.finance.yahoo.com/v8/finance/chart/GC%3DF?period1=0&period2=1893456000&interval=1d&events=history&includeAdjustedClose=true,,045ac6eb0799e765d8809f5092d3b1e23c27cec011846fcc11bbd0a880c42af3,False
