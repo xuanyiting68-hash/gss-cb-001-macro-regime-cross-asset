@@ -1,0 +1,43 @@
+name: energy-weekly-outcome-v1
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "research/ENERGY_WEEKLY_OUTCOME_008_LOCK.md"
+      - "scripts/run_energy_weekly_outcome_v1.py"
+      - "results/energy_weekly_prospective_v1/PROSPECTIVE_EVENT_REGISTRY.csv"
+      - ".github/workflows/energy-weekly-outcome-v1.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  mature:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install dependencies
+        run: python -m pip install --upgrade pip pandas numpy scipy beautifulsoup4 openpyxl xlrd
+      - name: Mature eligible prospective horizons
+        run: python scripts/run_energy_weekly_outcome_v1.py
+      - name: Commit prospective outcome state
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add results/energy_weekly_prospective_v1/PROSPECTIVE_EVENT_REGISTRY.csv
+          git add results/energy_weekly_prospective_v1/REGISTRY_INTEGRITY.json
+          git add results/energy_weekly_outcome_v1
+          if git diff --cached --quiet; then
+            echo "No outcome maturity changes"
+            exit 0
+          fi
+          git commit -m "Run ENERGY-WEEKLY-OUTCOME-008 [skip ci]"
+          git pull --rebase origin main
+          git push
