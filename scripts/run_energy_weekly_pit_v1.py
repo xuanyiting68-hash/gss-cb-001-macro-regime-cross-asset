@@ -143,35 +143,30 @@ def parse_schedule_exceptions(years=(2025,2026)):
     rows=[]
     years=set(int(y) for y in years)
     for tr in soup.find_all("tr"):
-        cells=[c.get_text(" ",strip=True) for c in tr.find_all(["th","td"])]
+        cells=[cell.get_text(" ",strip=True) for cell in tr.find_all(["th","td"])]
         if len(cells)<2:
             continue
-        joined=" ".join(cells)
-        if not any(str(y) in joined for y in years):
-            continue
-        dates=[]
+        parsed=[]
         for cell in cells:
-            # Search date-like substrings rather than requiring the entire cell.
-            for m in re.finditer(
-                r"(January|February|March|April|May|June|July|August|September|October|November|December)\\s+\\d{1,2},\\s+20\\d{2}",
-                cell,
-            ):
-                try:
-                    d=pd.Timestamp(pd.to_datetime(m.group(0))).normalize()
-                    dates.append(d)
-                except Exception:
-                    pass
-        if len(dates)>=2 and dates[0].year in years:
-            rows.append({
-                "week_end":dates[0],
-                "release_date":dates[1],
-                "release_method":"EIA_WPSR_HOLIDAY_EXCEPTION",
-                "source_url":SCHEDULE_URL,
-            })
+            d=pd.to_datetime(cell,errors="coerce")
+            if pd.notna(d):
+                ts=pd.Timestamp(d).normalize()
+                if ts.year in years or (ts.year==2024 and 2025 in years):
+                    parsed.append(ts)
+        if len(parsed)>=2:
+            week_end,release=parsed[0],parsed[1]
+            if release>week_end and (week_end.year in years or release.year in years):
+                rows.append({
+                    "week_end":week_end,
+                    "release_date":release,
+                    "release_method":"EIA_WPSR_HOLIDAY_EXCEPTION",
+                    "source_url":SCHEDULE_URL,
+                })
     out=pd.DataFrame(rows)
     if len(out):
         out=out.drop_duplicates("week_end").sort_values("week_end").reset_index(drop=True)
     return out, hashlib.sha256(raw).hexdigest()
+
 
 def standard_wpsr_release(week_end):
     we=pd.Timestamp(week_end).normalize()
@@ -277,12 +272,26 @@ def main():
     # audit each series has unique dates before forming the intersection.
     grid_dup={sid:int(pdata[sid].week_end.duplicated().sum()) for sid in SERIES}
 
+    regmap=dict(zip(registry.week_end,registry.release_date))
+    schedule_anchor_expected={
+        pd.Timestamp("2025-11-07"):pd.Timestamp("2025-11-13"),
+        pd.Timestamp("2025-12-19"):pd.Timestamp("2025-12-29"),
+        pd.Timestamp("2026-09-04"):pd.Timestamp("2026-09-10"),
+    }
+    schedule_anchor_matches={
+        str(k.date()): bool(k in regmap and pd.Timestamp(regmap[k]).normalize()==v)
+        for k,v in schedule_anchor_expected.items()
+    }
+    schedule_anchor_all_pass=all(schedule_anchor_matches.values())
+
     hard_fail=(
         hist_rows<1200
         or registry.loc[registry.week_end.dt.year<=2025,"week_end"].min().year!=2002
         or registry.loc[registry.week_end.dt.year<=2025,"week_end"].max().year!=2025
         or registry.loc[registry.week_end.dt.year<=2025,"week_end"].max().month!=12
         or post_2025_coverage<1.0
+        or len(exceptions)<10
+        or not schedule_anchor_all_pass
         or duplicate_we!=0
         or duplicate_pair!=0
         or lag_bad!=0
@@ -321,6 +330,8 @@ def main():
         "historical_archive_unmapped_release_links":hist_meta.get("unmapped_release_links",0),
         "schedule_2026_sha256":schedule_sha,
         "schedule_exception_rows_2025_2026":int(len(exceptions)),
+        "schedule_anchor_matches":schedule_anchor_matches,
+        "schedule_anchor_all_pass":schedule_anchor_all_pass,
         "final_twip_week_end":str(final_twip_we.date()),
         "post_twip_2025_common_week_ends":int(len(expected_post_2025)),
         "post_twip_2025_coverage":post_2025_coverage,
