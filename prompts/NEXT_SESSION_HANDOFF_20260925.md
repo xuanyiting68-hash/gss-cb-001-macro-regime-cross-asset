@@ -205,3 +205,24 @@ Updated next priority:
 1. **022 Historical Fed Cycle Casebook** — episode timelines for representative cycles, with real-time-vs-ex-post separation;
 2. prospective append-only maturation of already-frozen Fed/energy registries when their gates genuinely become eligible;
 3. after 022, build the content evidence/claim registry and reusable chart library from 021 + casebook evidence.
+
+## Post-handoff update — 022 completed
+
+FED-CYCLE-HISTORICAL-CASEBOOK-022 is complete and QC-passed.
+
+Primary cases: B02-B07. B02 is COMPOSITE_MULTI_LEG with three preserved mechanical sub-cycles; B03-B07 are single-cycle cases.
+
+Canonical 022 outputs separate:
+- policy chronology;
+- REALTIME_KNOWABLE pre-cut context from 019;
+- DESCRIPTIVE_PATH asset/rate/cash outcomes;
+- EXPOST_ONLY stress/trough alignment from 018.
+
+Counts: 30 policy rows, 120 asset-phase rows, 8 real-time pre-cut rows, 72 ex-post alignment rows, 90 rate/cash rows.
+
+Do not use 022 to claim causal Fed effects or to select a current analog. 019/020 remain negative timing-rule guardrails.
+
+Updated next priority:
+1. **022A Historical Context Registry** — independently source recession/macro/stress/policy-context facts and tag contemporaneous vs hindsight;
+2. then build a Claim Registry + Figure Registry + Content Evidence Library from 021 + 022/022A;
+3. maintain prospective Fed/energy registries append-only under frozen gates.
