@@ -1,0 +1,18 @@
+{
+  "qc_gate": "PASS",
+  "module": "FED-CYCLE-VINTAGE-AUDIT-007-EVENT-CONTRAST-IMPACT",
+  "event_rows": 10,
+  "state_flips": 1,
+  "current_strong_n": 6,
+  "current_weak_n": 4,
+  "realtime_strong_n": 7,
+  "realtime_weak_n": 3,
+  "current_12m_strong_minus_weak": -0.08313721520550045,
+  "realtime_12m_strong_minus_weak": -0.0912173255100146,
+  "current_mdd_strong_minus_weak": 0.026719152680313052,
+  "realtime_mdd_strong_minus_weak": -0.004737141571725306,
+  "inference_status": "NONE_DESCRIPTIVE_POSTRUN",
+  "causal_status": "NONE",
+  "oos_status": "NOT_A_FORECASTING_MODEL",
+  "deployment_status": "NOT_DEPLOYABLE"
+}
