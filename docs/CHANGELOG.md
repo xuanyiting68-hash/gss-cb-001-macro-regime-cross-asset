@@ -294,3 +294,15 @@
 - Historical same-class reference distribution (n=10) was frozen at registration and the event was added to a SHA256 append-only chain.
 - Current prospective energy registry contains one event and zero realized outcomes.
 
+## 2026-09-24 — ENERGY-PORTWATCH-006
+
+- Froze and executed a prospective IMF PortWatch maritime-context overlay for ENERGY005_2026-09-23 before any 4W/8W/13W outcome matured.
+- Historical ENERGY-WEEKLY-STATE-004 events were explicitly not reclassified with today's revised PortWatch history.
+- Four chokepoints were verified with 2,820 daily observations each; maximum data lag is 4 days.
+- Two relevant active RED disruption records are present: RED SEA TENSIONS and HORMUZ-26.
+- Hormuz triggers both frozen acute and structural traffic-stress flags.
+- Hormuz 7D total/tanker traffic is 33.2%/14.0% of prior-90D norms; 30D total/tanker traffic is 4.7%/2.4% of prior-calendar-year means.
+- Suez does not show stress under frozen rules; Bab el-Mandeb remains below norms but above the frozen stress thresholds; Cape rerouting is not elevated under the predeclared gate.
+- Integrated current state is TIGHT_OR_MIXED + EXTERNAL_SUPPLY_SHOCK_CONTEXT_PRESENT.
+- The result blocks a clean global supply-normalization interpretation of the current price rollover but does not generate a directional WTI forecast.
+

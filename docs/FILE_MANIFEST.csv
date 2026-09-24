@@ -368,3 +368,13 @@ results/energy_weekly_prospective_v1/PROSPECTIVE_EVENT_REGISTRY.csv,Append-only 
 results/energy_weekly_prospective_v1/EVENT_CHAIN.csv,Prospective energy event SHA256 chain,CANONICAL_APPEND_ONLY,PUBLIC_SAFE
 results/energy_weekly_prospective_v1/REGISTRY_INTEGRITY.json,Prospective energy registry integrity state,CANONICAL,PUBLIC_SAFE
 results/energy_weekly_prospective_v1/QC.json,Prospective live energy event QC,QC_PASS,PUBLIC_SAFE
+research/ENERGY_PORTWATCH_006_LOCK.md,Prospective PortWatch maritime shock-context lock,CANONICAL,PUBLIC_SAFE
+research/ENERGY_PORTWATCH_006_CLOSEOUT.md,Prospective PortWatch external-shock closeout,CANONICAL,PUBLIC_SAFE
+scripts/run_energy_portwatch_v1.py,Prospective PortWatch chokepoint/disruption snapshot runner,CANONICAL,PUBLIC_SAFE
+.github/workflows/energy-portwatch-v1.yml,Automated prospective PortWatch snapshot workflow,CANONICAL,PUBLIC
+results/energy_portwatch_v1/CURRENT_CHOKEPOINT_SNAPSHOT.csv,Prospective chokepoint traffic diagnostics,QC_PASS,PUBLIC_SAFE
+results/energy_portwatch_v1/ACTIVE_RELEVANT_DISRUPTIONS.csv,Active relevant official PortWatch disruptions,QC_PASS,PUBLIC_SAFE
+results/energy_portwatch_v1/EXTERNAL_CONTEXT_SNAPSHOT.csv,External supply-shock context for frozen live event,CANONICAL_SNAPSHOT,PUBLIC_SAFE
+results/energy_portwatch_v1/SOURCE_REGISTRY.csv,PortWatch raw-hash provenance registry,QC_PASS,PUBLIC_SAFE
+results/energy_portwatch_v1/QC.json,Prospective PortWatch context QC,QC_PASS,PUBLIC_SAFE
+results/energy_portwatch_v1/ENERGY_PORTWATCH_006_REPORT.md,Prospective external maritime context report,QC_PASS,PUBLIC_SAFE

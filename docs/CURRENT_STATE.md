@@ -646,13 +646,43 @@ Historical same-class distribution was frozen at registration using 10 completed
 
 The prospective registry has one row, one SHA256 chain row and **zero realized outcomes**. The event classification cannot be rewritten after outcome maturity.
 
+#### Prospective maritime external-shock context
+
+Status: **QC PASS / EXTERNAL SUPPLY-SHOCK CONTEXT PRESENT / CURRENT OUTCOME STILL UNREALIZED / NOT DEPLOYABLE**
+
+ENERGY-PORTWATCH-006 adds a retrieval-time IMF PortWatch layer to the already-frozen `ENERGY005_2026-09-23` event without retroactively changing historical 004 classifications.
+
+Snapshot:
+- four official chokepoints verified;
+- 2,820 daily observations per chokepoint;
+- latest settled date 2026-09-20;
+- maximum data lag 4 days;
+- two active relevant RED PortWatch disruptions: RED SEA TENSIONS and HORMUZ-26.
+
+Strait of Hormuz is the dominant stress state:
+- 7D total / prior-90D traffic = **33.2%**;
+- 7D tanker / prior-90D = **14.0%**;
+- 30D total / prior-year = **4.7%**;
+- 30D tanker / prior-year = **2.4%**;
+- ACUTE_TRANSIT_STRESS = True;
+- STRUCTURAL_TRANSIT_STRESS = True.
+
+Suez is near recent/previous-year norms, Bab el-Mandeb remains below norms but above frozen stress thresholds, and Cape rerouting does not meet the frozen elevation gate.
+
+Combined with the frozen current U.S. state:
+
+`TIGHT_OR_MIXED + EXTERNAL_SUPPLY_SHOCK_CONTEXT_PRESENT`
+
+the evidence does **not** support calling the current price rollover a clean global supply-normalization regime. This is a mechanism/risk veto, not a directional WTI forecast.
+
+
 
 
 ## Immediate public queue
 
 1. Preserve the failed stock-only rule and FLOW-002 as negative/mechanism evidence; do not retune them.
 2. ENERGY-WEEKLY-STATE-004 is now the weekly/daily strict-PIT engine. Do not loosen its mechanism thresholds on the consumed 17 events. Freeze the still-unrealized 2026-09-23 TIGHT_OR_MIXED event prospectively and track future selected events append-only.
-3. ENERGY-WEEKLY-PROSPECTIVE-005 has frozen the first live 2026-09-23 TIGHT_OR_MIXED event with zero outcomes and an integrity chain. Keep it outcome-isolated; next build an independent geopolitical/physical shock-veto registry without retuning 004.
+3. ENERGY-PORTWATCH-006 now independently confirms an active external maritime supply-shock context for the still-unrealized 2026-09-23 TIGHT_OR_MIXED event, driven by severe Hormuz traffic stress. Preserve this snapshot and do not reinterpret the rollover as clean global supply normalization; keep outcome tracking prospective.
 4. PROSPECTIVE-ISSUANCE-013 v1.1 now has a QC-passed cryptographic genesis/hash chain around the still-empty registry. Keep the system armed but unchanged: no prediction until a genuinely eligible new cycle, complete pre-target GC=F/RTDSM inputs, valid issue timing and all immutable hash checks coexist.
 5. Resolve official announcement timing for registry-only emergency-cut candidates before any emergency-event outcome study.
 6. Continue provenance-safe charts/content cards tied to the evidence ledger.
