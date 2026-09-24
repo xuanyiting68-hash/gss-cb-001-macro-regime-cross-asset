@@ -446,3 +446,4 @@ results/fed_cycle_cross_asset_expansion_v1/CASH_PHASE_METRICS.csv,Derived mechan
 results/fed_cycle_cross_asset_expansion_v1/CASH_PHASE_SUMMARY.csv,Mechanical DFF cash-carry phase summary,QC_PASS_DESCRIPTIVE,PUBLIC_SAFE
 results/fed_cycle_cross_asset_expansion_v1/QC.json,Cross-asset expansion QC gate,QC_PASS,PUBLIC_SAFE
 results/fed_cycle_cross_asset_expansion_v1/FED_CYCLE_CROSS_ASSET_EXPANSION_014_REPORT.md,Reproducible cross-asset expansion report,QC_PASS_DESCRIPTIVE,PUBLIC_SAFE
+content/FED_CYCLE_CROSS_ASSET_CONTENT_016.md,Evidence-linked first-cut cross-asset social content card,CANONICAL,PUBLIC_SAFE
