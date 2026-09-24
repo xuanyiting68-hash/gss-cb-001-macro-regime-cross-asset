@@ -1,0 +1,3 @@
+eventid,eventtype,eventname,htmlname,alertlevel,fromdate,todate,severitytext,pageid
+1000000,OT,RED SEA TENSIONS,Trade Disruptions in the Red Sea,RED,2023-12-16,,,573013af3b6545deaeb50ed1cbaf9444
+10000004,OT,HORMUZ-26,Trade Disruptions in the Strait of Hormuz,RED,2026-03-01,,,cc317ba850e34c4dadbead6f7b336fb1

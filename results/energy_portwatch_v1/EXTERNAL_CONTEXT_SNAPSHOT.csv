@@ -1,0 +1,2 @@
+event_id,event_release_date,snapshot_utc,mechanism_class,prospective_realization_status,official_active_relevant_disruptions,petroleum_chokepoint_traffic_stress,cape_rerouting_elevated,external_supply_shock_context_present,timing_status
+ENERGY005_2026-09-23,2026-09-23,2026-09-24T11:32:58.598220+00:00,TIGHT_OR_MIXED,UNREALIZED,2,True,False,True,POST_EVENT_PRE_OUTCOME_RETRIEVAL_SNAPSHOT
