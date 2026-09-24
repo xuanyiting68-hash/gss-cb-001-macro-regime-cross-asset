@@ -387,3 +387,14 @@
 - National nominal housing medians remain positive in most phase cells but the 2007 FIRST_CUT episode falls about 17% over 24 months with an 18.7% decline, so tail risk is preserved rather than hidden by the median.
 - No raw Yahoo or copyrighted Case-Shiller source history was committed.
 - Evidence class remains descriptive; no causal, FDR, OOS or deployment claim was made.
+
+## 2026-09-24 — ENERGY-WEEKLY-ANALOG-012A
+
+- Current ENERGY005 outcome remains unrealized.
+- Removed each of the 13 frozen analog features one at a time without changing the frozen 012 benchmark.
+- Original top-1 2004-11-03 remains top-1 in all 13/13 perturbations.
+- No single feature removal changes top-1.
+- Original top-3 overlap is never below 2/3 and averages 2.85/3.
+- 2004-11-03 and 2017-09-13 remain in every perturbed top-3; 2018-05-31 remains in 11/13.
+- This strengthens the structural robustness of the prospective historical analogy but does not create a forecast claim.
+

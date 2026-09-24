@@ -816,6 +816,24 @@ The closest 2004-11-03 analog exactly matches the current event's four mechanism
 
 This is a genuinely prospective historical reference because current ENERGY005 outcomes remain blank. It strengthens the descriptive bearish-confirmation veto but is not a validated directional forecast.
 
+#### Prospective analog robustness
+
+Status: **QC PASS / TOP-1 PRESERVED 13/13 / FROZEN 012 UNCHANGED**
+
+ENERGY-WEEKLY-ANALOG-012A removes one frozen analog feature at a time while current ENERGY005 outcomes remain unrealized.
+
+Results:
+- 13 leave-one-feature-out perturbations;
+- 2004-11-03 remains top-1 in 13/13;
+- no feature changes top-1;
+- original top-3 overlap minimum 2/3;
+- mean overlap 2.85/3;
+- 2004-11-03 and 2017-09-13 appear in every perturbed top-3;
+- 2018-05-31 appears in 11/13.
+
+Thus the frozen 012 benchmark is structurally stable rather than a one-feature artifact. It remains a historical similarity reference, not a forecast.
+
+
 
 
 
@@ -829,7 +847,7 @@ This is a genuinely prospective historical reference because current ENERGY005 o
 
 1. Preserve the failed stock-only rule and FLOW-002 as negative/mechanism evidence; do not retune them.
 2. ENERGY-WEEKLY-STATE-004 is now the weekly/daily strict-PIT engine. Do not loosen its mechanism thresholds on the consumed 17 events. Freeze the still-unrealized 2026-09-23 TIGHT_OR_MIXED event prospectively and track future selected events append-only.
-3. ENERGY-WEEKLY-ANALOG-012 now freezes a genuinely prospective top-3 historical benchmark before current outcomes mature. Treat it as a reference distribution only; keep 009 as mechanism tracking, 010 as external-risk tracking, and 008 as the realized-price ledger.
+3. ENERGY-WEEKLY-ANALOG-012A confirms the frozen analog structure is stable under all 13 leave-one-feature-out perturbations. Do not refit it; keep 009/010/008 as mechanism/external-risk/outcome paths.
 4. PROSPECTIVE-ISSUANCE-013 v1.1 now has a QC-passed cryptographic genesis/hash chain around the still-empty registry. Keep the system armed but unchanged: no prediction until a genuinely eligible new cycle, complete pre-target GC=F/RTDSM inputs, valid issue timing and all immutable hash checks coexist.
 5. Resolve official announcement timing for registry-only emergency-cut candidates before any emergency-event outcome study.
 6. Continue provenance-safe charts/content cards tied to the evidence ledger.
