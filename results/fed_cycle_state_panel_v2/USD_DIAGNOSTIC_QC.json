@@ -1,0 +1,14 @@
+{
+  "qc_gate": "PASS",
+  "module": "FED-CYCLE-STATE-PANEL-002-USD-DIAGNOSTIC",
+  "secondary_family_size": 12,
+  "secondary_bh_fdr10_survivors": 0,
+  "secondary_by_fdr10_survivors": 0,
+  "usd_full_beta_matches_original": true,
+  "usd_full_p_matches_original": true,
+  "usd_restriction_sign_stable": true,
+  "interpretation": "POST_RUN_HYPOTHESIS_GENERATING_DIAGNOSTIC_ONLY",
+  "causal_status": "NONE",
+  "oos_status": "NOT_A_FORECASTING_MODEL",
+  "deployment_status": "NOT_DEPLOYABLE"
+}
