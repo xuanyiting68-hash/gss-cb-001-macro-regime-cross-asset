@@ -17,6 +17,7 @@
   "housing_trough_reproduction_violations": 0,
   "recovery_order_violations": 0,
   "support_label_violations": 0,
+  "recovery_support_label_violations": 0,
   "current_2026_cycle_leak_violations": 0,
   "raw_source_histories_committed": false,
   "evidence_class": "DESCRIPTIVE",
