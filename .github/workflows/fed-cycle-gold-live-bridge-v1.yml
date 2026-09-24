@@ -1,0 +1,40 @@
+name: fed-cycle-gold-live-bridge-v1
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "scripts/run_fed_cycle_gold_live_bridge_v1.py"
+      - "research/FED_CYCLE_GOLD_LIVE_BRIDGE_011_LOCK.md"
+      - ".github/workflows/fed-cycle-gold-live-bridge-v1.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install dependencies
+        run: python -m pip install --upgrade pip pandas numpy matplotlib tabulate
+      - name: Run frozen GC=F feature-transport audit
+        run: python scripts/run_fed_cycle_gold_live_bridge_v1.py
+      - name: Commit QC-passed bridge outputs
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add results/fed_cycle_gold_live_bridge_v1
+          if git diff --cached --quiet; then
+            echo "No bridge result changes"
+            exit 0
+          fi
+          git commit -m "Run FED-CYCLE-GOLD-LIVE-BRIDGE-011 [skip ci]"
+          git pull --rebase origin main
+          git push
