@@ -241,3 +241,23 @@ Updated next priority:
 1. **022B Content Claim Registry** from 021 + 022 + 022A, with stable CLAIM_ID, exact wording, support/sample, source modules, evidence-time, allowed/prohibited wording, figure dependency and freshness rule;
 2. **023 Real-Time Regime Dashboard** for current state versus historical distributions without current-cycle analog overclaiming;
 3. then Figure Registry + Content Evidence Library / Myth-vs-Evidence packages.
+
+## Post-handoff update — 022B completed
+
+FED-CYCLE-CONTENT-CLAIM-REGISTRY-022B is complete and QC-passed.
+
+47 canonical claims now form the reusable publishing/PandaAI evidence layer:
+- 20 core asset-phase claims;
+- 6 historical case claims;
+- 18 official-source context claims;
+- 2 negative timing-rule guardrails;
+- 1 FIRST_CUT-vs-PAUSE recovery synthesis.
+
+Six content-routing packs are frozen. Hooks/titles may vary later, but factual payloads should resolve to stable CLAIM_IDs.
+
+Do not change 019/020 negative conclusions; do not select a current analog or create an asset ranking from the registry.
+
+Updated next priority:
+1. **023 Real-Time Regime Dashboard** — release-aware current policy/macro/market observables + historical-distribution links + freshness/uncertainty; no single-analog selection;
+2. Figure Registry keyed to the 022B figure IDs;
+3. Content Evidence Library / Myth-vs-Evidence production packages.
