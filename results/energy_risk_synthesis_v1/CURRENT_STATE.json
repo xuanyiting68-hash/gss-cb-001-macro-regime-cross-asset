@@ -1,0 +1,29 @@
+{
+  "module": "ENERGY-RISK-SYNTHESIS-007",
+  "event_id": "ENERGY005_2026-09-23",
+  "event_release_date": "2026-09-23",
+  "prospective_outcome_status": "UNREALIZED",
+  "price_rollover": true,
+  "frozen_mechanism_class": "TIGHT_OR_MIXED",
+  "clean_supply_normalization": false,
+  "broad_demand_destruction": false,
+  "external_supply_shock_context": true,
+  "historical_8w_bearish_confirmation_veto": true,
+  "composite_state": "ROLLOVER_NOT_CONFIRMED__EXTERNAL_SUPPLY_RISK_ACTIVE",
+  "bearish_reversal_confirmation": "VETO",
+  "historical_same_class_n": 10,
+  "historical_same_class_median_wti_8w": 0.0707752163988205,
+  "historical_same_class_median_short_mae_8w": 0.1524031034350356,
+  "modern_same_class_median_wti_8w": 0.0661164259549069,
+  "modern_same_class_median_wti_13w": 0.0125961469062815,
+  "portwatch_external_context": true,
+  "portwatch_active_relevant_disruptions": 2,
+  "causal_status": "NONE",
+  "directional_forecast_status": "NONE",
+  "deployment_status": "NOT_DEPLOYABLE",
+  "evidence_hashes": {
+    "prospective_registry_sha256": "7ba5ca3fba39de2326c5bd02d1ec5f3dfddb9b3253d6b086be3db403618f9c69",
+    "004a_qc_sha256": "a620ed6d5da1d7aeb331405ca5b5d492dedb4fc21dbef824eb297eac2c11e2f6",
+    "006_context_sha256": "0c9c479fa736a4cf064c4aeddafe5d49787c058d1d993f518267acf6bf93eda0"
+  }
+}

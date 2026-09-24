@@ -1,0 +1,13 @@
+{
+  "qc_gate": "PASS",
+  "module": "ENERGY-RISK-SYNTHESIS-007",
+  "upstream_005_qc": "PASS",
+  "upstream_004a_qc": "PASS",
+  "upstream_006_qc": "PASS",
+  "prospective_outcome_used": false,
+  "new_model_fitted": false,
+  "thresholds_retuned": false,
+  "composite_state": "ROLLOVER_NOT_CONFIRMED__EXTERNAL_SUPPLY_RISK_ACTIVE",
+  "bearish_reversal_confirmation": "VETO",
+  "deployment_status": "NOT_DEPLOYABLE"
+}
