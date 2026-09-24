@@ -560,10 +560,49 @@ Current conclusion:
 
 **stocks and flows improve mechanism understanding, but do not yet provide a validated directional timing signal.**
 
+#### Weekly strict-PIT energy release clock
+
+Status: **QC-PASSED FULL RELEASE CLOCK / NO OUTCOME EVIDENCE**
+
+ENERGY-WEEKLY-PIT-003 reconstructs the EIA weekly petroleum information clock from 2002 through 2026 using the TWIP archive through 2025-10-24 and WPSR schedule thereafter.
+
+Final QC:
+- 1,250 rows in 2002-2025;
+- 1,288 total rows through 2026-09-18;
+- release lag 5-10 days, median 5;
+- 99.84% common physical-grid mapping coverage;
+- 22/22 curated official mappings reproduced;
+- 14 2025-2026 holiday exceptions parsed;
+- all hard schedule anchors pass.
+
+Weekly observations are therefore no longer treated as known on their week-ending date.
+
+#### Weekly strict-PIT price × stock-flow engine
+
+Status: **QC PASS / PRIMARY FAMILY INSUFFICIENT SUPPORT / CURRENT LIVE EVENT AVAILABLE / NOT DEPLOYABLE**
+
+ENERGY-WEEKLY-STATE-004 produces 17 de-clustered strict-PIT rollover events from 1,288 release states.
+
+Mechanism counts:
+- TIGHT_OR_MIXED 11;
+- DEMAND_DESTRUCTION 4;
+- SUPPLY_NORMALIZATION 1;
+- DATA_INCOMPLETE 1.
+
+The frozen SUPPLY_NORMALIZATION vs TIGHT_OR_MIXED primary family cannot be estimated because SUPPLY_NORMALIZATION has only one event versus the required minimum five.
+
+Descriptively:
+- completed TIGHT_OR_MIXED 8W / 13W median WTI returns are +7.08% / +6.70%, with median short MAE +15.24% / +17.92%;
+- DEMAND_DESTRUCTION 8W / 13W medians are -2.36% / -7.07%, with 75% negative at 13W;
+- the single SUPPLY_NORMALIZATION event is negative at 8W and 13W with low short MAE, but n=1 prevents inference.
+
+The 2026-09-23 selected event is currently TIGHT_OR_MIXED and has no realized 4/8/13-week outcomes in the canonical panel. It should be frozen prospectively rather than used for retrospective tuning.
+
+
 ## Immediate public queue
 
 1. Preserve the failed stock-only rule and FLOW-002 as negative/mechanism evidence; do not retune them.
-2. Design a genuinely weekly/daily PIT commodity event engine to remove monthly-average timing limitations and increase event support.
+2. ENERGY-WEEKLY-STATE-004 is now the weekly/daily strict-PIT engine. Do not loosen its mechanism thresholds on the consumed 17 events. Freeze the still-unrealized 2026-09-23 TIGHT_OR_MIXED event prospectively and track future selected events append-only.
 3. Freeze an independent geopolitical/physical shock registry before any full P4A claim.
 4. PROSPECTIVE-ISSUANCE-013 v1.1 now has a QC-passed cryptographic genesis/hash chain around the still-empty registry. Keep the system armed but unchanged: no prediction until a genuinely eligible new cycle, complete pre-target GC=F/RTDSM inputs, valid issue timing and all immutable hash checks coexist.
 5. Resolve official announcement timing for registry-only emergency-cut candidates before any emergency-event outcome study.

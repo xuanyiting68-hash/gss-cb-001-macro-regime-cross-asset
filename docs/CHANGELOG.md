@@ -267,3 +267,16 @@
 - Full-chain recomputation passes and the research specification is explicitly recorded as unchanged.
 - Current issuance still refuses at the cycle gate: 1 hike / 25 bp, zero predictions.
 
+## 2026-09-24 — ENERGY-WEEKLY-PIT-003 / ENERGY-WEEKLY-STATE-004
+
+- Completed the full official EIA weekly petroleum information clock after two explicitly documented timing-source corrections.
+- Final PIT registry contains 1,250 rows for 2002-2025 and 1,288 rows through 2026-09-18, with 99.84% mapping coverage of the common physical grid.
+- All 22 curated historical release mappings reproduce exactly and all hard 2025-2026 holiday anchors pass.
+- Froze and executed the independent weekly strict-PIT price x stock-flow event engine only after the release clock passed.
+- 1,288 release states produce 44 raw rollover rows and 17 >91-day de-clustered selected events.
+- Mechanism counts are 11 TIGHT_OR_MIXED, 4 DEMAND_DESTRUCTION, 1 SUPPLY_NORMALIZATION and 1 DATA_INCOMPLETE.
+- The frozen primary family is not estimable because SUPPLY_NORMALIZATION support is only 1 versus the predeclared minimum 5; no p-value is promoted.
+- Completed TIGHT_OR_MIXED events have positive 8W/13W median WTI returns (+7.08%/+6.70%) and material short MAE (+15.24%/+17.92% median).
+- DEMAND_DESTRUCTION is descriptively weaker at 13W (median -7.07%, 75% negative), but this was observed after execution and is not promoted as a confirmatory result.
+- The newest selected event, release date 2026-09-23, is TIGHT_OR_MIXED and still has blank 4/8/13-week outcomes, creating a clean prospective follow-up opportunity.
+

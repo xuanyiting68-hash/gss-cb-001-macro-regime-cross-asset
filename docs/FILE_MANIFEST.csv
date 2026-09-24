@@ -345,3 +345,15 @@ scripts/run_fed_cycle_prospective_issuance_v1_1.py,Tamper-evident wrapper around
 results/fed_cycle_prospective_gcf_v1/REGISTRY_CHAIN.csv,Append-only prediction-row hash chain,CANONICAL_EMPTY_APPEND_ONLY,PUBLIC_SAFE
 results/fed_cycle_prospective_gcf_v1/REGISTRY_INTEGRITY.json,Current registry exact-file and chain integrity state,CANONICAL,PUBLIC_SAFE
 results/fed_cycle_prospective_gcf_v1/REGISTRY_INTEGRITY_QC.json,Registry genesis/full-chain integrity QC,QC_PASS,PUBLIC_SAFE
+research/ENERGY_WEEKLY_PIT_003_LOCK.md,Full weekly petroleum release-clock lock,CANONICAL,PUBLIC_SAFE
+research/ENERGY_WEEKLY_PIT_003_V1_1_SOURCE_TRANSITION_AMENDMENT.md,TWIP-to-WPSR source-transition amendment,CANONICAL,PUBLIC_SAFE
+research/ENERGY_WEEKLY_PIT_003_V1_2_HOLIDAY_PARSER_CORRECTION.md,Holiday-schedule parser correction,CANONICAL,PUBLIC_SAFE
+research/ENERGY_WEEKLY_PIT_003_CLOSEOUT.md,Full release-clock closeout,CANONICAL,PUBLIC_SAFE
+results/energy_weekly_pit_v1/WPSR_RELEASE_REGISTRY.csv,Full strict-PIT WPSR/TWIP release registry,QC_PASS,PUBLIC_SAFE
+results/energy_weekly_pit_v1/QC.json,Full release-clock QC,QC_PASS,PUBLIC_SAFE
+research/ENERGY_WEEKLY_STATE_004_LOCK.md,Strict-PIT weekly mechanism engine lock,CANONICAL,PUBLIC_SAFE
+research/ENERGY_WEEKLY_STATE_004_CLOSEOUT.md,Strict-PIT weekly mechanism engine closeout,CANONICAL,PUBLIC_SAFE
+results/energy_weekly_state_v1/SELECTED_EVENT_PANEL.csv,De-clustered strict-PIT weekly energy event panel,QC_PASS,PUBLIC_SAFE
+results/energy_weekly_state_v1/PRIMARY_TESTS.csv,Frozen weekly primary-family support/test table,QC_PASS_INSUFFICIENT_SUPPORT,PUBLIC_SAFE
+results/energy_weekly_state_v1/MECHANISM_DESCRIPTIVES.csv,Weekly mechanism-state outcome descriptives,DESCRIPTIVE,PUBLIC_SAFE
+results/energy_weekly_state_v1/QC.json,Weekly strict-PIT event-engine QC,QC_PASS,PUBLIC_SAFE
