@@ -834,3 +834,89 @@ This is a genuinely prospective historical reference because current ENERGY005 o
 5. Resolve official announcement timing for registry-only emergency-cut candidates before any emergency-event outcome study.
 6. Continue provenance-safe charts/content cards tied to the evidence ledger.
 7. Keep paper-specific identification work behind the firewall.
+
+## FED-CYCLE-CROSS-ASSET-EXPANSION-014 — duration / REIT / crypto / housing / rates / cash
+
+Status: **QC-PASSED DESCRIPTIVE EXTENSION / SHORT-HISTORY MARKET PROXIES LIMITED / NOT DEPLOYABLE**
+
+The protocol was frozen before outcome execution and reuses the canonical timing-corrected Fed-cycle registry and four phase anchors.
+
+QC:
+- 10 mechanical tightening cycles / 7 broad episodes;
+- TLT, VNQ, BTC-USD and DXY acquisitions all succeeded;
+- 68 market, 28 housing, 74 Treasury-yield and 37 cash cycle-phase rows;
+- 0 current-2026 outcome leakage;
+- 0 broad-episode weight or support-label violations;
+- no raw Yahoo / Case-Shiller source histories committed.
+
+### Rates and cash
+
+Broad-episode-weighted +12M yield changes:
+- FIRST_HIKE: DGS2 about **+123bp**, DGS10 about **+56bp**;
+- LAST_HIKE: about **-125bp / -60bp**;
+- PAUSE_START: about **-128bp / -108bp**;
+- FIRST_CUT: about **-167bp / -20bp**.
+
+Mechanical DFF-based 12M cash-carry medians:
+- FIRST_HIKE: **4.73%**;
+- LAST_HIKE: **5.94%**;
+- PAUSE_START: **5.88%**;
+- FIRST_CUT: **4.49%**.
+
+This supports treating the late-tightening plateau as a high cash-hurdle-rate phase rather than assuming all risk assets should immediately dominate cash.
+
+### TLT / VNQ / BTC
+
+All three remain **LIMITED_DESCRIPTIVE** because only 2-3 broad episodes are available.
+
+TLT +12M weighted medians:
+- FIRST_HIKE +1.10%;
+- LAST_HIKE +5.63%;
+- PAUSE_START +8.69%;
+- FIRST_CUT +15.13%.
+
+Episode heterogeneity is large: TLT FIRST_HIKE +12M is +22.27% in 2004 but -22.51% in 2022; FIRST_CUT is +29.71% in 2019 but -4.24% in 2024.
+
+VNQ +12M medians:
+- FIRST_HIKE -17.76%;
+- LAST_HIKE +18.98%;
+- PAUSE_START +23.52%;
+- FIRST_CUT -4.65%, with FIRST_CUT 12M MDD median 18.79%.
+
+BTC has only two broad episodes. FIRST_HIKE +12M is +137.35% in 2015 versus -38.38% in 2022. PAUSE_START +12M is positive in both available episodes but is not promoted into a stable rule.
+
+### DXY
+
+DXY has supported long-history cells. +12M medians are approximately:
+- FIRST_HIKE +3.01%;
+- LAST_HIKE -1.26%;
+- PAUSE_START -1.26%;
+- FIRST_CUT -1.33%.
+
+This is contextual phase evidence, not a deterministic USD rule or causal Gold signal.
+
+### Direct housing
+
+Case-Shiller national nominal house prices pass the frozen descriptive support threshold and remain slow/smoothed:
+- +12M weighted medians are positive across the four phase labels;
+- +24M medians range roughly +5.5% to +12.7%.
+
+But the median hides severe episode tails:
+- 2006 PAUSE_START in the 2004 cycle: +24M about -11.0%;
+- 2007 FIRST_CUT: +24M about -17.0%, 24M decline about 18.7%.
+
+Therefore direct housing must remain separated from listed REITs and evaluated with credit, leverage, mortgage structure, supply and starting valuation.
+
+### Integrated interpretation
+
+The public evidence now supports a four-axis cycle representation for PandaAI:
+
+1. policy phase / expected rate path;
+2. growth and earnings / commodity-demand state;
+3. inflation / energy / real-rate state;
+4. credit / volatility / liquidity stress.
+
+Asset output should remain:
+`phase + asset + historical endpoint/drawdown/trough distribution + support strength + current state`.
+
+It should not be reduced to deterministic labels such as “hikes bearish” or “first cut bullish.”
