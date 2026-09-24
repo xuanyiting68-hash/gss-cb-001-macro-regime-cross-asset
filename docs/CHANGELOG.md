@@ -171,3 +171,18 @@
 - Preserved CPI series-definition integrity: did not substitute seasonally adjusted Philadelphia Fed PCPI for the original not-seasonally-adjusted CPIAUCNS state.
 - Added an evidence-linked content card on real-time-vintage versus revised-history bias.
 - Next priority is a separately frozen time-ordered OOS test; in-sample exact p-values are not forecasting proof.
+
+## 2026-09-24 — FED-CYCLE-GOLD-OOS-008
+
+- Froze a single-target next-6M Gold forecast audit before execution; no random split, no hyperparameter search and no target-horizon shopping.
+- Used broad-episode forward chaining: B01-B03 -> B04, then expanding through B07, producing 119 OOS monthly predictions across four future broad episodes.
+- Hard leakage QC passed: every training target window ends before its test episode starts; no same/future episode enters training; Gold lag features and RTDSM vintages are strictly pre-month.
+- Frozen B0/B1/B2/M3/D4 model family used weighted linear regression with broad-episode/cycle hierarchy.
+- M3 (Gold history + cycle age + real-time IPT) passes the predeclared preliminary gate: 21.27% lower episode-equal MSE than B2, 3/4 B2 episode wins, OOS R² +3.38% versus historical mean.
+- Benchmark sanity audit prevents overstatement: M3 only lowers MSE 3.38% versus B0, wins 2/4 B0 episodes on MSE, and has 2.74% worse aggregate MAE with only 1/4 MAE wins.
+- M3 improves on current-vintage D4 by 6.80% MSE and 3.53% MAE and wins 3/4 episodes on each metric, supporting the usefulness of real-time-vintage information over revised-history input.
+- Real-time IPT standardized coefficients remain negative across all four expanding training folds (-0.043 to -0.050), but episode calibration is unstable.
+- M3 episode-equal signed bias is -2.84pp; the model compresses the realized positive tail, predicting at most +12.64% versus realized +41.51%.
+- Final status: PRELIMINARY_OOS_CANDIDATE / WEAK AND BENCHMARK-SENSITIVE / NOT DEPLOYABLE.
+- B04-B07 are now consumed OOS evidence for this specification and must not be used for further parameter tuning.
+- Added an evidence-linked content card explaining why passing an OOS gate is not equivalent to a tradable model.
