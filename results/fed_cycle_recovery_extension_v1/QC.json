@@ -1,0 +1,26 @@
+{
+  "qc_gate": "PASS",
+  "module": "FED-CYCLE-RECOVERY-EXTENSION-015",
+  "historical_mechanical_cycles": 10,
+  "historical_broad_episodes": 7,
+  "market_assets": [
+    "TLT",
+    "VNQ",
+    "BTC_USD",
+    "DXY"
+  ],
+  "market_metric_rows": 68,
+  "housing_metric_rows": 28,
+  "max_market_mdd_reproduction_error": 0.0,
+  "market_trough_reproduction_violations": 0,
+  "max_housing_decline_reproduction_error": 0.0,
+  "housing_trough_reproduction_violations": 0,
+  "recovery_order_violations": 0,
+  "support_label_violations": 0,
+  "current_2026_cycle_leak_violations": 0,
+  "raw_source_histories_committed": false,
+  "evidence_class": "DESCRIPTIVE",
+  "causal_status": "NONE",
+  "oos_status": "NOT_A_FORECASTING_MODEL",
+  "deployment_status": "NOT_DEPLOYABLE"
+}
