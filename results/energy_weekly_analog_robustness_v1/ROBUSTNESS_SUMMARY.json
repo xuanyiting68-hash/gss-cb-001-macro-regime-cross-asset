@@ -1,0 +1,19 @@
+{
+  "original_top1": "2004-11-03",
+  "original_top3": [
+    "2004-11-03",
+    "2017-09-13",
+    "2018-05-31"
+  ],
+  "n_feature_perturbations": 13,
+  "top1_preserved_count": 13,
+  "top1_preserved_share": 1.0,
+  "features_changing_top1": [],
+  "minimum_top3_overlap": 2,
+  "mean_top3_overlap": 2.8461538461538463,
+  "original_top3_appearance_counts": {
+    "2004-11-03": 13,
+    "2017-09-13": 13,
+    "2018-05-31": 11
+  }
+}

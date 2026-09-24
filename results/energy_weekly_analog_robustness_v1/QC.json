@@ -1,0 +1,13 @@
+{
+  "qc_gate": "PASS",
+  "module": "ENERGY-WEEKLY-ANALOG-012A",
+  "current_event_outcome_unrealized": true,
+  "one_feature_removed_per_run": true,
+  "n_feature_perturbations": 13,
+  "top1_preserved_share": 1.0,
+  "minimum_top3_overlap": 2,
+  "mean_top3_overlap": 2.8461538461538463,
+  "frozen_012_overwritten": false,
+  "outcome_fields_in_distance": false,
+  "deployment_status": "NOT_DEPLOYABLE"
+}
