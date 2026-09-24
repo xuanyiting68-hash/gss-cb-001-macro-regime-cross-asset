@@ -6,11 +6,11 @@ Repository: https://github.com/xuanyiting68-hash/gss-cb-001-macro-regime-cross-a
 
 Treat the latest GitHub `main` as the only authoritative state.
 
-At handoff creation, the latest research result commit before canonical closeout is:
+Canonical 019 closeout + handoff commit:
 
-`d60e38b60f82571347ea380de01c6daa33268f15`
+`c887905a128360c8a5735f4c7b0127b9689576c8`
 
-A later canonical-closeout/handoff commit will supersede it. Always read the actual latest `main` first.
+The metadata update containing this line is necessarily newer than that commit. Always read the actual latest `main` first; latest `main` overrides every SHA written inside a handoff.
 
 Do not reconstruct state from old chats, ZIPs, local notes or this handoff if GitHub has moved.
 
