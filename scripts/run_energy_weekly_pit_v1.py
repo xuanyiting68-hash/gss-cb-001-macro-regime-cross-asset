@@ -99,6 +99,18 @@ def build_full_twip_registry(common_week_ends):
             "archive_href":href,
         })
 
+    archive_hrefs=sorted({
+        str(a.get("href","")) for a in soup.find_all("a",href=True)
+        if "archive" in str(a.get("href","")).lower()
+    })
+    if not releases:
+        print(json.dumps({
+            "twip_archive_href_count":len(archive_hrefs),
+            "twip_archive_href_sample":archive_hrefs[:80],
+            "html_bytes":len(raw),
+            "html_sha256":hashlib.sha256(raw).hexdigest(),
+        },indent=2))
+
     out=pd.DataFrame(rows)
     if len(out):
         out=(
