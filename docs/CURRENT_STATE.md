@@ -850,7 +850,7 @@ Thus the frozen 012 benchmark is structurally stable rather than a one-feature a
 3. ENERGY-WEEKLY-ANALOG-012A confirms the frozen analog structure is stable under all 13 leave-one-feature-out perturbations. Do not refit it; keep 009/010/008 as mechanism/external-risk/outcome paths.
 4. PROSPECTIVE-ISSUANCE-013 v1.1 now has a QC-passed cryptographic genesis/hash chain around the still-empty registry. Keep the system armed but unchanged: no prediction until a genuinely eligible new cycle, complete pre-target GC=F/RTDSM inputs, valid issue timing and all immutable hash checks coexist.
 5. Resolve official announcement timing for registry-only emergency-cut candidates before any emergency-event outcome study.
-6. Continue provenance-safe charts/content cards tied to the evidence ledger.
+6. RECOVERY-EXTENSION-015 is QC-passed with recovery-risk-set support correction. Build any recovery communication from supported cells first; keep TLT/VNQ/BTC and housing-FIRST_CUT recovery numbers explicitly limited descriptive.
 7. Keep paper-specific identification work behind the firewall.
 
 ## FED-CYCLE-CROSS-ASSET-EXPANSION-014 — duration / REIT / crypto / housing / rates / cash
@@ -938,3 +938,30 @@ Asset output should remain:
 `phase + asset + historical endpoint/drawdown/trough distribution + support strength + current state`.
 
 It should not be reduced to deterministic labels such as “hikes bearish” or “first cut bullish.”
+
+## FED-CYCLE-RECOVERY-EXTENSION-015 — new-asset recovery clock
+
+Status: **QC PASS / RISK-SET SUPPORT CORRECTED / DESCRIPTIVE / NOT DEPLOYABLE**
+
+015 extends the 004 prior-peak drawdown recovery clock to TLT, VNQ, BTC, DXY and national house prices, with up to 60 months of post-trough recovery follow-up.
+
+v1.1 separates full phase-cell support from the narrower positive-drawdown recovery risk set.
+
+Supported recovery evidence:
+- DXY in all four phases;
+- US_HOUSE_PRICE at LAST_HIKE only.
+
+DXY full-recovery KM medians:
+- FIRST_HIKE 11m;
+- LAST_HIKE 12m;
+- PAUSE_START 8m;
+- FIRST_CUT 6m.
+
+Limited-descriptive but economically notable:
+- TLT full recovery: FIRST_HIKE 30m vs LAST_HIKE 3m / PAUSE_START 2m;
+- VNQ: FIRST_HIKE 21m vs LAST_HIKE/PAUSE_START 2m;
+- housing FIRST_CUT: 28m full recovery, but only 3 positive-drawdown broad episodes;
+- BTC: 2-4m full recovery in only two broad episodes despite very large drawdowns.
+
+Recovery speed must therefore be interpreted jointly with drawdown depth, censoring and support strength.
+

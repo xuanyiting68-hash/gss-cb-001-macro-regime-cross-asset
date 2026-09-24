@@ -398,3 +398,16 @@
 - 2004-11-03 and 2017-09-13 remain in every perturbed top-3; 2018-05-31 remains in 11/13.
 - This strengthens the structural robustness of the prospective historical analogy but does not create a forecast claim.
 
+## 2026-09-24 — FED-CYCLE-RECOVERY-EXTENSION-015 / v1.1
+
+- Extended the PHASE-CLOCK-004 prior-peak drawdown/recovery framework to TLT, VNQ, BTC, DXY and U.S. national house prices.
+- Liquid assets reproduce 014 12M MDD/trough values exactly; housing reproduces 014 24M decline/trough values exactly.
+- Recovery searches up to 60 months after trough with right-censoring.
+- Post-run support audit identified that recovery evidence must be labeled from the positive-drawdown risk set rather than the full phase cell.
+- v1.1 adds positive-drawdown episode/broad-episode counts and recovery_support_status without changing any numeric recovery result.
+- DXY retains supported recovery evidence across all four phases; full-recovery KM medians are 11m FIRST_HIKE, 12m LAST_HIKE, 8m PAUSE_START and 6m FIRST_CUT.
+- TLT/VNQ/BTC remain limited recovery evidence because of short histories.
+- National housing recovery is supported only at LAST_HIKE; FIRST_HIKE/PAUSE/FIRST_CUT recovery cells are limited after risk-set correction.
+- Housing FIRST_CUT full recovery median is 28m but is based on only three positive-drawdown broad episodes and remains limited descriptive.
+- No current-2026 cycle leakage, causal inference or forecasting claim.
+
