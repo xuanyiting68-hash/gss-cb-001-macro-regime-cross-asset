@@ -132,6 +132,49 @@ Yield curve, nominal 10Y, simple real-rate proxy and NFCI show no confirmatory s
 
 No causal/OOS/deployment claim.
 
+
+#### Cross-asset FIRST_HIKE risk clock
+
+Status: **QC-PASSED DESCRIPTIVE RISK CLOCK / NOT CAUSAL / NOT A FORECAST / NOT DEPLOYABLE**
+
+RISK-CLOCK-003 uses 24 complete months after the FIRST_HIKE event month, broad-episode weighting and right-censoring-aware recovery analysis.
+
+Primary support:
+- Gold: 10 mechanical legs / 7 broad episodes;
+- Nasdaq: 10 / 7;
+- S&P 500: 10 / 7;
+- WTI: 8 / 6.
+
+Weighted median 24M MDD-trough month:
+- Nasdaq: **7**;
+- S&P 500: **11**;
+- Gold: **12**;
+- WTI: **15**.
+
+MDD-trough timing shares:
+- Gold: 0% in months 1-6, 50% in 7-12, 50% in 13-24;
+- Nasdaq: 40.48% / 33.33% / 26.19%;
+- S&P 500: 33.33% / 19.05% / 47.62%;
+- WTI: 33.33% / 5.56% / 61.11%.
+
+Broad-episode-weighted median 24M MDD:
+- Gold 14.09%;
+- Nasdaq 12.18%;
+- S&P 500 8.47%;
+- WTI 20.65%.
+
+Broad-episode-weighted full-recovery KM medians from the 24M-window MDD trough:
+- Gold 13 months;
+- Nasdaq 8;
+- S&P 500 9;
+- WTI 8.
+
+The earlier equal-mechanical-leg Gold survival estimate was 19 months for full recovery. The 13-month estimate is a weighting sensitivity under broad-episode weighting, not a contradiction.
+
+The main descriptive conclusion is asset-specific timing: Nasdaq is more front-loaded, S&P retains a large late tail, Gold is mid/late distributed, and WTI is the most late-concentrated. Month 24 is the frozen window boundary and must not be described as a natural hazard spike.
+
+No p-value/FDR family is run; no causal/OOS/deployment claim.
+
 ### Household inflation / energy
 Status: **MECHANISM CANDIDATE / NOT A TRADING SIGNAL**
 
@@ -193,7 +236,7 @@ Current conclusion:
 1. Preserve the failed stock-only rule and FLOW-002 as negative/mechanism evidence; do not retune them.
 2. Design a genuinely weekly/daily PIT commodity event engine to remove monthly-average timing limitations and increase event support.
 3. Freeze an independent geopolitical/physical shock registry before any full P4A claim.
-4. Build the cross-asset FIRST_HIKE risk clock: month-by-month trough incidence, MDD accumulation, time-to-trough hazard and recovery hazard.
+4. Extend the risk clock across policy-cycle phases: LAST_HIKE, PAUSE_START and FIRST_CUT, using the same monthly path-risk convention and broad-episode weighting.
 5. Keep revised macro data explicitly separate from true real-time/vintage information; obtain vintage data where feasible before any stronger state claim.
 6. Resolve official announcement timing for registry-only emergency-cut candidates before any emergency-event outcome study.
 7. Continue provenance-safe charts/content cards tied to the evidence ledger.
