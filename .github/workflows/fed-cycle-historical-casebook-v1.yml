@@ -1,0 +1,38 @@
+name: fed-cycle-historical-casebook-v1
+on:
+  push:
+    branches: [main]
+    paths:
+      - "research/FED_CYCLE_HISTORICAL_CASEBOOK_022_LOCK.md"
+      - "scripts/run_fed_cycle_historical_casebook_v1.py"
+      - "results/fed_cycle_path_v1_1/**"
+      - "results/fed_cycle_phase_clock_v1/**"
+      - "results/fed_cycle_stress_layer_v1/**"
+      - "results/fed_cycle_stress_trough_alignment_v1/**"
+      - "results/fed_cycle_precut_state_v1/**"
+      - "results/fed_cycle_cross_asset_expansion_v1/**"
+      - ".github/workflows/fed-cycle-historical-casebook-v1.yml"
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  casebook:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m pip install --upgrade pip pandas
+      - run: python scripts/run_fed_cycle_historical_casebook_v1.py
+      - name: Commit 022 outputs
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add results/fed_cycle_historical_casebook_v1
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Run FED-CYCLE-HISTORICAL-CASEBOOK-022 [skip ci]"
+          git pull --rebase origin main
+          git push
