@@ -1,0 +1,33 @@
+{
+  "qc_gate": "PASS",
+  "module": "FED-CYCLE-PROSPECTIVE-GCF-012",
+  "spec_sha256": "f3d3eff3020af41665da93151962d0a488b14f642bf3e7e68dcf16cb156787b4",
+  "training_model_sha256": "96520e9316a0cbcc18085f0dfa2d7432fab9892d715e7893fcf5ad2b172ba50d",
+  "bridge_status": "PROXY_FEATURE_BRIDGE_CANDIDATE",
+  "bridge_required_status_pass": true,
+  "training_rows": 165,
+  "training_broad_episodes": [
+    "B01",
+    "B02",
+    "B03",
+    "B04",
+    "B05",
+    "B06",
+    "B07"
+  ],
+  "training_broad_episode_count": 7,
+  "latest_training_target_end_period": "2025-01",
+  "training_target_overlap_current_candidate_rows": 0,
+  "max_broad_episode_weight_error": 2.220446049250313e-16,
+  "current_candidate_first_hike": "2026-09-16",
+  "current_candidate_hikes": 1,
+  "current_candidate_cumulative_hike_bp": 25.0,
+  "current_candidate_qualifies": false,
+  "prediction_registry_rows": 0,
+  "predictions_created": 0,
+  "oos008_performance_inherited": false,
+  "within_episode_refit_allowed": false,
+  "retroactive_prediction_allowed": false,
+  "deployment_status": "NOT_DEPLOYABLE",
+  "evidence_status": "PROXY_MEASUREMENT_SHADOW_READY_NO_PROSPECTIVE_EVIDENCE"
+}

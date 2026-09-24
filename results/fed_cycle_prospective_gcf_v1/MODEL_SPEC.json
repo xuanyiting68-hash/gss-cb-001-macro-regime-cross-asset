@@ -1,0 +1,54 @@
+{
+  "active_episode_outcomes_in_training": false,
+  "baseline": "B0_HISTORICAL_WEIGHTED_MEAN",
+  "bridge_dependency": "FED-CYCLE-GOLD-LIVE-BRIDGE-011",
+  "bridge_required_status": "PROXY_FEATURE_BRIDGE_CANDIDATE",
+  "deployment_status": "NOT_DEPLOYABLE",
+  "frozen_date": "2026-09-24",
+  "historical_training_source": "OOS008_WORLD_BANK_GOLD_FEATURE_PANEL",
+  "live_gold_measurement": "GC=F_DAILY_CLOSE_CALENDAR_MONTH_MEAN",
+  "live_gold_min_daily_obs_per_month": 10,
+  "models": {
+    "B1_GOLD_HISTORY": [
+      "GOLD_RET_3M_LAGGED",
+      "GOLD_RET_6M_LAGGED",
+      "GOLD_VOL_6M_LAGGED"
+    ],
+    "B2_GOLD_PLUS_CYCLE_AGE": [
+      "GOLD_RET_3M_LAGGED",
+      "GOLD_RET_6M_LAGGED",
+      "GOLD_VOL_6M_LAGGED",
+      "CYCLE_AGE_MONTHS"
+    ],
+    "M3_PLUS_REALTIME_IPT": [
+      "GOLD_RET_3M_LAGGED",
+      "GOLD_RET_6M_LAGGED",
+      "GOLD_VOL_6M_LAGGED",
+      "CYCLE_AGE_MONTHS",
+      "RT_IPT_YOY"
+    ]
+  },
+  "module": "FED-CYCLE-PROSPECTIVE-GCF-012",
+  "oos008_performance_inherited": false,
+  "prospective_cycle_rule": {
+    "min_cumulative_hike_bp": 50.0,
+    "min_hikes": 2
+  },
+  "retroactive_predictions": false,
+  "spec_sha256": "f3d3eff3020af41665da93151962d0a488b14f642bf3e7e68dcf16cb156787b4",
+  "standardization": "TRAINING_ONLY_WEIGHTED_MEAN_SD",
+  "target": "GOLD_FWD_6M_RET",
+  "training_broad_episodes": [
+    "B01",
+    "B02",
+    "B03",
+    "B04",
+    "B05",
+    "B06",
+    "B07"
+  ],
+  "training_model_sha256": "96520e9316a0cbcc18085f0dfa2d7432fab9892d715e7893fcf5ad2b172ba50d",
+  "training_weight_rule": "BROAD_EPISODE_TOTAL_1_THEN_EQUAL_CYCLE_TOTAL_THEN_EQUAL_ROWS",
+  "version": "v1",
+  "within_episode_refit": false
+}

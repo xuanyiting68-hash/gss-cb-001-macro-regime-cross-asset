@@ -1,0 +1,118 @@
+{
+  "B0_HIST_MEAN": {
+    "prediction": 0.012357259295856802
+  },
+  "B1_GOLD_HISTORY": {
+    "active": [
+      true,
+      true,
+      true
+    ],
+    "coefficients_intercept_then_standardized_features": [
+      0.012357259295856798,
+      0.01377054626308609,
+      -0.0018338766200773175,
+      -0.020692904651704737
+    ],
+    "features": [
+      "GOLD_RET_3M_LAGGED",
+      "GOLD_RET_6M_LAGGED",
+      "GOLD_VOL_6M_LAGGED"
+    ],
+    "weighted_means": [
+      0.0061025045623796185,
+      0.026960729538112994,
+      0.036738580456897825
+    ],
+    "weighted_sds": [
+      0.06423002181852101,
+      0.08870982774950716,
+      0.021088086686627115
+    ]
+  },
+  "B2_GOLD_PLUS_CYCLE_AGE": {
+    "active": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "coefficients_intercept_then_standardized_features": [
+      0.012357259295856796,
+      0.009765582831108836,
+      -0.004311443648261843,
+      -0.015377234982287092,
+      0.02916847950416041
+    ],
+    "features": [
+      "GOLD_RET_3M_LAGGED",
+      "GOLD_RET_6M_LAGGED",
+      "GOLD_VOL_6M_LAGGED",
+      "CYCLE_AGE_MONTHS"
+    ],
+    "weighted_means": [
+      0.0061025045623796185,
+      0.026960729538112994,
+      0.036738580456897825,
+      10.964285714285714
+    ],
+    "weighted_sds": [
+      0.06423002181852101,
+      0.08870982774950716,
+      0.021088086686627115,
+      9.276758501724604
+    ]
+  },
+  "M3_PLUS_REALTIME_IPT": {
+    "active": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "coefficients_intercept_then_standardized_features": [
+      0.012357259295856795,
+      0.011008126026706994,
+      -0.01430755968716455,
+      -0.02550526303826331,
+      0.020022607276591053,
+      -0.0465994390410502
+    ],
+    "features": [
+      "GOLD_RET_3M_LAGGED",
+      "GOLD_RET_6M_LAGGED",
+      "GOLD_VOL_6M_LAGGED",
+      "CYCLE_AGE_MONTHS",
+      "RT_IPT_YOY"
+    ],
+    "weighted_means": [
+      0.0061025045623796185,
+      0.026960729538112994,
+      0.036738580456897825,
+      10.964285714285714,
+      0.03954741762744175
+    ],
+    "weighted_sds": [
+      0.06423002181852101,
+      0.08870982774950716,
+      0.021088086686627115,
+      9.276758501724604,
+      0.03690840094214266
+    ]
+  },
+  "latest_training_target_end_period": "2025-01",
+  "module": "FED-CYCLE-PROSPECTIVE-GCF-012",
+  "spec_sha256": "f3d3eff3020af41665da93151962d0a488b14f642bf3e7e68dcf16cb156787b4",
+  "training_broad_episodes": [
+    "B01",
+    "B02",
+    "B03",
+    "B04",
+    "B05",
+    "B06",
+    "B07"
+  ],
+  "training_model_sha256": "96520e9316a0cbcc18085f0dfa2d7432fab9892d715e7893fcf5ad2b172ba50d",
+  "training_rows": 165
+}
