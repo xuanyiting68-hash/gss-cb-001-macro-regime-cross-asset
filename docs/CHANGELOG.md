@@ -498,3 +498,11 @@
 - Added explicit claim-time taxonomy: CONTEMPORANEOUS_POLICY_CONTEXT, RETROSPECTIVE_DATING, RETROSPECTIVE_EVENT_CONTEXT and POST_ANCHOR_SHOCK.
 - Enforced anti-hindsight guardrails: 2001/2007 NBER recession dates are later determinations; September 11 is post-January-2001; COVID is post-July-2019; B07 NBER status is only as-of the 2026-09-25 source audit.
 - No market metrics were changed and no new inference was added.
+
+## 2026-09-25 — FED-CYCLE-CONTENT-CLAIM-REGISTRY-022B
+
+- Created the publishing-grade canonical claim layer from 021 + 022 + 022A + 017/019/020.
+- Registered 47 unique claims: 20 core asset-phase, 6 historical case, 18 official-source historical context, 2 negative timing guardrails and 1 recovery synthesis.
+- Every claim now carries support/sample, evidence class/time, source modules/files/URLs, allowed wording, prohibited wording, freshness and a future figure key.
+- Created six evidence-routing content packs: first-cut path risk, same-label/different-paths, Gold vs equities, hindsight traps, recovery clock and 1987 multi-leg.
+- Preserved 019/020 negative results and all 022A anti-hindsight rules; no new empirical inference or ranking introduced.
