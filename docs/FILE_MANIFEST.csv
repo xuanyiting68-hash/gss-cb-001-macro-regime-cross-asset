@@ -340,3 +340,8 @@ scripts/run_fed_cycle_prospective_issuance_v1.py,Fail-closed prospective forecas
 results/fed_cycle_prospective_gcf_v1/ISSUANCE_READINESS.csv,Current issuance eligibility/readiness state,QC_PASS_DESCRIPTIVE,PUBLIC_SAFE
 results/fed_cycle_prospective_gcf_v1/ISSUANCE_QC.json,Append-only issuance operational QC,QC_PASS,PUBLIC_SAFE
 results/fed_cycle_prospective_gcf_v1/ISSUANCE_STATUS.md,Prospective issuance status report,QC_PASS,PUBLIC_SAFE
+research/FED_CYCLE_PROSPECTIVE_ISSUANCE_013_V1_1_INTEGRITY_AMENDMENT.md,Pre-issuance registry integrity-chain amendment,CANONICAL,PUBLIC_SAFE
+scripts/run_fed_cycle_prospective_issuance_v1_1.py,Tamper-evident wrapper around frozen prospective issuer,CANONICAL,PUBLIC_SAFE
+results/fed_cycle_prospective_gcf_v1/REGISTRY_CHAIN.csv,Append-only prediction-row hash chain,CANONICAL_EMPTY_APPEND_ONLY,PUBLIC_SAFE
+results/fed_cycle_prospective_gcf_v1/REGISTRY_INTEGRITY.json,Current registry exact-file and chain integrity state,CANONICAL,PUBLIC_SAFE
+results/fed_cycle_prospective_gcf_v1/REGISTRY_INTEGRITY_QC.json,Registry genesis/full-chain integrity QC,QC_PASS,PUBLIC_SAFE

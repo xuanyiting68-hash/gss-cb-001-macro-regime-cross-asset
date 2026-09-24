@@ -479,6 +479,26 @@ The issuer therefore behaves fail-closed rather than manufacturing a forecast be
 
 Before a first real issuance, registry integrity should be strengthened with a cryptographic append-only hash chain; this is an audit-engineering amendment and does not alter the research specification.
 
+#### Issuance registry cryptographic integrity
+
+Status: **QC-PASSED GENESIS CHAIN / ZERO PREDICTIONS / RESEARCH SPEC UNCHANGED**
+
+PROSPECTIVE-ISSUANCE-013 v1.1 hardens the empty prospective registry before any real prediction exists.
+
+Current integrity state:
+- prediction rows: 0;
+- chain rows: 0;
+- exact registry SHA256: `c8e3cfb9eeb9c748d7ae8e9f8909be6713425ccd07f6019ef24d7fb38561c971`;
+- genesis/tail hash: `15c8893f10480bf408a72b705eb83015d407d9d0bb0fc23c519b3591b5656e4a`;
+- prior rows immutable: PASS;
+- full chain recomputation: PASS;
+- research specification changed: False.
+
+Before every later issuance, the wrapper requires the exact registry file hash, row count, chain links and tail hash to match the previously committed integrity state. After an issuance it permits growth of only 0 or 1 row and chains any new row to the previous tail hash.
+
+This is tamper-evident provenance, not a digital signature. Git permissions/history remain separate controls.
+
+
 
 
 
@@ -545,7 +565,7 @@ Current conclusion:
 1. Preserve the failed stock-only rule and FLOW-002 as negative/mechanism evidence; do not retune them.
 2. Design a genuinely weekly/daily PIT commodity event engine to remove monthly-average timing limitations and increase event support.
 3. Freeze an independent geopolitical/physical shock registry before any full P4A claim.
-4. PROSPECTIVE-ISSUANCE-013 is QC-passed and correctly refuses the current 1-hike/25bp candidate with zero predictions. Add a cryptographic registry integrity chain before any real issuance; after that, keep the system armed until a genuinely eligible new cycle and complete pre-target inputs coexist.
+4. PROSPECTIVE-ISSUANCE-013 v1.1 now has a QC-passed cryptographic genesis/hash chain around the still-empty registry. Keep the system armed but unchanged: no prediction until a genuinely eligible new cycle, complete pre-target GC=F/RTDSM inputs, valid issue timing and all immutable hash checks coexist.
 5. Resolve official announcement timing for registry-only emergency-cut candidates before any emergency-event outcome study.
 6. Continue provenance-safe charts/content cards tied to the evidence ledger.
 7. Keep paper-specific identification work behind the firewall.

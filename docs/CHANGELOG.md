@@ -254,3 +254,16 @@
 - Append-only row-count identity passes.
 - Identified one remaining pre-issuance audit hardening task: add a cryptographic registry hash chain so any future external/manual rewrite of an already committed prediction row is detectable.
 
+## 2026-09-24 — FED-CYCLE-PROSPECTIVE-ISSUANCE-013 v1.1 integrity chain
+
+- Froze a registry-integrity amendment before any real prospective prediction exists.
+- The amendment changes only audit integrity; model, target, features, cycle qualification, measurement bridge and issue timing remain unchanged.
+- Initialized a genesis hash chain around the empty GCF-012 prediction registry.
+- Exact empty-registry SHA256 is `c8e3cfb9eeb9c748d7ae8e9f8909be6713425ccd07f6019ef24d7fb38561c971`.
+- Genesis/tail hash is `15c8893f10480bf408a72b705eb83015d407d9d0bb0fc23c519b3591b5656e4a`.
+- Current registry rows = 0 and chain rows = 0.
+- v1.1 verifies the exact prior registry-file hash, row count, every canonical row hash link and tail hash before invoking the frozen issuer.
+- After the issuer, only 0 or 1 new row is permitted; all prior canonical row payloads must remain unchanged.
+- Full-chain recomputation passes and the research specification is explicitly recorded as unchanged.
+- Current issuance still refuses at the cycle gate: 1 hike / 25 bp, zero predictions.
+
