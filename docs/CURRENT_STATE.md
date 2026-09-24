@@ -309,6 +309,43 @@ CPI boundary:
 - Philadelphia Fed `PCPI` is seasonally adjusted and is not substituted;
 - CPI is therefore not upgraded to a strict real-time-vintage object by this module.
 
+
+#### Gold real-time growth OOS audit
+
+Status: **PRELIMINARY OOS CANDIDATE / WEAK AND BENCHMARK-SENSITIVE / NOT CAUSAL / NOT DEPLOYABLE**
+
+OOS-008 uses a frozen episode-forward design for next-6M Gold returns:
+
+- train B01-B03 -> test B04;
+- train B01-B04 -> test B05;
+- train B01-B05 -> test B06;
+- train B01-B06 -> test B07.
+
+No random split, no within-test refitting, no hyperparameter search and no target-window leakage.
+
+Frozen models:
+- B0 historical mean;
+- B1 lagged Gold 3M/6M returns + lagged 6M volatility;
+- B2 B1 + months since FIRST_HIKE;
+- M3 B2 + real-time IPT YoY;
+- D4 B2 + current-revised INDPRO diagnostic.
+
+M3 passes the predeclared preliminary gate:
+- episode-equal MSE is **21.27% lower than B2**;
+- M3 beats B2 in **3/4** future broad episodes;
+- OOS R² versus B0 = **+3.38%**.
+
+However the benchmark sanity audit materially limits the claim:
+- versus B0, M3 MSE improves only **3.38%** and wins only 2/4 episodes;
+- versus B0, M3 MAE is **2.74% worse** and wins only 1/4 episodes;
+- M3 versus current-vintage D4 improves MSE 6.80% and MAE 3.53%, winning 3/4 episodes;
+- episode-equal M3 signed bias is -2.84pp and calibration varies strongly by episode;
+- M3 prediction range (-14.7% to +12.6%) compresses the realized upside tail (-14.1% to +41.5%).
+
+The correct evidence label is therefore **PRELIMINARY OOS CANDIDATE / BENCHMARK-SENSITIVE**, not validated predictor or trading edge.
+
+B04-B07 are now consumed OOS evidence for this specification and must not be reused for parameter tuning.
+
 ### Household inflation / energy
 Status: **MECHANISM CANDIDATE / NOT A TRADING SIGNAL**
 
@@ -370,7 +407,7 @@ Current conclusion:
 1. Preserve the failed stock-only rule and FLOW-002 as negative/mechanism evidence; do not retune them.
 2. Design a genuinely weekly/daily PIT commodity event engine to remove monthly-average timing limitations and increase event support.
 3. Freeze an independent geopolitical/physical shock registry before any full P4A claim.
-4. Freeze a time-ordered OOS test for real-time IPT incremental forecasting value versus simple Gold-history / policy-phase benchmarks; do not reuse in-sample p-values as forecasting proof.
+4. Treat B04-B07 as consumed OOS evidence for the real-time growth specification; do not tune M3 on them. Future forecasting escalation requires genuinely new prospective data or a substantively new pre-frozen hypothesis.
 5. Resolve official announcement timing for registry-only emergency-cut candidates before any emergency-event outcome study.
 6. Continue provenance-safe charts/content cards tied to the evidence ledger.
 7. Keep paper-specific identification work behind the firewall.
