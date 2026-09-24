@@ -1,0 +1,37 @@
+name: fed-cycle-recovery-extension-v1
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "research/FED_CYCLE_RECOVERY_EXTENSION_015_LOCK.md"
+      - "scripts/run_fed_cycle_recovery_extension_v1.py"
+      - ".github/workflows/fed-cycle-recovery-extension-v1.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  recovery:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install dependencies
+        run: python -m pip install --upgrade pip pandas numpy scipy matplotlib beautifulsoup4 openpyxl xlrd tabulate
+      - name: Run new-asset recovery extension
+        run: python scripts/run_fed_cycle_recovery_extension_v1.py
+      - name: Commit recovery outputs
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add results/fed_cycle_recovery_extension_v1
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Run FED-CYCLE-RECOVERY-EXTENSION-015 [skip ci]"
+          git pull --rebase origin main
+          git push
