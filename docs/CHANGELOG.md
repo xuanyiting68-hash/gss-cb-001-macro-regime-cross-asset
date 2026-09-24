@@ -460,3 +460,14 @@
 - Final conclusion: simple pre-cut state rule not supported; do not convert 019 into a PandaAI timing score.
 - A future 020, if run, must be exploratory and use continuous pre-anchor stress levels without threshold tuning; otherwise this branch should stop.
 
+
+## 2026-09-25 — FED-CYCLE-PRECUT-STRESS-LEVEL-020
+
+- Froze 020 before association execution as an exploratory continuous-level extension of the negative 019 state diagnostic.
+- Restricted predictors to pre-cut Baa–10Y spread level, VIX level, curve stress and real-time RTDSM IPT growth stress; no NFCI extension, thresholds, interactions, composite score or fitted multivariate model.
+- QC passes on 8 mechanical cycles / 6 broad episodes; VIX has 5 broad episodes.
+- Full-sample median-trough Spearman rho is weak for Baa (+0.075), VIX (-0.211), curve stress (+0.029) and growth stress (-0.177), with LOO sign instability.
+- Late-trough share is nearly degenerate: B02 = 0.556 and B03-B07 = 1.000; it is constant in the VIX common sample.
+- Curve stress looks stronger only on B03-B07 (rho about -0.738), but restoring B02 changes the full-sample rho to about +0.029.
+- Final conclusion: continuous pre-cut levels do not rescue the 019 timing-rule hypothesis.
+- Per the frozen stopping rule, the small-sample FIRST_CUT timing-rule branch is closed rather than expanded.
