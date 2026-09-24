@@ -1,0 +1,18 @@
+{
+  "qc_gate": "PASS",
+  "module": "ENERGY-WEEKLY-OUTCOME-008",
+  "prospective_registry_rows": 1,
+  "immutable_event_chain_verified": true,
+  "immutable_event_chain_tail": "e5c9a4ce7caafa72958de30ca1eacaddccbc26982d0c84f8538918724b7a3d0d",
+  "wti_source_sha256": "344a4a7cce2b66e4e1d1789b3b15be4a96e24e4cad1d043e5c093be83d51bbcf",
+  "first_event_post_release_wti_observations": 0,
+  "newly_realized_horizons": [],
+  "newly_realized_horizon_count": 0,
+  "outcome_audit_rows": 0,
+  "first_event_status": "UNREALIZED",
+  "early_settlement_violation": false,
+  "model_fitted": false,
+  "thresholds_retuned": false,
+  "causal_status": "NONE",
+  "deployment_status": "NOT_DEPLOYABLE"
+}

@@ -1,0 +1,7 @@
+{
+  "schema_version": "ENERGY_WEEKLY_OUTCOME_008_V1",
+  "audit_sha256": "0d3a884f91f9cfb39cbc633bf5c5dd5e7bea657216429f8be3f7f61af7ed5ee9",
+  "audit_rows": 0,
+  "genesis_hash": "223bcb659c0ca3e687bcb17fb11b7c754a7cd08ca8df4874139219b79fc7f508",
+  "tail_hash": "223bcb659c0ca3e687bcb17fb11b7c754a7cd08ca8df4874139219b79fc7f508"
+}

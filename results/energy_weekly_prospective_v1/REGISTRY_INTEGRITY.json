@@ -4,5 +4,7 @@
   "registry_rows": 1,
   "chain_rows": 1,
   "genesis_hash": "1066f6b8e32168c12c540cc153f7bdfcb61ecb26d323264caec9ca1b4d31e1b1",
-  "tail_hash": "e5c9a4ce7caafa72958de30ca1eacaddccbc26982d0c84f8538918724b7a3d0d"
+  "tail_hash": "e5c9a4ce7caafa72958de30ca1eacaddccbc26982d0c84f8538918724b7a3d0d",
+  "realized_horizon_count": 0,
+  "last_outcome_maturation_utc": "2026-09-24T13:09:46.650273+00:00"
 }

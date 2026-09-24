@@ -1,0 +1,1 @@
+sequence,event_id,horizon,realized_utc,execution_date,execution_wti,endpoint_date,endpoint_wti,wti_source_sha256,endpoint_return,short_mae,short_mfe,previous_hash,row_hash
