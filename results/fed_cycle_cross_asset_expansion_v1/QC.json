@@ -1,0 +1,30 @@
+{
+  "qc_gate": "PASS",
+  "module": "FED-CYCLE-CROSS-ASSET-EXPANSION-014",
+  "mechanical_cycles": 10,
+  "broad_episodes": 7,
+  "latest_historical_first_hike_year": 2022,
+  "market_assets_loaded": [
+    "BTC_USD",
+    "DXY",
+    "TLT",
+    "VNQ"
+  ],
+  "market_acquisition_failures": [],
+  "required_market_acquisition_failures": [],
+  "market_metric_rows": 68,
+  "housing_metric_rows": 28,
+  "rate_metric_rows": 74,
+  "cash_metric_rows": 37,
+  "negative_market_mdd_violations": 0,
+  "negative_housing_decline_violations": 0,
+  "current_2026_cycle_leak_violations": 0,
+  "broad_episode_weight_violations": 0,
+  "support_label_violations": 0,
+  "raw_source_histories_committed": false,
+  "evidence_class": "DESCRIPTIVE",
+  "causal_status": "NONE",
+  "fdr_status": "NOT_APPLICABLE_NO_PVALUE_FAMILY",
+  "oos_status": "NOT_A_FORECASTING_MODEL",
+  "deployment_status": "NOT_DEPLOYABLE"
+}
