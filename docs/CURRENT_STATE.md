@@ -850,7 +850,7 @@ Thus the frozen 012 benchmark is structurally stable rather than a one-feature a
 3. ENERGY-WEEKLY-ANALOG-012A confirms the frozen analog structure is stable under all 13 leave-one-feature-out perturbations. Do not refit it; keep 009/010/008 as mechanism/external-risk/outcome paths.
 4. PROSPECTIVE-ISSUANCE-013 v1.1 now has a QC-passed cryptographic genesis/hash chain around the still-empty registry. Keep the system armed but unchanged: no prediction until a genuinely eligible new cycle, complete pre-target GC=F/RTDSM inputs, valid issue timing and all immutable hash checks coexist.
 5. Resolve official announcement timing for registry-only emergency-cut candidates before any emergency-event outcome study.
-6. TOTAL-RISK-CLOCK-017 now shows FIRST_CUT total full recovery is slower than PAUSE_START in 3/5 supported assets, equal in 2/5 and faster in 0/5. Next explanatory work must focus on predetermined macro state behind late troughs rather than adding more endpoint summaries.
+6. STRESS-TROUGH-ALIGNMENT-018 shows FIRST_CUT equity/WTI troughs cluster around the broader VIX/credit/copper stress maximum, while Gold is a clear timing exception. Next real-time-oriented work should use predetermined pre-anchor state rather than ex-post stress peaks.
 7. Keep paper-specific identification work behind the firewall.
 
 ## FED-CYCLE-CROSS-ASSET-EXPANSION-014 — duration / REIT / crypto / housing / rates / cash
@@ -1030,6 +1030,33 @@ Supported housing LAST_HIKE risk is even slower:
 - anchor→full recovery 20m.
 
 This remains descriptive phase evidence, not a causal effect of policy easing.
+
+## FED-CYCLE-STRESS-TROUGH-ALIGNMENT-018 — FIRST_CUT stress/trough timing
+
+Status: **QC PASS / EQUITY & WTI STRESS ALIGNMENT / GOLD EXCEPTION / NOT A REAL-TIME SIGNAL**
+
+018 aligns FIRST_CUT asset MDD trough months with the already-frozen VIX, Baa–10Y and copper stress-peak months.
+
+All 12 asset × stress pairs pass descriptive support.
+
+Most striking result:
+- Nasdaq × VIX: trough month 8, VIX stress month 8, same-month share **100%** across 5 modern broad episodes;
+- S&P × VIX: the same **100% same-month** alignment;
+- both equity/VIX pairs are within ±2 months in 100% of weighted support.
+
+Equity stress also aligns with:
+- Baa spread: median absolute gap 1m, ~71% within ±2m;
+- copper: median absolute gap 1m, 80% within ±2m.
+
+WTI troughs are similarly close to VIX/copper/credit stress, usually 0-1 month after the broad stress maximum.
+
+Gold is the exception:
+- Gold × VIX median lead -4m;
+- Gold × Baa spread -3m;
+- Gold often troughs before the later financial-stress maximum.
+
+Therefore the delayed FIRST_CUT equity/WTI troughs in 017 are consistent with a broader stress transition, while Gold follows a different timing channel. Because both stress peaks and troughs are future-window statistics, this is explanatory evidence only.
+
 
 
 

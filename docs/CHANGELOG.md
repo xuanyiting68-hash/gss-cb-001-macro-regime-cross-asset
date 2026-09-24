@@ -435,3 +435,14 @@
 - Supported national housing LAST_HIKE cell reaches median trough at 17m and prior-peak recovery at 20m.
 - Result is descriptive and does not imply that the first cut causes slower recovery.
 
+## 2026-09-24 — FED-CYCLE-STRESS-TROUGH-ALIGNMENT-018
+
+- Aligned FIRST_CUT asset MDD trough months with frozen VIX, Baa–10Y and copper stress peaks without reacquiring raw prices.
+- All 12 asset × stress pair cells meet descriptive support and QC.
+- Nasdaq and S&P 500 MDD troughs occur in the exact same event month as the maximum VIX stress increase in all five modern paired episodes.
+- Equity/Baa and equity/copper timing is also tight: median absolute gap ~1 month and 71-80% of weighted observations within ±2 months.
+- WTI troughs usually occur near or shortly after VIX/copper/credit stress peaks.
+- Gold is the important exception: its trough often occurs 3-4 months before the later VIX/credit maximum.
+- Cross-observable pair-level median lead is zero, but this aggregate masks the Gold timing difference.
+- Stress peaks and troughs are both ex-post future-window statistics, so the result is mechanism timing only and not a real-time bottoming signal.
+

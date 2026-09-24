@@ -490,3 +490,13 @@ results/fed_cycle_total_risk_clock_v1/SUPPORTED_TOTAL_CLOCK_KM.csv,Weighted tota
 results/fed_cycle_total_risk_clock_v1/FOUR_PHASE_TOTAL_CLOCK_COMPARISON.csv,Four-phase supported total recovery comparison,QC_PASS_DESCRIPTIVE,PUBLIC_SAFE
 results/fed_cycle_total_risk_clock_v1/QC.json,Total risk-clock QC,QC_PASS,PUBLIC_SAFE
 results/fed_cycle_total_risk_clock_v1/FED_CYCLE_TOTAL_RISK_CLOCK_017_REPORT.md,Total risk-clock report,QC_PASS_DESCRIPTIVE,PUBLIC_SAFE
+research/FED_CYCLE_STRESS_TROUGH_ALIGNMENT_018_LOCK.md,FIRST_CUT stress-trough timing alignment lock,CANONICAL,PUBLIC_SAFE
+research/FED_CYCLE_STRESS_TROUGH_ALIGNMENT_018_CLOSEOUT.md,FIRST_CUT stress-trough alignment closeout,CANONICAL,PUBLIC_SAFE
+scripts/run_fed_cycle_stress_trough_alignment_v1.py,Stress-peak versus MDD-trough timing runner,CANONICAL,PUBLIC_SAFE
+.github/workflows/fed-cycle-stress-trough-alignment-v1.yml,Stress-trough timing workflow,CANONICAL,PUBLIC
+results/fed_cycle_stress_trough_alignment_v1/PAIR_TIMING_PANEL.csv,Event-level FIRST_CUT stress/trough pairs,DESCRIPTIVE,PUBLIC_SAFE
+results/fed_cycle_stress_trough_alignment_v1/PAIR_TIMING_SUMMARY.csv,Supported asset-stress timing summary,QC_PASS_DESCRIPTIVE,PUBLIC_SAFE
+results/fed_cycle_stress_trough_alignment_v1/SUPPORTED_TIMING_PAIRS.csv,Supported FIRST_CUT timing pairs,QC_PASS_DESCRIPTIVE,PUBLIC_SAFE
+results/fed_cycle_stress_trough_alignment_v1/STRESS_SYNTHESIS.csv,Cross-asset stress timing synthesis,DESCRIPTIVE,PUBLIC_SAFE
+results/fed_cycle_stress_trough_alignment_v1/QC.json,Stress-trough alignment QC,QC_PASS,PUBLIC_SAFE
+results/fed_cycle_stress_trough_alignment_v1/FED_CYCLE_STRESS_TROUGH_ALIGNMENT_018_REPORT.md,Stress-trough timing report,QC_PASS_DESCRIPTIVE,PUBLIC_SAFE
