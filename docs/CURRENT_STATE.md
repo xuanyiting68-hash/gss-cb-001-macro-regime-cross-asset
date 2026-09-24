@@ -346,6 +346,38 @@ The correct evidence label is therefore **PRELIMINARY OOS CANDIDATE / BENCHMARK-
 
 B04-B07 are now consumed OOS evidence for this specification and must not be reused for parameter tuning.
 
+#### Prospective Gold shadow validation architecture
+
+Status: **QC-PASSED PROSPECTIVE ARCHITECTURE FROZEN / ARMED / NO NEW FORECAST EVIDENCE YET / NOT DEPLOYABLE**
+
+PROSPECTIVE-SHADOW-009 converts the consumed historical OOS experiment into an append-only future validation protocol without changing the OOS-008 specification.
+
+Hard anti-contamination rules:
+- B04-B07 remain consumed OOS evidence and cannot be used for feature, threshold, transformation, horizon or model tuning;
+- B0/B1/B2/M3 definitions remain frozen;
+- a new prospective broad episode is fit once using prior episodes only;
+- active-episode outcomes never enter training;
+- no within-episode refit;
+- no retroactive prediction after cycle qualification;
+- issued predictions are append-only and retain model/input provenance hashes.
+
+Current 2026 eligibility gate:
+- candidate FIRST_HIKE: 2026-09-16;
+- observed hikes in the current edge run: **1**;
+- cumulative tightening: **25 bp**;
+- frozen mechanical-cycle qualification requires **at least 2 hikes and at least 50 bp**;
+- current candidate therefore **does not qualify**;
+- if a later continuation satisfies the frozen rule, the next broad episode would be **B08** under the existing >18-month clustering rule;
+- current prospective prediction registry rows: **0**.
+
+QC passes with zero duplicate policy dates, zero sorting/sign-label violations, zero automatic prediction rows and explicit prohibition of retroactive predictions and historical-OOS specification tuning.
+
+Model specification SHA256:
+`fcaebf36a65ccd12dd7aa1cbb83450589e37ea852b638ad0cb60f43f2d16558b`.
+
+This milestone is forecasting infrastructure, not new positive forecast evidence. No B08 forecast is issued yet.
+
+
 ### Household inflation / energy
 Status: **MECHANISM CANDIDATE / NOT A TRADING SIGNAL**
 
@@ -407,7 +439,7 @@ Current conclusion:
 1. Preserve the failed stock-only rule and FLOW-002 as negative/mechanism evidence; do not retune them.
 2. Design a genuinely weekly/daily PIT commodity event engine to remove monthly-average timing limitations and increase event support.
 3. Freeze an independent geopolitical/physical shock registry before any full P4A claim.
-4. Treat B04-B07 as consumed OOS evidence for the real-time growth specification; do not tune M3 on them. Future forecasting escalation requires genuinely new prospective data or a substantively new pre-frozen hypothesis.
+4. Keep PROSPECTIVE-SHADOW-009 armed. The 2026 edge run is currently 1 hike / 25 bp and fails the frozen 2-hike / 50 bp eligibility rule, so no B08 forecast is issued. If a genuinely new cycle later qualifies, begin append-only prospective prediction issuance with the frozen M3 specification; never backfill earlier months or tune on B04-B07.
 5. Resolve official announcement timing for registry-only emergency-cut candidates before any emergency-event outcome study.
 6. Continue provenance-safe charts/content cards tied to the evidence ledger.
 7. Keep paper-specific identification work behind the firewall.

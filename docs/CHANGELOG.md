@@ -186,3 +186,16 @@
 - Final status: PRELIMINARY_OOS_CANDIDATE / WEAK AND BENCHMARK-SENSITIVE / NOT DEPLOYABLE.
 - B04-B07 are now consumed OOS evidence for this specification and must not be used for further parameter tuning.
 - Added an evidence-linked content card explaining why passing an OOS gate is not equivalent to a tradable model.
+
+## 2026-09-24 — FED-CYCLE-PROSPECTIVE-SHADOW-009
+
+- Froze an append-only prospective Gold validation architecture after OOS-008 rather than tuning the consumed B04-B07 evidence.
+- Preserved the existing mechanical tightening-leg eligibility rule: at least 2 positive target changes and at least 50 bp cumulative tightening.
+- The current 2026 edge run contains only the 2026-09-16 +25 bp hike, so it is a prospective candidate but **not yet an eligible B08 test episode**.
+- Automated gate QC passed: 185 policy rows, zero duplicate event dates, zero ordering/sign-label violations, zero automatic prediction rows and zero retroactive-issuance permission.
+- If the current/future edge run later qualifies, the existing broad-cluster rule maps it to prospective B08; no earlier month may be backfilled after qualification.
+- Frozen prospective live family is B0/B1/B2/M3 only; current-revised D4 remains historical diagnostic and is excluded from the live shadow path.
+- New-episode models are fit once from prior episodes only; active-episode outcomes never enter training and no within-episode refit is permitted.
+- Added immutable model-spec hashing and an append-only prediction registry schema for issue timestamps, source/input provenance, predictions, realized targets and errors.
+- Current registry contains 0 predictions. Evidence status is PROSPECTIVE_ARCHITECTURE_FROZEN_ARMED_NO_NEW_FORECAST_EVIDENCE / NOT_DEPLOYABLE.
+

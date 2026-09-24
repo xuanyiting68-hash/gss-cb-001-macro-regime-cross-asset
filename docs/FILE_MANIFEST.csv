@@ -292,3 +292,11 @@ results/fed_cycle_gold_oos_v1/FED_CYCLE_GOLD_OOS_008_REPORT.md,Reproducible epis
 results/fed_cycle_gold_oos_v1/01_oos_episode_mse_b2_vs_m3.png,OOS per-episode B2-vs-M3 MSE figure,DESCRIPTIVE,PUBLIC
 results/fed_cycle_gold_oos_v1/02_oos_r2_by_model.png,OOS model R-squared comparison figure,DESCRIPTIVE,PUBLIC
 content/FED_CYCLE_GOLD_OOS_CONTENT_010.md,Evidence-linked OOS benchmark-discipline content card,CANONICAL,PUBLIC_SAFE
+research/FED_CYCLE_PROSPECTIVE_SHADOW_009_LOCK.md,Prospective Gold append-only validation lock,CANONICAL,PUBLIC_SAFE
+scripts/run_fed_cycle_prospective_shadow_v1.py,Prospective cycle-eligibility and append-only registry gate runner,CANONICAL,PUBLIC_SAFE
+.github/workflows/fed-cycle-prospective-shadow-v1.yml,Automated prospective-shadow QC workflow,CANONICAL,PUBLIC
+results/fed_cycle_prospective_shadow_v1/QC.json,Prospective architecture and 2026 eligibility QC,QC_PASS,PUBLIC_SAFE
+results/fed_cycle_prospective_shadow_v1/MODEL_SPEC.json,Frozen prospective B0/B1/B2/M3 model specification and hash,CANONICAL,PUBLIC_SAFE
+results/fed_cycle_prospective_shadow_v1/PROSPECTIVE_CYCLE_GATE.csv,Current edge-cycle eligibility gate,QC_PASS_DESCRIPTIVE,PUBLIC_SAFE
+results/fed_cycle_prospective_shadow_v1/PREDICTION_REGISTRY.csv,Append-only prospective prediction registry,CANONICAL_EMPTY_APPEND_ONLY,PUBLIC_SAFE
+results/fed_cycle_prospective_shadow_v1/STATUS.md,Prospective shadow current status report,QC_PASS,PUBLIC_SAFE
