@@ -42,113 +42,79 @@ MONTHS={
     "July":7,"August":8,"September":9,"October":10,"November":11,"December":12,
 }
 
-def build_full_twip_registry():
+def build_full_twip_registry(common_week_ends):
+    """
+    Reconstruct actual historical release dates from official TWIP archive hrefs.
+
+    The archive URL encodes release date as:
+      /petroleum/weekly/archive/YYYY/YYMMDD/...
+
+    We then map each official release date to the latest common EIA physical
+    week-ending observation 3-12 calendar days earlier. This does not assume
+    Wednesday and preserves holiday shifts encoded by the archive URL itself.
+    """
     raw=fetch_bytes(PHYS.TWIP_URL,timeout=90)
     soup=BeautifulSoup(raw,"html.parser")
-    sections={}
-    # The archive has top navigation year labels plus later year-section labels.
-    # Take the LAST exact year node in document order, which avoids the nav copy.
-    year_nodes={y:[] for y in range(2002,2026)}
-    for tag in soup.find_all(True):
-        txt=tag.get_text(" ",strip=True)
-        if re.fullmatch(r"20\\d{2}",txt):
-            year=int(txt)
-            if 2002<=year<=2025:
-                year_nodes[year].append(tag)
-        tid=str(tag.get("id","")).strip()
-        if re.fullmatch(r"20\\d{2}",tid):
-            year=int(tid)
-            if 2002<=year<=2025:
-                year_nodes[year].append(tag)
-    for year,nodes in year_nodes.items():
-        if not nodes:
+    releases={}
+    pat=re.compile(r"/petroleum/weekly/archive/(20\\d{2})/(\\d{6})(?:/|$)",re.I)
+
+    for a in soup.find_all("a",href=True):
+        href=str(a.get("href",""))
+        m=pat.search(href)
+        if not m:
             continue
-        tag=nodes[-1]
-        table=tag.find_next("table")
-        if table is not None:
-            sections[year]=table
+        year=int(m.group(1))
+        code=m.group(2)
+        if not (2002<=year<=2025):
+            continue
+        try:
+            yy=int(code[:2]); mm=int(code[2:4]); dd=int(code[4:6])
+            release=pd.Timestamp(2000+yy,mm,dd).normalize()
+        except Exception:
+            continue
+        if release.year!=year:
+            continue
+        releases[release]=href
 
+    common=pd.DatetimeIndex(sorted(pd.to_datetime(common_week_ends))).normalize()
     rows=[]
-    for year,table in sorted(sections.items()):
-        current_month=None
-        for tr in table.find_all("tr"):
-            cells=[c.get_text(" ",strip=True) for c in tr.find_all(["th","td"])]
-            if len(cells)<2:
-                continue
-            if any("Release date" in c for c in cells):
-                continue
-
-            if cells[0] in MONTHS and len(cells)>=3:
-                current_month=MONTHS[cells[0]]
-                rel_month=current_month
-                rel_day=cells[1]
-                week_txt=cells[2]
-            elif current_month is not None and len(cells)>=2:
-                rel_month=current_month
-                rel_day=cells[0]
-                week_txt=cells[1]
-            else:
-                continue
-
-            m=re.search(r"\\d+",str(rel_day))
-            if not m:
-                continue
-            try:
-                release=pd.Timestamp(year,rel_month,int(m.group(0)))
-            except Exception:
-                continue
-
-            parts=[int(x) for x in re.findall(r"\\d+",str(week_txt))]
-            if not parts:
-                continue
-
-            week_end=None
-            if "/" in str(week_txt) and len(parts)>=2:
-                wm,wd=parts[0],parts[1]
-                wy=year-1 if (rel_month==1 and wm==12) else year
-                try:
-                    week_end=pd.Timestamp(wy,wm,wd)
-                except Exception:
-                    week_end=None
-            else:
-                wd=parts[0]
-                # Search release month and prior month; accept only plausible WPSR lag.
-                candidates=[]
-                for delta in [0,-1]:
-                    cm=release+pd.DateOffset(months=delta)
-                    try:
-                        cand=pd.Timestamp(cm.year,cm.month,wd)
-                        lag=(release-cand).days
-                        if 3<=lag<=12:
-                            candidates.append((abs(lag-5),cand))
-                    except Exception:
-                        pass
-                if candidates:
-                    week_end=sorted(candidates,key=lambda x:x[0])[0][1]
-
-            if week_end is None:
-                continue
-            lag=(release-week_end).days
-            if not (3<=lag<=12):
-                continue
-
-            rows.append({
-                "week_end":week_end.normalize(),
-                "release_date":release.normalize(),
-                "release_method":"EIA_TWIP_ARCHIVE_EXPLICIT",
-                "source_url":PHYS.TWIP_URL,
-                "section_year":year,
-            })
+    ambiguous=0
+    unmapped=0
+    for release,href in sorted(releases.items()):
+        candidates=common[(common<release) & ((release-common).days>=3) & ((release-common).days<=12)]
+        if len(candidates)==0:
+            unmapped+=1
+            continue
+        # The publication refers to the most recent available weekly grid row.
+        week_end=candidates.max()
+        same_latest=candidates[candidates==week_end]
+        if len(same_latest)!=1:
+            ambiguous+=1
+            continue
+        rows.append({
+            "week_end":pd.Timestamp(week_end).normalize(),
+            "release_date":pd.Timestamp(release).normalize(),
+            "release_method":"EIA_TWIP_ARCHIVE_URL_DATE",
+            "source_url":PHYS.TWIP_URL,
+            "archive_href":href,
+        })
 
     out=pd.DataFrame(rows)
     if len(out):
-        out=out.sort_values(["week_end","release_date"]).drop_duplicates("week_end",keep="last").reset_index(drop=True)
+        out=(
+            out.sort_values(["week_end","release_date"])
+            .drop_duplicates("week_end",keep="last")
+            .reset_index(drop=True)
+        )
     meta={
         "source_url":PHYS.TWIP_URL,
         "sha256":hashlib.sha256(raw).hexdigest(),
+        "archive_release_links":int(len(releases)),
         "rows":int(len(out)),
-        "years_found":sorted(sections.keys()),
-        "year_count":len(sections),
+        "ambiguous_mappings":int(ambiguous),
+        "unmapped_release_links":int(unmapped),
+        "first_release_date":str(min(releases).date()) if releases else None,
+        "last_release_date":str(max(releases).date()) if releases else None,
     }
     return out,meta
 
@@ -209,11 +175,6 @@ def build_2026(common_week_ends):
     return pd.DataFrame(rows), schedule_sha, exc
 
 def main():
-    hist,hist_meta=build_full_twip_registry()
-    if hist.empty or "week_end" not in hist.columns:
-        raise RuntimeError(f"TWIP year-section discovery returned no rows; meta={hist_meta}")
-    hist=hist[(hist.week_end.dt.year>=2002)&(hist.week_end.dt.year<=2025)].copy()
-
     pdata={}
     pmeta=[]
     for sid in SERIES:
@@ -225,6 +186,11 @@ def main():
     for sid in SERIES[1:]:
         common &= set(pdata[sid].week_end)
     common=sorted(pd.to_datetime(list(common)))
+
+    hist,hist_meta=build_full_twip_registry(common)
+    if hist.empty or "week_end" not in hist.columns:
+        raise RuntimeError(f"TWIP archive-link discovery returned no rows; meta={hist_meta}")
+    hist=hist[(hist.week_end.dt.year>=2002)&(hist.week_end.dt.year<=2025)].copy()
 
     exceptions,schedule_sha=parse_2026_exceptions()
     # Rebuild 2026 only on exact common physical grid.
@@ -251,6 +217,31 @@ def main():
     registry["release_lag_days"]=(registry.release_date-registry.week_end).dt.days
     registry["week_end_gap_days"]=registry.week_end.diff().dt.days
     registry["holiday_shift_gt5d"]=registry.release_lag_days>5
+
+    # Independent exact cross-check against the previously curated official
+    # event-scoped release registry used by PHYSICAL-WF-001 v1.1.
+    curated_path=ROOT/"data"/"public"/"ENERGY_PHYSICAL_EVENT_RELEASE_REGISTRY_V1.csv"
+    curated=pd.read_csv(curated_path,parse_dates=["week_end","release_date"])
+    curated=curated[(curated.week_end.dt.year>=2002)&(curated.week_end.dt.year<=2025)].copy()
+    hmap=dict(zip(hist.week_end,hist.release_date))
+    curated_matches=0
+    curated_checked=0
+    curated_mismatch_rows=[]
+    for _,r in curated.iterrows():
+        we=pd.Timestamp(r.week_end).normalize()
+        rd=pd.Timestamp(r.release_date).normalize()
+        if we in hmap:
+            curated_checked+=1
+            if pd.Timestamp(hmap[we]).normalize()==rd:
+                curated_matches+=1
+            else:
+                curated_mismatch_rows.append({
+                    "week_end":we,
+                    "curated_release_date":rd,
+                    "full_registry_release_date":pd.Timestamp(hmap[we]).normalize(),
+                })
+    curated_match_share=(curated_matches/curated_checked) if curated_checked else np.nan
+    pd.DataFrame(curated_mismatch_rows).to_csv(OUT/"CURATED_RELEASE_CROSSCHECK_MISMATCHES.csv",index=False)
 
     common_hist=pd.DatetimeIndex([x for x in common if 2002<=x.year<=2025])
     reg_hist=set(registry.loc[(registry.week_end.dt.year>=2002)&(registry.week_end.dt.year<=2025),"week_end"])
@@ -280,6 +271,9 @@ def main():
         or lag_bad!=0
         or not (5.0<=med_lag<=6.0)
         or coverage<0.95
+        or curated_checked<20
+        or curated_match_share<1.0
+        or hist_meta.get("ambiguous_mappings",0)!=0
         or any(v!=0 for v in grid_dup.values())
     )
 
@@ -298,12 +292,16 @@ def main():
         "release_lag_max_days":int(registry.release_lag_days.max()),
         "common_physical_week_ends_2002_2025":int(len(common_hist)),
         "common_physical_release_mapping_coverage":coverage,
+        "curated_release_rows_checked":int(curated_checked),
+        "curated_release_exact_matches":int(curated_matches),
+        "curated_release_exact_match_share":float(curated_match_share) if np.isfinite(curated_match_share) else None,
         "missing_common_physical_week_ends":int(len(missing_common)),
         "registry_only_historical_week_ends":int(len(reg_only)),
         "physical_series_duplicate_dates":grid_dup,
         "historical_archive_sha256":hist_meta["sha256"],
-        "historical_year_sections_found":hist_meta.get("years_found",[]),
-        "historical_year_section_count":hist_meta.get("year_count",0),
+        "historical_archive_release_links":hist_meta.get("archive_release_links",0),
+        "historical_archive_ambiguous_mappings":hist_meta.get("ambiguous_mappings",0),
+        "historical_archive_unmapped_release_links":hist_meta.get("unmapped_release_links",0),
         "schedule_2026_sha256":schedule_sha,
         "holiday_exception_rows_2026":int(len(exceptions)),
         "outcomes_loaded":False,
