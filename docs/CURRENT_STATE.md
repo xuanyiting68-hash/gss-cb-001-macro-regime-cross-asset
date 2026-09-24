@@ -850,7 +850,7 @@ Thus the frozen 012 benchmark is structurally stable rather than a one-feature a
 3. ENERGY-WEEKLY-ANALOG-012A confirms the frozen analog structure is stable under all 13 leave-one-feature-out perturbations. Do not refit it; keep 009/010/008 as mechanism/external-risk/outcome paths.
 4. PROSPECTIVE-ISSUANCE-013 v1.1 now has a QC-passed cryptographic genesis/hash chain around the still-empty registry. Keep the system armed but unchanged: no prediction until a genuinely eligible new cycle, complete pre-target GC=F/RTDSM inputs, valid issue timing and all immutable hash checks coexist.
 5. Resolve official announcement timing for registry-only emergency-cut candidates before any emergency-event outcome study.
-6. RECOVERY-EXTENSION-015 is QC-passed with recovery-risk-set support correction. Build any recovery communication from supported cells first; keep TLT/VNQ/BTC and housing-FIRST_CUT recovery numbers explicitly limited descriptive.
+6. SUPPORTED-RECOVERY-MAP-016 shows FIRST_CUT is not universally faster than PAUSE_START. Next compute the full anchor-to-trough-to-50%/100% recovery clock from event-level supported cells, preserving censoring.
 7. Keep paper-specific identification work behind the firewall.
 
 ## FED-CYCLE-CROSS-ASSET-EXPANSION-014 — duration / REIT / crypto / housing / rates / cash
@@ -964,4 +964,31 @@ Limited-descriptive but economically notable:
 - BTC: 2-4m full recovery in only two broad episodes despite very large drawdowns.
 
 Recovery speed must therefore be interpreted jointly with drawdown depth, censoring and support strength.
+
+## FED-CYCLE-SUPPORTED-RECOVERY-MAP-016 — support-filtered recovery synthesis
+
+Status: **QC PASS / FIRST_CUT NOT UNIVERSALLY FASTER / DESCRIPTIVE**
+
+Only recovery-supported cells enter the main four-phase comparison.
+
+Fully supported four-phase assets:
+- DXY;
+- GOLD;
+- NASDAQ;
+- SP500;
+- WTI.
+
+Full-recovery KM medians (FIRST_HIKE / LAST_HIKE / PAUSE_START / FIRST_CUT):
+- DXY: 11 / 12 / 8 / 6 months;
+- GOLD: 19 / 6 / 5 / 12;
+- NASDAQ: 8 / 3 / 3 / 3;
+- SP500: 4 / 1 / 3 / 5;
+- WTI: 3 / 19 / 8 / 9.
+
+Frozen synthesis result:
+- PAUSE_START is faster than FIRST_HIKE for 4/5 supported assets;
+- FIRST_CUT is slower than PAUSE_START for 3/5, equal for 1/5 and faster for 1/5.
+
+Therefore **FIRST_CUT does not universally accelerate recovery**. Recovery must remain asset-specific and phase-conditioned.
+
 

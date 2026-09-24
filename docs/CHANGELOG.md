@@ -411,3 +411,13 @@
 - Housing FIRST_CUT full recovery median is 28m but is based on only three positive-drawdown broad episodes and remains limited descriptive.
 - No current-2026 cycle leakage, causal inference or forecasting claim.
 
+## 2026-09-24 — FED-CYCLE-SUPPORTED-RECOVERY-MAP-016
+
+- Combined 004 and 015 recovery outputs without any new price estimation.
+- Main comparison is restricted to recovery-supported cells.
+- Five assets have supported 50%/100% recovery evidence at all four anchors: DXY, Gold, Nasdaq, S&P 500 and WTI.
+- FIRST_CUT does not universally accelerate full recovery relative to PAUSE_START: slower in 3/5 assets, equal in 1/5, faster in 1/5.
+- PAUSE_START full recovery is faster than FIRST_HIKE for 4/5; WTI is the exception.
+- Full-recovery phase ordering is strongly asset-specific: Gold is slowest after FIRST_HIKE; S&P after FIRST_CUT; WTI after LAST_HIKE; DXY after LAST_HIKE.
+- Next step is the total anchor-to-trough-to-recovery clock, preserving event-level censoring rather than adding medians mechanically.
+
