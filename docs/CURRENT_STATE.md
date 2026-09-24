@@ -1194,3 +1194,24 @@ Binding anti-hindsight rules:
 The combined content-ready evidence object is now: `policy chronology -> what was known then -> asset path -> stress/trough path -> later official dating -> later shock context -> evidence boundary`.
 
 Next priority: **022B Content Claim Registry**, then **023 Real-Time Regime Dashboard**. The claim registry should be the single source of truth for reusable script/article/image-card claims. Prospective Fed/energy registries remain append-only under their frozen gates.
+
+## Content Claim Registry — 022B
+
+Status: **QC-PASSED 47-CLAIM CANONICAL CONTENT CONTROL LAYER / NOT CAUSAL / NOT A FORECAST / NOT DEPLOYABLE**
+
+022B is now the single-source-of-truth claim layer for reuse in videos, long articles, image cards and PandaAI.
+
+Inventory:
+- 20 core asset x phase claims for DXY/GOLD/NASDAQ/SP500/WTI across FIRST_HIKE/LAST_HIKE/PAUSE_START/FIRST_CUT;
+- 6 historical case claims B02-B07;
+- 18 official-source context claims mapped 1:1 from 022A;
+- 2 timing-rule guardrails preserving the negative 019/020 results;
+- 1 supported FIRST_CUT-vs-PAUSE recovery-clock synthesis.
+
+Every claim carries canonical wording, sample/support, evidence class/time, sources, allowed/prohibited wording, freshness, figure key and content routing tags.
+
+Six content packs now exist: FIRST_CUT_NOT_THE_BOTTOM, SAME_LABEL_DIFFERENT_PATHS, GOLD_VS_EQUITIES, HINDSIGHT_TRAPS, RECOVERY_CLOCK and 1987_MULTI_LEG.
+
+No claim can be interpreted as causal, an asset ranking, a current analog selection, a deterministic bottom date or a trading recommendation.
+
+Next priority: **023 Real-Time Regime Dashboard**, using release-aware current observables and linking current-state descriptions back to 022B CLAIM_IDs and 021 historical distributions. 023 must not select a single historical analog. After 023, build the Figure Registry and visual/content production library.
