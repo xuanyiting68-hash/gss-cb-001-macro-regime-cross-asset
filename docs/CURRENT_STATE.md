@@ -707,6 +707,22 @@ Modern 2018+ same-class:
 
 The synthesis therefore blocks an overconfident durable-bearish interpretation of the current rollover. It does not create a bullish forecast or trading instruction.
 
+#### Prospective weekly outcome maturation
+
+Status: **QC PASS / NO-EARLY-SETTLEMENT VERIFIED / ZERO REALIZED HORIZONS**
+
+ENERGY-WEEKLY-OUTCOME-008 enforces the exact ENERGY-WEEKLY-STATE-004 observation-count convention on the immutable ENERGY005 registry.
+
+First execution for `ENERGY005_2026-09-23`:
+- DCOILWTICO observations strictly after release: **0**;
+- newly realized horizons: **0**;
+- outcome audit rows: **0**;
+- event status: **UNREALIZED**;
+- early-settlement violation: False.
+
+The original 005 immutable event-chain verifies and remains unchanged. Future 4W/8W/13W outcomes can only enter through a separate append-only audit after 21/41/66 WTI observations including the execution anchor are available.
+
+
 
 
 
@@ -715,7 +731,7 @@ The synthesis therefore blocks an overconfident durable-bearish interpretation o
 
 1. Preserve the failed stock-only rule and FLOW-002 as negative/mechanism evidence; do not retune them.
 2. ENERGY-WEEKLY-STATE-004 is now the weekly/daily strict-PIT engine. Do not loosen its mechanism thresholds on the consumed 17 events. Freeze the still-unrealized 2026-09-23 TIGHT_OR_MIXED event prospectively and track future selected events append-only.
-3. ENERGY-RISK-SYNTHESIS-007 now freezes the integrated current state as ROLLOVER_NOT_CONFIRMED__EXTERNAL_SUPPLY_RISK_ACTIVE with bearish-reversal confirmation VETO. Do not retune this state. Keep ENERGY005 outcome tracking prospective and update only realized 4W/8W/13W fields when they mature.
+3. ENERGY-WEEKLY-OUTCOME-008 now enforces strict prospective maturation and has verified zero early settlement. Preserve the current 007 state and only append realized 4W/8W/13W outcomes when the exact WTI observation counts mature.
 4. PROSPECTIVE-ISSUANCE-013 v1.1 now has a QC-passed cryptographic genesis/hash chain around the still-empty registry. Keep the system armed but unchanged: no prediction until a genuinely eligible new cycle, complete pre-target GC=F/RTDSM inputs, valid issue timing and all immutable hash checks coexist.
 5. Resolve official announcement timing for registry-only emergency-cut candidates before any emergency-event outcome study.
 6. Continue provenance-safe charts/content cards tied to the evidence ledger.

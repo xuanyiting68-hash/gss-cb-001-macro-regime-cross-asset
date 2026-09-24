@@ -318,3 +318,14 @@
 - Bearish-reversal confirmation state is VETO.
 - This blocks overconfident bearish-normalization language but is not a bullish forecast, causal claim or trading signal.
 
+## 2026-09-24 — ENERGY-WEEKLY-OUTCOME-008
+
+- Froze and executed a prospective outcome-maturation layer before the first live event reached 4W maturity.
+- The module reuses the exact 004 DCOILWTICO outcome convention and requires 21/41/66 observations including the execution anchor for 4W/8W/13W.
+- The current ENERGY005_2026-09-23 event has zero available DCOILWTICO observations strictly after release in the current source response.
+- Zero horizons were realized and no outcome field was populated.
+- Outcome audit remains empty and has its own SHA256 genesis chain.
+- Original ENERGY005 registration-state chain verifies and remains unchanged.
+- First workflow attempt failed only because matplotlib, imported by an upstream acquisition module, was missing; dependency was added without changing any research rule.
+- Final QC passes with early-settlement violation = False.
+
