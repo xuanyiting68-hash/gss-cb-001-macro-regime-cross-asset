@@ -115,3 +115,16 @@
 - Preserved the weighting sensitivity versus the earlier equal-mechanical-leg Gold full-recovery estimate of 19 months; the two summaries use different weighting conventions.
 - Added an evidence-linked content card: “第一次加息后，真正危险的是第几个月？”
 - Next risk-path priority is a phase clock spanning LAST_HIKE, PAUSE_START and FIRST_CUT under the same frozen conventions.
+
+## 2026-09-24 — FED-CYCLE-PHASE-CLOCK-004
+
+- Froze and executed one common 12-complete-month path-risk convention across FIRST_HIKE, LAST_HIKE, PAUSE_START and FIRST_CUT.
+- QC passed with 1,824 phase-path rows, 152 phase-asset-cycle rows and all 16 primary asset × phase cells supported.
+- S&P 500 median 12M MDD is 4.22% after PAUSE_START versus 13.99% after FIRST_CUT; Nasdaq is 4.00% versus 17.48%.
+- FIRST_CUT late-window MDD-trough shares are 90.48% for both S&P and Nasdaq.
+- WTI FIRST_CUT median +12M return is -16.94%, median MDD 22.23%, median trough month 11 and late trough share 100%.
+- Gold differs: FIRST_CUT +12M median +4.06%, MDD 5.43%, trough month 5.
+- The phase map therefore rejects a simplistic descriptive narrative that first cut universally means risk has ended, while making no causal claim about the cut itself.
+- No cross-phase significance test is run because the same cycles can enter multiple anchors and post-anchor windows can overlap.
+- Added an evidence-linked content card: “第一次降息，就代表风险结束了吗？”
+- Next public-safe extension is modern stress-state diagnostics such as VIX, credit spreads and copper where support permits.
