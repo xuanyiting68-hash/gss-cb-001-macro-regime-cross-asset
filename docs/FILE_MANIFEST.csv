@@ -393,3 +393,11 @@ results/energy_weekly_outcome_v1/OUTCOME_AUDIT.csv,Append-only prospective event
 results/energy_weekly_outcome_v1/OUTCOME_AUDIT_INTEGRITY.json,Prospective outcome audit integrity state,CANONICAL,PUBLIC_SAFE
 results/energy_weekly_outcome_v1/QC.json,Prospective outcome maturation QC,QC_PASS,PUBLIC_SAFE
 results/energy_weekly_outcome_v1/ENERGY_WEEKLY_OUTCOME_008_STATUS.md,Prospective outcome maturity status,QC_PASS,PUBLIC_SAFE
+research/ENERGY_WEEKLY_CONFIRMATION_009_LOCK.md,Post-event weekly physical-confirmation lock,CANONICAL,PUBLIC_SAFE
+research/ENERGY_WEEKLY_CONFIRMATION_009_CLOSEOUT.md,Post-event weekly physical-confirmation closeout,CANONICAL,PUBLIC_SAFE
+scripts/run_energy_weekly_confirmation_v1.py,Fresh EIA post-event physical-confirmation tracker,CANONICAL,PUBLIC_SAFE
+.github/workflows/energy-weekly-confirmation-v1.yml,Post-event physical-confirmation workflow,CANONICAL,PUBLIC
+results/energy_weekly_confirmation_v1/POST_EVENT_CONFIRMATION_REGISTRY.csv,Append-only post-event weekly mechanism path,CANONICAL_EMPTY_APPEND_ONLY,PUBLIC_SAFE
+results/energy_weekly_confirmation_v1/REGISTRY_INTEGRITY.json,Post-event confirmation registry integrity state,CANONICAL,PUBLIC_SAFE
+results/energy_weekly_confirmation_v1/QC.json,Post-event weekly confirmation QC,QC_PASS,PUBLIC_SAFE
+results/energy_weekly_confirmation_v1/ENERGY_WEEKLY_CONFIRMATION_009_STATUS.md,Post-event physical confirmation status,QC_PASS,PUBLIC_SAFE

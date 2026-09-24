@@ -329,3 +329,13 @@
 - First workflow attempt failed only because matplotlib, imported by an upstream acquisition module, was missing; dependency was added without changing any research rule.
 - Final QC passes with early-settlement violation = False.
 
+## 2026-09-24 — ENERGY-WEEKLY-CONFIRMATION-009
+
+- Froze a post-event weekly physical-confirmation path before the first WPSR release after ENERGY005_2026-09-23.
+- Reuses the exact 004 stock-flow mechanism classification.
+- A single clean weekly class is only a candidate; confirmation requires two consecutive releases with the same clean class.
+- The original 2026-09-23 TIGHT_OR_MIXED event label is immutable and is never rewritten.
+- First run finds zero fresh common week ends and zero observed post-event WPSR releases.
+- Confirmation registry remains empty and current state is WAITING_NEXT_WPSR_RELEASE.
+- No prospective WTI outcome is used and no threshold is changed.
+

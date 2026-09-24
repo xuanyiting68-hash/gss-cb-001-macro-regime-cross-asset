@@ -722,6 +722,29 @@ First execution for `ENERGY005_2026-09-23`:
 
 The original 005 immutable event-chain verifies and remains unchanged. Future 4W/8W/13W outcomes can only enter through a separate append-only audit after 21/41/66 WTI observations including the execution anchor are available.
 
+#### Post-event weekly physical confirmation
+
+Status: **QC PASS / WAITING NEXT WPSR RELEASE / ZERO CONFIRMATION ROWS**
+
+ENERGY-WEEKLY-CONFIRMATION-009 freezes a two-release hysteresis rule before the first post-event weekly release.
+
+Rules:
+- one DEMAND_DESTRUCTION week -> candidate only;
+- two consecutive DEMAND_DESTRUCTION weeks -> confirmed;
+- one SUPPLY_NORMALIZATION week -> candidate only;
+- two consecutive SUPPLY_NORMALIZATION weeks -> confirmed;
+- otherwise no clean confirmation.
+
+First execution:
+- fresh post-PIT common week ends: 0;
+- observed releases after 2026-09-23: 0;
+- registry rows: 0;
+- current state: `WAITING_NEXT_WPSR_RELEASE`;
+- prospective WTI outcome use: False.
+
+The original ENERGY005 event remains permanently TIGHT_OR_MIXED; later weekly releases create a separate confirmation path rather than rewriting history.
+
+
 
 
 
@@ -731,7 +754,7 @@ The original 005 immutable event-chain verifies and remains unchanged. Future 4W
 
 1. Preserve the failed stock-only rule and FLOW-002 as negative/mechanism evidence; do not retune them.
 2. ENERGY-WEEKLY-STATE-004 is now the weekly/daily strict-PIT engine. Do not loosen its mechanism thresholds on the consumed 17 events. Freeze the still-unrealized 2026-09-23 TIGHT_OR_MIXED event prospectively and track future selected events append-only.
-3. ENERGY-WEEKLY-OUTCOME-008 now enforces strict prospective maturation and has verified zero early settlement. Preserve the current 007 state and only append realized 4W/8W/13W outcomes when the exact WTI observation counts mature.
+3. ENERGY-WEEKLY-CONFIRMATION-009 now separately tracks future physical confirmation under a pre-frozen two-release rule and currently has zero post-event releases. Preserve the 007 state until new official WPSR information or matured 008 outcomes legitimately change the evidence set.
 4. PROSPECTIVE-ISSUANCE-013 v1.1 now has a QC-passed cryptographic genesis/hash chain around the still-empty registry. Keep the system armed but unchanged: no prediction until a genuinely eligible new cycle, complete pre-target GC=F/RTDSM inputs, valid issue timing and all immutable hash checks coexist.
 5. Resolve official announcement timing for registry-only emergency-cut candidates before any emergency-event outcome study.
 6. Continue provenance-safe charts/content cards tied to the evidence ledger.
