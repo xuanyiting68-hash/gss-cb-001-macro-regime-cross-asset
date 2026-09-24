@@ -1,4 +1,4 @@
-# Current state — 2026-09-24
+# Current state — 2026-09-25
 
 ## Repository role
 
@@ -1094,3 +1094,31 @@ Next work should either:
 
 
 
+
+#### Continuous pre-cut stress-level diagnostic
+
+Status: **QC PASS / CONTINUOUS PRE-CUT LEVEL RULE NOT SUPPORTED / BRANCH STOP**
+
+FED-CYCLE-PRECUT-STRESS-LEVEL-020 freezes four predetermined continuous pre-FIRST_CUT inputs after the negative 019 binary-state result: Baa–10Y spread level, VIX level, curve stress and real-time RTDSM IPT growth stress.
+
+Support:
+- 8 mechanical cycles / 6 broad episodes;
+- VIX available for 5 broad episodes.
+
+Median SP500/Nasdaq/WTI trough-month Spearman rho:
+- Baa +0.075;
+- VIX -0.211;
+- curve stress +0.029;
+- real-time growth stress -0.177.
+
+Every full-sample relation fails the frozen composition-robustness requirement because LOO signs change.
+
+The late-trough-share outcome is nearly degenerate: B02 = 0.556 and B03-B07 = 1.000. The VIX common sample therefore has no late-share variation.
+
+A stronger B03-B07 curve-stress relation (rho about -0.738) disappears when B02 is restored (full-sample rho about +0.029), so it is sample-composition sensitive and is not promoted.
+
+Canonical conclusion: **continuous pre-cut levels do not rescue 019. Stop the small-sample FIRST_CUT timing-rule branch.**
+
+Do not add predictors, optimize transformations or fit a multivariate score on these six broad episodes.
+
+Next priority is prospective append-only evidence maturation and evidence-linked PandaAI integration. B04-B07 remain consumed OOS evidence for OOS-008 M3 and must not be reused for tuning.
