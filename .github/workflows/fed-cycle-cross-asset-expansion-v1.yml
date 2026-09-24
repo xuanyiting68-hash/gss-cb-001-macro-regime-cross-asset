@@ -25,7 +25,7 @@ jobs:
           python-version: "3.12"
 
       - name: Install dependencies
-        run: python -m pip install --upgrade pip pandas numpy tabulate
+        run: python -m pip install --upgrade pip pandas numpy tabulate matplotlib
 
       - name: Run frozen cross-asset expansion
         run: python scripts/run_fed_cycle_cross_asset_expansion_v1.py
