@@ -323,3 +323,13 @@ results/fed_cycle_gold_live_bridge_v1/QC.json,Gold live bridge computational QC 
 results/fed_cycle_gold_live_bridge_v1/FED_CYCLE_GOLD_LIVE_BRIDGE_011_REPORT.md,Reproducible feature-transport report,QC_PASS,PUBLIC_SAFE
 results/fed_cycle_gold_live_bridge_v1/01_ret3_feature_bridge.png,3M Gold feature bridge diagnostic figure,DESCRIPTIVE,PUBLIC
 results/fed_cycle_gold_live_bridge_v1/02_ret6_feature_bridge.png,6M Gold feature bridge diagnostic figure,DESCRIPTIVE,PUBLIC
+research/FED_CYCLE_PROSPECTIVE_GCF_012_LOCK.md,Proxy-measurement prospective Gold model lock,CANONICAL,PUBLIC_SAFE
+research/FED_CYCLE_PROSPECTIVE_GCF_012_CLOSEOUT.md,Proxy-measurement prospective Gold model closeout,CANONICAL,PUBLIC_SAFE
+scripts/run_fed_cycle_prospective_gcf_v1.py,Freeze final historical model for GC=F prospective measurement,CANONICAL,PUBLIC_SAFE
+.github/workflows/fed-cycle-prospective-gcf-v1.yml,Automated prospective proxy-model freeze workflow,CANONICAL,PUBLIC
+results/fed_cycle_prospective_gcf_v1/MODEL_SPEC.json,Frozen proxy-measurement prospective specification and hashes,CANONICAL,PUBLIC_SAFE
+results/fed_cycle_prospective_gcf_v1/FROZEN_TRAINING_MODEL.json,Immutable B0/B1/B2/M3 final historical coefficients and scalers,CANONICAL,PUBLIC_SAFE
+results/fed_cycle_prospective_gcf_v1/CURRENT_CYCLE_GATE.csv,Current prospective-cycle qualification state,QC_PASS_DESCRIPTIVE,PUBLIC_SAFE
+results/fed_cycle_prospective_gcf_v1/PREDICTION_REGISTRY.csv,Append-only proxy-measurement prediction registry,CANONICAL_EMPTY_APPEND_ONLY,PUBLIC_SAFE
+results/fed_cycle_prospective_gcf_v1/QC.json,Prospective proxy-model freeze QC,QC_PASS,PUBLIC_SAFE
+results/fed_cycle_prospective_gcf_v1/STATUS.md,Prospective proxy-model status report,QC_PASS,PUBLIC_SAFE

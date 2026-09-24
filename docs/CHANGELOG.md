@@ -228,3 +228,17 @@
 - First workflow attempt failed before research execution because beautifulsoup4 was absent; dependency was added and the exact frozen specification reran successfully without changing any research threshold.
 - Next task: freeze a separately versioned prospective measurement amendment that uses the bridge only for live Gold features while preserving outcome isolation and no-backfill rules.
 
+## 2026-09-24 — FED-CYCLE-PROSPECTIVE-GCF-012
+
+- Froze a separately versioned prospective Gold measurement specification after BRIDGE-011 passed all engineering-equivalence gates.
+- Historical fitting remains on the original OOS-008 World Bank Gold feature panel; GC=F is used only as the future live measurement contract.
+- Final historical training contains 165 rows across B01-B07, with latest realized target end 2025-01 and zero overlap with the current 2026 candidate.
+- Hierarchical broad-episode weights pass to numerical tolerance.
+- Froze immutable prospective spec SHA256 `f3d3eff3020af41665da93151962d0a488b14f642bf3e7e68dcf16cb156787b4`.
+- Froze training-model SHA256 `96520e9316a0cbcc18085f0dfa2d7432fab9892d715e7893fcf5ad2b172ba50d`.
+- Serialized B0/B1/B2/M3 coefficients, training weighted means and standard deviations.
+- Current 2026 edge run remains 1 hike / 25 bp, so it does not satisfy the frozen 2-hike / 50 bp activation rule.
+- Prediction registry remains empty and zero predictions are created.
+- OOS-008 performance is explicitly not inherited by the measurement-amended model.
+- Next step is a separate append-only issuance engine with hard duplicate, timing, input-readiness and no-backfill gates.
+

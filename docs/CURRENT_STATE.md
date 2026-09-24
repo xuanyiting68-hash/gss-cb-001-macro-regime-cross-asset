@@ -432,6 +432,30 @@ Result:
 
 This does not revalidate OOS-008 with futures data and does not transfer its historical OOS label automatically. It only supports building a separately versioned prospective measurement amendment. Yahoo/raw market-data licensing is also not treated as resolved for production deployment.
 
+#### Proxy-measurement prospective Gold model
+
+Status: **QC-PASSED MODEL FREEZE / PROXY-MEASUREMENT SHADOW READY / NO PROSPECTIVE EVIDENCE YET / NOT DEPLOYABLE**
+
+PROSPECTIVE-GCF-012 converts the successful BRIDGE-011 measurement result into a separately versioned future model without changing OOS-008.
+
+Frozen training:
+- 165 historical rows;
+- B01-B07;
+- latest realized training target end 2025-01;
+- zero target overlap with the 2026 candidate;
+- hierarchical broad-episode weighting passes.
+
+Frozen hashes:
+- prospective spec: `f3d3eff3020af41665da93151962d0a488b14f642bf3e7e68dcf16cb156787b4`;
+- training model: `96520e9316a0cbcc18085f0dfa2d7432fab9892d715e7893fcf5ad2b172ba50d`.
+
+Historical fitting still uses the original World Bank Gold features. Only future live Gold inputs are allowed to use the BRIDGE-011 GC=F monthly-mean measurement contract.
+
+The current 2026 edge run is still 1 hike / 25 bp, below the frozen 2-hike / 50 bp rule. Therefore prediction registry rows remain **0**.
+
+012 does not inherit OOS-008's preliminary OOS label. Its evidence status is **PROXY_MEASUREMENT_SHADOW_READY_NO_PROSPECTIVE_EVIDENCE**.
+
+
 
 
 
@@ -496,7 +520,7 @@ Current conclusion:
 1. Preserve the failed stock-only rule and FLOW-002 as negative/mechanism evidence; do not retune them.
 2. Design a genuinely weekly/daily PIT commodity event engine to remove monthly-average timing limitations and increase event support.
 3. Freeze an independent geopolitical/physical shock registry before any full P4A claim.
-4. GOLD-LIVE-BRIDGE-011 passes all 17/17 frozen feature-equivalence gates for the GC=F monthly-mean proxy. Freeze a separately versioned prospective measurement amendment using this bridge, with no inherited OOS label, no backfill, no B04-B07 tuning and an explicit source/license boundary before any B08 issuance.
+4. PROSPECTIVE-GCF-012 is now frozen and QC-passed with immutable spec/model hashes, but the 2026 edge run remains 1 hike / 25 bp and ineligible. Build the append-only issuance engine next; it must refuse duplicate, retroactive, late or input-incomplete forecasts and must create zero predictions until every frozen gate passes.
 5. Resolve official announcement timing for registry-only emergency-cut candidates before any emergency-event outcome study.
 6. Continue provenance-safe charts/content cards tied to the evidence ledger.
 7. Keep paper-specific identification work behind the firewall.
