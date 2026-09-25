@@ -38,20 +38,9 @@ def srt_time(seconds):
     return f"{h:02d}:{m:02d}:{s:02d},{ms:03d}"
 
 def wrap_cn(text,max_chars=18):
-    text=str(text).strip()
-    chunks=[]
-    while len(text)>max_chars:
-        cut=max_chars
-        for p in ["，","；","。","？","！",",",";"," "]:
-            idx=text.rfind(p,0,max_chars+1)
-            if idx>=max_chars//2:
-                cut=idx+1
-                break
-        chunks.append(text[:cut].strip())
-        text=text[cut:].strip()
-    if text:
-        chunks.append(text)
-    return "\n".join(chunks)
+    # Preserve the exact subtitle text in SRT. Visual wrapping belongs to the
+    # video compositor, so numeric tokens such as +20.2% can never be split.
+    return str(text).strip()
 
 def main():
     q030=read_pass(Q030)
