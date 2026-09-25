@@ -46,6 +46,18 @@ CHANNELS = [
     "PANDAAI_EXPLANATION",
 ]
 
+PUBLISHING_SUPPLEMENTAL_FIGURES = {
+    "CNT-01-FIRST-CUT-NOT-THE-BOTTOM": [],
+    "CNT-02-SAME-LABEL-DIFFERENT-PATHS": ["FIG-CASE-B03"],
+    "CNT-03-GOLD-VS-EQUITIES": [],
+    "CNT-04-HINDSIGHT-TRAPS": [
+        "FIG-CTX-B04_CTX_02","FIG-CTX-B04_CTX_03","FIG-CTX-B05_CTX_03",
+        "FIG-CTX-B06_CTX_02","FIG-CTX-B06_CTX_03",
+    ],
+    "CNT-05-RECOVERY-CLOCK": [],
+    "CNT-06-1987-MULTI-LEG": ["FIG-CASE-B02"],
+}
+
 VARIANTS = {
     "SVG_RESEARCH": {"figsize": (12, 7), "suffix": "__research.svg", "dpi": 100, "width": 1200, "height": 700},
     "PNG_16_9": {"figsize": (16, 9), "suffix": "__16x9.png", "dpi": 100, "width": 1600, "height": 900},
@@ -267,8 +279,12 @@ def parse_list(s):
     return [x for x in str(s).split("|") if x]
 
 def publishing_row(content_row, channel, all_rendered):
-    figures=parse_list(content_row["figure_keys"])
-    rendered=[f for f in figures if f in all_rendered]
+    figures=parse_list(content_row["figure_keys"]) + PUBLISHING_SUPPLEMENTAL_FIGURES[content_row["content_id"]]
+    dedup=[]
+    for f in figures:
+        if f not in dedup:
+            dedup.append(f)
+    rendered=[f for f in dedup if f in all_rendered]
     hooks=json.loads(content_row["hooks_json"])
     hook=hooks[0]
     base={
@@ -426,22 +442,22 @@ def main():
         raise RuntimeError(f"prohibited matrix fields: {bad}")
     if not pubdf[pubdf["channel"]=="DOUYIN_TIKTOK_SHORT"]["layout_plan"].str.contains("9:16 video composition external to 027",regex=False).all():
         raise RuntimeError("Douyin/TikTok matrix must disclose no full 9:16 composition")
+    cnt02 = pubdf[pubdf["content_id"]=="CNT-02-SAME-LABEL-DIFFERENT-PATHS"]
+    if not cnt02["available_figure_keys"].str.contains("FIG-CASE-B03", regex=False).all():
+        raise RuntimeError("CNT-02 publishing rows missing newly rendered B03 figure")
+    cnt04 = pubdf[pubdf["content_id"]=="CNT-04-HINDSIGHT-TRAPS"]
+    for key in PUBLISHING_SUPPLEMENTAL_FIGURES["CNT-04-HINDSIGHT-TRAPS"]:
+        if not cnt04["available_figure_keys"].str.contains(key, regex=False).all():
+            raise RuntimeError(f"CNT-04 publishing rows missing newly rendered context figure {key}")
+    cnt06 = pubdf[pubdf["content_id"]=="CNT-06-1987-MULTI-LEG"]
+    if not cnt06["available_figure_keys"].str.contains("FIG-CASE-B02", regex=False).all():
+        raise RuntimeError("CNT-06 publishing rows missing newly rendered B02 figure")
 
     pubdf.to_csv(OUT/"PUBLISHING_MATRIX.csv",index=False)
 
     # All six canonical packages now have at least one package-specific visual; include new B02/B03/context where relevant.
     readiness=[]
-    addmap={
-        "CNT-01-FIRST-CUT-NOT-THE-BOTTOM":[],
-        "CNT-02-SAME-LABEL-DIFFERENT-PATHS":["FIG-CASE-B03"],
-        "CNT-03-GOLD-VS-EQUITIES":[],
-        "CNT-04-HINDSIGHT-TRAPS":[
-            "FIG-CTX-B04_CTX_02","FIG-CTX-B04_CTX_03","FIG-CTX-B05_CTX_03",
-            "FIG-CTX-B06_CTX_02","FIG-CTX-B06_CTX_03"
-        ],
-        "CNT-05-RECOVERY-CLOCK":[],
-        "CNT-06-1987-MULTI-LEG":["FIG-CASE-B02"],
-    }
+    addmap=PUBLISHING_SUPPLEMENTAL_FIGURES
     for _,r in content.iterrows():
         base=parse_list(r["rendered_figure_keys"])
         combined=[]
@@ -563,6 +579,7 @@ def main():
         "post_anchor_shock_cards_visible":True,
         "publishing_matrix_rows":int(len(pubdf)),
         "channels_per_content":4,
+        "publishing_matrix_new_p1_figures_routed":True,
         "canonical_visual_complete_packages":int((rdf["new_visual_readiness"]=="VISUAL_COMPLETE_FOR_CANONICAL_PACKAGE").sum()),
         "douyin_tiktok_full_9x16_render_claimed":False,
         "cnt04_reverify_before_current_use":True,
