@@ -1323,3 +1323,15 @@ The first 028 run failed because a negated sentence contained a prohibited analo
 At this stage the project is **editorial-production ready**. Remaining high-value work is release operations rather than more small-sample rule mining: final release candidates, publishing order/cadence, preflight freshness/source checks, optional platform-native compositing and post-publication metrics logging.
 
 Next priority: **029 Editorial Release Candidate + Content Calendar**.
+
+## Editorial Release Candidate + Content Calendar — 029
+
+Status: **QC-PASSED SIX RC1 RELEASE OBJECTS + FOUR-WEEK RELEASE OPERATIONS / NOT PUBLISHED / NOT A FORECAST / NOT DEPLOYABLE**
+
+029 freezes one RC1 per canonical content package with immutable evidence SHA256 covering CLAIM_IDs, rendered FIGURE_KEYs, freshness, caveat and sources. Title/cover/hook presentation may be A/B tested; factual evidence may not change.
+
+The final release calendar has six unique PRIMARY slots across weeks 1-3, zero duplicate dates, and week 4 reserved for performance-based repurposing without evidence changes. CNT-04 remains REVERIFY_REQUIRED_BEFORE_RELEASE.
+
+A pre-publication checklist enforces claim/figure existence, evidence-hash match, freshness, time-class labels, source availability, caveats, no current-snapshot staleness and no prohibited financial-action language. Performance logging includes `evidence_payload_changed`, which must remain FALSE for normal editorial experiments.
+
+The project is now end-to-end editorial-release ready. The highest-value next step is execution/preflight or a genuinely refreshed current-cycle topical brief, not additional retrospective timing-rule mining.
