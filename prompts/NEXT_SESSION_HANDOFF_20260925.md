@@ -356,3 +356,19 @@ The project is now editorial-production ready. Updated next priority:
 3. add post-publication performance-log schema without modifying research claims;
 4. append new current-state snapshots only on genuine new releases/policy actions;
 5. prospective Fed/energy chains remain append-only and fail-closed.
+
+## Post-handoff update — 029 completed
+
+FED-CYCLE-EDITORIAL-RELEASE-CANDIDATE-029 is complete and QC-passed.
+
+Six RC1 release candidates now freeze immutable evidence hashes while allowing only editorial packaging A/B changes. The final calendar has six unique primary release slots across weeks 1-3, zero date collisions, and week 4 repurpose placeholders. CNT-04 requires re-verification before release.
+
+Preflight checklist, editorial A/B rules and performance-log schema are frozen. Normal editorial experiments must keep evidence_payload_changed = FALSE.
+
+The public project now has an end-to-end chain from research to claim registry to figures to platform-native production to release control.
+
+Updated next priority:
+1. execute per-release preflight and publishing workflow;
+2. create **030 Current-Cycle Topical Brief** only when new current data/policy genuinely change 023, or when a time-sensitive current explainer is explicitly needed;
+3. use performance data to improve packaging only, never to rewrite empirical claims;
+4. prospective Fed/energy registries remain append-only and fail-closed.
