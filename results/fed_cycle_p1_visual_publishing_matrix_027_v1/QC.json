@@ -23,6 +23,7 @@
   "post_anchor_shock_cards_visible": true,
   "publishing_matrix_rows": 24,
   "channels_per_content": 4,
+  "publishing_matrix_new_p1_figures_routed": true,
   "canonical_visual_complete_packages": 6,
   "douyin_tiktok_full_9x16_render_claimed": false,
   "cnt04_reverify_before_current_use": true,
