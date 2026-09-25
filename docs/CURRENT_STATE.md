@@ -1297,3 +1297,15 @@ Five packages are READY_P0_VISUAL using 025 renders. CNT-06 1987 multi-leg is in
 All numeric evidence is sourced from canonical claim payload/wording; 6/6 scripts explicitly distinguish historical evidence from current prediction. No buy/sell instruction, deterministic bottom, closest-analog ranking, best-asset ranking or unsupported causal Fed claim is generated.
 
 Next priority: **027 P1 Visual Completion + Publishing Matrix** — render B02/B03 and the five priority hindsight cards, then map each content object to Douyin/TikTok, Xiaohongshu, WeChat/long-form and PandaAI delivery while preserving the same evidence controls. A new 023-style current snapshot should only be appended when new releases or policy actions materially change current state.
+
+## P1 Visual Completion + Publishing Matrix — 027
+
+Status: **QC-PASSED 7-FIGURE x 3-VARIANT P1 PACK + 24-ROW PUBLISHING MATRIX / NOT NEW EVIDENCE / NOT A FORECAST / NOT DEPLOYABLE**
+
+027 renders B02/B03 and five priority hindsight/context cards. B02 explicitly preserves T03_1987/T04_1987/T05_1988 and does not fabricate a synthetic single-cycle or four-asset aggregate. The five context cards preserve RETROSPECTIVE_DATING or POST_ANCHOR_SHOCK exactly.
+
+The publishing matrix covers six canonical 026 packages across four channels: Douyin/TikTok short, Xiaohongshu carousel, WeChat/long-form and PandaAI explanation. A readback defect was fixed so newly rendered P1 figures are actually routed into the platform rows: B03 for CNT-02, five hindsight cards for CNT-04 and B02 for CNT-06.
+
+All six content packages are now `VISUAL_COMPLETE_FOR_CANONICAL_PACKAGE`. This means evidence visuals exist; it does not mean a final 9:16 video or published post has been produced.
+
+Next priority: **028 Platform-Native Production Pack** — create final shot lists/subtitle timing, Xiaohongshu carousel copy, complete long-form drafts and PandaAI retrieval templates while preserving CLAIM_ID/FIGURE_KEY/freshness/caveat provenance.
