@@ -1,0 +1,37 @@
+name: fed-cycle-realtime-regime-dashboard-v1
+on:
+  push:
+    branches: [main]
+    paths:
+      - "research/FED_CYCLE_REALTIME_REGIME_DASHBOARD_023_LOCK.md"
+      - "data/public/FED_REALTIME_REGIME_SNAPSHOT_20260925.csv"
+      - "scripts/run_fed_cycle_realtime_regime_dashboard_v1.py"
+      - "results/fed_cycle_prospective_gcf_v1/CURRENT_CYCLE_GATE.csv"
+      - "results/fed_cycle_prospective_gcf_v1/QC.json"
+      - "results/fed_cycle_content_claim_registry_022b_v1/CLAIM_REGISTRY.csv"
+      - "results/fed_cycle_content_claim_registry_022b_v1/QC.json"
+      - ".github/workflows/fed-cycle-realtime-regime-dashboard-v1.yml"
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  dashboard:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m pip install --upgrade pip pandas
+      - run: python scripts/run_fed_cycle_realtime_regime_dashboard_v1.py
+      - name: Commit 023 outputs
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add results/fed_cycle_realtime_regime_dashboard_v1
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Run FED-CYCLE-REALTIME-REGIME-DASHBOARD-023 [skip ci]"
+          git pull --rebase origin main
+          git push
