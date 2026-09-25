@@ -16,6 +16,7 @@
   "primary_release_slots": 6,
   "primary_packages_unique": 6,
   "week4_repurpose_only": true,
+  "duplicate_calendar_dates": 0,
   "cnt04_release_gate": "REVERIFY_REQUIRED_BEFORE_RELEASE",
   "current_snapshot_perpetually_live": false,
   "performance_schema_has_evidence_payload_changed": true,
