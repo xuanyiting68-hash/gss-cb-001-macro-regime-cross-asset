@@ -543,3 +543,13 @@
 - Evidence numbers are inserted only from canonical claim payload/wording; no independent recalculation is performed in the publishing layer.
 - All six scripts explicitly separate historical evidence from current prediction; prohibited buy/sell, deterministic-bottom, analog-ranking and best-asset language checks pass.
 - A second workflow pass normalized and de-duplicated official-source URL aggregation.
+
+## 2026-09-25 — FED-CYCLE-P1-VISUAL-PUBLISHING-MATRIX-027
+
+- Rendered the seven frozen high-priority P1 figures: B02, B03 and five retrospective/post-anchor context cards.
+- Added 21 new visual artifacts with SHA256 provenance: 7 SVG research, 7 1600x900 PNG and 7 1200x1200 PNG.
+- Preserved the B02 three-sub-cycle structure and prohibited a synthetic single-cycle/four-asset aggregate.
+- Preserved RETROSPECTIVE_DATING and POST_ANCHOR_SHOCK time classes on all five hindsight cards.
+- Built a 24-row publishing matrix covering six canonical content objects across Douyin/TikTok, Xiaohongshu, WeChat/long-form and PandaAI.
+- Readback identified and fixed a routing defect: the final matrix now includes B03 for CNT-02, all five hindsight cards for CNT-04 and B02 for CNT-06 across all channels.
+- All six packages are now VISUAL_COMPLETE_FOR_CANONICAL_PACKAGE; this does not claim a finished platform-native 9:16 video.
