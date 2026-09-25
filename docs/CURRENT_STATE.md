@@ -1283,3 +1283,17 @@ Automated render checks preserve the evidence boundary: B04 9/11 and B06 COVID r
 The session connector cannot directly return binary PNG bodies for in-chat pixel inspection, so canonical status is based on reproducible rendering, exact dimensions, non-empty artifacts, source/render hashes and SVG text-boundary checks rather than an unsupported claim of manual pixel review.
 
 Next priority: **026 Content Production Library** — build claim-backed platform-ready hooks, short-video structures, long-form article structures and source/caveat blocks using 022B + 025, without changing factual payloads.
+
+## Content Production Library — 026
+
+Status: **QC-PASSED 6-PACKAGE CHINESE CONTENT LIBRARY / CLAIM-LINKED / NOT A FORECAST / NOT DEPLOYABLE**
+
+026 now provides six reusable Chinese content objects covering: first-cut-not-the-bottom, same-label/different-paths, Gold-vs-equities, hindsight traps, recovery clocks and the 1987-89 multi-leg structure.
+
+Every package includes three hooks, a finished 60-90 second short-video script, long-form outline, canonical CLAIM_ID/FIGURE_KEY linkage, source/caveat blocks, freshness and visual readiness.
+
+Five packages are READY_P0_VISUAL using 025 renders. CNT-06 1987 multi-leg is intentionally TEXT_READY_VISUAL_PENDING_P1 because FIG-CASE-B02 has not yet been rendered.
+
+All numeric evidence is sourced from canonical claim payload/wording; 6/6 scripts explicitly distinguish historical evidence from current prediction. No buy/sell instruction, deterministic bottom, closest-analog ranking, best-asset ranking or unsupported causal Fed claim is generated.
+
+Next priority: **027 P1 Visual Completion + Publishing Matrix** — render B02/B03 and the five priority hindsight cards, then map each content object to Douyin/TikTok, Xiaohongshu, WeChat/long-form and PandaAI delivery while preserving the same evidence controls. A new 023-style current snapshot should only be appended when new releases or policy actions materially change current state.
