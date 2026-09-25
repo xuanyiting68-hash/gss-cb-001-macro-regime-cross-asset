@@ -1215,3 +1215,35 @@ Six content packs now exist: FIRST_CUT_NOT_THE_BOTTOM, SAME_LABEL_DIFFERENT_PATH
 No claim can be interpreted as causal, an asset ranking, a current analog selection, a deterministic bottom date or a trading recommendation.
 
 Next priority: **023 Real-Time Regime Dashboard**, using release-aware current observables and linking current-state descriptions back to 022B CLAIM_IDs and 021 historical distributions. 023 must not select a single historical analog. After 023, build the Figure Registry and visual/content production library.
+
+## Real-Time Regime Dashboard — 023
+
+Status: **QC-PASSED RELEASE-AWARE CURRENT SNAPSHOT / HISTORICAL-EVIDENCE LINKAGE / NOT CAUSAL / NOT A FORECAST / NOT DEPLOYABLE**
+
+Snapshot clock: 2026-09-25 16:08 Australia/Sydney.
+
+Current prospective Fed gate remains fail-closed:
+- candidate FIRST_HIKE 2026-09-16;
+- 1 observed hike / 25bp cumulative tightening;
+- target range 3.75%-4.00%, midpoint 3.875%;
+- frozen qualification requires >=2 hikes and >=50bp;
+- current qualification FALSE; no prospective prediction issued.
+
+Canonical current label: `EDGE_TIGHTENING_CANDIDATE__NOT_YET_QUALIFIED`.
+
+Current release-aware state:
+- EFFR 3.88%;
+- 2Y 4.85%, 10Y 5.11%, 10Y-2Y +26bp -> NON_INVERTED;
+- 5Y/10Y breakevens 2.33%/2.33%;
+- VIX 15.67;
+- Baa-10Y spread 1.39%;
+- NFCI -0.555 -> LOOSER_THAN_AVERAGE;
+- unemployment 4.1%;
+- industrial production YoY +1.4%;
+- headline/core PCE YoY 3.7%/3.3% (July latest release at snapshot; both above 2%).
+
+023 deliberately keeps these dimensions separate and links only seven 022B context claims: five FIRST_HIKE core-asset historical distributions plus the 019/020 negative timing-rule guardrails.
+
+No closest analog, similarity score, asset ranking, bottom date, prospective return forecast or trading recommendation is generated.
+
+Next priority: **024 Figure Registry and Visual Evidence Specs** keyed to the 022B figure IDs, then reusable chart generation/content production packs. Prospective Fed/energy registries remain append-only under their frozen gates.
