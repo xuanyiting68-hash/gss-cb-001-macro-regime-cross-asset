@@ -506,3 +506,13 @@
 - Every claim now carries support/sample, evidence class/time, source modules/files/URLs, allowed wording, prohibited wording, freshness and a future figure key.
 - Created six evidence-routing content packs: first-cut path risk, same-label/different-paths, Gold vs equities, hindsight traps, recovery clock and 1987 multi-leg.
 - Preserved 019/020 negative results and all 022A anti-hindsight rules; no new empirical inference or ranking introduced.
+
+## 2026-09-25 — FED-CYCLE-REALTIME-REGIME-DASHBOARD-023
+
+- Froze a 2026-09-25 16:08 Australia/Sydney release-aware current snapshot rather than a mutable live pull.
+- Preserved the prospective Fed gate exactly: 2026-09-16 candidate FIRST_HIKE, 1 hike, 25bp, qualification FALSE under the frozen >=2 hikes and >=50bp rule.
+- Registered 14 current observables spanning policy, Treasuries, breakevens, VIX, Baa credit spread, NFCI, unemployment, industrial production and PCE inflation.
+- Derived only deterministic state fields: target midpoint, 10Y-2Y curve (+26bp / NON_INVERTED), NFCI sign state, PCE-above-2 flags and INDPRO growth sign.
+- Linked five 022B FIRST_HIKE historical distribution claims plus the 019/020 negative timing-rule guardrails.
+- Explicitly generated zero analog-selection, similarity-score, asset-ranking and forecast fields.
+- GitHub Actions QC passed and committed the canonical 023 outputs.
