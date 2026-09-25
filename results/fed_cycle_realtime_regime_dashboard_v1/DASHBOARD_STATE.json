@@ -1,0 +1,155 @@
+{
+  "module": "FED-CYCLE-REALTIME-REGIME-DASHBOARD-023",
+  "snapshot_timestamp_utc": "2026-09-25T06:08:00Z",
+  "current_policy_label": "EDGE_TIGHTENING_CANDIDATE__NOT_YET_QUALIFIED",
+  "prospective_cycle_gate": {
+    "candidate_first_hike": "2026-09-16",
+    "n_hikes": 1,
+    "cumulative_hike_bp": 25.0,
+    "qualifies": false,
+    "prospective_episode_if_later_qualified": "B08",
+    "forecast_issued": false
+  },
+  "derived_state": {
+    "target_midpoint_percent": 3.875,
+    "curve_10y2y_bp": 26.000000000000068,
+    "curve_state": "NON_INVERTED",
+    "nfci_state": "LOOSER_THAN_AVERAGE",
+    "pce_above_2": true,
+    "core_pce_above_2": true,
+    "indpro_yoy_sign": "POSITIVE"
+  },
+  "current_observables": {
+    "FED_TARGET_LOWER": {
+      "value": 3.75,
+      "unit": "percent",
+      "observation_period": "2026-09-17",
+      "source_update_date": "2026-09-16",
+      "freshness_class": "CURRENT_LATEST_RELEASE",
+      "source_url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260916a.htm"
+    },
+    "FED_TARGET_UPPER": {
+      "value": 4.0,
+      "unit": "percent",
+      "observation_period": "2026-09-17",
+      "source_update_date": "2026-09-16",
+      "freshness_class": "CURRENT_LATEST_RELEASE",
+      "source_url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260916a.htm"
+    },
+    "EFFR": {
+      "value": 3.88,
+      "unit": "percent",
+      "observation_period": "2026-09-23",
+      "source_update_date": "2026-09-24",
+      "freshness_class": "CURRENT_LATEST_RELEASE",
+      "source_url": "https://fred.stlouisfed.org/series/EFFR"
+    },
+    "DGS2": {
+      "value": 4.85,
+      "unit": "percent",
+      "observation_period": "2026-09-23",
+      "source_update_date": "2026-09-24",
+      "freshness_class": "CURRENT_LATEST_RELEASE",
+      "source_url": "https://fred.stlouisfed.org/series/DGS2"
+    },
+    "DGS10": {
+      "value": 5.11,
+      "unit": "percent",
+      "observation_period": "2026-09-23",
+      "source_update_date": "2026-09-24",
+      "freshness_class": "CURRENT_LATEST_RELEASE",
+      "source_url": "https://fred.stlouisfed.org/series/DGS10"
+    },
+    "T5YIE": {
+      "value": 2.33,
+      "unit": "percent",
+      "observation_period": "2026-09-24",
+      "source_update_date": "2026-09-24",
+      "freshness_class": "CURRENT_LATEST_RELEASE",
+      "source_url": "https://fred.stlouisfed.org/series/T5YIE"
+    },
+    "T10YIE": {
+      "value": 2.33,
+      "unit": "percent",
+      "observation_period": "2026-09-24",
+      "source_update_date": "2026-09-24",
+      "freshness_class": "CURRENT_LATEST_RELEASE",
+      "source_url": "https://fred.stlouisfed.org/series/T10YIE"
+    },
+    "VIX": {
+      "value": 15.67,
+      "unit": "index",
+      "observation_period": "2026-09-24",
+      "source_update_date": "2026-09-24",
+      "freshness_class": "CURRENT_LATEST_RELEASE",
+      "source_url": "https://www.cboe.com/tradable-products/vix"
+    },
+    "BAA10Y": {
+      "value": 1.39,
+      "unit": "percent",
+      "observation_period": "2026-09-23",
+      "source_update_date": "2026-09-24",
+      "freshness_class": "CURRENT_LATEST_RELEASE",
+      "source_url": "https://fred.stlouisfed.org/series/BAA10Y"
+    },
+    "NFCI": {
+      "value": -0.555,
+      "unit": "index",
+      "observation_period": "2026-09-18",
+      "source_update_date": "2026-09-23",
+      "freshness_class": "CURRENT_LATEST_RELEASE",
+      "source_url": "https://fred.stlouisfed.org/series/NFCI"
+    },
+    "UNRATE": {
+      "value": 4.1,
+      "unit": "percent",
+      "observation_period": "2026-08-01",
+      "source_update_date": "2026-09-04",
+      "freshness_class": "CURRENT_LATEST_RELEASE",
+      "source_url": "https://fred.stlouisfed.org/series/UNRATE"
+    },
+    "INDPRO_YOY": {
+      "value": 1.4,
+      "unit": "percent_yoy",
+      "observation_period": "2026-08-01",
+      "source_update_date": "2026-09-18",
+      "freshness_class": "CURRENT_LATEST_RELEASE",
+      "source_url": "https://fred.stlouisfed.org/series/INDPRO"
+    },
+    "PCEPI_YOY": {
+      "value": 3.7,
+      "unit": "percent_yoy",
+      "observation_period": "2026-07-01",
+      "source_update_date": "2026-08-26",
+      "freshness_class": "CURRENT_WITH_KNOWN_PUBLICATION_LAG",
+      "source_url": "https://fred.stlouisfed.org/series/PCEPI"
+    },
+    "CORE_PCE_YOY": {
+      "value": 3.3,
+      "unit": "percent_yoy",
+      "observation_period": "2026-07-01",
+      "source_update_date": "2026-08-26",
+      "freshness_class": "CURRENT_WITH_KNOWN_PUBLICATION_LAG",
+      "source_url": "https://fred.stlouisfed.org/series/PCEPILFE"
+    }
+  },
+  "historical_reference_claim_ids": [
+    "CLM-PHASE-DXY-FIRST_HIKE",
+    "CLM-PHASE-GOLD-FIRST_HIKE",
+    "CLM-PHASE-NASDAQ-FIRST_HIKE",
+    "CLM-PHASE-SP500-FIRST_HIKE",
+    "CLM-PHASE-WTI-FIRST_HIKE",
+    "CLM-GUARD-019",
+    "CLM-GUARD-020"
+  ],
+  "interpretation_boundary": {
+    "analog_selection": false,
+    "similarity_score": false,
+    "asset_ranking": false,
+    "return_forecast": false,
+    "trading_recommendation": false
+  },
+  "causal_status": "NONE",
+  "oos_status": "NOT_A_FORECASTING_MODEL",
+  "deployment_status": "NOT_DEPLOYABLE"
+}

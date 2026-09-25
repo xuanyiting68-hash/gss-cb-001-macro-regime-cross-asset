@@ -1,0 +1,2 @@
+candidate_first_hike,candidate_last_hike,n_hikes,cumulative_hike_bp,qualifies,current_policy_label,target_lower,target_upper,target_midpoint,qualification_caveat,forecast_issued,prediction_registry_rows_expected
+2026-09-16,2026-09-16,1,25.0,False,EDGE_TIGHTENING_CANDIDATE__NOT_YET_QUALIFIED,3.75,4.0,3.875,Current 2026 run has only one 25bp hike and does not yet qualify under the frozen >=2 hikes and >=50bp rule.,False,0
