@@ -1,0 +1,26 @@
+{
+  "qc_gate": "PASS",
+  "module": "FED-CYCLE-CONTENT-PRODUCTION-LIBRARY-026",
+  "upstream_qc": {
+    "022B": "PASS",
+    "024": "PASS",
+    "025": "PASS"
+  },
+  "content_packages": 6,
+  "content_ids_exact_match": true,
+  "p0_visual_ready_packages": 5,
+  "text_ready_visual_pending_p1_packages": 1,
+  "all_claim_refs_exist": true,
+  "all_figure_refs_exist": true,
+  "cnt06_b02_render_falsely_claimed": false,
+  "cnt04_reverify_before_current_use": true,
+  "script_numeric_source_mode": "CLAIM_PAYLOAD_OR_CANONICAL_WORDING_ONLY",
+  "scripts_with_history_not_forecast_boundary": 6,
+  "prohibited_language_leaks": [],
+  "new_inference": false,
+  "pvalues_generated": false,
+  "private_paper_inputs_used": false,
+  "causal_status": "NONE",
+  "oos_status": "NOT_A_FORECASTING_MODEL",
+  "deployment_status": "NOT_DEPLOYABLE"
+}
