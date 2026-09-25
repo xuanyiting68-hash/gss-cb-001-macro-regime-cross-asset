@@ -1,0 +1,4 @@
+hook_id,text,data_valid,editorially_unambiguous,release_use,reason
+HOOK_A,同一个FIRST_CUT标签，2001、2007、2019、2024走出了完全不同的资产路径。,True,True,SELECTED_RC1,No numeric asset ambiguity.
+HOOK_B,2001首降后，纳指+12个月是-25.6%；2024案例里则是+28.5%。,True,False,PROHIBITED_FOR_FIRST_RELEASE,2001 value is explicitly Nasdaq; 2024 +28.5% is also Nasdaq but the second asset label is omitted.
+HOOK_C,真正值得研究的不是“降息”两个字，而是降息发生在什么宏观和金融环境里。,True,True,RESERVE_NON_NUMERIC,Non-numeric conceptual hook.

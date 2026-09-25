@@ -1,0 +1,26 @@
+{
+  "module": "FED-CYCLE-CNT02-FINAL-PUBLISHING-RC-031",
+  "content_id": "CNT-02-SAME-LABEL-DIFFERENT-PATHS",
+  "release_candidate_id": "RC-CNT-02-SAME-LABEL-DIFFERENT-PATHS",
+  "scheduled_primary_release": "2026-09-28",
+  "preflight_status": "GO_RC1",
+  "publication_status": "NOT_PUBLISHED",
+  "final_title": "同样叫“第一次降息”，为什么历史上的市场路径差这么多？",
+  "final_hook": "同一个 FIRST_CUT 标签，2001、2007、2019、2024走出了完全不同的资产路径。",
+  "immutable_evidence_sha256": "48a659bb900be19707165bf8f6802e5ce31c514b59a9eb2ee050ccd89868a191",
+  "storyboard_rows": 7,
+  "duration_seconds": 72,
+  "srt_cues": 7,
+  "asset_sequence": [
+    "FIG-CASE-B03",
+    "FIG-CASE-B04",
+    "FIG-CASE-B05",
+    "FIG-CASE-B06",
+    "FIG-CASE-B07"
+  ],
+  "ambiguous_hook_b_used": false,
+  "final_mp4_rendered": false,
+  "current_market_claims_added": false,
+  "evidence_payload_changed": false,
+  "publication_actions_taken": 0
+}

@@ -1,0 +1,6 @@
+sequence_no,figure_key,start_sec,end_sec,purpose,preferred_16x9_path,render_sha256,placement,crop_source_footer
+1,FIG-CASE-B03,7.0,18.0,1995 evidence,results/fed_cycle_p1_visual_publishing_matrix_027_v1/figures/FIG-CASE-B03__16x9.png,57970d2fa9d347ec6a2cf717e782e07c3bd9e21b75693183af9652bd3e7a53db,CENTER_FIT_WITH_FOOTER_VISIBLE,False
+2,FIG-CASE-B04,18.0,29.0,2001 evidence,results/fed_cycle_p0_visual_evidence_pack_v1/figures/FIG-CASE-B04__16x9.png,d9b6321509583e92c40d7820251d19fdbe734684e4219061f6ee08ae93300b78,CENTER_FIT_WITH_FOOTER_VISIBLE,False
+3,FIG-CASE-B05,29.0,40.0,2007 evidence,results/fed_cycle_p0_visual_evidence_pack_v1/figures/FIG-CASE-B05__16x9.png,26ca029ff2d0be19d41b525b16847db17f4ba5ea4979b028c961c585d0a80841,CENTER_FIT_WITH_FOOTER_VISIBLE,False
+4,FIG-CASE-B06,40.0,45.5,2019 evidence,results/fed_cycle_p0_visual_evidence_pack_v1/figures/FIG-CASE-B06__16x9.png,4806ee9e739a92eb3617d2c60c1332a088cf3623d29b03c7781316a66fd323c2,CENTER_FIT_WITH_FOOTER_VISIBLE,False
+5,FIG-CASE-B07,45.5,51.0,2024 evidence,results/fed_cycle_p0_visual_evidence_pack_v1/figures/FIG-CASE-B07__16x9.png,0962e03cef7ff134e1aca15b31a32b7df7c8acc9280abc2cc4374686e4c343dc,CENTER_FIT_WITH_FOOTER_VISIBLE,False
