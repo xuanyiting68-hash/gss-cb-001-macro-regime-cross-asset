@@ -374,7 +374,7 @@ Publication status: NOT_PUBLISHED
         "storyboard_duration_seconds":int(sdf["duration_sec"].sum()),
         "timing_inherited_exactly":True,
         "srt_cues":7,
-        "final_srt_boundary_present":True,
+        "final_srt_boundary_present":True,\n        "srt_text_truncation_allowed":False,
         "rendered_case_figures":int(len(adf)),
         "figure_footer_cropping_allowed":False,
         "caption_ready":True,
