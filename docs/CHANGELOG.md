@@ -525,3 +525,12 @@
 - Preserved B02 three-sub-cycle structure, B04/B06 post-anchor-shock timing, B07 NBER reverify freshness and 019/020 negative-result visual boundaries.
 - Generated zero analog-score, asset-ranking or forecast-return visual fields.
 - GitHub Actions workflow passed and committed the canonical registry and P0 build plan.
+
+## 2026-09-25 — FED-CYCLE-P0-VISUAL-EVIDENCE-PACK-025
+
+- Rendered the exact 13-figure P0 queue from 024 into three reproducible variants per figure: SVG research, 1600x900 PNG and 1200x1200 PNG.
+- Produced 39 non-empty rendered files plus render/source hash manifests and a visual index.
+- Hardened provenance so each render hashes every actual input file consumed by the renderer, including policy chronology + case paths + historical context for B04-B07.
+- Automated checks confirm B04 9/11 and B06 COVID remain POST_ANCHOR_SHOCK, current 023 figure visibly states qualification FALSE/no-analog boundary, and 019/020 contain no BUY/SELL signal leakage.
+- Phase cards read 022B metric payloads directly; recovery chart remains restricted to the five supported assets and PAUSE_START/FIRST_CUT.
+- No new empirical inference, p-values, analog score, ranking or forecast is generated.
