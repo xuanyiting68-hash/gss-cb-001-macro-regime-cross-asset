@@ -1,0 +1,20 @@
+field_name,data_type,description,required
+content_id,string,Canonical content package ID,True
+release_candidate_id,string,Frozen RC ID,True
+platform,string,Publishing platform,True
+publish_timestamp,datetime,Actual publish timestamp,True
+title_variant,string,Editorial title/cover variant,True
+hook_variant,string,Hook variant A/B/C,True
+views,integer,Platform view count,False
+views_3s,integer,Three-second views if available,False
+average_watch_time,float,Average watch time seconds,False
+completion_rate,float,Video completion rate 0-1,False
+likes,integer,Likes,False
+comments,integer,Comments,False
+saves,integer,Saves/favorites,False
+shares,integer,Shares,False
+profile_clicks,integer,Profile clicks,False
+follows,integer,Attributed follows if available,False
+link_clicks,integer,Link clicks if available,False
+notes,string,Qualitative observations,False
+evidence_payload_changed,boolean,Must remain FALSE for normal editorial A/B tests,True
