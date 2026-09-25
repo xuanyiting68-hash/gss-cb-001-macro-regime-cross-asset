@@ -55,6 +55,7 @@ VARIANTS = {
 }
 
 plt.rcParams["svg.hashsalt"] = "fed-cycle-p0-visual-evidence-pack-025"
+plt.rcParams["svg.fonttype"] = "none"
 plt.rcParams["font.family"] = "DejaVu Sans"
 plt.rcParams["axes.titleweight"] = "bold"
 plt.rcParams["figure.titlesize"] = 16
@@ -384,6 +385,31 @@ def current_figure(spec, figsize, obs, gate, derived):
     return fig
 
 
+def effective_source_files(spec) -> str:
+    key = spec["figure_key"]
+    if key.startswith("FIG-PHASE-"):
+        return spec["source_files"]
+    if key == "FIG-RECOVERY-FIRSTCUT-VS-PAUSE":
+        return "results/fed_cycle_total_risk_clock_v1/SUPPORTED_TOTAL_CLOCK_SUMMARY.csv"
+    if key == "FIG-GUARD-019":
+        return "results/fed_cycle_precut_state_v1/BINARY_STATE_SUPPORT.csv|results/fed_cycle_precut_state_v1/BINARY_STATE_CONTRASTS.csv"
+    if key == "FIG-GUARD-020":
+        return "results/fed_cycle_precut_stress_level_v1/CONTINUOUS_RANK_DIAGNOSTICS.csv"
+    if key.startswith("FIG-CASE-"):
+        return (
+            "results/fed_cycle_historical_casebook_v1/CASEBOOK_POLICY_SEQUENCE.csv|"
+            "results/fed_cycle_historical_casebook_v1/CASEBOOK_ASSET_PHASE_METRICS.csv|"
+            "results/fed_cycle_historical_context_022a_v1/CONTEXT_CLAIMS.csv"
+        )
+    if key == "FIG-CURRENT-023-REGIME-SNAPSHOT":
+        return (
+            "results/fed_cycle_realtime_regime_dashboard_v1/CURRENT_POLICY_GATE.csv|"
+            "results/fed_cycle_realtime_regime_dashboard_v1/CURRENT_OBSERVABLES.csv|"
+            "results/fed_cycle_realtime_regime_dashboard_v1/CURRENT_STATE_DERIVED.csv"
+        )
+    raise RuntimeError(f"no effective source mapping for {key}")
+
+
 def build_figure(spec, figsize, claims, recovery, support019, contrasts019, diag020, policy, case_assets, context, obs, gate, derived):
     key = spec["figure_key"]
     if key.startswith("FIG-PHASE-"):
@@ -464,7 +490,8 @@ def main():
     manifest = []
     ordered = p0.set_index("figure_key").loc[P0_KEYS].reset_index()
     for _, spec in ordered.iterrows():
-        source_hash = source_bundle_hash(spec["source_files"])
+        actual_sources = effective_source_files(spec)
+        source_hash = source_bundle_hash(actual_sources)
         for variant, cfg in VARIANTS.items():
             fig = build_figure(
                 spec, cfg["figsize"], claims, recovery, support019, contrasts019,
@@ -484,7 +511,7 @@ def main():
                 "variant":variant,
                 "relative_path":str(path.relative_to(ROOT)).replace("\\","/"),
                 "linked_claim_ids":spec["linked_claim_ids"],
-                "source_files":spec["source_files"],
+                "source_files":actual_sources,
                 "source_bundle_sha256":source_hash,
                 "sha256":sha256_file(path),
                 "byte_size":path.stat().st_size,
@@ -528,7 +555,7 @@ def main():
     m.to_csv(OUT / "RENDER_MANIFEST.csv", index=False)
 
     source_rows = []
-    unique_sources = sorted(set("|".join(ordered["source_files"]).split("|")))
+    unique_sources = sorted({rel for _, spec in ordered.iterrows() for rel in effective_source_files(spec).split("|")})
     for rel in unique_sources:
         p = ROOT / rel
         source_rows.append({
