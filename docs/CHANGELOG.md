@@ -516,3 +516,12 @@
 - Linked five 022B FIRST_HIKE historical distribution claims plus the 019/020 negative timing-rule guardrails.
 - Explicitly generated zero analog-selection, similarity-score, asset-ranking and forecast fields.
 - GitHub Actions QC passed and committed the canonical 023 outputs.
+
+## 2026-09-25 — FED-CYCLE-FIGURE-REGISTRY-024
+
+- Created a canonical visual-evidence specification layer over all 47 022B claims plus one supplemental 023 current-state figure.
+- Registered 48 unique figure specs across six visual families: 20 core phase cards, 6 case timelines, 18 context cards, 2 method guardrails, 1 recovery synthesis and 1 current snapshot.
+- Frozen production tiers are P0=13, P1=22 and P2=13; priority is production order only, not evidence strength or asset ranking.
+- Preserved B02 three-sub-cycle structure, B04/B06 post-anchor-shock timing, B07 NBER reverify freshness and 019/020 negative-result visual boundaries.
+- Generated zero analog-score, asset-ranking or forecast-return visual fields.
+- GitHub Actions workflow passed and committed the canonical registry and P0 build plan.
