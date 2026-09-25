@@ -279,3 +279,20 @@ Updated next priority:
 2. reusable visual/chart generation for the six content packs;
 3. Content Evidence Library / Myth-vs-Evidence production assets;
 4. keep prospective Fed/energy chains append-only and fail-closed.
+
+## Post-handoff update — 024 completed
+
+FED-CYCLE-FIGURE-REGISTRY-024 is complete and QC-passed.
+
+48 unique visual specs now exist: 47 map 1:1 from 022B CLAIM_ID figure keys and one is the supplemental current 023 regime snapshot.
+
+Families: 20 phase cards, 6 case timelines, 18 context cards, 2 method guardrails, 1 recovery synthesis, 1 current snapshot. Production tiers: P0=13/P1=22/P2=13.
+
+P0 is frozen to five FIRST_CUT core-asset cards, FIRST_CUT-vs-PAUSE recovery, 019/020 guardrails, B04-B07 cases and the current 023 snapshot.
+
+Do not add analog scores, rankings, forecasts or signal colors. Context timing and freshness must remain visible.
+
+Updated next priority:
+1. **025 P0 Visual Evidence Pack** — render the 13 P0 specs reproducibly with claim/source linkage and render QC;
+2. then build platform-specific 16:9 / 1:1 content packages from the same canonical figures;
+3. maintain prospective Fed/energy chains append-only and fail-closed.
