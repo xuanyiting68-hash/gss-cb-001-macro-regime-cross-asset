@@ -325,3 +325,19 @@ Updated next priority:
 2. keep CLAIM_ID / FIGURE_KEY / freshness / caveat controls intact across platform adaptations;
 3. append a new current-regime snapshot only when genuinely new releases or Fed actions materially change 023;
 4. prospective Fed/energy chains remain append-only and fail-closed.
+
+## Post-handoff update — 027 completed
+
+FED-CYCLE-P1-VISUAL-PUBLISHING-MATRIX-027 is complete and QC-passed.
+
+Seven P1 figures are now rendered in 21 artifacts: B02, B03, 2001 retrospective dating, 9/11 post-anchor shock, 2007 retrospective dating, 2020 retrospective dating and COVID post-anchor shock.
+
+The final corrected publishing matrix has 24 rows = six content packages x four channels. New P1 visuals are routed into the relevant rows: CNT-02 includes B03, CNT-04 includes all five hindsight cards and CNT-06 includes B02.
+
+All six packages are VISUAL_COMPLETE_FOR_CANONICAL_PACKAGE. Douyin/TikTok remains script/evidence ready but no finished 9:16 composition is claimed.
+
+Updated next priority:
+1. **028 Platform-Native Production Pack** — 9:16 shot/subtitle plans, Xiaohongshu final carousel copy, complete WeChat/deep-article drafts and PandaAI explanation templates;
+2. keep every output linked to CLAIM_ID / FIGURE_KEY / freshness / caveat metadata;
+3. append new current-state snapshots only on genuine new data/policy changes;
+4. prospective Fed/energy chains remain append-only and fail-closed.
