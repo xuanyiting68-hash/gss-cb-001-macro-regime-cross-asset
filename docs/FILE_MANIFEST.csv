@@ -650,3 +650,14 @@ results/fed_cycle_editorial_release_candidate_029_v1/EDITORIAL_AB_TEST_RULES.md,
 results/fed_cycle_editorial_release_candidate_029_v1/PERFORMANCE_LOG_SCHEMA.csv,Post-publication metrics schema with evidence-payload-change guardrail,CANONICAL_RELEASE_CONTROL,PUBLIC_SAFE
 results/fed_cycle_editorial_release_candidate_029_v1/FED_CYCLE_EDITORIAL_RELEASE_CANDIDATE_029_REPORT.md,029 release-operations report,QC_PASS,PUBLIC_SAFE
 results/fed_cycle_editorial_release_candidate_029_v1/QC.json,029 release-operations QC,QC_PASS,PUBLIC_SAFE
+research/FED_CYCLE_RELEASE_PREFLIGHT_030_LOCK.md,First release-preflight frozen design,CANONICAL,PUBLIC_SAFE
+research/FED_CYCLE_RELEASE_PREFLIGHT_030_CLOSEOUT.md,First release-preflight closeout,CANONICAL,PUBLIC_SAFE
+scripts/run_fed_cycle_release_preflight_030_v1.py,Reproducible RC integrity and release-status preflight,CANONICAL,PUBLIC_SAFE
+.github/workflows/fed-cycle-release-preflight-030-v1.yml,Automated 030 release-preflight workflow,CANONICAL,PUBLIC
+results/fed_cycle_release_preflight_030_v1/RELEASE_PREFLIGHT_STATUS.csv,Six-RC GO/HOLD/READY release status registry,QC_PASS_RELEASE_PREFLIGHT,PUBLIC_SAFE
+results/fed_cycle_release_preflight_030_v1/RC_CNT02_RELEASE_BUNDLE.csv,Exact CNT-02 first-release evidence-asset bundle,QC_PASS_RELEASE_PREFLIGHT,PUBLIC_SAFE
+results/fed_cycle_release_preflight_030_v1/RC_CNT02_RELEASE_README_ZH.md,Human-readable 2026-09-28 CNT-02 release bundle,QC_PASS_RELEASE_PREFLIGHT,PUBLIC_SAFE
+results/fed_cycle_release_preflight_030_v1/RC_CNT04_HOLD_NOTE.md,CNT-04 NBER-current-chronology reverify HOLD note,CANONICAL_RELEASE_CONTROL,PUBLIC_SAFE
+results/fed_cycle_release_preflight_030_v1/PREFLIGHT_AUDIT.json,Machine-readable six-RC internal preflight audit,QC_PASS_RELEASE_PREFLIGHT,PUBLIC_SAFE
+results/fed_cycle_release_preflight_030_v1/FED_CYCLE_RELEASE_PREFLIGHT_030_REPORT.md,030 release-preflight report,QC_PASS,PUBLIC_SAFE
+results/fed_cycle_release_preflight_030_v1/QC.json,030 release-preflight QC,QC_PASS,PUBLIC_SAFE
