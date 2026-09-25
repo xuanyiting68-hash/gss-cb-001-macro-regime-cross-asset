@@ -296,3 +296,18 @@ Updated next priority:
 1. **025 P0 Visual Evidence Pack** — render the 13 P0 specs reproducibly with claim/source linkage and render QC;
 2. then build platform-specific 16:9 / 1:1 content packages from the same canonical figures;
 3. maintain prospective Fed/energy chains append-only and fail-closed.
+
+## Post-handoff update — 025 completed
+
+FED-CYCLE-P0-VISUAL-EVIDENCE-PACK-025 is complete and QC-passed.
+
+The frozen 13-figure P0 queue is now rendered into 39 canonical artifacts: 13 SVG_RESEARCH, 13 PNG_16_9 (1600x900) and 13 PNG_1_1 (1200x1200). Every render and actual input source has SHA256 provenance.
+
+Automated visual-boundary checks pass: B04 9/11 and B06 COVID stay POST_ANCHOR_SHOCK; current 023 figure shows qualification FALSE/no-analog; 019/020 contain no BUY/SELL leakage; no analog score/ranking/forecast exists.
+
+The connector cannot directly return binary PNG bodies for manual pixel review; do not claim such a review unless performed through another supported rendering surface. SVG text and file/dimension/hash integrity are audited.
+
+Updated next priority:
+1. **026 Content Production Library** from 022B claims + 025 figures;
+2. platform-ready short/long content packages that preserve CLAIM_ID/FIGURE_KEY/source/caveat linkage;
+3. prospective Fed/energy registries remain append-only and fail-closed.
