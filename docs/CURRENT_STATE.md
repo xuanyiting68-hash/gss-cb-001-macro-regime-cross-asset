@@ -1269,3 +1269,17 @@ P0 contains five FIRST_CUT asset cards, recovery synthesis, 019/020 guardrails, 
 Visual boundaries are machine-checked: no analog score, asset ranking or forecast-return field; B02 stays multi-leg; context timing/freshness labels are preserved; current snapshot must display prospective qualification FALSE.
 
 Next priority: **025 P0 Visual Evidence Pack** — reproducibly render the 13 P0 specs from canonical data, with claim/source linkage and render QC. Rendered visuals remain communication artifacts, not new empirical evidence.
+
+## P0 Visual Evidence Pack — 025
+
+Status: **QC-PASSED 13-FIGURE x 3-VARIANT RENDER PACK / 39 FILES / NOT NEW EVIDENCE / NOT CAUSAL / NOT DEPLOYABLE**
+
+025 has rendered the frozen 024 P0 queue into 13 research SVGs, 13 1600x900 PNGs and 13 1200x1200 PNGs. Every render has a file SHA256, actual-source bundle SHA256, byte size and dimension record.
+
+The pack includes five FIRST_CUT core-asset evidence cards, FIRST_CUT-vs-PAUSE recovery, 019/020 negative-result guardrails, B04-B07 historical case timelines and the current 023 regime snapshot.
+
+Automated render checks preserve the evidence boundary: B04 9/11 and B06 COVID remain later POST_ANCHOR_SHOCK annotations; 019/020 contain no trade-signal wording; the current 023 figure visibly states qualification FALSE and the no-closest-analog boundary. No analog score, asset ranking or forecast is generated.
+
+The session connector cannot directly return binary PNG bodies for in-chat pixel inspection, so canonical status is based on reproducible rendering, exact dimensions, non-empty artifacts, source/render hashes and SVG text-boundary checks rather than an unsupported claim of manual pixel review.
+
+Next priority: **026 Content Production Library** — build claim-backed platform-ready hooks, short-video structures, long-form article structures and source/caveat blocks using 022B + 025, without changing factual payloads.
