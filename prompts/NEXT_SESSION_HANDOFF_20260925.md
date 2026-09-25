@@ -372,3 +372,18 @@ Updated next priority:
 2. create **030 Current-Cycle Topical Brief** only when new current data/policy genuinely change 023, or when a time-sensitive current explainer is explicitly needed;
 3. use performance data to improve packaging only, never to rewrite empirical claims;
 4. prospective Fed/energy registries remain append-only and fail-closed.
+
+## Post-handoff update — 030 completed
+
+FED-CYCLE-RELEASE-PREFLIGHT-030 is complete and QC-passed.
+
+All six RC1 objects pass internal integrity. CNT-02 SAME_LABEL_DIFFERENT_PATHS is GO_RC1 for the 2026-09-28 primary release, with exact immutable evidence hash, seven-shot plan and five rendered 16:9 case figures bundled; publication status remains NOT_PUBLISHED.
+
+CNT-04 HINDSIGHT_TRAPS remains HOLD_REVERIFY for 2026-10-01 because the current NBER chronology claim must be re-audited near release. Do not promote it before that external check. The other four RCs are READY_NOT_DUE.
+
+Updated next priority:
+1. execute final editorial/platform preflight for CNT-02 close to 2026-09-28 and publish only on explicit user request through an available platform workflow;
+2. re-audit the official NBER chronology near 2026-10-01 before releasing CNT-04;
+3. preserve immutable evidence hashes through all editorial packaging;
+4. append current-state snapshots only when genuine new data/policy changes occur;
+5. prospective Fed/energy chains remain append-only and fail-closed.
