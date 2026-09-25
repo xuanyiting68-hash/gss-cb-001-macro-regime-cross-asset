@@ -41,7 +41,7 @@ Use these blocks when publishing or handing content to another agent/editor.
 - Figure keys: FIG-CASE-B04|FIG-CASE-B05|FIG-CASE-B06|FIG-CASE-B07
 - Rendered P0 figures: FIG-CASE-B04|FIG-CASE-B05|FIG-CASE-B06|FIG-CASE-B07
 - Canonical source files: results/fed_cycle_historical_context_022a_v1/CONTEXT_CLAIMS.csv
-- Official source URLs:  https://www.federalreserve.gov/monetarypolicy/fomcminutes20200315.htm| https://www.nber.org/news/business-cycle-dating-committee-announcement-july-19-2021|https://www.federalreserve.gov/newsevents/pressreleases/monetary20200315a.htm |https://www.federalreservehistory.org/essays/september-11|https://www.nber.org/news/business-cycle-dating-committee-announcement-june-8-2020 |https://www.nber.org/research/business-cycle-dating|https://www.nber.org/research/business-cycle-dating/business-cycle-dating-procedure-frequently-asked-questions
+- Official source URLs: https://www.federalreserve.gov/monetarypolicy/fomcminutes20200315.htm|https://www.federalreserve.gov/newsevents/pressreleases/monetary20200315a.htm|https://www.federalreservehistory.org/essays/september-11|https://www.nber.org/news/business-cycle-dating-committee-announcement-july-19-2021|https://www.nber.org/news/business-cycle-dating-committee-announcement-june-8-2020|https://www.nber.org/research/business-cycle-dating|https://www.nber.org/research/business-cycle-dating/business-cycle-dating-procedure-frequently-asked-questions
 - Freshness: REVERIFY_BEFORE_CURRENT_USE
 - Mandatory caveat: 历史研究/教育内容；不构成当前市场预测、资产排序、底部时间判断或投资建议。
 - Prohibited wording: 不得改写为必涨/必跌、确定性底部、最像当前的历史周期、最佳资产或因果性Fed结论。
@@ -63,7 +63,7 @@ Use these blocks when publishing or handing content to another agent/editor.
 - Figure keys: FIG-CASE-B02
 - Rendered P0 figures: none
 - Canonical source files: results/fed_cycle_historical_casebook_v1/CASEBOOK_EPISODES.csv|results/fed_cycle_historical_context_022a_v1/CONTEXT_CLAIMS.csv
-- Official source URLs:  https://www.nber.org/research/business-cycle-dating|https://www.federalreservehistory.org/essays/stock-market-crash-of-1987|https://www.federalreservehistory.org/essays/stock-market-crash-of-1987 
+- Official source URLs: https://www.federalreservehistory.org/essays/stock-market-crash-of-1987|https://www.nber.org/research/business-cycle-dating
 - Freshness: STATIC_SOURCE_AUDIT
 - Mandatory caveat: 历史研究/教育内容；不构成当前市场预测、资产排序、底部时间判断或投资建议。
 - Prohibited wording: 不得改写为必涨/必跌、确定性底部、最像当前的历史周期、最佳资产或因果性Fed结论。
