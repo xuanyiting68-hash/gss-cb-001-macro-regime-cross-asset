@@ -387,3 +387,20 @@ Updated next priority:
 3. preserve immutable evidence hashes through all editorial packaging;
 4. append current-state snapshots only when genuine new data/policy changes occur;
 5. prospective Fed/energy chains remain append-only and fail-closed.
+
+## Post-handoff update — 031 completed
+
+FED-CYCLE-CNT02-FINAL-PUBLISHING-RC-031 is complete and QC-passed.
+
+The 2026-09-28 CNT-02 first-release package is now finalized as GO_RC1 / NOT_PUBLISHED: exact title, non-numeric cover, Hook A, seven-shot 72-second 9:16 storyboard, B03-B07 evidence sequence, seven-cue Chinese SRT, final caption and pinned comment. Immutable evidence hash is unchanged.
+
+Hook B is data-valid but editorially ambiguous because its 2024 +28.5% value is Nasdaq while the second asset label is omitted; it is prohibited for the first release. Final copy explicitly names assets.
+
+Subtitle handling was hardened after QC/readback caught numeric-token truncation. Final SRT preserves +20.2% exactly and no text truncation is allowed.
+
+Updated next priority:
+1. do not add more retrospective timing-rule research to this branch;
+2. on/near 2026-09-28, run same-day integrity/pre-publication check for CNT-02 and publish only on explicit user instruction through an available platform workflow;
+3. re-audit NBER near 2026-10-01 before promoting CNT-04 from HOLD_REVERIFY;
+4. preserve immutable evidence hashes through all compositing and publication steps;
+5. prospective Fed/energy registries remain append-only and fail-closed.
