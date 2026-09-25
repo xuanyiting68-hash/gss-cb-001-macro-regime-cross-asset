@@ -341,3 +341,18 @@ Updated next priority:
 2. keep every output linked to CLAIM_ID / FIGURE_KEY / freshness / caveat metadata;
 3. append new current-state snapshots only on genuine new data/policy changes;
 4. prospective Fed/energy chains remain append-only and fail-closed.
+
+## Post-handoff update — 028 completed
+
+FED-CYCLE-PLATFORM-NATIVE-PRODUCTION-PACK-028 is complete and QC-passed.
+
+Six canonical packages now have platform-native production assets: 42 Douyin/TikTok timed shots, 42 Xiaohongshu cards, six complete Chinese deep-article drafts and six PandaAI explanation templates. All evidence remains linked to canonical claims/figures/freshness rules.
+
+The first 028 run failed because a negated sentence contained a prohibited analog-ranking phrase; wording was corrected without weakening QC. Final workflow passed. No final MP4 is claimed and nothing has been published automatically.
+
+The project is now editorial-production ready. Updated next priority:
+1. **029 Editorial Release Candidate + Content Calendar** — freeze one release candidate per package, platform-specific cover/caption/figure sequence, publishing cadence and preflight checklist;
+2. separate A/B hook testing from immutable factual payload;
+3. add post-publication performance-log schema without modifying research claims;
+4. append new current-state snapshots only on genuine new releases/policy actions;
+5. prospective Fed/energy chains remain append-only and fail-closed.
