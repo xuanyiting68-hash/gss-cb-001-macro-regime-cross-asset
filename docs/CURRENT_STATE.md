@@ -1247,3 +1247,25 @@ Current release-aware state:
 No closest analog, similarity score, asset ranking, bottom date, prospective return forecast or trading recommendation is generated.
 
 Next priority: **024 Figure Registry and Visual Evidence Specs** keyed to the 022B figure IDs, then reusable chart generation/content production packs. Prospective Fed/energy registries remain append-only under their frozen gates.
+
+## Figure Registry and Visual Evidence Specs — 024
+
+Status: **QC-PASSED 48-FIGURE VISUAL SPEC REGISTRY / CLAIM-LINKED / NOT CAUSAL / NOT DEPLOYABLE**
+
+024 maps all 47 canonical 022B claims 1:1 into figure specifications and adds one supplemental 023 current-regime snapshot figure.
+
+Registry composition:
+- 20 core asset x phase evidence cards;
+- 6 historical case timelines;
+- 18 official-source historical context cards;
+- 2 negative method-guardrail figures for 019/020;
+- 1 FIRST_CUT-vs-PAUSE recovery synthesis;
+- 1 current 023 regime snapshot.
+
+Production queue: P0=13, P1=22, P2=13. Priority is production order only.
+
+P0 contains five FIRST_CUT asset cards, recovery synthesis, 019/020 guardrails, B04-B07 case timelines and the current 023 regime snapshot.
+
+Visual boundaries are machine-checked: no analog score, asset ranking or forecast-return field; B02 stays multi-leg; context timing/freshness labels are preserved; current snapshot must display prospective qualification FALSE.
+
+Next priority: **025 P0 Visual Evidence Pack** — reproducibly render the 13 P0 specs from canonical data, with claim/source linkage and render QC. Rendered visuals remain communication artifacts, not new empirical evidence.
