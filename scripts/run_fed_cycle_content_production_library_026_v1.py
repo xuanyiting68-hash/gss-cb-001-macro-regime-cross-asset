@@ -360,9 +360,9 @@ def main():
         subset = claims[claims["claim_id"].isin(cfg["claims"])].copy()
         source_files = sorted({x for s in subset["source_files"] for x in str(s).split("|")})
         urls = sorted({
-            x for s in subset["official_source_urls"]
+            x.strip() for s in subset["official_source_urls"]
             for x in str(s).split("|")
-            if x and x != "N/A_REPO_DERIVED"
+            if x.strip() and x.strip() != "N/A_REPO_DERIVED"
         })
         freshness = cfg["freshness_rule"]
         if cid == "CNT-04-HINDSIGHT-TRAPS" and freshness != "REVERIFY_BEFORE_CURRENT_USE":
