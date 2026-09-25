@@ -1309,3 +1309,17 @@ The publishing matrix covers six canonical 026 packages across four channels: Do
 All six content packages are now `VISUAL_COMPLETE_FOR_CANONICAL_PACKAGE`. This means evidence visuals exist; it does not mean a final 9:16 video or published post has been produced.
 
 Next priority: **028 Platform-Native Production Pack** — create final shot lists/subtitle timing, Xiaohongshu carousel copy, complete long-form drafts and PandaAI retrieval templates while preserving CLAIM_ID/FIGURE_KEY/freshness/caveat provenance.
+
+## Platform-Native Production Pack — 028
+
+Status: **QC-PASSED SIX-PACKAGE PLATFORM-NATIVE EDITORIAL PRODUCTION LAYER / NOT PUBLISHED / NOT A FORECAST / NOT DEPLOYABLE**
+
+028 turns the canonical research/content stack into operational production assets: 42 timed Douyin/TikTok shots, 42 Xiaohongshu cards, six full WeChat/deep-article drafts and six PandaAI explanation templates.
+
+All evidence values are inherited from 026/022B, with historical-event facts from 022A. Every short-video plan ends in a boundary shot; every carousel ends in a source/boundary card; every article contains figure markers, source/claim appendix and explicit limitations. No final MP4 is claimed.
+
+The first 028 run failed because a negated sentence contained a prohibited analog-ranking phrase. The copy was rewritten while retaining the strict audit; the final run passed with no prohibited-language leaks.
+
+At this stage the project is **editorial-production ready**. Remaining high-value work is release operations rather than more small-sample rule mining: final release candidates, publishing order/cadence, preflight freshness/source checks, optional platform-native compositing and post-publication metrics logging.
+
+Next priority: **029 Editorial Release Candidate + Content Calendar**.
