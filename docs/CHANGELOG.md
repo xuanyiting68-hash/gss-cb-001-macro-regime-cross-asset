@@ -581,3 +581,12 @@
 - Marked CNT-04 (scheduled 2026-10-01) HOLD_REVERIFY because its current NBER chronology claim requires official-source re-audit near release.
 - Kept the later four packages READY_NOT_DUE.
 - No publication, MP4 render, evidence change, current-snapshot promotion or external reverify claim was made.
+
+## 2026-09-26 — FED-CYCLE-CNT02-FINAL-PUBLISHING-RC-031
+
+- Finalized the 2026-09-28 CNT-02 release package while keeping status GO_RC1 / NOT_PUBLISHED.
+- Locked the final title, non-numeric cover, Hook A, 72-second seven-shot storyboard, exact B03-B07 evidence sequence, final caption and pinned comment.
+- Added a deterministic seven-cue Chinese SRT and hardened subtitle handling so numeric tokens such as +20.2% cannot be split or truncated by production wrapping.
+- Audited Hook B: the +28.5% value is valid Nasdaq evidence, but the second asset name is omitted, so Hook B is prohibited for the first release to avoid editorial ambiguity.
+- Strict QC caught negative-sentence lexical leaks, subtitle truncation, an intermediate syntax error and numeric-token splitting before final closeout; QC rules were not weakened.
+- No final MP4 was rendered and no publication action was taken.
