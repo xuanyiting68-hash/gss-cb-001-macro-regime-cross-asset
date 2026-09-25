@@ -178,7 +178,7 @@ def carousel_specs(content,claims):
             ("EVIDENCE","2007：股票与黄金分化",f"S&P 500 {pct(cases['B05']['SP500']['ret_12m'])}；Gold {pct(cases['B05']['GOLD']['ret_12m'])}。","FIG-CASE-B05"),
             ("EVIDENCE","2019：后续又出现全新冲击",f"S&P 500 +12个月{pct(cases['B06']['SP500']['ret_12m'])}。","FIG-CASE-B06"),
             ("EVIDENCE","2024：又是一条不同路径",f"S&P 500 +12个月{pct(cases['B07']['SP500']['ret_12m'])}。","FIG-CASE-B07"),
-            ("SOURCE_BOUNDARY","不要挑一个历史模板硬套今天","案例用于理解路径差异，不是“最像当前周期”的排名。",""),
+            ("SOURCE_BOUNDARY","不要挑一个历史模板硬套今天","案例用于理解路径差异，不是给当前周期做单一历史模板排名。",""),
         ],
         CONTENT_IDS[2]:[
             ("COVER","黄金和美股会一起走吗？","同一个Fed阶段，不等于同一条资产路径。",""),
@@ -317,7 +317,7 @@ Claims: {content_row(content,CONTENT_IDS[1])['claim_ids']}
 Figures: FIG-CASE-B03|FIG-CASE-B04|FIG-CASE-B05|FIG-CASE-B06|FIG-CASE-B07
 
 ### 边界
-这些案例用于理解历史路径差异，不用于挑选“最像当前”的单一历史模板，也不构成当前周期预测。
+这些案例用于理解历史路径差异，不用于为当前周期挑选单一历史模板，也不构成当前周期预测。
 """
 
     articles[CONTENT_IDS[2]]=f"""# 降息周期里，黄金和美股会一起走吗？历史上并不总是如此
