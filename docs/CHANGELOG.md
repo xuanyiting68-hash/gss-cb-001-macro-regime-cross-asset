@@ -534,3 +534,12 @@
 - Automated checks confirm B04 9/11 and B06 COVID remain POST_ANCHOR_SHOCK, current 023 figure visibly states qualification FALSE/no-analog boundary, and 019/020 contain no BUY/SELL signal leakage.
 - Phase cards read 022B metric payloads directly; recovery chart remains restricted to the five supported assets and PAUSE_START/FIRST_CUT.
 - No new empirical inference, p-values, analog score, ranking or forecast is generated.
+
+## 2026-09-25 — FED-CYCLE-CONTENT-PRODUCTION-LIBRARY-026
+
+- Converted the 022B claim registry and 025 rendered visual pack into six canonical Chinese content-production packages.
+- Each package now includes three hook options, a 60-90 second short-video script, long-form outline, CLAIM_ID/FIGURE_KEY linkage, source/caveat block, freshness and visual readiness.
+- Five packages are READY_P0_VISUAL; the 1987-89 multi-leg package is correctly TEXT_READY_VISUAL_PENDING_P1 because FIG-CASE-B02 has not yet been rendered.
+- Evidence numbers are inserted only from canonical claim payload/wording; no independent recalculation is performed in the publishing layer.
+- All six scripts explicitly separate historical evidence from current prediction; prohibited buy/sell, deterministic-bottom, analog-ranking and best-asset language checks pass.
+- A second workflow pass normalized and de-duplicated official-source URL aggregation.
