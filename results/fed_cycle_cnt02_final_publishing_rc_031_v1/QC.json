@@ -19,6 +19,7 @@
   "timing_inherited_exactly": true,
   "srt_cues": 7,
   "final_srt_boundary_present": true,
+  "srt_text_truncation_allowed": false,
   "rendered_case_figures": 5,
   "figure_footer_cropping_allowed": false,
   "caption_ready": true,
