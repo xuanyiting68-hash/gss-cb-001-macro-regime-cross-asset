@@ -157,6 +157,8 @@ def main():
         raise RuntimeError("SRT cue count")
     if "不是当前周期的预测模板" not in srt_text:
         raise RuntimeError("final SRT boundary missing")
+    if "+20.2%" not in srt_text:
+        raise RuntimeError("SRT numeric text truncated: missing +20.2%")
     (OUT/"CNT02_FINAL_SUBTITLES_ZH.srt").write_text(srt_text)
 
     # Asset sequence with exact render paths from 030 bundle.
