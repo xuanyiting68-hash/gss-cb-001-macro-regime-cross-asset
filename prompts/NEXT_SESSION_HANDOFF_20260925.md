@@ -261,3 +261,21 @@ Updated next priority:
 1. **023 Real-Time Regime Dashboard** — release-aware current policy/macro/market observables + historical-distribution links + freshness/uncertainty; no single-analog selection;
 2. Figure Registry keyed to the 022B figure IDs;
 3. Content Evidence Library / Myth-vs-Evidence production packages.
+
+## Post-handoff update — 023 completed
+
+FED-CYCLE-REALTIME-REGIME-DASHBOARD-023 is complete and QC-passed.
+
+Snapshot: 2026-09-25 16:08 Australia/Sydney.
+
+Current prospective Fed state remains `EDGE_TIGHTENING_CANDIDATE__NOT_YET_QUALIFIED`: 1 hike / 25bp since 2026-09-16, target 3.75%-4.00%, frozen >=2 hikes and >=50bp gate still false, zero prospective prediction rows.
+
+Current release-aware observables include EFFR, 2Y/10Y, 5Y/10Y breakevens, VIX, Baa-10Y spread, NFCI, unemployment, industrial production and headline/core PCE. Derived curve = +26bp NON_INVERTED; NFCI = LOOSER_THAN_AVERAGE; PCE/core PCE both >2%; INDPRO YoY positive.
+
+023 links five FIRST_HIKE 022B asset distribution claims plus the 019/020 timing-rule guardrails. It generates no closest analog, similarity score, asset ranking or forecast.
+
+Updated next priority:
+1. **024 Figure Registry and Visual Evidence Specs** keyed to 022B `figure_key` values;
+2. reusable visual/chart generation for the six content packs;
+3. Content Evidence Library / Myth-vs-Evidence production assets;
+4. keep prospective Fed/energy chains append-only and fail-closed.
