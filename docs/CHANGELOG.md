@@ -563,3 +563,12 @@
 - Generated six machine-readable PandaAI explanation templates with freshness/current-data rules and forbidden transformations.
 - First workflow run failed because a negated sentence contained a prohibited analog-ranking phrase; the copy was rewritten rather than weakening QC. Final run passed.
 - No new inference, p-values, current analog ranking, asset ranking, trade instruction or political evaluation was introduced.
+
+## 2026-09-25 — FED-CYCLE-EDITORIAL-RELEASE-CANDIDATE-029
+
+- Froze six RC1 editorial release candidates with immutable CLAIM_ID/FIGURE_KEY/freshness/caveat/source payloads and SHA256 hashes.
+- Created a four-week release calendar: six unique primary slots across weeks 1-3 plus week-4 performance-based repurpose placeholders.
+- Readback found date collisions between B-slot long-form repurposing and later primary slots; the generator was hardened so B-slot long-form runs on Sunday and duplicate calendar dates fail QC.
+- CNT-04 retains REVERIFY_REQUIRED_BEFORE_RELEASE.
+- Added a pre-publication evidence/freshness checklist, editorial A/B rules and post-publication performance-log schema.
+- Performance may change packaging and sequencing but not factual evidence; evidence_payload_changed must remain FALSE for normal editorial experiments.
