@@ -591,3 +591,13 @@ results/fed_cycle_figure_registry_024_v1/P0_BUILD_QUEUE.csv,Frozen 13-figure P0 
 results/fed_cycle_figure_registry_024_v1/P0_BUILD_PLAN.md,P0 visual production plan with claim and boundary linkage,QC_PASS_VISUAL_SPEC,PUBLIC_SAFE
 results/fed_cycle_figure_registry_024_v1/FED_CYCLE_FIGURE_REGISTRY_024_REPORT.md,024 visual-spec registry report,QC_PASS_VISUAL_SPEC,PUBLIC_SAFE
 results/fed_cycle_figure_registry_024_v1/QC.json,024 visual-spec registry QC,QC_PASS,PUBLIC_SAFE
+research/FED_CYCLE_P0_VISUAL_EVIDENCE_PACK_025_LOCK.md,P0 rendered visual pack frozen design,CANONICAL,PUBLIC_SAFE
+research/FED_CYCLE_P0_VISUAL_EVIDENCE_PACK_025_CLOSEOUT.md,P0 rendered visual pack closeout,CANONICAL,PUBLIC_SAFE
+scripts/run_fed_cycle_p0_visual_evidence_pack_v1.py,Reproducible P0 visual renderer and render QC,CANONICAL,PUBLIC_SAFE
+.github/workflows/fed-cycle-p0-visual-evidence-pack-v1.yml,Automated 025 P0 render workflow,CANONICAL,PUBLIC
+results/fed_cycle_p0_visual_evidence_pack_v1/RENDER_MANIFEST.csv,Rendered-file/source-bundle hash manifest,QC_PASS_VISUAL_DELIVERY,PUBLIC_SAFE
+results/fed_cycle_p0_visual_evidence_pack_v1/SOURCE_FILE_HASHES.csv,Exact source-file hash registry for P0 renderer,QC_PASS_PROVENANCE,PUBLIC_SAFE
+results/fed_cycle_p0_visual_evidence_pack_v1/P0_VISUAL_INDEX.md,Claim/source/disclaimer-linked P0 visual index,QC_PASS_VISUAL_DELIVERY,PUBLIC_SAFE
+results/fed_cycle_p0_visual_evidence_pack_v1/FED_CYCLE_P0_VISUAL_EVIDENCE_PACK_025_REPORT.md,025 rendered visual pack report,QC_PASS_VISUAL_DELIVERY,PUBLIC_SAFE
+results/fed_cycle_p0_visual_evidence_pack_v1/QC.json,025 render and provenance QC,QC_PASS,PUBLIC_SAFE
+results/fed_cycle_p0_visual_evidence_pack_v1/figures/,39 canonical P0 SVG/PNG visual artifacts,QC_PASS_VISUAL_DELIVERY,PUBLIC_SAFE
