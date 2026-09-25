@@ -1347,3 +1347,17 @@ CNT-04 HINDSIGHT_TRAPS, scheduled for 2026-10-01, remains `HOLD_REVERIFY`. Inter
 The other four RCs are READY_NOT_DUE. No publication action, final MP4 render, current-snapshot-live claim, evidence change, forecast, ranking or trading instruction was produced.
 
 Next priority is release execution/preflight close to the scheduled dates rather than further retrospective timing-rule mining.
+
+## CNT-02 Final Publishing Candidate — 031
+
+Status: **QC-PASSED FINAL EDITORIAL PRODUCTION CANDIDATE / GO_RC1 / NOT PUBLISHED**
+
+031 finalizes the first scheduled 2026-09-28 CNT-02 SAME_LABEL_DIFFERENT_PATHS package. The final title, non-numeric cover, Hook A, seven-shot 72-second 9:16 storyboard, B03-B07 evidence sequence, exact seven-cue Chinese SRT, caption and pinned comment are frozen against immutable evidence SHA256 `48a659bb900be19707165bf8f6802e5ce31c514b59a9eb2ee050ccd89868a191`.
+
+Hook B is numerically valid—2024 +28.5% is Nasdaq—but editorially ambiguous because the second asset label is omitted, so it is excluded from the first release. Final release copy instead names every asset explicitly.
+
+Strict QC also hardened subtitle integrity: production wrapping may not split or truncate numeric tokens; final SRT readback retains `+20.2%` in full. No figure footer may be cropped.
+
+Publication status remains `NOT_PUBLISHED`; no final MP4, current-cycle forecast, asset/current-analog ranking, trade instruction, evidence change or political evaluation has been produced.
+
+The evidence/editorial package is now finished. Next operational step is same-day preflight and human/platform compositing/publishing on explicit instruction. CNT-04 remains HOLD_REVERIFY pending NBER source re-audit near 2026-10-01.
