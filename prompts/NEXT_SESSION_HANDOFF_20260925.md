@@ -311,3 +311,17 @@ Updated next priority:
 1. **026 Content Production Library** from 022B claims + 025 figures;
 2. platform-ready short/long content packages that preserve CLAIM_ID/FIGURE_KEY/source/caveat linkage;
 3. prospective Fed/energy registries remain append-only and fail-closed.
+
+## Post-handoff update — 026 completed
+
+FED-CYCLE-CONTENT-PRODUCTION-LIBRARY-026 is complete and QC-passed.
+
+Six canonical Chinese production packages now exist. Each contains three hooks, a 60-90s short-video script, long-form outline, CLAIM_ID/FIGURE_KEY/source/caveat/freshness linkage. Five are READY_P0_VISUAL; 1987 multi-leg remains TEXT_READY_VISUAL_PENDING_P1 because FIG-CASE-B02 is not yet rendered.
+
+All numeric content is derived from canonical claim payload/wording. Six of six scripts explicitly say historical evidence is not current prediction. No buy/sell, deterministic bottom, closest-analog, best-asset or unsupported causal claim is generated.
+
+Updated next priority:
+1. **027 P1 Visual Completion + Publishing Matrix** — render B02/B03 + five priority hindsight/context cards, then map packages to Douyin/TikTok, Xiaohongshu, WeChat/long-form and PandaAI;
+2. keep CLAIM_ID / FIGURE_KEY / freshness / caveat controls intact across platform adaptations;
+3. append a new current-regime snapshot only when genuinely new releases or Fed actions materially change 023;
+4. prospective Fed/energy chains remain append-only and fail-closed.
