@@ -51,7 +51,7 @@ def wrap_cn(text,max_chars=18):
         text=text[cut:].strip()
     if text:
         chunks.append(text)
-    return "\n".join(chunks[:3])
+    return "\n".join(chunks)
 
 def main():
     q030=read_pass(Q030)
