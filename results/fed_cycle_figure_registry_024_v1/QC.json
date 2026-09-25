@@ -1,0 +1,29 @@
+{
+  "qc_gate": "PASS",
+  "module": "FED-CYCLE-FIGURE-REGISTRY-024",
+  "upstream_qc": {
+    "022B": "PASS",
+    "023": "PASS"
+  },
+  "figure_specs": 48,
+  "claim_linked_figure_specs": 47,
+  "supplemental_current_figure_specs": 1,
+  "unique_figure_keys": 48,
+  "context_figure_specs": 18,
+  "context_timing_preserved": true,
+  "b02_three_subcycle_visual_guardrail": true,
+  "b04_b06_post_anchor_shock_visual_guardrail": true,
+  "b07_reverify_freshness_preserved": true,
+  "p0_count": 13,
+  "p1_count": 22,
+  "p2_count": 13,
+  "blank_visual_boundary_fields": 0,
+  "analog_score_fields": 0,
+  "asset_ranking_fields": 0,
+  "forecast_return_fields": 0,
+  "new_inference": false,
+  "pvalues_generated": false,
+  "private_paper_inputs_used": false,
+  "causal_status": "NONE",
+  "deployment_status": "NOT_DEPLOYABLE"
+}
