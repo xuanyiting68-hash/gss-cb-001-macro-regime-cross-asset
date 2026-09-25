@@ -11,7 +11,7 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
 import pandas as pd
-from PIL import Image
+from PIL import Image, __version__ as pillow_version
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "results" / "fed_cycle_p0_visual_evidence_pack_v1"
@@ -644,6 +644,11 @@ def main():
         "private_paper_inputs_used":False,
         "causal_status":"NONE",
         "deployment_status":"NOT_DEPLOYABLE",
+        "render_environment":{
+            "python_matplotlib":matplotlib.__version__,
+            "pandas":pd.__version__,
+            "pillow":pillow_version,
+        },
     }
     (OUT / "QC.json").write_text(json.dumps(qc, indent=2) + "\n")
 
