@@ -572,3 +572,12 @@
 - CNT-04 retains REVERIFY_REQUIRED_BEFORE_RELEASE.
 - Added a pre-publication evidence/freshness checklist, editorial A/B rules and post-publication performance-log schema.
 - Performance may change packaging and sequencing but not factual evidence; evidence_payload_changed must remain FALSE for normal editorial experiments.
+
+## 2026-09-25 — FED-CYCLE-RELEASE-PREFLIGHT-030
+
+- Executed internal release preflight for all six frozen 029 RC1 objects.
+- Marked CNT-02 (scheduled 2026-09-28) GO_RC1 after exact immutable-evidence hash, claim, figure, seven-shot, boundary-card and caveat checks passed.
+- Created a deterministic CNT-02 release bundle referencing five exact 16:9 historical case figures and their render SHA256 values.
+- Marked CNT-04 (scheduled 2026-10-01) HOLD_REVERIFY because its current NBER chronology claim requires official-source re-audit near release.
+- Kept the later four packages READY_NOT_DUE.
+- No publication, MP4 render, evidence change, current-snapshot promotion or external reverify claim was made.
