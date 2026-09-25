@@ -1335,3 +1335,15 @@ The final release calendar has six unique PRIMARY slots across weeks 1-3, zero d
 A pre-publication checklist enforces claim/figure existence, evidence-hash match, freshness, time-class labels, source availability, caveats, no current-snapshot staleness and no prohibited financial-action language. Performance logging includes `evidence_payload_changed`, which must remain FALSE for normal editorial experiments.
 
 The project is now end-to-end editorial-release ready. The highest-value next step is execution/preflight or a genuinely refreshed current-cycle topical brief, not additional retrospective timing-rule mining.
+
+## First Release Preflight — 030
+
+Status: **QC-PASSED SIX-RC INTERNAL PREFLIGHT / CNT-02 GO_RC1 / CNT-04 HOLD_REVERIFY / NOTHING PUBLISHED**
+
+All six frozen 029 RC1 objects pass internal evidence-integrity checks. CNT-02 SAME_LABEL_DIFFERENT_PATHS, scheduled for 2026-09-28, is `GO_RC1 / NOT_PUBLISHED`: immutable evidence hash matches exactly, five historical case figures are rendered, seven short-video shots exist with a final boundary shot, and the release bundle records exact figure paths/SHA256 values.
+
+CNT-04 HINDSIGHT_TRAPS, scheduled for 2026-10-01, remains `HOLD_REVERIFY`. Internal QC passes, but its current NBER chronology claim has `REVERIFY_BEFORE_CURRENT_USE`; the official NBER page must be re-audited near release. No external reverify has been claimed yet.
+
+The other four RCs are READY_NOT_DUE. No publication action, final MP4 render, current-snapshot-live claim, evidence change, forecast, ranking or trading instruction was produced.
+
+Next priority is release execution/preflight close to the scheduled dates rather than further retrospective timing-rule mining.
