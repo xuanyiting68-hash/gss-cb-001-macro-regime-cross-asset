@@ -1,0 +1,30 @@
+{
+  "qc_gate": "PASS",
+  "module": "FED-CYCLE-RELEASE-PREFLIGHT-030",
+  "upstream_qc": {
+    "029": "PASS",
+    "028": "PASS",
+    "024": "PASS",
+    "022B": "PASS"
+  },
+  "assessment_date": "2026-09-25",
+  "rc_status_rows": 6,
+  "all_internal_checks_pass": true,
+  "cnt02_status": "GO_RC1",
+  "cnt04_status": "HOLD_REVERIFY",
+  "later_ready_not_due_count": 4,
+  "cnt02_immutable_hash_match": true,
+  "cnt02_shot_rows": 7,
+  "cnt02_final_boundary_shot": true,
+  "cnt02_bundle_figure_rows": 5,
+  "cnt02_publication_status": "NOT_PUBLISHED",
+  "cnt04_external_reverify_completed": false,
+  "current_snapshot_treated_as_live": false,
+  "evidence_payload_changes": 0,
+  "publication_actions_taken": 0,
+  "new_inference": false,
+  "pvalues_generated": false,
+  "private_paper_inputs_used": false,
+  "causal_status": "NONE",
+  "deployment_status": "NOT_DEPLOYABLE"
+}
