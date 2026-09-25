@@ -218,8 +218,9 @@ def main():
             "preflight_required": True,
             "publication_status": "PLANNED_NOT_PUBLISHED",
         })
+        long_offset_days = 3 if slot.endswith("-B") else 4
         cal.append({
-            "date": str((d + pd.Timedelta(days=4)).date()),
+            "date": str((d + pd.Timedelta(days=long_offset_days)).date()),
             "week": slot.split("-")[0],
             "slot": slot + "-LONG",
             "slot_type": "REPURPOSE",
@@ -253,6 +254,8 @@ def main():
         raise RuntimeError("primary calendar rule")
     if not (caldf[caldf["week"] == "W4"]["slot_type"] == "PERFORMANCE_REPURPOSE_PLACEHOLDER").all():
         raise RuntimeError("week4 must be repurpose only")
+    if caldf["date"].duplicated().any():
+        raise RuntimeError("release calendar contains duplicate publication dates")
     caldf.to_csv(OUT / "RELEASE_CALENDAR.csv", index=False)
 
     preflight = """# 029 Pre-Publication Evidence / Freshness Checklist
@@ -386,6 +389,7 @@ Performance metrics can inform packaging and sequencing. They must never be used
         "primary_release_slots": int(len(prim)),
         "primary_packages_unique": int(prim["content_id"].nunique()),
         "week4_repurpose_only": True,
+        "duplicate_calendar_dates": 0,
         "cnt04_release_gate": rc.loc[rc["content_id"]=="CNT-04-HINDSIGHT-TRAPS","release_gate"].iloc[0],
         "current_snapshot_perpetually_live": False,
         "performance_schema_has_evidence_payload_changed": True,
