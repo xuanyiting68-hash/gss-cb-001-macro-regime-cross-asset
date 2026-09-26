@@ -1,8 +1,8 @@
 question_id,question_en,answer_zh,evidence_layer
 H-Q01,How quickly do mortgage rates move after each Fed phase anchor?,FIRST_HIKE 12M mortgage-rate change median +1.14pp; LAST_HIKE -1.01pp; PAUSE -1.01pp; FIRST_CUT -0.53pp.,FINANCING
-H-Q02,Does mortgage-rate pressure peak before housing activity troughs?,Median mortgage max-pressure month / activity-trough month: FIRST_HIKE M12 / M13; LAST_HIKE M0 / M12; PAUSE M0 / M10; FIRST_CUT M11 / M10. These are descriptive timing differences.,LAG_SEQUENCE
+H-Q02,Does mortgage-rate pressure peak before housing activity troughs?,"Paired episode share with cycle-window absolute mortgage peak before-or-same as activity trough: FIRST_HIKE 67%; LAST_HIKE 100%; PAUSE 100%; FIRST_CUT 100%. This [-12,+24] peak is a post-run anchor-reset diagnostic, not a causal lag estimate.",LAG_SEQUENCE
 H-Q03,"Which activity series reacts earlier: permits, starts, or new-home sales?","FIRST_HIKE trough medians: PERMIT M13, HOUST M15, HSN1F M12. Compare phase by phase rather than imposing one universal ordering.",ACTIVITY
-H-Q04,Does activity generally weaken before national house prices decline?,"Among episodes with positive 24M house-price decline, the phase summaries preserve price-trough timing separately from activity troughs. Median price-after-activity differences are FIRST_HIKE M0, LAST_HIKE M1, PAUSE M0, FIRST_CUT M1.",LAG_SEQUENCE
+H-Q04,Does activity generally weaken before national house prices decline?,"Among positive 24M price-decline episodes, paired share with activity trough before-or-same as price trough: FIRST_HIKE 71%; LAST_HIKE 77%; PAUSE 75%; FIRST_CUT 57%. Ordering is descriptive and not uniform across episodes.",LAG_SEQUENCE
 H-Q05,How long after FIRST_HIKE do housing activity and prices reach their worst point?,FIRST_HIKE activity median trough M13; price trough among positive-decline episodes M10.,FIRST_HIKE
 H-Q06,What changes by LAST_HIKE?,"LAST_HIKE mortgage 12M change -1.01pp, activity median trough M12, house-price 12M median +3.5%, 24M +7.3%.",LAST_HIKE
 H-Q07,What changes by PAUSE_START?,PAUSE mortgage 12M change -1.01pp; HOUST 12M -4.4%; PERMIT 12M -0.3%; house-price 12M +3.8%.,PAUSE_START

@@ -2,12 +2,14 @@
 
 ## 核心框架
 
-住房不是股票。更合适的历史时钟是：**融资价格先变 → 许可/开工/新房销售等活动量调整 → 全国房价更慢地反映**。034只验证这种历史排序是否经常出现，不把它当作Fed因果系数。
+住房不是股票。常见机制叙事是“融资条件 → 活动量 → 价格”，但034的逐episode结果显示：**这个先后顺序不是跨阶段固定成立的。** 尤其在LAST_HIKE / PAUSE / FIRST_CUT，phase anchor可能发生在mortgage周期高点之后，所以必须看paired ordering和[-12,+24]绝对利率峰值，而不能只比较各变量的阶段中位月份。
 
 ## FIRST_HIKE｜加息启动
 
 - 30Y mortgage 12M变化中位：+1.14pp
-- mortgage 最大压力月份中位：M12
+- 锚点后 mortgage 最大压力月份中位：M12
+- [-12,+24]绝对 mortgage rate峰值月中位（post-run diagnostic）：M11
+- 配对episode中，绝对mortgage峰值早于/同月activity trough的加权占比：67%
 - PERMIT 12M变化 / trough：-3.9% / M13
 - HOUST 12M变化 / trough：-0.1% / M15
 - New-home sales 12M变化 / trough：-6.7% / M12
@@ -17,7 +19,9 @@
 ## LAST_HIKE｜最后一次加息
 
 - 30Y mortgage 12M变化中位：-1.01pp
-- mortgage 最大压力月份中位：M0
+- 锚点后 mortgage 最大压力月份中位：M0
+- [-12,+24]绝对 mortgage rate峰值月中位（post-run diagnostic）：M0
+- 配对episode中，绝对mortgage峰值早于/同月activity trough的加权占比：100%
 - PERMIT 12M变化 / trough：-4.3% / M18
 - HOUST 12M变化 / trough：-6.7% / M12
 - New-home sales 12M变化 / trough：+5.2% / M2
@@ -27,7 +31,9 @@
 ## PAUSE_START｜暂停
 
 - 30Y mortgage 12M变化中位：-1.01pp
-- mortgage 最大压力月份中位：M0
+- 锚点后 mortgage 最大压力月份中位：M0
+- [-12,+24]绝对 mortgage rate峰值月中位（post-run diagnostic）：M-1
+- 配对episode中，绝对mortgage峰值早于/同月activity trough的加权占比：100%
 - PERMIT 12M变化 / trough：-0.3% / M17
 - HOUST 12M变化 / trough：-4.4% / M10
 - New-home sales 12M变化 / trough：+3.6% / M1
@@ -37,7 +43,9 @@
 ## FIRST_CUT｜第一次降息
 
 - 30Y mortgage 12M变化中位：-0.53pp
-- mortgage 最大压力月份中位：M11
+- 锚点后 mortgage 最大压力月份中位：M11
+- [-12,+24]绝对 mortgage rate峰值月中位（post-run diagnostic）：M-7
+- 配对episode中，绝对mortgage峰值早于/同月activity trough的加权占比：100%
 - PERMIT 12M变化 / trough：+3.9% / M11
 - HOUST 12M变化 / trough：+0.6% / M10
 - New-home sales 12M变化 / trough：+2.8% / M9
