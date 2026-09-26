@@ -1385,3 +1385,17 @@ Gold also has a different stress clock from U.S. equities: in FIRST_CUT pairs it
 External Gold literature is stored as clearly separated LITERATURE_CONTEXT and is used to frame hedge/safe-haven definitions, inflation-hedge limitations, multi-driver sensitivity and regime dependence without overriding repository evidence.
 
 Next research priority: **034 Housing Lag Chain** — trace policy/rates/mortgage financing into housing activity and prices on a slow-moving clock, preserving the distinction between housing 24M decline metrics and traded-asset MDD.
+
+## Housing Lag Chain — 034
+
+Status: **QC-PASSED FINANCING-ACTIVITY-PRICE TIMING MAP / NOT CAUSAL / NOT A FORECAST / NOT DEPLOYABLE**
+
+034 adds 30Y mortgage, DGS10, permits, starts and new-home-sales context to the existing national Case-Shiller housing layer while preserving the slow 24M housing clock. Canonical house-price results from 014/015 match exactly.
+
+The main insight is phase-dependent sequencing rather than a fixed mechanical chain. FIRST_HIKE has mortgage +1.14pp at 12M while activity weakens but the national price median remains positive. By LAST_HIKE/PAUSE, mortgage rates are already falling while starts/permits can trough much later. At FIRST_CUT, a post-run anchor-reset diagnostic places the cycle-window absolute mortgage peak median around M-7, showing that easing can begin after financing pressure has already peaked.
+
+Episode-level ordering shares were added transparently after the first run revealed that phase medians cannot be subtracted as paired lags. Cycle mortgage peak occurs before/same as activity trough in 67% of FIRST_HIKE and 100% of LAST_HIKE/PAUSE/FIRST_CUT weighted comparisons; activity-before-price ordering among positive-decline episodes is only 57%-77%, so it is not a deterministic law.
+
+B05 and B07 are kept separate: the 2004-07 sequence developed into a deep housing bust only later in the cycle, while 2022-23 had a much larger mortgage shock and sharp activity contraction but substantially more resilient national prices.
+
+Next research priority: extend long-duration Treasury history beyond TLT inception using a separately validated public proxy bridge; do not inherit TLT evidence automatically.
