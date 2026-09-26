@@ -598,3 +598,12 @@
 - Preserved evidence tiers: BTC/TLT/VNQ LIMITED_DESCRIPTIVE, Asian equities DIAGNOSTIC_ASIA, U.S. housing SUPPORTED_SLOW_MOVING with DECLINE_24M rather than traded-asset MDD.
 - Highlighted three robust descriptive distinctions: short-horizon versus 12M equity behavior after FIRST_HIKE; falling Treasury yields plus high cash carry around LAST_HIKE/PAUSE; positive FIRST_CUT equity endpoints coexisting with deeper drawdown/later trough/stress.
 - Generated zero best-asset/best-phase ranking, expected-return forecast, deterministic bottom rule or current-analog score.
+
+## 2026-09-26 — FED-CYCLE-GOLD-MECHANISM-DECOMPOSITION-033
+
+- Integrated Gold phase, event-state, monthly-panel, stress-timing and external-literature context into one public-safe mechanism map.
+- Preserved the counterintuitive USD diagnostics as secondary evidence rather than deleting them; no secondary-family FDR survivor is claimed.
+- Kept actual DFII10 at INSUFFICIENT_SUPPORT and did not impose a textbook inverse real-rate/Gold rule.
+- Separated inflation level from inflation direction: high-inflation and rising-inflation states have different historical Gold associations.
+- Documented that Gold FIRST_CUT trough timing can precede later Baa/VIX stress maxima; this remains ex-post descriptive evidence, not an entry signal.
+- Added five frozen literature-context rows covering safe-haven definitions, inflation-hedge limitations, multi-driver sensitivity and regime-dependent real-rate evidence.
