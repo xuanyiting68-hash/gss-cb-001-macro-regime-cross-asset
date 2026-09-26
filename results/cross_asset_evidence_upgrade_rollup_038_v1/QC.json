@@ -1,0 +1,32 @@
+{
+  "qc_gate": "PASS",
+  "module": "CROSS-ASSET-EVIDENCE-UPGRADE-ROLLUP-038",
+  "upstream_qc": {
+    "032": "PASS",
+    "033": "PASS",
+    "034": "PASS",
+    "035": "PASS",
+    "036": "PASS",
+    "037": "PASS"
+  },
+  "asset_evidence_rows": 12,
+  "proxy_phase_rows": 12,
+  "claim_upgrade_rows": 10,
+  "vustx_supported_proxy_preserved": true,
+  "vgsix_limited_proxy_preserved": true,
+  "fresx_not_promoted_preserved": true,
+  "housing_decline_24m_preserved": true,
+  "gold_mechanism_ranking_created": false,
+  "bitcoin_status": "LIMITED_DESCRIPTIVE",
+  "synthetic_bitcoin_history_created": false,
+  "best_asset_outputs": 0,
+  "best_phase_outputs": 0,
+  "expected_return_forecasts": 0,
+  "trade_instructions": 0,
+  "new_estimation": false,
+  "new_pvalues_generated": false,
+  "private_paper_inputs_used": false,
+  "causal_status": "NONE",
+  "oos_status": "NOT_A_FORECASTING_MODEL",
+  "deployment_status": "NOT_DEPLOYABLE"
+}

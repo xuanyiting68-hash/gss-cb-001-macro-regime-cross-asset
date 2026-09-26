@@ -1,0 +1,13 @@
+asset_id,asset_label,status_032_or_prior,canonical_status_after_038,source_module,interpretation_boundary,path_risk_metric
+GOLD,Gold,CORE_SUPPORTED,CORE_SUPPORTED + MULTI_MECHANISM_MAP_AVAILABLE,033,Phase evidence supported; mechanism map available; no dominant driver ranking.,NONE
+US_HOUSE_PRICE,U.S. national house price,SUPPORTED_SLOW_MOVING,SUPPORTED_SLOW_MOVING + FINANCING_ACTIVITY_PRICE_TIMING_MAP,034,Case-Shiller slow clock retained; financing/activity ordering is descriptive and path risk remains DECLINE_24M.,DECLINE_24M
+TLT,TLT target ETF,LIMITED_DESCRIPTIVE,TARGET_ETF_LIMITED_HISTORY,035,Original ETF history remains limited; use VUSTX proxy for supported longer-history duration evidence without relabeling.,MDD_12M
+VUSTX_LONG_TREASURY_PROXY,Long-duration Treasury proxy,N/A,SUPPORTED_PROXY_DESCRIPTIVE,035,All TLT-VUSTX bridge gates passed; proxy extension supported and separately labeled.,MDD_12M
+VNQ,VNQ target ETF,LIMITED_DESCRIPTIVE,TARGET_ETF_LIMITED_HISTORY,036,Original VNQ history remains limited.,MDD_12M
+VGSIX_REIT_PROXY,Listed REIT proxy,N/A,LIMITED_PROXY_DESCRIPTIVE,036,Bridge to VNQ passed but only four broad episodes; do not promote to supported evidence.,MDD_12M
+FRESX_REIT_ACTIVE_PROXY,Active REIT deep-history candidate,N/A,NOT_PROMOTED_DUAL_BRIDGE_FAIL,037,Highly correlated with VNQ/VGSIX but one frozen VGSIX phase-direction gate failed; deep history blocked.,MDD_12M
+BTC_USD,Bitcoin USD,LIMITED_DESCRIPTIVE,LIMITED_DESCRIPTIVE,032,Short true history retained; no synthetic backfill.,MDD_12M
+HANG_SENG,Hang Seng,DIAGNOSTIC_ASIA,DIAGNOSTIC_ASIA,032,Regional diagnostic only.,MDD_12M
+KOSPI,KOSPI,DIAGNOSTIC_ASIA,DIAGNOSTIC_ASIA,032,Regional diagnostic only.,MDD_12M
+NIKKEI_225,Nikkei 225,DIAGNOSTIC_ASIA,DIAGNOSTIC_ASIA,032,Regional diagnostic only.,MDD_12M
+SHANGHAI_COMPOSITE,Shanghai Composite,DIAGNOSTIC_ASIA,DIAGNOSTIC_ASIA,032,Regional diagnostic only.,MDD_12M

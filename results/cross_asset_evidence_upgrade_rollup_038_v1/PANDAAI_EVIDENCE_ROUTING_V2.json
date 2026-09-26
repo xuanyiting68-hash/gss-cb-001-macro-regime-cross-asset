@@ -1,0 +1,22 @@
+{
+  "module": "CROSS-ASSET-EVIDENCE-UPGRADE-ROLLUP-038",
+  "routing": {
+    "GOLD": "use_032_phase_plus_033_mechanism_map",
+    "US_HOUSE_PRICE": "use_032_phase_plus_034_slow_lag_chain",
+    "LONG_DURATION_TREASURY": "use_035_VUSTX_supported_proxy_with_explicit_proxy_label",
+    "LISTED_REIT": "use_036_VGSIX_limited_proxy; reject_037_FRESX_deep_extension",
+    "BTC_USD": "use_032_limited_phase_history; next research should be mechanism/liquidity"
+  },
+  "prohibited": [
+    "best_asset",
+    "best_phase",
+    "expected_return",
+    "trade_instruction",
+    "relabel_proxy_as_target",
+    "promote_failed_proxy",
+    "synthetic_btc_history"
+  ],
+  "causal_status": "NONE",
+  "oos_status": "NOT_A_FORECASTING_MODEL",
+  "deployment_status": "NOT_DEPLOYABLE"
+}

@@ -1,0 +1,11 @@
+claim_id,claim,status,source_module,boundary
+UPG-038-01,Long-duration Treasury evidence is stronger than the original TLT-only layer.,SUPPORTED_PROXY_DESCRIPTIVE,035,Use VUSTX proxy label; do not call pre-2002 history TLT.
+UPG-038-02,FIRST_HIKE long-duration Treasury history shows near-flat 12M endpoint with materially larger interim drawdown.,SUPPORTED_PROXY_DESCRIPTIVE,035,"Historical proxy distribution, not expected return."
+UPG-038-03,LAST_HIKE and PAUSE long-duration Treasury proxy medians are stronger than FIRST_HIKE in the extended sample.,SUPPORTED_PROXY_DESCRIPTIVE,035,Do not turn into best-phase ranking.
+UPG-038-04,VGSIX is a very high-fidelity VNQ proxy in overlap history.,BRIDGE_VALID,036,Measurement bridge does not upgrade sample count by itself.
+UPG-038-05,REIT Fed-cycle phase evidence remains limited after the VGSIX extension.,LIMITED_PROXY_DESCRIPTIVE,036,Four broad episodes only.
+UPG-038-06,FRESX cannot be used to promote 1987+ REIT history under the frozen dual bridge.,NOT_PROMOTED_DUAL_BRIDGE_FAIL,037,Do not relax the +/-3% direction gate post-run.
+UPG-038-07,Gold should be explained through multiple mechanisms rather than a single real-rate/USD/inflation driver.,MULTI_MECHANISM_MAP_AVAILABLE,033,No dominant-driver ranking.
+UPG-038-08,Housing requires a slow financing-activity-price clock rather than traded-asset MDD logic.,SUPPORTED_SLOW_MOVING,034,Keep DECLINE_24M and national-index boundary.
+UPG-038-09,"Mortgage-rate peaks often precede housing activity troughs, but activity-before-price ordering is not deterministic.",SUPPORTED_DESCRIPTIVE,034,"Timing ordering is descriptive, not causal."
+UPG-038-10,Bitcoin remains genuinely short-history in Fed-cycle analysis.,LIMITED_DESCRIPTIVE,032,Deepen by mechanisms/liquidity rather than synthetic backfill.
