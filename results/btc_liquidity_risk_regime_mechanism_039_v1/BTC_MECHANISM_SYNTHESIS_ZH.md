@@ -38,6 +38,8 @@ WALCL 3M变化的时代相关：-0.240 / +0.106 / -0.352；M2 3M变化：-0.308 
 
 WALCL只是Fed资产负债表规模代理；M2是广义货币存量，而且2020年H.6/Regulation D变化带来定义/构成 caveat。相关关系不能直接翻译成“印钱导致BTC上涨”。
 
+状态样本的跨时代可比性：WALCL = PARTIAL_STATE_COMPARABILITY；M2 = WEAK_STATE_COMPARABILITY。特别是M2在前两个固定时代没有任何3个月收缩/持平状态，因此全样本+4.2%的状态差不能写成跨时代规律。
+
 ## 6. Era stability
 
 - 三个时代Pearson符号一致：NASDAQ_RET, DXY_RET, VIX_CHANGE, NFCI_CHANGE

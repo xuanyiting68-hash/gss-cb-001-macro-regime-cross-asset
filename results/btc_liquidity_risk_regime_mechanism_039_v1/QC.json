@@ -31,6 +31,8 @@
   "fixed_era_association_rows": 21,
   "era_stability_rows": 7,
   "state_contrast_rows": 28,
+  "state_support_audit_rows": 7,
+  "state_support_post_run_amendment": true,
   "state_cutoff": "ZERO_EXACT",
   "state_support_thresholds": {
     "supported_min_each": 18,

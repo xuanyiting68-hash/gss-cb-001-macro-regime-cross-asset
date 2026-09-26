@@ -12,6 +12,7 @@
 - full association rows: 7
 - fixed-era association rows: 21
 - state contrast rows: 28
+- state-support audit rows: 7
 - rolling 36M rows: 749
 - era-dependent mechanisms: 3
 - sign-stable mechanisms: 4

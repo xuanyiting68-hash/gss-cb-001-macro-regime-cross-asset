@@ -4,8 +4,8 @@ BTC-Q02,Is Bitcoin consistently inversely associated with the U.S. dollar?,BTC-D
 BTC-Q03,Is the real-yield association stable?,BTC-DFII10-change Pearson by era: +0.132 / -0.117 / -0.231; status ERA_DEPENDENT.,REAL_YIELD
 BTC-Q04,Does BTC behave differently when VIX is rising?,Full-sample BTC median difference VIX_UP minus VIX_DOWN_OR_FLAT: -5.5%; support SUPPORTED_DESCRIPTIVE.,VIX
 BTC-Q05,Does BTC behave differently when NFCI is tightening?,Full-sample BTC median difference NFCI_TIGHTENING minus EASING_OR_FLAT: -6.3%; support SUPPORTED_DESCRIPTIVE.,NFCI
-BTC-Q06,Are WALCL-expansion months systematically different for BTC?,Full-sample median difference WALCL_EXPANDING_3M minus CONTRACTING_OR_FLAT: +3.1%; support SUPPORTED_DESCRIPTIVE. This is not causal.,WALCL
-BTC-Q07,Are M2-expansion months systematically different for BTC?,Full-sample median difference M2_EXPANDING_3M minus CONTRACTING_OR_FLAT: +4.2%; support SUPPORTED_DESCRIPTIVE; retain the 2020 M2 definition caveat.,M2
+BTC-Q06,Are WALCL-expansion months systematically different for BTC?,Full-sample median difference WALCL_EXPANDING_3M minus CONTRACTING_OR_FLAT: +3.1%; support SUPPORTED_DESCRIPTIVE; cross-era state comparability PARTIAL_STATE_COMPARABILITY. This is not causal.,WALCL
+BTC-Q07,Are M2-expansion months systematically different for BTC?,"Full-sample median difference M2_EXPANDING_3M minus CONTRACTING_OR_FLAT: +4.2%; full-sample support SUPPORTED_DESCRIPTIVE, but cross-era state comparability WEAK_STATE_COMPARABILITY (ERA1/ERA2 have zero contracting-or-flat months); retain the 2020 M2 definition caveat.",M2
 BTC-Q08,Which mechanism signs are stable across all three fixed eras?,"NASDAQ_RET, DXY_RET, VIX_CHANGE, NFCI_CHANGE",ERA_STABILITY
 BTC-Q09,Which mechanisms are era-dependent?,"DFII10_CHANGE_PP, WALCL_3M_PCT, M2SL_3M_PCT",ERA_STABILITY
 BTC-Q10,Does the 36M rolling Nasdaq correlation simply rise after 2020?,039 does not pre-register a monotonic trend test. The fixed 36M diagnostic spans +0.120 to +0.578; latest +0.479.,ROLLING_DIAGNOSTIC
