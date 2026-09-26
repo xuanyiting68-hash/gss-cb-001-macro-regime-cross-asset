@@ -1,0 +1,54 @@
+{
+  "qc_gate": "PASS",
+  "module": "BTC-LIQUIDITY-RISK-REGIME-MECHANISM-039",
+  "upstream_qc": {
+    "038": "PASS"
+  },
+  "btc_source_start": "2014-09-17",
+  "first_analysis_month": "2014-11",
+  "last_analysis_month": "2026-08",
+  "analysis_months": 142,
+  "partial_sep_2026_used": false,
+  "inception_partial_sep_2014_used_as_return_month": false,
+  "source_rows": 8,
+  "source_hashes_complete": true,
+  "missing_interpolation_used": false,
+  "fixed_era_counts": {
+    "ERA_1_EARLY": 38,
+    "ERA_2_INSTITUTIONALIZATION": 48,
+    "ERA_3_POST_2022": 56
+  },
+  "mechanism_variables": [
+    "NASDAQ_RET",
+    "DXY_RET",
+    "DFII10_CHANGE_PP",
+    "VIX_CHANGE",
+    "NFCI_CHANGE",
+    "WALCL_3M_PCT",
+    "M2SL_3M_PCT"
+  ],
+  "full_association_rows": 7,
+  "fixed_era_association_rows": 21,
+  "era_stability_rows": 7,
+  "state_contrast_rows": 28,
+  "state_cutoff": "ZERO_EXACT",
+  "state_support_thresholds": {
+    "supported_min_each": 18,
+    "limited_min_each": 9
+  },
+  "rolling_window_months": 36,
+  "rolling_window_optimized": false,
+  "rolling_rows": 749,
+  "m2_structural_definition_caveat_retained": true,
+  "walcl_identified_liquidity_shock": false,
+  "mechanism_ranking_created": false,
+  "expected_btc_return_forecast_created": false,
+  "optimized_lag_created": false,
+  "causal_monetary_policy_claim_created": false,
+  "synthetic_btc_history_created": false,
+  "pvalues_generated": false,
+  "private_paper_inputs_used": false,
+  "causal_status": "NONE",
+  "oos_status": "NOT_A_FORECASTING_MODEL",
+  "deployment_status": "NOT_DEPLOYABLE"
+}

@@ -1,0 +1,55 @@
+{
+  "module": "BTC-LIQUIDITY-RISK-REGIME-MECHANISM-039",
+  "history_boundary": "GENUINE_BTC_HISTORY_ONLY",
+  "analysis_start": "2014-11",
+  "analysis_end": "2026-08",
+  "mechanisms": [
+    "NASDAQ_RET",
+    "DXY_RET",
+    "DFII10_CHANGE_PP",
+    "VIX_CHANGE",
+    "NFCI_CHANGE",
+    "WALCL_3M_PCT",
+    "M2SL_3M_PCT"
+  ],
+  "fixed_eras": [
+    {
+      "name": "ERA_1_EARLY",
+      "start": "2014-11",
+      "end": "2017-12"
+    },
+    {
+      "name": "ERA_2_INSTITUTIONALIZATION",
+      "start": "2018-01",
+      "end": "2021-12"
+    },
+    {
+      "name": "ERA_3_POST_2022",
+      "start": "2022-01",
+      "end": "2026-08"
+    }
+  ],
+  "required_outputs": [
+    "full_sample_association",
+    "fixed_era_association",
+    "era_stability",
+    "state_contrast",
+    "rolling_36m_time_variation",
+    "support",
+    "source_freshness",
+    "boundary"
+  ],
+  "prohibited_outputs": [
+    "dominant_mechanism_score",
+    "expected_btc_return",
+    "optimized_lag",
+    "identified_fed_liquidity_shock",
+    "best_regime",
+    "buy_sell_instruction",
+    "synthetic_btc_history"
+  ],
+  "m2_definition_caveat_required": true,
+  "causal_status": "NONE",
+  "oos_status": "NOT_A_FORECASTING_MODEL",
+  "deployment_status": "NOT_DEPLOYABLE"
+}

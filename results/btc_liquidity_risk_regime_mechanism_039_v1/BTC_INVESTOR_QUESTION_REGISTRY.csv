@@ -1,0 +1,16 @@
+question_id,question_en,answer,evidence_layer
+BTC-Q01,Has Bitcoin's Nasdaq association changed across fixed eras?,Pearson by era: +0.211 / +0.388 / +0.555; status SIGN_STABLE_ALL_ERAS.,RISK_BETA
+BTC-Q02,Is Bitcoin consistently inversely associated with the U.S. dollar?,BTC-DXY Pearson by era: -0.154 / -0.050 / -0.117; status SIGN_STABLE_ALL_ERAS.,USD
+BTC-Q03,Is the real-yield association stable?,BTC-DFII10-change Pearson by era: +0.132 / -0.117 / -0.231; status ERA_DEPENDENT.,REAL_YIELD
+BTC-Q04,Does BTC behave differently when VIX is rising?,Full-sample BTC median difference VIX_UP minus VIX_DOWN_OR_FLAT: -5.5%; support SUPPORTED_DESCRIPTIVE.,VIX
+BTC-Q05,Does BTC behave differently when NFCI is tightening?,Full-sample BTC median difference NFCI_TIGHTENING minus EASING_OR_FLAT: -6.3%; support SUPPORTED_DESCRIPTIVE.,NFCI
+BTC-Q06,Are WALCL-expansion months systematically different for BTC?,Full-sample median difference WALCL_EXPANDING_3M minus CONTRACTING_OR_FLAT: +3.1%; support SUPPORTED_DESCRIPTIVE. This is not causal.,WALCL
+BTC-Q07,Are M2-expansion months systematically different for BTC?,Full-sample median difference M2_EXPANDING_3M minus CONTRACTING_OR_FLAT: +4.2%; support SUPPORTED_DESCRIPTIVE; retain the 2020 M2 definition caveat.,M2
+BTC-Q08,Which mechanism signs are stable across all three fixed eras?,"NASDAQ_RET, DXY_RET, VIX_CHANGE, NFCI_CHANGE",ERA_STABILITY
+BTC-Q09,Which mechanisms are era-dependent?,"DFII10_CHANGE_PP, WALCL_3M_PCT, M2SL_3M_PCT",ERA_STABILITY
+BTC-Q10,Does the 36M rolling Nasdaq correlation simply rise after 2020?,039 does not pre-register a monotonic trend test. The fixed 36M diagnostic spans +0.120 to +0.578; latest +0.479.,ROLLING_DIAGNOSTIC
+BTC-Q11,Is 'Bitcoin is always uncorrelated with stocks' supported?,"No fixed zero-correlation property is assumed. Nasdaq era correlations are +0.211, +0.388, +0.555; literature context also documents stronger crypto-equity interconnectedness over time.",RISK_BETA
+BTC-Q12,Is 'Bitcoin is digital gold' established by this design?,No. 039 does not directly test BTC against Gold and therefore cannot establish a digital-gold equivalence.,BOUNDARY
+BTC-Q13,Is 'Fed tightening always hurts Bitcoin' established?,"No causal Fed claim is identified. 039 uses contemporaneous market/macro proxies, not a monetary-policy shock series.",BOUNDARY
+BTC-Q14,Is 'balance-sheet expansion mechanically causes BTC gains' established?,No. WALCL is a Fed balance-sheet-scale proxy; same-month/3M associations do not identify mechanical causality.,BOUNDARY
+BTC-Q15,What should PandaAI surface?,"Era-specific BTC associations, state contrasts, rolling 36M time variation, sample support, source freshness, M2 definition caveat and explicit non-causal/non-forecast boundaries.",PANDAAI
