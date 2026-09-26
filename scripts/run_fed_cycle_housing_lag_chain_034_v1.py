@@ -37,11 +37,27 @@ def sha256_bytes(raw:bytes)->str:
     return hashlib.sha256(raw).hexdigest()
 
 def fetch_csv(url:str)->tuple[pd.DataFrame,dict]:
-    req=urllib.request.Request(url,headers={"User-Agent":"Mozilla/5.0 housing-lag-chain-research"})
-    with urllib.request.urlopen(req,timeout=60) as resp:
-        raw=resp.read()
-    df=pd.read_csv(io.BytesIO(raw))
-    return df,{"sha256":sha256_bytes(raw),"raw_bytes":len(raw)}
+    last_error=None
+    for attempt in range(4):
+        try:
+            req=urllib.request.Request(
+                url,
+                headers={
+                    "User-Agent":"Mozilla/5.0 housing-lag-chain-research",
+                    "Accept":"text/csv,*/*;q=0.8",
+                }
+            )
+            with urllib.request.urlopen(req,timeout=120) as resp:
+                raw=resp.read()
+            if len(raw)<100:
+                raise RuntimeError(f"unexpectedly short FRED response: {len(raw)} bytes")
+            df=pd.read_csv(io.BytesIO(raw))
+            return df,{"sha256":sha256_bytes(raw),"raw_bytes":len(raw),"fetch_attempt":attempt+1}
+        except Exception as exc:
+            last_error=exc
+            if attempt<3:
+                time.sleep(2*(attempt+1))
+    raise RuntimeError(f"source fetch failed after retries: {url}: {last_error}")
 
 def weighted_median(values,weights):
     v=np.asarray(values,dtype=float)
@@ -227,7 +243,7 @@ def main():
             "series_id":s.series_id,"layer":s.layer,"source":s.source,"source_url":s.source_url,
             "frequency":s.frequency,"units":s.units,"transformation":s.transformation,
             "retrieved_utc":retrieved,"sha256":meta["sha256"],"raw_bytes":meta["raw_bytes"],
-            "rows_monthly":len(m),"first_month":str(m["period"].min()),"last_month":str(m["period"].max()),
+            "fetch_attempt":meta["fetch_attempt"],"rows_monthly":len(m),"first_month":str(m["period"].min()),"last_month":str(m["period"].max()),
             "raw_committed":False,"critical_note":s.critical_note
         })
     reg=pd.DataFrame(registry)
