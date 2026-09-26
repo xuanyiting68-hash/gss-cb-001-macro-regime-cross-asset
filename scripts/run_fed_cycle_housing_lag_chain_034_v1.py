@@ -72,6 +72,14 @@ def weighted_median(values,weights):
     cutoff=0.5*w.sum()
     return float(v[np.searchsorted(c,cutoff,side="left")])
 
+def weighted_share(values,weights):
+    v=np.asarray(values,dtype=float)
+    w=np.asarray(weights,dtype=float)
+    ok=np.isfinite(v)&np.isfinite(w)&(w>0)
+    if not ok.any():
+        return np.nan
+    return float(np.sum(v[ok]*w[ok])/np.sum(w[ok]))
+
 def broad_count(df):
     return int(df.loc[df["episode_weight"].notna(),"broad_episode_id"].nunique())
 
@@ -137,6 +145,26 @@ def financing_metrics(series_id,ser,anchors):
             row["min_change_24m_pp"]=np.nan
             row["min_rate_month_24m"]=np.nan
             row["months_observed_0_24"]=0
+
+        cycle_window=[]
+        for p in pd.period_range(anchor_p-12,anchor_p+24,freq="M"):
+            v=value_at(ser,p)
+            if np.isfinite(v):
+                cycle_window.append((p.ordinal-anchor_p.ordinal,v))
+        if cycle_window:
+            abs_peak_p,abs_peak_level=max(cycle_window,key=lambda z:z[1])
+            abs_min_p,abs_min_level=min(cycle_window,key=lambda z:z[1])
+            row["absolute_peak_level_m12_p24"]=abs_peak_level
+            row["absolute_peak_month_m12_p24"]=int(abs_peak_p)
+            row["absolute_min_level_m12_p24"]=abs_min_level
+            row["absolute_min_month_m12_p24"]=int(abs_min_p)
+            row["months_observed_m12_p24"]=len(cycle_window)
+        else:
+            row["absolute_peak_level_m12_p24"]=np.nan
+            row["absolute_peak_month_m12_p24"]=np.nan
+            row["absolute_min_level_m12_p24"]=np.nan
+            row["absolute_min_month_m12_p24"]=np.nan
+            row["months_observed_m12_p24"]=0
         rows.append(row)
     return pd.DataFrame(rows)
 
@@ -216,6 +244,9 @@ def fmt_pp(x):
 
 def fmt_month(x):
     return "NA" if pd.isna(x) else f"M{int(round(x))}"
+
+def fmt_share(x):
+    return "NA" if pd.isna(x) else f"{x*100:.0f}%"
 
 def main():
     q014=read_pass(Q014); q015=read_pass(Q015); q032=read_pass(Q032)
@@ -298,7 +329,7 @@ def main():
 
     panel=panel.merge(pick_metric(
         fmet,"MORTGAGE30US",
-        ["baseline_level","change_3m_pp","change_6m_pp","change_12m_pp","change_24m_pp","max_increase_24m_pp","max_pressure_month_24m","min_change_24m_pp","min_rate_month_24m"],
+        ["baseline_level","change_3m_pp","change_6m_pp","change_12m_pp","change_24m_pp","max_increase_24m_pp","max_pressure_month_24m","min_change_24m_pp","min_rate_month_24m","absolute_peak_level_m12_p24","absolute_peak_month_m12_p24"],
         "mortgage_"
     ),on=["anchor","cycle_id"],how="left",validate="one_to_one")
 
@@ -334,6 +365,38 @@ def main():
         panel["trough_month_24m"]-panel["mortgage_max_pressure_month_24m"],
         np.nan
     )
+
+    # Post-run diagnostic amendment: paired ordering and cycle-window absolute
+    # mortgage-rate peak. These do not overwrite preregistered forward-window metrics.
+    panel["activity_after_cycle_mortgage_peak_months"]=(
+        panel["activity_median_trough_month_24m"]-panel["mortgage_absolute_peak_month_m12_p24"]
+    )
+    panel["price_after_cycle_mortgage_peak_months"]=np.where(
+        panel["decline_24m"].fillna(0)>0,
+        panel["trough_month_24m"]-panel["mortgage_absolute_peak_month_m12_p24"],
+        np.nan
+    )
+    panel["forward_mortgage_before_or_same_activity"]=np.where(
+        np.isfinite(panel["activity_after_mortgage_months"]),
+        (panel["activity_after_mortgage_months"]>=0).astype(float),
+        np.nan
+    )
+    panel["cycle_mortgage_peak_before_or_same_activity"]=np.where(
+        np.isfinite(panel["activity_after_cycle_mortgage_peak_months"]),
+        (panel["activity_after_cycle_mortgage_peak_months"]>=0).astype(float),
+        np.nan
+    )
+    panel["activity_before_or_same_price_positive_decline"]=np.where(
+        np.isfinite(panel["price_after_activity_months"]),
+        (panel["price_after_activity_months"]>=0).astype(float),
+        np.nan
+    )
+    panel["cycle_mortgage_peak_before_or_same_price_positive_decline"]=np.where(
+        np.isfinite(panel["price_after_cycle_mortgage_peak_months"]),
+        (panel["price_after_cycle_mortgage_peak_months"]>=0).astype(float),
+        np.nan
+    )
+    panel["ordering_diagnostic_status"]="POST_RUN_DIAGNOSTIC__ANCHOR_RESET_AUDIT"
     panel["causal_status"]="NONE"
     panel["interpretation_guardrail"]="timing differences are descriptive sequencing, not causal transmission lags"
     panel.to_csv(OUT/"HOUSING_LAG_CHAIN_EPISODE_PANEL.csv",index=False)
@@ -362,10 +425,35 @@ def main():
             "positive_price_decline_legs":int((g["decline_24m"]>0).sum()),
             "weighted_median_activity_trough_month":weighted_median(g["activity_median_trough_month_24m"],g["episode_weight"]),
             "weighted_median_activity_after_mortgage_months":weighted_median(g["activity_after_mortgage_months"],g["episode_weight"]),
+            "weighted_share_forward_mortgage_before_or_same_activity":weighted_share(
+                g["forward_mortgage_before_or_same_activity"],g["episode_weight"]
+            ),
+            "weighted_median_cycle_mortgage_peak_month_m12_p24":weighted_median(
+                g["mortgage_absolute_peak_month_m12_p24"],g["episode_weight"]
+            ),
+            "weighted_median_activity_after_cycle_mortgage_peak_months":weighted_median(
+                g["activity_after_cycle_mortgage_peak_months"],g["episode_weight"]
+            ),
+            "weighted_share_cycle_mortgage_peak_before_or_same_activity":weighted_share(
+                g["cycle_mortgage_peak_before_or_same_activity"],g["episode_weight"]
+            ),
             "weighted_median_price_after_activity_months_positive_declines":weighted_median(
                 g.loc[g["decline_24m"]>0,"price_after_activity_months"],
                 g.loc[g["decline_24m"]>0,"episode_weight"]
             ),
+            "weighted_share_activity_before_or_same_price_positive_declines":weighted_share(
+                g.loc[g["decline_24m"]>0,"activity_before_or_same_price_positive_decline"],
+                g.loc[g["decline_24m"]>0,"episode_weight"]
+            ),
+            "weighted_median_price_after_cycle_mortgage_peak_months_positive_declines":weighted_median(
+                g.loc[g["decline_24m"]>0,"price_after_cycle_mortgage_peak_months"],
+                g.loc[g["decline_24m"]>0,"episode_weight"]
+            ),
+            "weighted_share_cycle_mortgage_peak_before_or_same_price_positive_declines":weighted_share(
+                g.loc[g["decline_24m"]>0,"cycle_mortgage_peak_before_or_same_price_positive_decline"],
+                g.loc[g["decline_24m"]>0,"episode_weight"]
+            ),
+            "ordering_diagnostic_status":"POST_RUN_DIAGNOSTIC__ANCHOR_RESET_AUDIT",
             "path_risk_metric":"DECLINE_24M",
             "causal_status":"NONE",
             "oos_status":"NOT_A_FORECASTING_MODEL",
@@ -376,6 +464,23 @@ def main():
     if len(psum)!=4:
         raise RuntimeError("phase lag summary must have four rows")
     psum.to_csv(OUT/"HOUSING_LAG_CHAIN_PHASE_SUMMARY.csv",index=False)
+
+    ordering_cols=[
+        "anchor","n_legs","n_broad_episodes",
+        "weighted_median_mortgage_max_pressure_month",
+        "weighted_median_activity_trough_month",
+        "weighted_share_forward_mortgage_before_or_same_activity",
+        "weighted_median_cycle_mortgage_peak_month_m12_p24",
+        "weighted_median_activity_after_cycle_mortgage_peak_months",
+        "weighted_share_cycle_mortgage_peak_before_or_same_activity",
+        "weighted_median_house_trough_month_positive_declines",
+        "weighted_median_price_after_activity_months_positive_declines",
+        "weighted_share_activity_before_or_same_price_positive_declines",
+        "weighted_median_price_after_cycle_mortgage_peak_months_positive_declines",
+        "weighted_share_cycle_mortgage_peak_before_or_same_price_positive_declines",
+        "ordering_diagnostic_status","causal_status"
+    ]
+    psum[ordering_cols].to_csv(OUT/"HOUSING_ORDERING_DIAGNOSTICS.csv",index=False)
 
     # Exact canonical price summary check.
     canon=house_summary.set_index("anchor")
@@ -406,11 +511,11 @@ def main():
         ("H-Q01","How quickly do mortgage rates move after each Fed phase anchor?",
          f"FIRST_HIKE 12M mortgage-rate change median {fmt_pp(p('FIRST_HIKE','weighted_median_mortgage_change_12m_pp'))}; LAST_HIKE {fmt_pp(p('LAST_HIKE','weighted_median_mortgage_change_12m_pp'))}; PAUSE {fmt_pp(p('PAUSE_START','weighted_median_mortgage_change_12m_pp'))}; FIRST_CUT {fmt_pp(p('FIRST_CUT','weighted_median_mortgage_change_12m_pp'))}.","FINANCING"),
         ("H-Q02","Does mortgage-rate pressure peak before housing activity troughs?",
-         f"Median mortgage max-pressure month / activity-trough month: FIRST_HIKE {fmt_month(p('FIRST_HIKE','weighted_median_mortgage_max_pressure_month'))} / {fmt_month(p('FIRST_HIKE','weighted_median_activity_trough_month'))}; LAST_HIKE {fmt_month(p('LAST_HIKE','weighted_median_mortgage_max_pressure_month'))} / {fmt_month(p('LAST_HIKE','weighted_median_activity_trough_month'))}; PAUSE {fmt_month(p('PAUSE_START','weighted_median_mortgage_max_pressure_month'))} / {fmt_month(p('PAUSE_START','weighted_median_activity_trough_month'))}; FIRST_CUT {fmt_month(p('FIRST_CUT','weighted_median_mortgage_max_pressure_month'))} / {fmt_month(p('FIRST_CUT','weighted_median_activity_trough_month'))}. These are descriptive timing differences.","LAG_SEQUENCE"),
+         f"Paired episode share with cycle-window absolute mortgage peak before-or-same as activity trough: FIRST_HIKE {fmt_share(p('FIRST_HIKE','weighted_share_cycle_mortgage_peak_before_or_same_activity'))}; LAST_HIKE {fmt_share(p('LAST_HIKE','weighted_share_cycle_mortgage_peak_before_or_same_activity'))}; PAUSE {fmt_share(p('PAUSE_START','weighted_share_cycle_mortgage_peak_before_or_same_activity'))}; FIRST_CUT {fmt_share(p('FIRST_CUT','weighted_share_cycle_mortgage_peak_before_or_same_activity'))}. This [-12,+24] peak is a post-run anchor-reset diagnostic, not a causal lag estimate.","LAG_SEQUENCE"),
         ("H-Q03","Which activity series reacts earlier: permits, starts, or new-home sales?",
          f"FIRST_HIKE trough medians: PERMIT {fmt_month(p('FIRST_HIKE','weighted_median_permit_trough_month'))}, HOUST {fmt_month(p('FIRST_HIKE','weighted_median_houst_trough_month'))}, HSN1F {fmt_month(p('FIRST_HIKE','weighted_median_sales_trough_month'))}. Compare phase by phase rather than imposing one universal ordering.","ACTIVITY"),
         ("H-Q04","Does activity generally weaken before national house prices decline?",
-         f"Among episodes with positive 24M house-price decline, the phase summaries preserve price-trough timing separately from activity troughs. Median price-after-activity differences are FIRST_HIKE {fmt_month(p('FIRST_HIKE','weighted_median_price_after_activity_months_positive_declines'))}, LAST_HIKE {fmt_month(p('LAST_HIKE','weighted_median_price_after_activity_months_positive_declines'))}, PAUSE {fmt_month(p('PAUSE_START','weighted_median_price_after_activity_months_positive_declines'))}, FIRST_CUT {fmt_month(p('FIRST_CUT','weighted_median_price_after_activity_months_positive_declines'))}.","LAG_SEQUENCE"),
+         f"Among positive 24M price-decline episodes, paired share with activity trough before-or-same as price trough: FIRST_HIKE {fmt_share(p('FIRST_HIKE','weighted_share_activity_before_or_same_price_positive_declines'))}; LAST_HIKE {fmt_share(p('LAST_HIKE','weighted_share_activity_before_or_same_price_positive_declines'))}; PAUSE {fmt_share(p('PAUSE_START','weighted_share_activity_before_or_same_price_positive_declines'))}; FIRST_CUT {fmt_share(p('FIRST_CUT','weighted_share_activity_before_or_same_price_positive_declines'))}. Ordering is descriptive and not uniform across episodes.","LAG_SEQUENCE"),
         ("H-Q05","How long after FIRST_HIKE do housing activity and prices reach their worst point?",
          f"FIRST_HIKE activity median trough {fmt_month(p('FIRST_HIKE','weighted_median_activity_trough_month'))}; price trough among positive-decline episodes {fmt_month(p('FIRST_HIKE','weighted_median_house_trough_month_positive_declines'))}.","FIRST_HIKE"),
         ("H-Q06","What changes by LAST_HIKE?",
@@ -445,7 +550,7 @@ def main():
         "",
         "## 核心框架",
         "",
-        "住房不是股票。更合适的历史时钟是：**融资价格先变 → 许可/开工/新房销售等活动量调整 → 全国房价更慢地反映**。034只验证这种历史排序是否经常出现，不把它当作Fed因果系数。",
+        "住房不是股票。常见机制叙事是“融资条件 → 活动量 → 价格”，但034的逐episode结果显示：**这个先后顺序不是跨阶段固定成立的。** 尤其在LAST_HIKE / PAUSE / FIRST_CUT，phase anchor可能发生在mortgage周期高点之后，所以必须看paired ordering和[-12,+24]绝对利率峰值，而不能只比较各变量的阶段中位月份。",
         "",
     ]
     for a,label in [("FIRST_HIKE","加息启动"),("LAST_HIKE","最后一次加息"),("PAUSE_START","暂停"),("FIRST_CUT","第一次降息")]:
@@ -453,7 +558,9 @@ def main():
             f"## {a}｜{label}",
             "",
             f"- 30Y mortgage 12M变化中位：{fmt_pp(p(a,'weighted_median_mortgage_change_12m_pp'))}",
-            f"- mortgage 最大压力月份中位：{fmt_month(p(a,'weighted_median_mortgage_max_pressure_month'))}",
+            f"- 锚点后 mortgage 最大压力月份中位：{fmt_month(p(a,'weighted_median_mortgage_max_pressure_month'))}",
+            f"- [-12,+24]绝对 mortgage rate峰值月中位（post-run diagnostic）：{fmt_month(p(a,'weighted_median_cycle_mortgage_peak_month_m12_p24'))}",
+            f"- 配对episode中，绝对mortgage峰值早于/同月activity trough的加权占比：{fmt_share(p(a,'weighted_share_cycle_mortgage_peak_before_or_same_activity'))}",
             f"- PERMIT 12M变化 / trough：{fmt_pct(p(a,'weighted_median_permit_change_12m'))} / {fmt_month(p(a,'weighted_median_permit_trough_month'))}",
             f"- HOUST 12M变化 / trough：{fmt_pct(p(a,'weighted_median_houst_change_12m'))} / {fmt_month(p(a,'weighted_median_houst_trough_month'))}",
             f"- New-home sales 12M变化 / trough：{fmt_pct(p(a,'weighted_median_sales_change_12m'))} / {fmt_month(p(a,'weighted_median_sales_trough_month'))}",
@@ -514,6 +621,7 @@ def main():
         f"- phase summary rows: {len(psum)}",
         f"- B05/B07 case-audit rows: {len(case)}",
         f"- investor questions: {len(qdf)}",
+        "- post-run paired-ordering diagnostic: included and explicitly labeled",
         "",
         "Price outcomes are copied from canonical 014/015; new source histories are used only to derive financing/activity context. Housing risk remains DECLINE_24M and timing differences are descriptive, not causal transmission estimates.",
     ]
@@ -532,6 +640,10 @@ def main():
         raise RuntimeError("case audit lost B05/B07")
     if reg["last_month"].isna().any():
         raise RuntimeError("source last month missing")
+    if not (panel["ordering_diagnostic_status"]=="POST_RUN_DIAGNOSTIC__ANCHOR_RESET_AUDIT").all():
+        raise RuntimeError("ordering diagnostic label lost")
+    if psum["weighted_share_cycle_mortgage_peak_before_or_same_activity"].isna().any():
+        raise RuntimeError("paired ordering share missing")
 
     qc={
         "qc_gate":"PASS",
@@ -554,6 +666,10 @@ def main():
         "b05_b07_case_audit_rows":int(len(case)),
         "investor_questions":int(len(qdf)),
         "lag_differences_causal":False,
+        "post_run_ordering_diagnostic_added":True,
+        "cycle_mortgage_peak_window":"M_MINUS_12_TO_M_PLUS_24",
+        "paired_ordering_from_episode_rows":True,
+        "primary_preregistered_metrics_overwritten":False,
         "best_housing_phase_outputs":0,
         "expected_house_price_forecasts":0,
         "home_buying_recommendations":0,
