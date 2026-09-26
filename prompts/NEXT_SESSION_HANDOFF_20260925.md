@@ -418,3 +418,17 @@ Updated research priority:
 2. preserve association/causal boundaries and avoid fitting a trading score unless separately pre-registered;
 3. after Gold, evaluate housing lag-chain and longer-history proxies for TLT/VNQ/BTC;
 4. current-state/prospective Fed and energy chains remain append-only and fail-closed.
+
+## Post-handoff update — 033 completed
+
+FED-CYCLE-GOLD-MECHANISM-DECOMPOSITION-033 is complete and QC-passed.
+
+The public Gold evidence now has a multi-mechanism map covering Fed phase, inflation level/direction, growth, energy, USD, real-rate proxy/DFII10, NFCI and stress timing, with five frozen external-literature context rows. The evidence does not justify a single dominant Gold driver.
+
+Important guardrails: USD remains secondary/no FDR survivor; DFII10 remains INSUFFICIENT_SUPPORT; no inverse real-rate rule is asserted; inflation level and direction stay separate; Gold stress timing is ex-post and not a safe-haven entry signal.
+
+Updated next priority:
+1. **034 Housing Lag Chain** — policy/rates/mortgage rates -> housing activity -> house prices -> recovery timing;
+2. keep housing on its slow-moving 24M clock and do not compare DECLINE_24M with traded-asset MDD;
+3. after housing, evaluate longer-history bond/REIT proxies and Asia local-policy/USD/credit mechanisms;
+4. current-state/prospective Fed and energy chains remain append-only and fail-closed.
