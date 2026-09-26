@@ -1373,3 +1373,15 @@ The main descriptive insights are now explicit: FIRST_HIKE may combine weak 3M e
 Evidence tiers remain binding: BTC/TLT/VNQ are LIMITED, Asian equities DIAGNOSTIC, and U.S. housing uses a separate 24M slow-moving decline clock. No best asset, best phase, current analog, deterministic bottom or trade instruction is generated.
 
 Next research priority: **033 Gold Mechanism Decomposition** — deepen Gold vs real yields, DXY, inflation expectations and stress by phase/case, while separating association from causal identification.
+
+## Gold Mechanism Decomposition — 033
+
+Status: **QC-PASSED MULTI-MECHANISM GOLD EVIDENCE MAP / NOT CAUSAL / NOT A FORECAST / NOT DEPLOYABLE**
+
+033 shows that the public evidence stack does not support a single-driver Gold story. Inflation level and inflation direction have different event-state associations; weak growth and rising energy show stable descriptive heterogeneity; actual DFII10 is under-supported; the real-rate proxy does not establish a stable inverse rule; USD results are counterintuitive but remain secondary and do not survive family-level multiplicity control; NFCI has no stable monthly association.
+
+Gold also has a different stress clock from U.S. equities: in FIRST_CUT pairs its trough can precede later Baa/VIX stress peaks by several months. This is ex-post timing context, not a safe-haven trading signal.
+
+External Gold literature is stored as clearly separated LITERATURE_CONTEXT and is used to frame hedge/safe-haven definitions, inflation-hedge limitations, multi-driver sensitivity and regime dependence without overriding repository evidence.
+
+Next research priority: **034 Housing Lag Chain** — trace policy/rates/mortgage financing into housing activity and prices on a slow-moving clock, preserving the distinction between housing 24M decline metrics and traded-asset MDD.
