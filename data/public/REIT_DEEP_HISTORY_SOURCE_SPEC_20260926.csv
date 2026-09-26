@@ -1,0 +1,4 @@
+asset_id,symbol,role,source,source_context_url,price_history_method,price_field,official_inception,raw_commit_policy
+VNQ,VNQ,TARGET_ETF,"Yahoo Finance public chart history / Vanguard context","https://fund-docs.vanguard.com/F0986.pdf","YAHOO_FINANCE_CHART_JSON","adjusted_close","2004-09-23","HASH_ONLY_NO_RAW_COMMIT"
+VGSIX_REIT_PROXY,VGSIX,HIGH_FIDELITY_REFERENCE,"Yahoo Finance public chart history / Vanguard context","https://workplace.vanguard.com/assets/corp/fund_communications/pdf_publish/us-products/fact-sheet/F0123.pdf","YAHOO_FINANCE_CHART_JSON","adjusted_close","1996-05-13","HASH_ONLY_NO_RAW_COMMIT"
+FRESX_REIT_ACTIVE_PROXY,FRESX,DEEP_HISTORY_CANDIDATE,"Yahoo Finance public chart history / Fidelity context","https://institutional.fidelity.com/app/proxy/content?literatureURL=%2F9922273.PDF","YAHOO_FINANCE_CHART_JSON","adjusted_close","1986-11-17","HASH_ONLY_NO_RAW_COMMIT"
