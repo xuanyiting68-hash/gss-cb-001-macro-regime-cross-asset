@@ -432,3 +432,19 @@ Updated next priority:
 2. keep housing on its slow-moving 24M clock and do not compare DECLINE_24M with traded-asset MDD;
 3. after housing, evaluate longer-history bond/REIT proxies and Asia local-policy/USD/credit mechanisms;
 4. current-state/prospective Fed and energy chains remain append-only and fail-closed.
+
+## Post-handoff update — 034 completed
+
+FED-CYCLE-HOUSING-LAG-CHAIN-034 is complete and QC-passed.
+
+034 adds MORTGAGE30US, DGS10, HOUST, PERMIT and HSN1F to the canonical national house-price layer. House-price values remain exactly the 014/015 Case-Shiller results and risk remains DECLINE_24M.
+
+Key result: housing sequencing is phase-dependent, not a universal fixed lag chain. A post-run diagnostic amendment was added transparently after the first successful run showed phase-median subtraction can misrepresent episode ordering. The absolute mortgage peak in [-12,+24] precedes/same-month as activity trough in weighted shares of 67% FIRST_HIKE and 100% LAST_HIKE/PAUSE/FIRST_CUT, but activity-before-price ordering is only 57%-77% among positive-decline episodes.
+
+B05 and B07 are separately auditable: 2004-07 becomes a deep housing bust later in the cycle, while 2022-23 combines a much larger mortgage-rate shock and activity contraction with resilient national prices.
+
+Updated next priority:
+1. longer-history long-duration Treasury proxy bridge beyond TLT inception, with overlap validation before any evidence inheritance;
+2. then longer-history real-estate/REIT proxy if a defensible public series exists;
+3. Bitcoin remains structurally short-history and should be handled through mechanism/liquidity research rather than pretending a long Fed-cycle sample exists;
+4. current-state/prospective Fed and energy chains remain append-only and fail-closed.
