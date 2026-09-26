@@ -1399,3 +1399,15 @@ Episode-level ordering shares were added transparently after the first run revea
 B05 and B07 are kept separate: the 2004-07 sequence developed into a deep housing bust only later in the cycle, while 2022-23 had a much larger mortgage shock and sharp activity contraction but substantially more resilient national prices.
 
 Next research priority: extend long-duration Treasury history beyond TLT inception using a separately validated public proxy bridge; do not inherit TLT evidence automatically.
+
+## Long-Duration Treasury Proxy Bridge — 035
+
+Status: **BRIDGE_PASS_SUPPORTED_PROXY_EXTENSION / QC PASS / NOT A FORECAST / NOT DEPLOYABLE**
+
+035 validates VUSTX as a longer-history long-duration Treasury proxy for the limited TLT layer. Over 289 complete matched monthly returns, TLT/VUSTX Pearson correlation is 0.991 and Spearman 0.993; the descriptive beta is 0.874. On 12 common Fed events, 12M return signs agree 100%, return correlation is 0.995 and MDD correlation is 0.999. All frozen bridge gates pass.
+
+The project may therefore use VUSTX_LONG_TREASURY_PROXY to extend duration history back to the 1987-era cycles, but pre-2002 proxy observations must never be called TLT. The extended sample reaches 8 legs / 6 broad episodes for FIRST_HIKE, LAST_HIKE and FIRST_CUT, and 6 / 6 for PAUSE_START.
+
+Extended proxy 12M medians: FIRST_HIKE +1.0% with 10.7% MDD; LAST_HIKE +9.9%; PAUSE_START +15.1%; FIRST_CUT +6.0%. This materially strengthens descriptive duration evidence but remains historical distributional evidence, not a best-phase ranking or expected-return forecast.
+
+Next priority: **036 Listed REIT Long-History Proxy Bridge** — validate a pre-VNQ listed-REIT proxy on overlap before any historical extension.
