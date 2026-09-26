@@ -634,3 +634,12 @@
 - Preserved proxy identity: no pre-2004 VGSIX observation is called VNQ.
 - Despite the bridge pass, the expanded Fed-cycle sample contains only four legs/four broad episodes, below the preregistered >=5-leg support threshold; all phase results remain LIMITED_PROXY_DESCRIPTIVE.
 - The limited proxy sample shows strong short-horizon weakness at FIRST_HIKE, stronger 12M medians at LAST_HIKE/PAUSE, and a negative FIRST_CUT 12M median, but none are promoted to stable rules.
+
+## 2026-09-26 — FED-CYCLE-REIT-DEEP-HISTORY-DUAL-BRIDGE-037
+
+- Tested 1986-inception FRESX as an active deep-history REIT proxy using a frozen dual bridge against both VNQ and the already validated VGSIX proxy.
+- FRESX/VNQ monthly Pearson/Spearman are 0.993/0.987 and all VNQ bridge gates pass.
+- FRESX/VGSIX monthly Pearson/Spearman are 0.992/0.986; event return/MDD correlations are 0.984/0.989 and all but one VGSIX gate pass.
+- The sole failure is the frozen four-phase direction gate: FIRST_HIKE VGSIX common-sample median +2.50% is NEUTRAL under the predeclared +/-3% band while FRESX +3.97% is POSITIVE. The 1.47pp continuous difference is small, but the categorical gate remains binding.
+- No threshold was relaxed after seeing the result; FRESX 1987+ evidence is explicitly NOT_PROMOTED_DUAL_BRIDGE_FAIL.
+- Proxy-shopping should stop here; the next module should address a different evidence gap.
