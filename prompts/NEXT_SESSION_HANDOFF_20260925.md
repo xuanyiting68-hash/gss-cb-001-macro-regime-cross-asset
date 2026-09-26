@@ -448,3 +448,17 @@ Updated next priority:
 2. then longer-history real-estate/REIT proxy if a defensible public series exists;
 3. Bitcoin remains structurally short-history and should be handled through mechanism/liquidity research rather than pretending a long Fed-cycle sample exists;
 4. current-state/prospective Fed and energy chains remain append-only and fail-closed.
+
+## Post-handoff update — 035 completed
+
+FED-CYCLE-LONG-TREASURY-PROXY-BRIDGE-035 is complete and QC-passed with BRIDGE_PASS_SUPPORTED_PROXY_EXTENSION.
+
+VUSTX was validated as a separately labeled long-duration Treasury proxy against TLT: 289 monthly overlap returns, Pearson 0.991, Spearman 0.993, descriptive beta 0.874; common-event 12M direction agreement 100%, return correlation 0.995 and MDD correlation 0.999. All frozen bridge gates pass.
+
+The proxy extends descriptive duration evidence to 1987+ without relabeling VUSTX as TLT. Extended proxy medians: FIRST_HIKE +1.0% 12M / 10.7% MDD; LAST_HIKE +9.9%; PAUSE +15.1%; FIRST_CUT +6.0%. All remain historical distributions, not forecasts.
+
+Updated next priority:
+1. **036 Listed REIT Long-History Proxy Bridge** — seek a defensible pre-VNQ listed-REIT proxy and apply the same overlap-first gate structure;
+2. if the bridge passes, extend REIT phase evidence while retaining proxy identity;
+3. if it fails, keep VNQ LIMITED_DESCRIPTIVE rather than weakening standards;
+4. Bitcoin remains short-history and should be deepened through mechanism/liquidity research, not synthetic historical backfill.
