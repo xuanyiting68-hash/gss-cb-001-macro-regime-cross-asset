@@ -643,3 +643,11 @@
 - The sole failure is the frozen four-phase direction gate: FIRST_HIKE VGSIX common-sample median +2.50% is NEUTRAL under the predeclared +/-3% band while FRESX +3.97% is POSITIVE. The 1.47pp continuous difference is small, but the categorical gate remains binding.
 - No threshold was relaxed after seeing the result; FRESX 1987+ evidence is explicitly NOT_PROMOTED_DUAL_BRIDGE_FAIL.
 - Proxy-shopping should stop here; the next module should address a different evidence gap.
+
+## 2026-09-26 — CROSS-ASSET-EVIDENCE-UPGRADE-ROLLUP-038
+
+- Consolidated 033-037 into a new canonical evidence-status routing layer.
+- Upgraded long-duration Treasury research through the 035 VUSTX supported proxy while keeping TLT itself as a limited-history target ETF.
+- Preserved REIT evidence boundaries: VGSIX bridge-valid but limited; FRESX deep-history candidate not promoted after the 037 dual-bridge fail.
+- Preserved housing DECLINE_24M and Gold multi-mechanism non-ranking guardrails.
+- Kept Bitcoin LIMITED_DESCRIPTIVE and explicitly prohibited synthetic historical backfill.
