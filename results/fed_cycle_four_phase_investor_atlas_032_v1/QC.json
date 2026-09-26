@@ -1,0 +1,43 @@
+{
+  "qc_gate": "PASS",
+  "module": "FED-CYCLE-FOUR-PHASE-INVESTOR-ATLAS-032",
+  "upstream_qc": {
+    "021": "PASS",
+    "019": "PASS",
+    "020": "PASS"
+  },
+  "core_asset_phase_rows": 20,
+  "rates_cash_rows": 12,
+  "stress_rows": 12,
+  "extension_diagnostic_rows": 32,
+  "extension_assets": 8,
+  "investor_questions": 20,
+  "myth_audit_rows": 12,
+  "evidence_tiers_preserved": true,
+  "housing_metric_preserved": "DECLINE_24M",
+  "first_cut_endpoint_and_path_risk_jointly_reported": true,
+  "yield_changes_labeled_as_yields_not_bond_returns": true,
+  "limited_assets_preserved": [
+    "BTC_USD",
+    "TLT",
+    "VNQ"
+  ],
+  "asia_diagnostic_preserved": [
+    "HANG_SENG",
+    "KOSPI",
+    "NIKKEI_225",
+    "SHANGHAI_COMPOSITE"
+  ],
+  "best_asset_outputs": 0,
+  "best_phase_outputs": 0,
+  "current_analog_rankings": 0,
+  "deterministic_bottom_rules": 0,
+  "expected_return_forecasts": 0,
+  "new_price_estimation": false,
+  "new_inference": false,
+  "pvalues_generated": false,
+  "private_paper_inputs_used": false,
+  "causal_status": "NONE",
+  "oos_status": "NOT_A_FORECASTING_MODEL",
+  "deployment_status": "NOT_DEPLOYABLE"
+}

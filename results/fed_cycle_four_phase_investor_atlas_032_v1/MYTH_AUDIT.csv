@@ -1,0 +1,13 @@
+myth_id,myth_zh,status,evidence_summary_zh
+MYTH-01,开始加息后，美股一年后一定下跌,NOT_SUPPORTED_AS_SIMPLE_RULE,FIRST_HIKE 3M中位偏弱，但S&P500/Nasdaq 12M中位转正。
+MYTH-02,最后一次加息后，市场利率仍会继续上行,NOT_SUPPORTED_AS_SIMPLE_RULE,LAST_HIKE后2Y/10Y 12M中位变化均为下降。
+MYTH-03,暂停后，现金收益很快消失,NOT_SUPPORTED_AS_SIMPLE_RULE,PAUSE_START机械现金12M carry中位仍接近5.9%。
+MYTH-04,第一次降息就是风险资产底部,NOT_SUPPORTED_AS_SIMPLE_RULE,FIRST_CUT股票终点可为正，但MDD更深、低点更晚；019/020无稳健计时规则。
+MYTH-05,第一次降息一定利好原油,NOT_SUPPORTED_AS_SIMPLE_RULE,WTI FIRST_CUT 12M中位为 -16.9%。
+MYTH-06,降息后黄金一定大涨,MIXED_BY_ASSET_OR_PHASE,Gold FIRST_CUT 12M中位为 +4.1%，但跨阶段和跨案例并非单一大涨规律。
+MYTH-07,收益率下降就意味着现金carry已经很低,NOT_SUPPORTED_AS_SIMPLE_RULE,LAST_HIKE/PAUSE中市场收益率下降与高现金carry可同时存在。
+MYTH-08,一年后正收益说明途中风险不大,NOT_SUPPORTED_AS_SIMPLE_RULE,FIRST_CUT S&P/Nasdaq提供正终点+较深MDD的直接反例。
+MYTH-09,Bitcoin对Fed周期有稳定可重复的方向规律,LIMITED_SAMPLE,当前每阶段只有2个episode，证据不足。
+MYTH-10,REIT在暂停/降息后有稳定上涨规律,LIMITED_SAMPLE,VNQ只有2-3个历史周期。
+MYTH-11,亚洲股市对Fed周期方向一致,DIAGNOSTIC_ONLY,FIRST_CUT的Hang Seng/KOSPI/Nikkei/Shanghai 12M结果方向和幅度明显异质。
+MYTH-12,房价可以用和股票一样的12M MDD框架理解,MIXED_BY_ASSET_OR_PHASE,房价采用24M慢变量/DECLINE_24M口径，不能直接和股票MDD排名。

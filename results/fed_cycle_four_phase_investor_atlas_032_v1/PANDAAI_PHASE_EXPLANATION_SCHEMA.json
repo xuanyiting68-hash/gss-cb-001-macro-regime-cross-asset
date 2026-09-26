@@ -1,0 +1,47 @@
+{
+  "module": "FED-CYCLE-FOUR-PHASE-INVESTOR-ATLAS-032",
+  "phase_fields": [
+    "phase",
+    "core_asset_distributions",
+    "yield_context",
+    "cash_carry_context",
+    "stress_context",
+    "recovery_clock",
+    "support_status",
+    "evidence_boundary"
+  ],
+  "core_assets": [
+    "DXY",
+    "GOLD",
+    "NASDAQ",
+    "SP500",
+    "WTI"
+  ],
+  "extension_tiers": {
+    "SUPPORTED_SLOW_MOVING": [
+      "US_HOUSE_PRICE"
+    ],
+    "DIAGNOSTIC_ASIA": [
+      "HANG_SENG",
+      "KOSPI",
+      "NIKKEI_225",
+      "SHANGHAI_COMPOSITE"
+    ],
+    "LIMITED_EXTENSION": [
+      "BTC_USD",
+      "TLT",
+      "VNQ"
+    ]
+  },
+  "prohibited_outputs": [
+    "best_asset",
+    "best_phase",
+    "expected_return",
+    "bottom_date",
+    "closest_current_analog",
+    "buy_sell_instruction"
+  ],
+  "causal_status": "NONE",
+  "oos_status": "NOT_A_FORECASTING_MODEL",
+  "deployment_status": "NOT_DEPLOYABLE"
+}
