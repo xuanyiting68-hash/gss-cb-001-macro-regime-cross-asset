@@ -1,0 +1,2 @@
+matched_return_months,first_return_month,last_return_month,last_complete_month_required,pearson_monthly_return,spearman_monthly_return,descriptive_beta_vgsix_on_vnq,descriptive_intercept,median_abs_monthly_return_diff,mean_abs_monthly_return_diff,current_partial_month_used
+263,2004-10,2026-08,2026-08,0.99987305984788,0.9997908877179186,1.0006303459214971,-8.428907850057051e-05,0.0001959048048063572,0.0003649240748470269,False

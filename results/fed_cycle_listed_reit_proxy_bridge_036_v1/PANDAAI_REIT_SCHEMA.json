@@ -1,0 +1,20 @@
+{
+  "module": "FED-CYCLE-LISTED-REIT-PROXY-BRIDGE-036",
+  "bridge_status": "BRIDGE_PASS_SUPPORTED_PROXY_EXTENSION",
+  "proxy_asset_id": "VGSIX_REIT_PROXY",
+  "target_asset_id": "VNQ",
+  "allowed_if_bridge_pass": [
+    "historical_proxy_phase_distribution",
+    "proxy_path_risk",
+    "proxy_sample_support"
+  ],
+  "prohibited_outputs": [
+    "pre2004_vnq_label",
+    "expected_return",
+    "best_reit_phase",
+    "reit_buying_instruction"
+  ],
+  "causal_status": "NONE",
+  "oos_status": "NOT_A_FORECASTING_MODEL",
+  "deployment_status": "NOT_DEPLOYABLE"
+}

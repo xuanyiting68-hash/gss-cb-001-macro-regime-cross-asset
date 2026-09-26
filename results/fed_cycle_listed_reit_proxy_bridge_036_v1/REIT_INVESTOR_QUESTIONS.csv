@@ -1,0 +1,11 @@
+question_id,question_en,answer,evidence_layer
+REIT-Q01,Did the proxy bridge pass?,BRIDGE_PASS_SUPPORTED_PROXY_EXTENSION,BRIDGE
+REIT-Q02,How similar are monthly VNQ and VGSIX returns?,Matched months 263; Pearson 1.000; Spearman 1.000; beta 1.001; monthly intercept -0.00008.,BRIDGE
+REIT-Q03,Do common Fed-cycle event outcomes agree?,12M event sign agreement 100%; return correlation 1.000; median absolute 12M-return difference 0.18pp; MDD correlation 1.000.,BRIDGE
+REIT-Q04,What does the longer proxy show at FIRST_HIKE?,VGSIX proxy 12M median +2.5%; MDD 11.5%; trough M7; support LIMITED_PROXY_DESCRIPTIVE.,PHASE
+REIT-Q05,What does it show at LAST_HIKE?,12M median +18.8%; MDD 4.3%; trough M6.,PHASE
+REIT-Q06,What does it show at PAUSE_START?,12M median +21.4%; MDD 4.3%; trough M5.,PHASE
+REIT-Q07,What does it show at FIRST_CUT?,12M median -4.8%; MDD 8.3%; trough M7.,PHASE
+REIT-Q08,Can pre-2004 proxy returns be called VNQ returns?,No. Pre-2004 observations remain VGSIX_REIT_PROXY even if the engineering bridge passes.,BOUNDARY
+REIT-Q09,Does a bridge pass imply a REIT forecast?,No. The bridge validates historical measurement similarity only; phase medians remain descriptive distributions.,BOUNDARY
+REIT-Q10,What should PandaAI show?,"Show proxy label, bridge status/gates, sample support, phase return/path-risk distributions and explicit non-forecast boundary. Never relabel proxy history as VNQ.",PANDAAI
