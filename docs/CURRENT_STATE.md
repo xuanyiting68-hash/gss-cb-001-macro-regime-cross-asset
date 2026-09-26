@@ -1421,3 +1421,15 @@ Status: **BRIDGE_PASS / QC PASS / LIMITED_PROXY_DESCRIPTIVE / NOT A FORECAST / N
 Historical depth remains the limiting factor. The proxy produces only four legs/four broad episodes in each phase, below the frozen >=5-leg support threshold, so all REIT phase results remain LIMITED_PROXY_DESCRIPTIVE. Proxy 12M medians are FIRST_HIKE +2.5%, LAST_HIKE +18.8%, PAUSE +21.4%, FIRST_CUT -4.8%; these are small-sample historical distributions, not stable rules.
 
 Next priority: test the 1986-inception FRESX active real-estate fund using a dual bridge against both VNQ and VGSIX. Only a pass on both measurement relationships can support deeper REIT history.
+
+## REIT Deep-History Dual Bridge — 037
+
+Status: **QC PASS / DUAL_BRIDGE_FAIL_NO_DEEP_EXTENSION / NO FRESX PROMOTION**
+
+037 tested FRESX as a 1986-era active listed-real-estate proxy against both VNQ and the 036-validated VGSIX proxy. Measurement similarity is high: FRESX/VNQ monthly Pearson 0.993, FRESX/VGSIX 0.992; event return and MDD correlations are also above 0.98.
+
+Nevertheless one preregistered gate fails. On the exact VGSIX/FRESX FIRST_HIKE common sample, VGSIX 12M median is +2.50% and therefore NEUTRAL under the frozen +/-3% band, while FRESX is +3.97% and therefore POSITIVE. The continuous difference is only 1.47pp, but the categorical gate remains binding. No post-run threshold relaxation is allowed.
+
+Therefore FRESX 1987+ metrics remain NOT_PROMOTED_DUAL_BRIDGE_FAIL. Canonical REIT state remains: VNQ LIMITED_DESCRIPTIVE; VGSIX_REIT_PROXY bridge-validated but LIMITED_PROXY_DESCRIPTIVE; no supported deep-history REIT extension.
+
+Do not continue proxy-shopping. Move to a different evidence gap.
