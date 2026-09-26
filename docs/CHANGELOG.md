@@ -590,3 +590,11 @@
 - Audited Hook B: the +28.5% value is valid Nasdaq evidence, but the second asset name is omitted, so Hook B is prohibited for the first release to avoid editorial ambiguity.
 - Strict QC caught negative-sentence lexical leaks, subtitle truncation, an intermediate syntax error and numeric-token splitting before final closeout; QC rules were not weakened.
 - No final MP4 was rendered and no publication action was taken.
+
+## 2026-09-26 — FED-CYCLE-FOUR-PHASE-INVESTOR-ATLAS-032
+
+- Reorganized the existing 52-row cross-asset master evidence into a four-phase investor knowledge atlas.
+- Created 20 core asset-phase rows, 12 rates/cash rows, 12 stress rows, 32 extension/diagnostic rows, 20 investor-question answers and a 12-item myth audit.
+- Preserved evidence tiers: BTC/TLT/VNQ LIMITED_DESCRIPTIVE, Asian equities DIAGNOSTIC_ASIA, U.S. housing SUPPORTED_SLOW_MOVING with DECLINE_24M rather than traded-asset MDD.
+- Highlighted three robust descriptive distinctions: short-horizon versus 12M equity behavior after FIRST_HIKE; falling Treasury yields plus high cash carry around LAST_HIKE/PAUSE; positive FIRST_CUT equity endpoints coexisting with deeper drawdown/later trough/stress.
+- Generated zero best-asset/best-phase ranking, expected-return forecast, deterministic bottom rule or current-analog score.
