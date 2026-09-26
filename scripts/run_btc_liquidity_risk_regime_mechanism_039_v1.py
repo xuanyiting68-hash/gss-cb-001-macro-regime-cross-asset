@@ -402,6 +402,44 @@ def main():
     contrasts=build_state_contrasts(panel)
     contrasts.to_csv(OUT/"BTC_STATE_CONTRASTS.csv",index=False)
 
+    # Post-run amendment: audit whether full-sample state support is also
+    # comparable within every preregistered era.
+    support_audit=[]
+    for mech in MECHANISMS:
+        full_row=contrasts[(contrasts["scope"]=="FULL_SAMPLE")&(contrasts["mechanism"]==mech)].iloc[0]
+        eg=contrasts[(contrasts["scope"]!="FULL_SAMPLE")&(contrasts["mechanism"]==mech)].copy()
+        if len(eg)!=3:
+            raise RuntimeError(f"state-support era rows missing for {mech}")
+        supported=int((eg["support_status"]=="SUPPORTED_DESCRIPTIVE").sum())
+        limited=int((eg["support_status"]=="LIMITED_DESCRIPTIVE").sum())
+        insufficient=int((eg["support_status"]=="INSUFFICIENT_VARIATION").sum())
+        if insufficient>0:
+            comp="WEAK_STATE_COMPARABILITY"
+        elif limited>0:
+            comp="PARTIAL_STATE_COMPARABILITY"
+        else:
+            comp="ROBUST_STATE_COMPARABILITY"
+        support_audit.append({
+            "mechanism":mech,
+            "full_sample_support":full_row["support_status"],
+            "era_1_min_state_count":int(min(
+                eg.loc[eg["scope"]=="ERA_1_EARLY","n_a"].iloc[0],
+                eg.loc[eg["scope"]=="ERA_1_EARLY","n_b"].iloc[0])),
+            "era_2_min_state_count":int(min(
+                eg.loc[eg["scope"]=="ERA_2_INSTITUTIONALIZATION","n_a"].iloc[0],
+                eg.loc[eg["scope"]=="ERA_2_INSTITUTIONALIZATION","n_b"].iloc[0])),
+            "era_3_min_state_count":int(min(
+                eg.loc[eg["scope"]=="ERA_3_POST_2022","n_a"].iloc[0],
+                eg.loc[eg["scope"]=="ERA_3_POST_2022","n_b"].iloc[0])),
+            "supported_eras":supported,
+            "limited_eras":limited,
+            "insufficient_eras":insufficient,
+            "cross_era_state_comparability":comp,
+            "diagnostic_status":"POST_RUN_STATE_SUPPORT_AUDIT",
+        })
+    state_audit=pd.DataFrame(support_audit)
+    state_audit.to_csv(OUT/"BTC_STATE_SUPPORT_AUDIT.csv",index=False)
+
     # Rolling 36m diagnostic.
     roll=rolling36(panel)
     if len(roll)==0:
@@ -438,11 +476,13 @@ def main():
     stab_idx=stab.set_index("mechanism")
     roll_idx=rsum.set_index("mechanism")
     full_con=contrasts[contrasts["scope"]=="FULL_SAMPLE"].set_index("mechanism")
+    state_audit_idx=state_audit.set_index("mechanism")
     for mech in MECHANISMS:
         f=full_idx.loc[mech]
         s=stab_idx.loc[mech]
         r=roll_idx.loc[mech]
         sc=full_con.loc[mech]
+        sa=state_audit_idx.loc[mech]
         ev.append({
             "mechanism":mech,
             "evidence_status":s["era_stability_status"],
@@ -454,6 +494,10 @@ def main():
             "era_3_pearson":s["era_3_pearson"],
             "full_state_support":sc["support_status"],
             "full_state_median_diff_a_minus_b":sc["oriented_median_diff_a_minus_b"],
+            "cross_era_state_comparability":sa["cross_era_state_comparability"],
+            "era_1_min_state_count":sa["era_1_min_state_count"],
+            "era_2_min_state_count":sa["era_2_min_state_count"],
+            "era_3_min_state_count":sa["era_3_min_state_count"],
             "rolling_36m_min":r["min_pearson_36m"],
             "rolling_36m_max":r["max_pearson_36m"],
             "rolling_36m_latest":r["latest_pearson_36m"],
@@ -557,9 +601,9 @@ def main():
         ("BTC-Q05","Does BTC behave differently when NFCI is tightening?",
          f"Full-sample BTC median difference NFCI_TIGHTENING minus EASING_OR_FLAT: {fmt_pct(state_full('NFCI_CHANGE')['oriented_median_diff_a_minus_b'])}; support {state_full('NFCI_CHANGE')['support_status']}.","NFCI"),
         ("BTC-Q06","Are WALCL-expansion months systematically different for BTC?",
-         f"Full-sample median difference WALCL_EXPANDING_3M minus CONTRACTING_OR_FLAT: {fmt_pct(state_full('WALCL_3M_PCT')['oriented_median_diff_a_minus_b'])}; support {state_full('WALCL_3M_PCT')['support_status']}. This is not causal.","WALCL"),
+         f"Full-sample median difference WALCL_EXPANDING_3M minus CONTRACTING_OR_FLAT: {fmt_pct(state_full('WALCL_3M_PCT')['oriented_median_diff_a_minus_b'])}; support {state_full('WALCL_3M_PCT')['support_status']}; cross-era state comparability {state_audit_idx.loc['WALCL_3M_PCT','cross_era_state_comparability']}. This is not causal.","WALCL"),
         ("BTC-Q07","Are M2-expansion months systematically different for BTC?",
-         f"Full-sample median difference M2_EXPANDING_3M minus CONTRACTING_OR_FLAT: {fmt_pct(state_full('M2SL_3M_PCT')['oriented_median_diff_a_minus_b'])}; support {state_full('M2SL_3M_PCT')['support_status']}; retain the 2020 M2 definition caveat.","M2"),
+         f"Full-sample median difference M2_EXPANDING_3M minus CONTRACTING_OR_FLAT: {fmt_pct(state_full('M2SL_3M_PCT')['oriented_median_diff_a_minus_b'])}; full-sample support {state_full('M2SL_3M_PCT')['support_status']}, but cross-era state comparability {state_audit_idx.loc['M2SL_3M_PCT','cross_era_state_comparability']} (ERA1/ERA2 have zero contracting-or-flat months); retain the 2020 M2 definition caveat.","M2"),
         ("BTC-Q08","Which mechanism signs are stable across all three fixed eras?",
          ", ".join(stab.loc[stab["era_stability_status"]=="SIGN_STABLE_ALL_ERAS","mechanism"].tolist()) or "None.","ERA_STABILITY"),
         ("BTC-Q09","Which mechanisms are era-dependent?",
@@ -626,6 +670,8 @@ def main():
         "",
         "WALCL只是Fed资产负债表规模代理；M2是广义货币存量，而且2020年H.6/Regulation D变化带来定义/构成 caveat。相关关系不能直接翻译成“印钱导致BTC上涨”。",
         "",
+        f"状态样本的跨时代可比性：WALCL = {state_audit_idx.loc['WALCL_3M_PCT','cross_era_state_comparability']}；M2 = {state_audit_idx.loc['M2SL_3M_PCT','cross_era_state_comparability']}。特别是M2在前两个固定时代没有任何3个月收缩/持平状态，因此全样本+4.2%的状态差不能写成跨时代规律。",
+        "",
         "## 6. Era stability",
         "",
         f"- 三个时代Pearson符号一致：{', '.join(stable) if stable else 'None'}",
@@ -679,6 +725,7 @@ def main():
         f"- full association rows: {len(full)}",
         f"- fixed-era association rows: {len(era_assoc)}",
         f"- state contrast rows: {len(contrasts)}",
+        f"- state-support audit rows: {len(state_audit)}",
         f"- rolling 36M rows: {len(roll)}",
         f"- era-dependent mechanisms: {len(dep)}",
         f"- sign-stable mechanisms: {len(stable)}",
@@ -704,6 +751,11 @@ def main():
         raise RuntimeError("mechanism family drift")
     if not (contrasts["support_status"].isin({"SUPPORTED_DESCRIPTIVE","LIMITED_DESCRIPTIVE","INSUFFICIENT_VARIATION"})).all():
         raise RuntimeError("state support status drift")
+    if len(state_audit)!=7:
+        raise RuntimeError("state-support audit row count")
+    m2audit=state_audit[state_audit["mechanism"]=="M2SL_3M_PCT"].iloc[0]
+    if m2audit["cross_era_state_comparability"]!="WEAK_STATE_COMPARABILITY":
+        raise RuntimeError("M2 cross-era state-support audit changed unexpectedly")
     if not (roll["paired_months"]==36).all():
         raise RuntimeError("rolling window drift")
     if panel["month"].str.startswith("2026-09").any():
@@ -730,6 +782,8 @@ def main():
         "fixed_era_association_rows":int(len(era_assoc)),
         "era_stability_rows":int(len(stab)),
         "state_contrast_rows":int(len(contrasts)),
+        "state_support_audit_rows":int(len(state_audit)),
+        "state_support_post_run_amendment":True,
         "state_cutoff":"ZERO_EXACT",
         "state_support_thresholds":{"supported_min_each":18,"limited_min_each":9},
         "rolling_window_months":36,
