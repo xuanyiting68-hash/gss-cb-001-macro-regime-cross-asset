@@ -607,3 +607,13 @@
 - Separated inflation level from inflation direction: high-inflation and rising-inflation states have different historical Gold associations.
 - Documented that Gold FIRST_CUT trough timing can precede later Baa/VIX stress maxima; this remains ex-post descriptive evidence, not an entry signal.
 - Added five frozen literature-context rows covering safe-haven definitions, inflation-hedge limitations, multi-driver sensitivity and regime-dependent real-rate evidence.
+
+## 2026-09-26 — FED-CYCLE-HOUSING-LAG-CHAIN-034
+
+- Added Freddie Mac 30Y mortgage, DGS10, Census/HUD housing starts, permits and new-home sales context to the canonical Case-Shiller housing layer.
+- Preserved the 014/015 house-price results exactly and kept housing path risk as DECLINE_24M.
+- First source-fetch run timed out on full FRED history; downloads were narrowed to the 1986+ analysis window and hardened with retries while retaining source SHA256.
+- First successful result exposed an anchor-reset interpretation issue: phase-level median months cannot be subtracted to infer paired sequencing, and FIRST_CUT often occurs after the cycle mortgage peak.
+- Added a transparent post-run amendment with episode-level ordering shares and an absolute mortgage-rate peak diagnostic over [-12,+24] months; preregistered forward-window metrics were not overwritten.
+- Found descriptive financing-before-activity ordering in 67% of FIRST_HIKE and 100% of LAST_HIKE/PAUSE/FIRST_CUT weighted episode comparisons, but activity-before-price ordering is weaker (57%-77%) and not deterministic.
+- Preserved B05 housing-bust and B07 2022-23 price-resilience cases as separate audits.
