@@ -404,3 +404,17 @@ Updated next priority:
 3. re-audit NBER near 2026-10-01 before promoting CNT-04 from HOLD_REVERIFY;
 4. preserve immutable evidence hashes through all compositing and publication steps;
 5. prospective Fed/energy registries remain append-only and fail-closed.
+
+## Post-handoff update — 032 completed
+
+FED-CYCLE-FOUR-PHASE-INVESTOR-ATLAS-032 is complete and QC-passed.
+
+The project now has a four-phase investor knowledge atlas across 20 core asset-phase rows, 12 rates/cash rows, 12 stress rows and 32 extension/diagnostic rows, plus 20 evidence-linked investor questions and 12 myth audits.
+
+Key descriptive synthesis: FIRST_HIKE can show weak 3M equity medians but positive 12M endpoints; LAST_HIKE/PAUSE can show falling Treasury yields while cash carry stays high; FIRST_CUT can show positive 12M equity endpoints while drawdowns/troughs/stress remain materially adverse. BTC/TLT/VNQ stay LIMITED, Asian equities DIAGNOSTIC, housing uses a separate 24M clock.
+
+Updated research priority:
+1. **033 Gold Mechanism Decomposition** — Gold vs real yields, DXY, breakevens/inflation expectations and financial stress by phase and historical case;
+2. preserve association/causal boundaries and avoid fitting a trading score unless separately pre-registered;
+3. after Gold, evaluate housing lag-chain and longer-history proxies for TLT/VNQ/BTC;
+4. current-state/prospective Fed and energy chains remain append-only and fail-closed.
