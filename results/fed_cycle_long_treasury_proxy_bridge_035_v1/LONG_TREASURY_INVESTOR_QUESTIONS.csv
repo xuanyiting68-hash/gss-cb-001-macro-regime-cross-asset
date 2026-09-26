@@ -1,0 +1,11 @@
+question_id,question_en,answer,evidence_layer
+TSY-Q01,Did the proxy bridge pass?,BRIDGE_PASS_SUPPORTED_PROXY_EXTENSION,BRIDGE
+TSY-Q02,How similar are monthly TLT and VUSTX returns?,Matched months 289; Pearson 0.991; Spearman 0.993; beta 0.874; monthly intercept +0.00040.,BRIDGE
+TSY-Q03,Do common Fed-cycle event outcomes agree?,12M event sign agreement 100%; return correlation 0.995; median absolute 12M-return difference 0.68pp; MDD correlation 0.999.,BRIDGE
+TSY-Q04,What does the longer proxy show at FIRST_HIKE?,VUSTX proxy 12M median +1.0%; MDD 10.7%; trough M9; support SUPPORTED_PROXY_DESCRIPTIVE.,PHASE
+TSY-Q05,What does it show at LAST_HIKE?,12M median +9.9%; MDD 3.3%; trough M11.,PHASE
+TSY-Q06,What does it show at PAUSE_START?,12M median +15.1%; MDD 3.9%; trough M10.,PHASE
+TSY-Q07,What does it show at FIRST_CUT?,12M median +6.0%; MDD 4.5%; trough M10.,PHASE
+TSY-Q08,Can pre-2002 proxy returns be called TLT returns?,No. Pre-2002 observations remain VUSTX_LONG_TREASURY_PROXY even if the engineering bridge passes.,BOUNDARY
+TSY-Q09,Does a bridge pass imply a bond forecast?,No. The bridge validates historical measurement similarity only; phase medians remain descriptive distributions.,BOUNDARY
+TSY-Q10,What should PandaAI show?,"Show proxy label, bridge status/gates, sample support, phase return/path-risk distributions and explicit non-forecast boundary. Never relabel proxy history as TLT.",PANDAAI
