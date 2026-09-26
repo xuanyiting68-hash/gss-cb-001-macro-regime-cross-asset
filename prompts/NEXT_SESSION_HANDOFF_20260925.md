@@ -486,3 +486,17 @@ FRESX is highly similar to VNQ/VGSIX, but the frozen VGSIX phase-direction gate 
 Canonical REIT evidence remains limited: VNQ LIMITED_DESCRIPTIVE; VGSIX bridge-valid but LIMITED_PROXY_DESCRIPTIVE. Stop additional proxy-shopping.
 
 Recommended next branch: address Bitcoin / liquidity / risk-regime mechanisms with its genuine 2014+ history rather than synthetic backfill, or update the master atlas to incorporate 033-037 before further expansion.
+
+## Post-handoff update — 038 completed
+
+CROSS-ASSET-EVIDENCE-UPGRADE-ROLLUP-038 is complete and QC-passed. It is the canonical post-032 evidence routing layer.
+
+Current evidence states:
+- Gold: CORE_SUPPORTED + multi-mechanism map;
+- U.S. housing: SUPPORTED_SLOW_MOVING + lag-chain map;
+- long-duration Treasury: VUSTX SUPPORTED_PROXY_DESCRIPTIVE, TLT target history limited;
+- listed REIT: VNQ limited, VGSIX limited proxy, FRESX deep-history candidate not promoted;
+- Bitcoin: LIMITED_DESCRIPTIVE, no synthetic backfill;
+- Asia: diagnostic only.
+
+Next priority: 039 Bitcoin Liquidity / Risk-Regime Mechanism Map using real 2014+ data for DXY, real yields, Nasdaq/risk beta, VIX/NFCI and Fed liquidity/balance-sheet proxies.
