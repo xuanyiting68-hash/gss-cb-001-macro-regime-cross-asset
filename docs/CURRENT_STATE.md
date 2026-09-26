@@ -1361,3 +1361,15 @@ Strict QC also hardened subtitle integrity: production wrapping may not split or
 Publication status remains `NOT_PUBLISHED`; no final MP4, current-cycle forecast, asset/current-analog ranking, trade instruction, evidence change or political evaluation has been produced.
 
 The evidence/editorial package is now finished. Next operational step is same-day preflight and human/platform compositing/publishing on explicit instruction. CNT-04 remains HOLD_REVERIFY pending NBER source re-audit near 2026-10-01.
+
+## Four-Phase Investor Knowledge Atlas — 032
+
+Status: **QC-PASSED FOUR-PHASE KNOWLEDGE ATLAS / NOT A FORECAST / NOT DEPLOYABLE**
+
+032 reorganizes the existing 021 evidence into a complete FIRST_HIKE / LAST_HIKE / PAUSE_START / FIRST_CUT investor-education map across core assets, rates/cash, stress, housing, limited extensions and Asian diagnostics.
+
+The main descriptive insights are now explicit: FIRST_HIKE may combine weak 3M equity medians with positive 12M endpoints; LAST_HIKE/PAUSE may combine falling 2Y/10Y yields with still-high cash carry; FIRST_CUT may combine positive 12M equity endpoints with materially deeper MDD, later troughs and later stress peaks. These are historical distributions, not expected returns.
+
+Evidence tiers remain binding: BTC/TLT/VNQ are LIMITED, Asian equities DIAGNOSTIC, and U.S. housing uses a separate 24M slow-moving decline clock. No best asset, best phase, current analog, deterministic bottom or trade instruction is generated.
+
+Next research priority: **033 Gold Mechanism Decomposition** — deepen Gold vs real yields, DXY, inflation expectations and stress by phase/case, while separating association from causal identification.
