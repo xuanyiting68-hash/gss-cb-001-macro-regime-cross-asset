@@ -201,17 +201,17 @@ def main():
     gates=[
         ("G1","overlap_months_ge_240",len(ov),">=240",len(ov)>=240),
         ("G2","pearson_monthly_ge_0.97",pearson,">=0.97",pearson>=0.97),
-        ("G2","spearman_monthly_ge_0.97",spearman,">=0.95",spearman>=0.97),
+        ("G2","spearman_monthly_ge_0.97",spearman,">=0.97",spearman>=0.97),
         ("G3","beta_in_0.80_1.20",float(beta),"[0.80,1.20]",0.80<=beta<=1.20),
         ("G3","abs_intercept_le_0.0030",abs(float(intercept)),"<=0.0030",abs(intercept)<=0.0030),
         ("G4","event_ret12_sign_agreement_ge_0.85",event_sign_agree,">=0.85",event_sign_agree>=0.85),
         ("G4","event_ret12_corr_ge_0.95",event_ret_corr,">=0.95",event_ret_corr>=0.95),
-        ("G4","event_ret12_median_abs_diff_le_0.04",event_abs_ret_med,"<=0.03",event_abs_ret_med<=0.04),
-        ("G5","event_mdd_corr_ge_0.90",mdd_corr,">=0.80",mdd_corr>=0.90),
+        ("G4","event_ret12_median_abs_diff_le_0.04",event_abs_ret_med,"<=0.04",event_abs_ret_med<=0.04),
+        ("G5","event_mdd_corr_ge_0.90",mdd_corr,">=0.90",mdd_corr>=0.90),
         ("G5","event_mdd_median_abs_diff_le_0.04",mdd_abs_med,"<=0.04",mdd_abs_med<=0.04),
         ("G6","four_phase_direction_agreement",int(phase_dir_all),"true",phase_dir_all),
-        ("G6","phase_median_abs_ret12_diff_le_0.03",phase_med_abs,"<=0.04",phase_med_abs<=0.03),
-        ("G6","phase_max_abs_ret12_diff_le_0.06",phase_max_abs,"<=0.07",phase_max_abs<=0.06),
+        ("G6","phase_median_abs_ret12_diff_le_0.03",phase_med_abs,"<=0.03",phase_med_abs<=0.03),
+        ("G6","phase_max_abs_ret12_diff_le_0.06",phase_max_abs,"<=0.06",phase_max_abs<=0.06),
     ]
     ga=pd.DataFrame(gates,columns=["gate_family","test","observed","threshold","pass"])
     bridge_pass=bool(ga["pass"].all())
@@ -291,8 +291,8 @@ def main():
         ("REIT-Q05","What does it show at LAST_HIKE?",f"12M median {pp(sidx.loc['LAST_HIKE','weighted_median_ret_12m'])}; MDD {sidx.loc['LAST_HIKE','weighted_median_mdd_12m']*100:.1f}%; trough {mm(sidx.loc['LAST_HIKE','weighted_median_mdd_trough_month'])}.","PHASE"),
         ("REIT-Q06","What does it show at PAUSE_START?",f"12M median {pp(sidx.loc['PAUSE_START','weighted_median_ret_12m'])}; MDD {sidx.loc['PAUSE_START','weighted_median_mdd_12m']*100:.1f}%; trough {mm(sidx.loc['PAUSE_START','weighted_median_mdd_trough_month'])}.","PHASE"),
         ("REIT-Q07","What does it show at FIRST_CUT?",f"12M median {pp(sidx.loc['FIRST_CUT','weighted_median_ret_12m'])}; MDD {sidx.loc['FIRST_CUT','weighted_median_mdd_12m']*100:.1f}%; trough {mm(sidx.loc['FIRST_CUT','weighted_median_mdd_trough_month'])}.","PHASE"),
-        ("REIT-Q08","Can pre-2002 proxy returns be called VNQ returns?","No. Pre-2002 observations remain VGSIX_REIT_PROXY even if the engineering bridge passes.","BOUNDARY"),
-        ("REIT-Q09","Does a bridge pass imply a bond forecast?","No. The bridge validates historical measurement similarity only; phase medians remain descriptive distributions.","BOUNDARY"),
+        ("REIT-Q08","Can pre-2004 proxy returns be called VNQ returns?","No. Pre-2004 observations remain VGSIX_REIT_PROXY even if the engineering bridge passes.","BOUNDARY"),
+        ("REIT-Q09","Does a bridge pass imply a REIT forecast?","No. The bridge validates historical measurement similarity only; phase medians remain descriptive distributions.","BOUNDARY"),
         ("REIT-Q10","What should PandaAI show?","Show proxy label, bridge status/gates, sample support, phase return/path-risk distributions and explicit non-forecast boundary. Never relabel proxy history as VNQ.","PANDAAI"),
     ]
     pd.DataFrame(qrows,columns=["question_id","question_en","answer","evidence_layer"]).to_csv(OUT/"REIT_INVESTOR_QUESTIONS.csv",index=False)
@@ -329,18 +329,18 @@ def main():
         narrative += [
             "## 边界",
             "",
-            "这个桥接解决的是**历史测量长度**，不是预测问题。VGSIX与VNQ费用、结构、久期和执行载体并不完全相同；bridge pass只允许我们研究更长的listed REIT proxy分布。",
+            "这个桥接解决的是**历史测量长度**，不是预测问题。VGSIX与VNQ费用、份额结构、交易载体和历史基准实现并不完全相同；bridge pass只允许我们研究更长的上市房地产/REIT proxy分布。",
         ]
     else:
         failed=", ".join(ga.loc[~ga["pass"],"test"].tolist())
         narrative=[
-            "# Listed REIT Proxy Bridge — 035",
+            "# Listed REIT Proxy Bridge — 036",
             "",
             f"**{bridge_status}**",
             "",
             f"未通过的冻结gate：{failed}",
             "",
-            "因此VGSIX不会被用于升级长期美债Fed-cycle证据；VNQ仍保留原有LIMITED_DESCRIPTIVE状态。",
+            "因此VGSIX不会被用于升级VNQ的长期REIT Fed-cycle证据；VNQ仍保留原有LIMITED_DESCRIPTIVE状态。",
         ]
     (OUT/"REIT_PROXY_SYNTHESIS_ZH.md").write_text("\n".join(narrative)+"\n")
 
@@ -353,7 +353,7 @@ def main():
             "historical_proxy_phase_distribution","proxy_path_risk","proxy_sample_support"
         ],
         "prohibited_outputs":[
-            "pre2002_tlt_label","expected_return","best_bond_phase","reit_buying_instruction"
+            "pre2004_vnq_label","expected_return","best_reit_phase","reit_buying_instruction"
         ],
         "causal_status":"NONE",
         "oos_status":"NOT_A_FORECASTING_MODEL",
@@ -378,7 +378,7 @@ def main():
         f"- event MDD correlation: {mdd_corr:.4f}",
         f"- all frozen bridge tests pass: {bridge_pass}",
         "",
-        "No pre-2002 VGSIX observation is labeled VNQ.",
+        "No pre-2004 VGSIX observation is labeled VNQ.",
     ]
     (OUT/"FED_CYCLE_LISTED_REIT_PROXY_BRIDGE_036_REPORT.md").write_text("\n".join(report)+"\n")
 
@@ -391,7 +391,7 @@ def main():
         raise RuntimeError("passing bridge incorrectly suppressed proxy summaries")
     if not bridge_pass and (ext_sum["support_status"]!="NOT_PROMOTED_BRIDGE_FAIL").any():
         raise RuntimeError("failed bridge promoted proxy evidence")
-    if (proxy_met["asset_id"]!="VGSIX_LONG_TREASURY_PROXY").any():
+    if (proxy_met["asset_id"]!="VGSIX_REIT_PROXY").any():
         raise RuntimeError("proxy identity lost")
 
     qc={
@@ -401,7 +401,7 @@ def main():
         "bridge_status":bridge_status,
         "source_rows":int(len(preg)),
         "source_hashes_complete":bool(preg["sha256"].str.len().eq(64).all()),
-        "vustx_first_date":str(vfirst.date()),
+        "vgsix_first_date":str(vfirst.date()),
         "last_complete_bridge_month":str(ov.index.max()),
         "partial_current_month_used":False,
         "overlap_monthly_returns":int(len(ov)),
@@ -421,7 +421,7 @@ def main():
         "all_bridge_tests_pass":bridge_pass,
         "proxy_extended_rows":int(len(proxy_met)),
         "pre2004_rows_labeled_vnq":0,
-        "yield_change_substituted_for_total_return":False,
+        "national_house_price_substituted_for_listed_reit_return":False,
         "best_phase_outputs":0,
         "expected_return_forecasts":0,
         "reit_buying_recommendations":0,
