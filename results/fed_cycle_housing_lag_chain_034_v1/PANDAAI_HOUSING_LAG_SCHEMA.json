@@ -1,0 +1,40 @@
+{
+  "module": "FED-CYCLE-HOUSING-LAG-CHAIN-034",
+  "layers": {
+    "financing": [
+      "MORTGAGE30US",
+      "DGS10",
+      "MORTGAGE_SPREAD_PP"
+    ],
+    "activity": [
+      "PERMIT",
+      "HOUST",
+      "HSN1F"
+    ],
+    "price": [
+      "CSUSHPINSA_CANONICAL_014_015"
+    ]
+  },
+  "required_fields": [
+    "phase",
+    "financing_changes",
+    "activity_changes",
+    "activity_troughs",
+    "price_12m_24m",
+    "decline_24m",
+    "recovery_support",
+    "episode_case_flags",
+    "source_snapshot",
+    "boundary"
+  ],
+  "prohibited_outputs": [
+    "best_housing_phase",
+    "expected_house_price_return",
+    "home_buying_timing",
+    "causal_transmission_lag",
+    "city_level_extrapolation"
+  ],
+  "causal_status": "NONE",
+  "oos_status": "NOT_A_FORECASTING_MODEL",
+  "deployment_status": "NOT_DEPLOYABLE"
+}
