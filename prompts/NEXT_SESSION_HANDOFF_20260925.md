@@ -462,3 +462,17 @@ Updated next priority:
 2. if the bridge passes, extend REIT phase evidence while retaining proxy identity;
 3. if it fails, keep VNQ LIMITED_DESCRIPTIVE rather than weakening standards;
 4. Bitcoin remains short-history and should be deepened through mechanism/liquidity research, not synthetic historical backfill.
+
+## Post-handoff update — 036 completed
+
+FED-CYCLE-LISTED-REIT-PROXY-BRIDGE-036 is complete and QC-passed.
+
+VGSIX/VNQ measurement compatibility is exceptionally strong and all frozen gates pass, but historical coverage only reaches four legs/four broad episodes. Therefore the extension remains LIMITED_PROXY_DESCRIPTIVE rather than being promoted to supported evidence.
+
+VGSIX proxy 12M medians: FIRST_HIKE +2.5% with 11.5% MDD; LAST_HIKE +18.8%; PAUSE +21.4%; FIRST_CUT -4.8%. Proxy identity remains explicit and pre-2004 history is not VNQ.
+
+Next priority:
+1. test FRESX (1986 inception) as a longer REIT candidate using a dual bridge against VNQ and VGSIX;
+2. require both overlap relationships plus event/path agreement before any 1987+ extension;
+3. do not loosen the 036 sample-support threshold merely because the VGSIX bridge is excellent;
+4. Bitcoin remains short-history and requires mechanism/liquidity research rather than historical backfill.
