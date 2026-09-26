@@ -1411,3 +1411,13 @@ The project may therefore use VUSTX_LONG_TREASURY_PROXY to extend duration histo
 Extended proxy 12M medians: FIRST_HIKE +1.0% with 10.7% MDD; LAST_HIKE +9.9%; PAUSE_START +15.1%; FIRST_CUT +6.0%. This materially strengthens descriptive duration evidence but remains historical distributional evidence, not a best-phase ranking or expected-return forecast.
 
 Next priority: **036 Listed REIT Long-History Proxy Bridge** — validate a pre-VNQ listed-REIT proxy on overlap before any historical extension.
+
+## Listed REIT Proxy Bridge — 036
+
+Status: **BRIDGE_PASS / QC PASS / LIMITED_PROXY_DESCRIPTIVE / NOT A FORECAST / NOT DEPLOYABLE**
+
+036 validates VGSIX against VNQ with extremely strong measurement overlap: 263 matched monthly returns, Pearson 0.99987, Spearman 0.99979, beta 1.0006; common-event 12M return correlation 0.99998 and MDD correlation 0.99999; all four phase directions agree. The bridge therefore permits VGSIX_REIT_PROXY historical extension, but never relabels pre-2004 proxy history as VNQ.
+
+Historical depth remains the limiting factor. The proxy produces only four legs/four broad episodes in each phase, below the frozen >=5-leg support threshold, so all REIT phase results remain LIMITED_PROXY_DESCRIPTIVE. Proxy 12M medians are FIRST_HIKE +2.5%, LAST_HIKE +18.8%, PAUSE +21.4%, FIRST_CUT -4.8%; these are small-sample historical distributions, not stable rules.
+
+Next priority: test the 1986-inception FRESX active real-estate fund using a dual bridge against both VNQ and VGSIX. Only a pass on both measurement relationships can support deeper REIT history.
