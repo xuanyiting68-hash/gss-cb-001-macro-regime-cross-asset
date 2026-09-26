@@ -626,3 +626,11 @@
 - Expanded descriptive duration coverage to 8 legs / 6 broad episodes for FIRST_HIKE/LAST_HIKE/FIRST_CUT and 6 / 6 for PAUSE_START.
 - Extended proxy evidence shows materially worse path risk at FIRST_HIKE and stronger historical median duration returns around LAST_HIKE/PAUSE than the original three-episode TLT layer could establish.
 - No best-phase ranking, expected-return forecast or bond-buying recommendation was produced.
+
+## 2026-09-26 — FED-CYCLE-LISTED-REIT-PROXY-BRIDGE-036
+
+- Validated VGSIX against VNQ using frozen monthly, event-return, path-risk and phase-direction gates.
+- Bridge quality is exceptionally high: monthly Pearson/Spearman ~0.9999, common-event return and MDD correlations ~1.0, all phase directions agree.
+- Preserved proxy identity: no pre-2004 VGSIX observation is called VNQ.
+- Despite the bridge pass, the expanded Fed-cycle sample contains only four legs/four broad episodes, below the preregistered >=5-leg support threshold; all phase results remain LIMITED_PROXY_DESCRIPTIVE.
+- The limited proxy sample shows strong short-horizon weakness at FIRST_HIKE, stronger 12M medians at LAST_HIKE/PAUSE, and a negative FIRST_CUT 12M median, but none are promoted to stable rules.
