@@ -476,3 +476,13 @@ Next priority:
 2. require both overlap relationships plus event/path agreement before any 1987+ extension;
 3. do not loosen the 036 sample-support threshold merely because the VGSIX bridge is excellent;
 4. Bitcoin remains short-history and requires mechanism/liquidity research rather than historical backfill.
+
+## Post-handoff update — 037 completed
+
+FED-CYCLE-REIT-DEEP-HISTORY-DUAL-BRIDGE-037 is complete. QC PASS, research decision DUAL_BRIDGE_FAIL_NO_DEEP_EXTENSION.
+
+FRESX is highly similar to VNQ/VGSIX, but the frozen VGSIX phase-direction gate fails only at FIRST_HIKE: VGSIX common-sample 12M median +2.50% = NEUTRAL under +/-3%, while FRESX +3.97% = POSITIVE. All other dual-bridge tests pass. The threshold is not changed after observing the result, so FRESX deep history is not promoted.
+
+Canonical REIT evidence remains limited: VNQ LIMITED_DESCRIPTIVE; VGSIX bridge-valid but LIMITED_PROXY_DESCRIPTIVE. Stop additional proxy-shopping.
+
+Recommended next branch: address Bitcoin / liquidity / risk-regime mechanisms with its genuine 2014+ history rather than synthetic backfill, or update the master atlas to incorporate 033-037 before further expansion.
