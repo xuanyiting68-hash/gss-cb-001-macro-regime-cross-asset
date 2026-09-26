@@ -1,0 +1,35 @@
+name: btc-liquidity-risk-regime-mechanism-039-v1
+on:
+  push:
+    branches: [main]
+    paths:
+      - "research/BTC_LIQUIDITY_RISK_REGIME_MECHANISM_039_LOCK.md"
+      - "data/public/BTC_MECHANISM_SOURCE_SPEC_20260926.csv"
+      - "data/public/BTC_MECHANISM_LITERATURE_REGISTRY_20260926.csv"
+      - "scripts/run_btc_liquidity_risk_regime_mechanism_039_v1.py"
+      - "results/cross_asset_evidence_upgrade_rollup_038_v1/**"
+      - ".github/workflows/btc-liquidity-risk-regime-mechanism-039-v1.yml"
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m pip install --upgrade pip pandas numpy
+      - run: python scripts/run_btc_liquidity_risk_regime_mechanism_039_v1.py
+      - name: Commit 039 outputs
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add results/btc_liquidity_risk_regime_mechanism_039_v1
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Run BTC-LIQUIDITY-RISK-REGIME-MECHANISM-039 [skip ci]"
+          git pull --rebase origin main
+          git push
