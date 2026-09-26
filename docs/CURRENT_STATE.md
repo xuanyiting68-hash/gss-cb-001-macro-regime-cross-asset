@@ -1433,3 +1433,11 @@ Nevertheless one preregistered gate fails. On the exact VGSIX/FRESX FIRST_HIKE c
 Therefore FRESX 1987+ metrics remain NOT_PROMOTED_DUAL_BRIDGE_FAIL. Canonical REIT state remains: VNQ LIMITED_DESCRIPTIVE; VGSIX_REIT_PROXY bridge-validated but LIMITED_PROXY_DESCRIPTIVE; no supported deep-history REIT extension.
 
 Do not continue proxy-shopping. Move to a different evidence gap.
+
+## Cross-Asset Evidence Upgrade Rollup — 038
+
+Status: **QC-PASSED POST-032 EVIDENCE ROUTING / NO NEW ESTIMATION / NOT A FORECAST**
+
+038 is now the canonical routing layer for evidence changes introduced by 033-037. Gold remains CORE_SUPPORTED with a multi-mechanism map; U.S. housing remains SUPPORTED_SLOW_MOVING with the 034 financing/activity/price timing layer; VUSTX provides SUPPORTED_PROXY_DESCRIPTIVE long-duration Treasury history while TLT itself remains a limited-history target ETF; VNQ remains limited, VGSIX is a bridge-valid but LIMITED_PROXY_DESCRIPTIVE extension, and FRESX is NOT_PROMOTED after the frozen 037 dual-bridge fail. Bitcoin remains LIMITED_DESCRIPTIVE with no synthetic backfill.
+
+Next research priority: **039 Bitcoin Liquidity / Risk-Regime Mechanism Map** using genuine 2014+ history and explicit mechanism/state analysis rather than pretending a longer Fed-cycle sample exists.
