@@ -23,10 +23,15 @@ is stable or era-dependent.
 
 Market history begins with the public BTC-USD history available in September 2014.
 
-Analysis uses monthly data through the last **complete** calendar month:
+BTC-USD public history begins on 2014-09-17, so September 2014 is an inception-partial month.
+
+The first complete BTC price month is 2014-10. Because a monthly return requires a complete prior-month baseline, the first analysis return month is:
+- 2014-11
+
+Analysis runs through the last **complete** calendar month:
 - 2026-08
 
-The incomplete current month is excluded.
+The inception-partial September 2014 baseline and incomplete current September 2026 are excluded from return analysis.
 
 ## Frozen market / macro inputs
 
@@ -151,7 +156,7 @@ No missing monthly value may be interpolated.
 These windows are frozen before results:
 
 ### ERA_1_EARLY
-2014-10 through 2017-12
+2014-11 through 2017-12
 
 ### ERA_2_INSTITUTIONALIZATION
 2018-01 through 2021-12
@@ -328,7 +333,7 @@ Literature context does not establish the repository's correlations or causality
 
 PASS requires:
 
-1. BTC history starts in the genuine 2014 era;
+1. BTC source history starts in the genuine 2014 era and the first analysis return month is exactly 2014-11;
 2. last analysis month is 2026-08 or the latest complete month fixed by this lock;
 3. incomplete September 2026 excluded;
 4. source SHA256 recorded for all eight inputs;
