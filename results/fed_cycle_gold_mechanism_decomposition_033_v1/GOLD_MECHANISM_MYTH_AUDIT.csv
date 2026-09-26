@@ -1,0 +1,7 @@
+myth_id,myth_zh,status,evidence_summary_zh
+GOLD-MYTH-01,高通胀本身就一定利好黄金,NOT_SUPPORTED_AS_SIMPLE_RULE,FIRST_HIKE事件样本中，高通胀水平组的Gold 12M中位数反而更低；但通胀方向结果又不同，说明level与direction必须拆开。
+GOLD-MYTH-02,黄金和实际利率永远稳定负相关,INSUFFICIENT_SUPPORT,本仓库实际DFII10只有3个周期，真实利率代理也没有给出稳定的 textbook inverse 关系；外部文献同样存在regime-dependent结果。
+GOLD-MYTH-03,美元上涨，黄金就一定下跌,NOT_SUPPORTED_AS_SIMPLE_RULE,仓库的event/monthly USD诊断出现正向Gold关系，但只是secondary diagnostic且不通过多重检验；说明简单固定符号不足。
+GOLD-MYTH-04,金融压力越大，黄金就一定同步上涨,NOT_SUPPORTED_AS_SIMPLE_RULE,Gold在FIRST_CUT样本中的低点常早于Baa/VIX压力峰值，stress timing并不同步。
+GOLD-MYTH-05,黄金是任何市场、任何期限都稳定的避险资产,CONTEXT_DEPENDENT,文献显示safe-haven定义本身依赖极端市场条件，效果可短暂且跨国家/市场不一致。
+GOLD-MYTH-06,第一次降息天然是黄金的大行情起点,NOT_SUPPORTED_AS_SIMPLE_RULE,Gold FIRST_CUT 12M历史中位约+4.1%，但Fed phase只是条件标签，不能替代机制状态。

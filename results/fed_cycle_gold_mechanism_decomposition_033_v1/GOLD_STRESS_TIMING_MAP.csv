@@ -1,0 +1,4 @@
+asset,stress_observable,n_legs,n_broad_episodes,support_status,weighted_median_asset_trough_month,weighted_median_stress_peak_month,weighted_median_lead_months,weighted_median_abs_gap_months,weighted_stress_before_share,weighted_same_month_share,weighted_before_or_same_share,weighted_near_2m_share,weighted_both_late_7plus_share
+GOLD,BAA10Y_SPREAD,10,7,SUPPORTED_TIMING_DESCRIPTIVE,5.0,7.0,-3.0,5.0,0.3571428571428571,0.1428571428571428,0.4999999999999999,0.1428571428571428,0.1904761904761904
+GOLD,COPPER,5,5,SUPPORTED_TIMING_DESCRIPTIVE,4.0,9.0,0.0,0.0,0.0,0.6,0.6,0.6,0.4
+GOLD,VIX,5,5,SUPPORTED_TIMING_DESCRIPTIVE,4.0,8.0,-4.0,4.0,0.0,0.4,0.4,0.4,0.4

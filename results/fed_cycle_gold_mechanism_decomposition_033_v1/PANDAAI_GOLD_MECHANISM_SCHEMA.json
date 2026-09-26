@@ -1,0 +1,33 @@
+{
+  "module": "FED-CYCLE-GOLD-MECHANISM-DECOMPOSITION-033",
+  "mechanism_families": [
+    "INFLATION_LEVEL",
+    "INFLATION_DIRECTION",
+    "GROWTH_STATE",
+    "ENERGY_DIRECTION",
+    "USD_DIRECTION",
+    "REAL_RATE_PROXY",
+    "DFII10_REAL_YIELD",
+    "NFCI_FINANCIAL_CONDITIONS",
+    "STRESS_TIMING",
+    "FED_PHASE"
+  ],
+  "required_output_fields": [
+    "mechanism",
+    "evidence_status",
+    "repository_result",
+    "sample_support",
+    "literature_context_optional",
+    "boundary"
+  ],
+  "prohibited_outputs": [
+    "dominant_driver_score",
+    "best_gold_phase",
+    "expected_gold_return",
+    "gold_bottom_date",
+    "buy_sell_instruction"
+  ],
+  "causal_status": "NONE",
+  "oos_status": "NOT_A_FORECASTING_MODEL",
+  "deployment_status": "NOT_DEPLOYABLE"
+}
