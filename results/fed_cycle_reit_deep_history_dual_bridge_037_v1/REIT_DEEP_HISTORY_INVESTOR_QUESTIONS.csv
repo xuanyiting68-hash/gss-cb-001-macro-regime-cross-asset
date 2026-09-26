@@ -1,0 +1,13 @@
+question_id,question_en,answer,evidence_layer
+REITD-Q01,Did the FRESX dual bridge pass?,DUAL_BRIDGE_FAIL_NO_DEEP_EXTENSION,DUAL_BRIDGE
+REITD-Q02,How close is FRESX to VNQ monthly?,263 months; Pearson 0.993; Spearman 0.987; beta 1.025.,VNQ_BRIDGE
+REITD-Q03,How close is FRESX to VGSIX monthly?,363 months; Pearson 0.992; Spearman 0.986; beta 1.020.,VGSIX_BRIDGE
+REITD-Q04,Do Fed-event outcomes agree with VNQ?,12M sign 100%; return corr 0.988; MDD corr 0.987.,VNQ_EVENT
+REITD-Q05,Do Fed-event outcomes agree with VGSIX?,12M sign 100%; return corr 0.984; MDD corr 0.989.,VGSIX_EVENT
+REITD-Q06,What does deep history show at FIRST_HIKE?,12M +3.3%; MDD 11.3%; trough M7; support NOT_PROMOTED_DUAL_BRIDGE_FAIL.,PHASE
+REITD-Q07,What does it show at LAST_HIKE?,12M +15.9%; MDD 4.0%.,PHASE
+REITD-Q08,What does it show at PAUSE_START?,12M +17.2%; MDD 3.6%.,PHASE
+REITD-Q09,What does it show at FIRST_CUT?,12M +1.6%; MDD 6.7%.,PHASE
+REITD-Q10,Can FRESX be called VNQ?,No. FRESX remains an active real-estate proxy in all historical periods.,BOUNDARY
+REITD-Q11,Does deep-history support create a forecast?,No. It only strengthens historical descriptive coverage if both bridges pass.,BOUNDARY
+REITD-Q12,What should PandaAI show?,"Show active-proxy label, dual-bridge status, both bridge diagnostics, phase/path distributions, support status and non-forecast boundary.",PANDAAI

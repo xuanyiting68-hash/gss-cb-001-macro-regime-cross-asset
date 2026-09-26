@@ -1,0 +1,18 @@
+{
+  "module": "FED-CYCLE-REIT-DEEP-HISTORY-DUAL-BRIDGE-037",
+  "dual_bridge_status": "DUAL_BRIDGE_FAIL_NO_DEEP_EXTENSION",
+  "target": "VNQ",
+  "reference": "VGSIX_REIT_PROXY",
+  "deep_proxy": "FRESX_REIT_ACTIVE_PROXY",
+  "active_management_caveat": true,
+  "prohibited_outputs": [
+    "pre2004_vnq_label",
+    "expected_reit_return",
+    "best_reit_phase",
+    "reit_buying_instruction",
+    "national_house_price_substitution"
+  ],
+  "causal_status": "NONE",
+  "oos_status": "NOT_A_FORECASTING_MODEL",
+  "deployment_status": "NOT_DEPLOYABLE"
+}
