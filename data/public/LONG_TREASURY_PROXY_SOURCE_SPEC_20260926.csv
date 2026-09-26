@@ -1,0 +1,3 @@
+asset_id,symbol,role,source,source_context_url,price_history_method,price_field,raw_commit_policy
+TLT,TLT,TARGET,"Yahoo Finance public chart history","https://www.ishares.com/us/products/239454/ishares-20-year-treasury-bond-etf","YAHOO_FINANCE_CHART_JSON","adjusted_close","HASH_ONLY_NO_RAW_COMMIT"
+VUSTX_LONG_TREASURY_PROXY,VUSTX,CANDIDATE_PROXY,"Yahoo Finance public chart history / Vanguard fund context","https://investor.vanguard.com/investment-products/mutual-funds/profile/vustx","YAHOO_FINANCE_CHART_JSON","adjusted_close","HASH_ONLY_NO_RAW_COMMIT"
