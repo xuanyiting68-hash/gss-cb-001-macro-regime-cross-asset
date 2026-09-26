@@ -617,3 +617,12 @@
 - Added a transparent post-run amendment with episode-level ordering shares and an absolute mortgage-rate peak diagnostic over [-12,+24] months; preregistered forward-window metrics were not overwritten.
 - Found descriptive financing-before-activity ordering in 67% of FIRST_HIKE and 100% of LAST_HIKE/PAUSE/FIRST_CUT weighted episode comparisons, but activity-before-price ordering is weaker (57%-77%) and not deterministic.
 - Preserved B05 housing-bust and B07 2022-23 price-resilience cases as separate audits.
+
+## 2026-09-26 — FED-CYCLE-LONG-TREASURY-PROXY-BRIDGE-035
+
+- Validated VUSTX as a longer-history long-duration Treasury proxy before extending the TLT evidence layer.
+- All frozen bridge gates passed: 289 monthly overlap observations, Pearson 0.991, Spearman 0.993, beta 0.874; common-event 12M return correlation 0.995 and MDD correlation 0.999; all four common-sample phase directions agree.
+- Preserved instrument identity: pre-2002 VUSTX observations are never labeled TLT.
+- Expanded descriptive duration coverage to 8 legs / 6 broad episodes for FIRST_HIKE/LAST_HIKE/FIRST_CUT and 6 / 6 for PAUSE_START.
+- Extended proxy evidence shows materially worse path risk at FIRST_HIKE and stronger historical median duration returns around LAST_HIKE/PAUSE than the original three-episode TLT layer could establish.
+- No best-phase ranking, expected-return forecast or bond-buying recommendation was produced.
