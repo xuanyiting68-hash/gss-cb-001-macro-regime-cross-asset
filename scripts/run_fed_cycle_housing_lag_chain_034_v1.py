@@ -192,6 +192,9 @@ def summarize_activity(df):
 def fmt_pct(x):
     return "NA" if pd.isna(x) else f"{x*100:+.1f}%"
 
+def mag(x):
+    return "NA" if pd.isna(x) else f"{x*100:.1f}%"
+
 def fmt_pp(x):
     return "NA" if pd.isna(x) else f"{x:+.2f}pp"
 
