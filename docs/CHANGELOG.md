@@ -1,5 +1,13 @@
 # Changelog
 
+## 2026-09-27 — COMMODITY-HOUSEHOLD-CHAIN-042
+
+- Locked data availability, point-in-time gaps, fixed 2008/2020/2022 case years and complete-year distribution before estimating; separately documented the later IMF grain acquisition amendment with no tuning or inference promotion.
+- Audited Warsh's 2026-09-16 transcript pages 4, 5 and 12 in question context and distinguished oil refining crack spreads from soybean crush, corn ethanol and wheat milling economics.
+- Reproduced BLS national retail gasoline/bread and EIA/FRED WTI spot history: 18 complete years (2007–24), 54 annual rows, three case paths, distribution and provenance; 2025 October bread missing, 2026 incomplete. Added 54 derived IMF global grain year rows and a second case plot; excluded copyrighted raw IMF series.
+- Added source/release-dated 2026-09-27 observation table and seven public-safe content ideas with allowed/prohibited claim wording. USDA farm-to-retail literature is labeled historical mechanism context, not a 2026 structural coefficient.
+- No causal inference, futures basis, transaction-cost result, FDR survivor, OOS forecast or actionable timing claim. Existing energy nulls and the prospective 2026-09-23 event are unchanged; private-paper data are excluded.
+
 ## 2026-09-24 — Public companion repository initialized
 
 - Initialized the previously empty public repository.

@@ -1,0 +1,39 @@
+{
+  "bls_url": "https://www.bls.gov/charts/consumer-price-index/consumer-price-index-average-price-data.htm",
+  "bls_sha256": "48975078affe454e98673a44bbac45f7fc349ce5ad8598168064eee7ffc955fd",
+  "wti_url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DCOILWTICO",
+  "wti_sha256": "344a4a7cce2b66e4e1d1789b3b15be4a96e24e4cad1d043e5c093be83d51bbcf",
+  "bls_source_last_month": "2026-08-01",
+  "wti_last_observation": "2026-09-22",
+  "monthly_common_last": "2026-09-01",
+  "complete_years": [
+    2007,
+    2008,
+    2009,
+    2010,
+    2011,
+    2012,
+    2013,
+    2014,
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "incomplete_years": {
+    "2025": [
+      "2025-10-01"
+    ],
+    "2026": [
+      "2026-09-01"
+    ]
+  },
+  "rows": 54,
+  "qc": "PASS_DESCRIPTIVE_ONLY"
+}

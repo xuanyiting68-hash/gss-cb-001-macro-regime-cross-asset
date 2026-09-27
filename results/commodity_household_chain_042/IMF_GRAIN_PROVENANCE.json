@@ -1,0 +1,31 @@
+{
+  "qc": "PASS_DESCRIPTIVE_ONLY",
+  "source": "IMF Primary Commodity Prices via FRED",
+  "attribution_required": true,
+  "series": {
+    "wheat": {
+      "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=PWHEAMTUSDM",
+      "sha256": "b9b08e4c69c020b9059a0013540f9589341becd04e6cb2dd6f85473319b128b0",
+      "last_observation": "2026-07-01",
+      "units": "nominal USD/metric ton, IMF global benchmark"
+    },
+    "corn": {
+      "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=PMAIZMTUSDM",
+      "sha256": "2c6b35f3e6b0ac36df2059455f478fbf8b8da45c8e69a722350a6668ad623e51",
+      "last_observation": "2026-07-01",
+      "units": "nominal USD/metric ton, IMF global benchmark"
+    },
+    "soybeans": {
+      "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=PSOYBUSDM",
+      "sha256": "0174f97bc1ab9d4dc67c14a7087335985f04e5a07bf23f8b0771a522eb5d7cd2",
+      "last_observation": "2026-07-01",
+      "units": "nominal USD/metric ton, IMF global benchmark"
+    }
+  },
+  "derived_rows": 54,
+  "case_years": [
+    2008,
+    2020,
+    2022
+  ]
+}

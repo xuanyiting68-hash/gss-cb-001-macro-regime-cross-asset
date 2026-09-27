@@ -1,0 +1,4 @@
+series,n,median,p10,p90,negative_share,median_mdd
+bread_usd_per_lb,18,1.14,-3.74,11.86,0.33,-3.16
+gas_usd_per_gal,18,-1.84,-17.74,36.92,0.56,-15.92
+wti_usd_per_bbl,18,-1.23,-26.94,65.26,0.5,-18.82
