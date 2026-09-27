@@ -1489,6 +1489,12 @@ VGSIX remains LIMITED_PROXY_DESCRIPTIVE and BTC remains LIMITED_DESCRIPTIVE; hur
 
 Next research priority: **041 Opportunity-Cost Path / Breakeven Timing Map** — extend 040 from endpoint-only hurdle comparison to the monthly path: cumulative asset-vs-cash and real-purchasing-power gaps, first/last hurdle crossover, maximum opportunity-cost deficit, and recovery above the hurdle, while preserving evidence tiers and forbidding best-phase/asset ranking.
 
+## 商品与美联储周期：043 历史价格路径扩展（2026-09-27）
+
+状态：**QC PASS / DESCRIPTIVE ONLY / NO TRADABLE SIGNAL**。沿用 004 四阶段注册表，冻结 043 方案后获取 IMF/FRED 全球小麦、玉米、大豆 1992-01 至 2026-07 月度现货基准；5 个 1994–2022 宽泛周期 × 4 阶段 × 3 品种形成 60 个逐事件记录与 12 个分布格，全部为 5 腿／5 周期。原始价格未提交；原始下载 SHA-256、执行时间和来源见 043 QC。2022 玉米官方表独立复核 M-1 到 M+12 为 -2.64%。
+
+首次加息后 12 月玉米五次皆跌、加权中位 -9.4%，小麦 -11.0%、大豆 -6.2%；首次降息后玉米 +15.9%、小麦 -2.4%、大豆 +1.9%。五轮样本小，其他阶段无统一方向；2022 玉米途中最高 +19.1% 后 12 月 -2.6%，显示回撤/不利路径。旧 004/040 对照首次降息 WTI -16.9%、S&P 500 +11.0% 但月度 MDD 14.0%。全球现货不是期货收益，LAST_HIKE/PAUSE_START 标签依赖未来，未作 PIT、OOS、交易成本或多重检验。三张条件式机会卡均为研究假说，不授权具体下单。报告及面向粉丝的七条选题见 `results/commodity_fed_cycle_phase_043/` 与 `content/COMMODITY_FED_CYCLE_043_TOPICS_ZH.md`。
+
 ## Cash-hurdle discrete-horizon map — 041
 
 Status: **QC PASS / 3M–6M–12M DISCRETE-HORIZON DESCRIPTIVE / NOT CAUSAL / NOT A FORECAST / NOT DEPLOYABLE**.

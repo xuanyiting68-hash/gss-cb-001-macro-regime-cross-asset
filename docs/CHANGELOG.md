@@ -688,3 +688,10 @@
 - QC passed: 232 event rows, 696 horizon rows, 32 asset-phase summaries, 256 fixed-pattern rows and 37 official event inputs; 12M cash and excess values exactly reproduce 040 within 1e-12.
 - Found 18/133, 27/138 and 30/136 positive nominal rows still below matched cash at 3M/6M/12M respectively. Across the full overlapping panel, 25 rows improve by 12M after 3M underperformance and 39 lose an earlier advantage by 12M.
 - Preserved VUSTX proxy identity, VGSIX/BTC limited tiers, episode weights, and the boundary between observed horizons and unknown intervening crossover months. No inferential, forecasting, ranking or trading claims were added.
+
+## 2026-09-27 — COMMODITY-FED-CYCLE-PHASE-043
+
+- Before computing grain phase results, froze IMF world benchmark sources, canonical 004 event timing, M-1/M+3/6/12 definitions, broad-episode weighting, 5-leg/4-broad support gate, four example years, opportunities-as-hypotheses and QC criteria.
+- Added reproducible acquisition-and-analysis script (raw IMF/FRED monthly observations are not redistributed), 60 event rows, 12 full-distribution cells, 12 fixed-case rows, chart, provenance hashes, Chinese investor report and seven public-safe education topics.
+- Every grain phase cell has 5 legs / 5 broad episodes. Corn FIRST_HIKE 12M median -9.4%, negative in all five retrospective spot examples; 2022 path still ran +19.1% above baseline before ending -2.6%. Full negative examples preserved.
+- Explicitly separated 004/035/040 cross-asset samples from new world-grain history, retrospective LAST_HIKE/PAUSE labels from live triggers, spot prices from futures returns, and descriptive opportunity hypotheses from cost-adjusted deployment. Independent 2022 corn endpoint check against official FRED table passed.

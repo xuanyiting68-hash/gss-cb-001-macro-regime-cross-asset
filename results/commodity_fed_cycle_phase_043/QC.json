@@ -1,0 +1,46 @@
+{
+  "status": "PASS_DESCRIPTIVE_ONLY",
+  "run_utc": "2026-09-27T12:22:53.979830+00:00",
+  "sources": {
+    "WHEAT": {
+      "series": "PWHEAMTUSDM",
+      "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=PWHEAMTUSDM",
+      "sha256_raw_acquisition": "b9b08e4c69c020b9059a0013540f9589341becd04e6cb2dd6f85473319b128b0",
+      "first_month": "1992-01",
+      "last_month": "2026-07",
+      "observations": 415,
+      "units": "USD/metric ton, nominal IMF world benchmark; not futures return"
+    },
+    "CORN": {
+      "series": "PMAIZMTUSDM",
+      "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=PMAIZMTUSDM",
+      "sha256_raw_acquisition": "2c6b35f3e6b0ac36df2059455f478fbf8b8da45c8e69a722350a6668ad623e51",
+      "first_month": "1992-01",
+      "last_month": "2026-07",
+      "observations": 415,
+      "units": "USD/metric ton, nominal IMF world benchmark; not futures return"
+    },
+    "SOYBEANS": {
+      "series": "PSOYBUSDM",
+      "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=PSOYBUSDM",
+      "sha256_raw_acquisition": "0174f97bc1ab9d4dc67c14a7087335985f04e5a07bf23f8b0771a522eb5d7cd2",
+      "first_month": "1992-01",
+      "last_month": "2026-07",
+      "observations": 415,
+      "units": "USD/metric ton, nominal IMF world benchmark; not futures return"
+    }
+  },
+  "event_rows": 60,
+  "phase_cells": 12,
+  "support_cells": 12,
+  "limited_cells": 0,
+  "event_dates": "canonical 004",
+  "raw_source_rows_committed": false,
+  "independent_fred_table_check": "PASS: 2022 corn 284.95740496894420/292.67159304511270-1",
+  "limitations": [
+    "current-vintage retrospective",
+    "global spot proxy not futures",
+    "overlapping events",
+    "no PIT, OOS or cost-adjusted test"
+  ]
+}
