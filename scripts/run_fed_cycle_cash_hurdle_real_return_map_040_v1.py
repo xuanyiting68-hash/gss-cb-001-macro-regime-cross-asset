@@ -4,9 +4,12 @@ FED-CYCLE-CASH-HURDLE-REAL-RETURN-MAP-040
 
 Preregistered descriptive module.
 Compares canonical asset phase endpoints with:
-1) a same-month-grid mechanical DFF cash hurdle;
+1) a same-month-grid mechanical federal-funds cash hurdle;
 2) matched ex-post CPI purchasing-power inflation;
 3) canonical 12M path MDD.
+
+The exact 37 event-level federal-funds/CPI inputs are frozen in-repo under
+AMENDMENT 02 so the canonical run is not dependent on live FRED transport.
 
 No ranking, no forecast, no causal claim, no trading instruction.
 """
@@ -14,11 +17,7 @@ No ranking, no forecast, no causal claim, no trading instruction.
 from __future__ import annotations
 
 import hashlib
-import io
 import json
-import time
-import urllib.request
-from datetime import datetime, timezone
 from pathlib import Path
 
 import numpy as np
@@ -27,6 +26,8 @@ import pandas as pd
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "results" / "fed_cycle_cash_hurdle_real_return_map_040_v1"
 OUT.mkdir(parents=True, exist_ok=True)
+
+EVENT_INPUT_PATH = ROOT / "data/public/CASH_HURDLE_REAL_RETURN_EVENT_INPUTS_20260927.csv"
 
 PHASES = ["FIRST_HIKE", "LAST_HIKE", "PAUSE_START", "FIRST_CUT"]
 ASSET_ORDER = [
@@ -59,14 +60,50 @@ SOURCE_MODULE = {
     "VUSTX_LONG_TREASURY_PROXY": "035_LONG_TREASURY_PROXY",
     "VGSIX_REIT_PROXY": "036_LISTED_REIT_PROXY",
 }
-FRED = {
-    "DFF": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=FEDFUNDS&cosd=1983-01-01",
-    "CPIAUCSL": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=CPIAUCSL&cosd=1983-01-01",
+
+INPUT_FILES = {
+    "PHASE_CYCLE_ASSET_METRICS": ROOT / "results/fed_cycle_phase_clock_v1/PHASE_CYCLE_ASSET_METRICS.csv",
+    "MARKET_PHASE_METRICS": ROOT / "results/fed_cycle_cross_asset_expansion_v1/MARKET_PHASE_METRICS.csv",
+    "VUSTX_EXTENDED_PHASE_METRICS": ROOT / "results/fed_cycle_long_treasury_proxy_bridge_035_v1/VUSTX_EXTENDED_PHASE_METRICS.csv",
+    "VGSIX_EXTENDED_PHASE_METRICS": ROOT / "results/fed_cycle_listed_reit_proxy_bridge_036_v1/VGSIX_EXTENDED_PHASE_METRICS.csv",
+    "CASH_PHASE_METRICS": ROOT / "results/fed_cycle_cross_asset_expansion_v1/CASH_PHASE_METRICS.csv",
+    "FROZEN_FRED_EVENT_INPUTS": EVENT_INPUT_PATH,
 }
 
 
 def read_json(path: Path):
     return json.loads(path.read_text(encoding="utf-8"))
+
+
+def sha256_file(path: Path) -> str:
+    h = hashlib.sha256()
+    with path.open("rb") as fh:
+        for block in iter(lambda: fh.read(1024 * 1024), b""):
+            h.update(block)
+    return h.hexdigest()
+
+
+def source_registry():
+    rows = []
+    for source_id, path in INPUT_FILES.items():
+        if not path.exists():
+            raise RuntimeError(f"missing input file: {path}")
+        rows.append(
+            {
+                "source_id": source_id,
+                "kind": "REPO_FROZEN_INPUT" if source_id == "FROZEN_FRED_EVENT_INPUTS" else "CANONICAL_REPO_OUTPUT",
+                "path": str(path.relative_to(ROOT)).replace("\\", "/"),
+                "sha256": sha256_file(path),
+                "bytes": int(path.stat().st_size),
+                "raw_committed": source_id == "FROZEN_FRED_EVENT_INPUTS",
+                "external_authority": (
+                    "FRED FEDFUNDS + CPIAUCSL official monthly tables; captured 2026-09-27"
+                    if source_id == "FROZEN_FRED_EVENT_INPUTS"
+                    else ""
+                ),
+            }
+        )
+    return pd.DataFrame(rows)
 
 
 def assert_upstream_qc():
@@ -84,56 +121,6 @@ def assert_upstream_qc():
             raise RuntimeError(f"upstream {key} QC is not PASS: {gate}")
         out[key] = gate
     return out
-
-
-def fetch_bytes(url: str, attempts: int = 4, timeout: int = 90) -> bytes:
-    last = None
-    headers = {"User-Agent": "Mozilla/5.0 research-reproducibility/1.0"}
-    for i in range(attempts):
-        try:
-            req = urllib.request.Request(url, headers=headers)
-            with urllib.request.urlopen(req, timeout=timeout) as r:
-                return r.read()
-        except Exception as exc:
-            last = exc
-            time.sleep(1.5 * (i + 1))
-    raise RuntimeError(f"fetch failed: {url}: {last!r}")
-
-
-def fetch_fred(series: str):
-    url = FRED[series]
-    raw = fetch_bytes(url)
-    df = pd.read_csv(io.BytesIO(raw))
-    if df.shape[1] < 2:
-        raise RuntimeError(f"{series} malformed FRED CSV")
-    date_col = df.columns[0]
-    value_col = series if series in df.columns else df.columns[1]
-    x = pd.DataFrame({
-        "date": pd.to_datetime(df[date_col], errors="coerce"),
-        "value": pd.to_numeric(df[value_col].replace(".", np.nan), errors="coerce"),
-    }).dropna()
-    x = x.sort_values("date").drop_duplicates("date", keep="last").reset_index(drop=True)
-    if len(x) < 100:
-        raise RuntimeError(f"{series} history too short: {len(x)}")
-    meta = {
-        "series": series,
-        "acquired_fred_series": ("FEDFUNDS" if series == "DFF" else series),
-        "url": url,
-        "retrieved_utc": datetime.now(timezone.utc).isoformat(),
-        "sha256": hashlib.sha256(raw).hexdigest(),
-        "raw_bytes": len(raw),
-        "rows_nonmissing": int(len(x)),
-        "first_date": str(x["date"].min().date()),
-        "last_date": str(x["date"].max().date()),
-        "raw_committed": False,
-    }
-    return x, meta
-
-
-def monthly_average(df: pd.DataFrame):
-    x = df.copy()
-    x["period"] = x["date"].dt.to_period("M")
-    return x.groupby("period", as_index=False)["value"].mean().sort_values("period")
 
 
 def weighted_median(values, weights):
@@ -159,18 +146,25 @@ def weighted_share(flag, weights):
 
 
 def load_asset_events():
-    core = pd.read_csv(ROOT / "results/fed_cycle_phase_clock_v1/PHASE_CYCLE_ASSET_METRICS.csv")
+    core = pd.read_csv(INPUT_FILES["PHASE_CYCLE_ASSET_METRICS"])
     core = core[core["asset"].isin(["GOLD", "SP500", "NASDAQ", "WTI"])].copy()
 
-    market = pd.read_csv(ROOT / "results/fed_cycle_cross_asset_expansion_v1/MARKET_PHASE_METRICS.csv")
+    market = pd.read_csv(INPUT_FILES["MARKET_PHASE_METRICS"])
     market = market[market["asset"].isin(["DXY", "BTC_USD"])].copy()
 
-    vus = pd.read_csv(ROOT / "results/fed_cycle_long_treasury_proxy_bridge_035_v1/VUSTX_EXTENDED_PHASE_METRICS.csv")
-    vgs = pd.read_csv(ROOT / "results/fed_cycle_listed_reit_proxy_bridge_036_v1/VGSIX_EXTENDED_PHASE_METRICS.csv")
+    vus = pd.read_csv(INPUT_FILES["VUSTX_EXTENDED_PHASE_METRICS"])
+    vgs = pd.read_csv(INPUT_FILES["VGSIX_EXTENDED_PHASE_METRICS"])
 
     cols = [
-        "asset", "asset_label", "anchor", "cycle_id", "broad_episode_id",
-        "anchor_date", "episode_weight", "ret_12m", "mdd_12m",
+        "asset",
+        "asset_label",
+        "anchor",
+        "cycle_id",
+        "broad_episode_id",
+        "anchor_date",
+        "episode_weight",
+        "ret_12m",
+        "mdd_12m",
     ]
     for name, df in [("core", core), ("market", market), ("vus", vus), ("vgs", vgs)]:
         missing = [c for c in cols if c not in df.columns]
@@ -200,68 +194,128 @@ def load_asset_events():
     return ev
 
 
-def attach_hurdles(ev: pd.DataFrame, dff_m: pd.DataFrame, cpi_m: pd.DataFrame):
-    dff = dict(zip(dff_m["period"], dff_m["value"].astype(float)))
-    cpi = dict(zip(cpi_m["period"], cpi_m["value"].astype(float)))
+def load_and_validate_event_inputs(cash_df: pd.DataFrame):
+    x = pd.read_csv(EVENT_INPUT_PATH, dtype={"anchor_month": str, "baseline_period": str, "endpoint_period": str})
+    required = [
+        "anchor",
+        "cycle_id",
+        "broad_episode_id",
+        "anchor_month",
+        "fedfunds_monthly_pct",
+        "baseline_period",
+        "cpi_baseline",
+        "endpoint_period",
+        "cpi_endpoint",
+        "fedfunds_source_url",
+        "cpi_source_url",
+        "vintage_note",
+    ]
+    missing = [c for c in required if c not in x.columns]
+    if missing:
+        raise RuntimeError(f"event input missing columns: {missing}")
+    if x.duplicated(["anchor", "cycle_id"]).any():
+        raise RuntimeError("duplicate event-input keys")
 
-    canon = pd.read_csv(ROOT / "results/fed_cycle_cross_asset_expansion_v1/CASH_PHASE_METRICS.csv")
-    canon = canon[["anchor", "cycle_id", "cash_carry_12m"]].rename(
+    canon = cash_df[["anchor", "cycle_id", "broad_episode_id", "anchor_date"]].copy()
+    canon["anchor_date"] = pd.to_datetime(canon["anchor_date"])
+    canon_keys = set(map(tuple, canon[["anchor", "cycle_id"]].to_numpy()))
+    input_keys = set(map(tuple, x[["anchor", "cycle_id"]].to_numpy()))
+    if canon_keys != input_keys:
+        raise RuntimeError(
+            f"event-input key mismatch: missing={sorted(canon_keys-input_keys)} extra={sorted(input_keys-canon_keys)}"
+        )
+    if len(x) != 37:
+        raise RuntimeError(f"expected exactly 37 event inputs, found {len(x)}")
+
+    merged = x.merge(
+        canon,
+        on=["anchor", "cycle_id"],
+        how="left",
+        suffixes=("_input", "_canonical"),
+        validate="one_to_one",
+    )
+    broad_bad = int(
+        (merged["broad_episode_id_input"].astype(str) != merged["broad_episode_id_canonical"].astype(str)).sum()
+    )
+    period_bad = 0
+    for r in merged.itertuples():
+        ep = pd.Timestamp(r.anchor_date).to_period("M")
+        if str(ep) != str(r.anchor_month):
+            period_bad += 1
+        if str(ep - 1) != str(r.baseline_period):
+            period_bad += 1
+        if str(ep + 12) != str(r.endpoint_period):
+            period_bad += 1
+    numeric_cols = ["fedfunds_monthly_pct", "cpi_baseline", "cpi_endpoint"]
+    numeric_missing = int(x[numeric_cols].apply(pd.to_numeric, errors="coerce").isna().any(axis=1).sum())
+    nonpositive_cpi = int(
+        ((pd.to_numeric(x["cpi_baseline"], errors="coerce") <= 0) |
+         (pd.to_numeric(x["cpi_endpoint"], errors="coerce") <= 0)).sum()
+    )
+    return x, {
+        "event_input_rows": int(len(x)),
+        "event_input_broad_episode_violations": broad_bad,
+        "event_input_period_alignment_violations": period_bad,
+        "event_input_numeric_missing_rows": numeric_missing,
+        "event_input_nonpositive_cpi_rows": nonpositive_cpi,
+    }
+
+
+def attach_hurdles(ev: pd.DataFrame, cash_df: pd.DataFrame, event_inputs: pd.DataFrame):
+    cash = cash_df[["anchor", "cycle_id", "cash_carry_12m"]].rename(
         columns={"cash_carry_12m": "canonical_cash_014_post12"}
     )
-    canon_key = canon.set_index(["anchor", "cycle_id"])["canonical_cash_014_post12"].to_dict()
+    inp = event_inputs[
+        [
+            "anchor",
+            "cycle_id",
+            "anchor_month",
+            "fedfunds_monthly_pct",
+            "baseline_period",
+            "cpi_baseline",
+            "endpoint_period",
+            "cpi_endpoint",
+        ]
+    ].copy()
 
-    rows = []
-    for _, r in ev.iterrows():
-        ep = pd.Timestamp(r["anchor_date"]).to_period("M")
-        baseline = ep - 1
-        endpoint = ep + 12
-        cash_months = [ep + k for k in range(0, 13)]
+    panel = ev.merge(cash, on=["anchor", "cycle_id"], how="left", validate="many_to_one")
+    panel = panel.merge(inp, on=["anchor", "cycle_id"], how="left", validate="many_to_one")
 
-        missing_dff = [p for p in cash_months if p not in dff or not np.isfinite(dff[p])]
-        if missing_dff:
-            raise RuntimeError(f"missing DFF for {r['asset']} {r['anchor']} {r['cycle_id']}: {missing_dff}")
+    for c in [
+        "canonical_cash_014_post12",
+        "fedfunds_monthly_pct",
+        "cpi_baseline",
+        "cpi_endpoint",
+        "ret_12m",
+        "mdd_12m",
+        "episode_weight",
+    ]:
+        panel[c] = pd.to_numeric(panel[c], errors="coerce")
 
-        if baseline not in cpi or endpoint not in cpi:
-            raise RuntimeError(
-                f"missing CPI for {r['asset']} {r['anchor']} {r['cycle_id']} "
-                f"baseline={baseline} endpoint={endpoint}"
-            )
+    panel["matched_cash_months"] = 13
+    panel["matched_cash_carry"] = (
+        (1.0 + panel["canonical_cash_014_post12"])
+        * (1.0 + panel["fedfunds_monthly_pct"] / 100.0 / 12.0)
+        - 1.0
+    )
+    panel["cash_timing_gap"] = panel["matched_cash_carry"] - panel["canonical_cash_014_post12"]
+    panel["matched_inflation"] = panel["cpi_endpoint"] / panel["cpi_baseline"] - 1.0
+    panel["asset_vs_cash"] = (
+        (1.0 + panel["ret_12m"]) / (1.0 + panel["matched_cash_carry"]) - 1.0
+    )
+    panel["real_asset_return"] = (
+        (1.0 + panel["ret_12m"]) / (1.0 + panel["matched_inflation"]) - 1.0
+    )
+    panel["real_cash_return"] = (
+        (1.0 + panel["matched_cash_carry"]) / (1.0 + panel["matched_inflation"]) - 1.0
+    )
 
-        rates = np.array([dff[p] for p in cash_months], dtype=float)
-        matched_cash = float(np.prod(1.0 + rates / 100.0 / 12.0) - 1.0)
-        inflation = float(cpi[endpoint] / cpi[baseline] - 1.0)
-        nominal = float(r["ret_12m"])
-        key = (r["anchor"], r["cycle_id"])
-        if key not in canon_key:
-            raise RuntimeError(f"missing canonical cash cross-check row: {key}")
-        canonical_cash = float(canon_key[key])
-
-        asset_vs_cash = float((1.0 + nominal) / (1.0 + matched_cash) - 1.0)
-        real_asset = float((1.0 + nominal) / (1.0 + inflation) - 1.0)
-        real_cash = float((1.0 + matched_cash) / (1.0 + inflation) - 1.0)
-
-        out = r.to_dict()
-        out.update({
-            "baseline_period": str(baseline),
-            "endpoint_period": str(endpoint),
-            "matched_cash_months": 13,
-            "matched_cash_carry": matched_cash,
-            "canonical_cash_014_post12": canonical_cash,
-            "cash_timing_gap": matched_cash - canonical_cash,
-            "matched_inflation": inflation,
-            "asset_vs_cash": asset_vs_cash,
-            "real_asset_return": real_asset,
-            "real_cash_return": real_cash,
-            "nominal_positive": nominal > 0.0,
-            "beats_cash": asset_vs_cash > 0.0,
-            "beats_inflation": real_asset > 0.0,
-            "beats_both": (asset_vs_cash > 0.0) and (real_asset > 0.0),
-            "positive_nominal_but_not_cash": (nominal > 0.0) and not (asset_vs_cash > 0.0),
-            "positive_nominal_but_not_inflation": (nominal > 0.0) and not (real_asset > 0.0),
-        })
-        rows.append(out)
-
-    panel = pd.DataFrame(rows)
+    panel["nominal_positive"] = panel["ret_12m"] > 0.0
+    panel["beats_cash"] = panel["asset_vs_cash"] > 0.0
+    panel["beats_inflation"] = panel["real_asset_return"] > 0.0
+    panel["beats_both"] = panel["beats_cash"] & panel["beats_inflation"]
+    panel["positive_nominal_but_not_cash"] = panel["nominal_positive"] & ~panel["beats_cash"]
+    panel["positive_nominal_but_not_inflation"] = panel["nominal_positive"] & ~panel["beats_inflation"]
     return panel
 
 
@@ -273,32 +327,34 @@ def summarize(panel: pd.DataFrame):
             if g.empty:
                 continue
             w = g["episode_weight"].to_numpy(float)
-            rows.append({
-                "asset": asset,
-                "asset_label": g["asset_label"].iloc[0],
-                "anchor": phase,
-                "evidence_tier": EVIDENCE_TIER[asset],
-                "source_module": SOURCE_MODULE[asset],
-                "n_legs": int(g["cycle_id"].nunique()),
-                "n_broad_episodes": int(g["broad_episode_id"].nunique()),
-                "weighted_median_nominal_ret_12m": weighted_median(g["ret_12m"], w),
-                "weighted_median_matched_cash_carry": weighted_median(g["matched_cash_carry"], w),
-                "weighted_median_matched_inflation": weighted_median(g["matched_inflation"], w),
-                "weighted_median_asset_vs_cash": weighted_median(g["asset_vs_cash"], w),
-                "weighted_median_real_asset_return": weighted_median(g["real_asset_return"], w),
-                "weighted_median_real_cash_return": weighted_median(g["real_cash_return"], w),
-                "weighted_median_mdd_12m": weighted_median(g["mdd_12m"], w),
-                "weighted_share_nominal_positive": weighted_share(g["nominal_positive"], w),
-                "weighted_share_beats_cash": weighted_share(g["beats_cash"], w),
-                "weighted_share_beats_inflation": weighted_share(g["beats_inflation"], w),
-                "weighted_share_beats_both": weighted_share(g["beats_both"], w),
-                "weighted_share_positive_nominal_but_not_cash": weighted_share(
-                    g["positive_nominal_but_not_cash"], w
-                ),
-                "weighted_share_positive_nominal_but_not_inflation": weighted_share(
-                    g["positive_nominal_but_not_inflation"], w
-                ),
-            })
+            rows.append(
+                {
+                    "asset": asset,
+                    "asset_label": g["asset_label"].iloc[0],
+                    "anchor": phase,
+                    "evidence_tier": EVIDENCE_TIER[asset],
+                    "source_module": SOURCE_MODULE[asset],
+                    "n_legs": int(g["cycle_id"].nunique()),
+                    "n_broad_episodes": int(g["broad_episode_id"].nunique()),
+                    "weighted_median_nominal_ret_12m": weighted_median(g["ret_12m"], w),
+                    "weighted_median_matched_cash_carry": weighted_median(g["matched_cash_carry"], w),
+                    "weighted_median_matched_inflation": weighted_median(g["matched_inflation"], w),
+                    "weighted_median_asset_vs_cash": weighted_median(g["asset_vs_cash"], w),
+                    "weighted_median_real_asset_return": weighted_median(g["real_asset_return"], w),
+                    "weighted_median_real_cash_return": weighted_median(g["real_cash_return"], w),
+                    "weighted_median_mdd_12m": weighted_median(g["mdd_12m"], w),
+                    "weighted_share_nominal_positive": weighted_share(g["nominal_positive"], w),
+                    "weighted_share_beats_cash": weighted_share(g["beats_cash"], w),
+                    "weighted_share_beats_inflation": weighted_share(g["beats_inflation"], w),
+                    "weighted_share_beats_both": weighted_share(g["beats_both"], w),
+                    "weighted_share_positive_nominal_but_not_cash": weighted_share(
+                        g["positive_nominal_but_not_cash"], w
+                    ),
+                    "weighted_share_positive_nominal_but_not_inflation": weighted_share(
+                        g["positive_nominal_but_not_inflation"], w
+                    ),
+                }
+            )
     out = pd.DataFrame(rows)
     out["asset_order"] = out["asset"].map({a: i for i, a in enumerate(ASSET_ORDER)})
     out["phase_order"] = out["anchor"].map({a: i for i, a in enumerate(PHASES)})
@@ -309,64 +365,87 @@ def make_question_registry(summary: pd.DataFrame, panel: pd.DataFrame, cash_audi
     def fmt_pct(x):
         return "NA" if pd.isna(x) else f"{100*x:+.1f}%"
 
-    core_supported = summary[summary["evidence_tier"].isin(["CORE_SUPPORTED", "SUPPORTED_PROXY_DESCRIPTIVE"])]
-    pos_fail_cash = panel[(panel["nominal_positive"]) & (~panel["beats_cash"])]
-    pos_fail_infl = panel[(panel["nominal_positive"]) & (~panel["beats_inflation"])]
+    core_supported = summary[
+        summary["evidence_tier"].isin(["CORE_SUPPORTED", "SUPPORTED_PROXY_DESCRIPTIVE"])
+    ]
+    pos_fail_cash = panel[panel["positive_nominal_but_not_cash"]]
+    pos_fail_infl = panel[panel["positive_nominal_but_not_inflation"]]
 
     rows = [
         {
             "question_id": "040-Q01",
             "question": "Can a positive nominal endpoint still fail the cash hurdle?",
-            "answer": f"Yes. Event-level positive-nominal-but-not-cash rows: {len(pos_fail_cash)}. The module preserves these cases rather than equating positive nominal return with opportunity outperformance.",
+            "answer": (
+                f"Yes. Event-level positive-nominal-but-not-cash rows: {len(pos_fail_cash)}. "
+                "Positive nominal return is not equivalent to clearing contemporaneous cash opportunity cost."
+            ),
             "boundary": "DESCRIPTIVE_NOT_FORECAST",
         },
         {
             "question_id": "040-Q02",
             "question": "Can a positive nominal endpoint still lose purchasing power?",
-            "answer": f"Yes. Event-level positive-nominal-but-not-inflation rows: {len(pos_fail_infl)} using matched current-vintage CPI.",
+            "answer": (
+                f"Yes. Event-level positive-nominal-but-not-inflation rows: {len(pos_fail_infl)} "
+                "using matched current-vintage CPI."
+            ),
             "boundary": "EXPOST_REAL_RETURN",
         },
         {
             "question_id": "040-Q03",
             "question": "Does the cash hurdle use the same convention as 014?",
-            "answer": f"No. 040 uses a same-month-grid 13-month mechanical hurdle; 014 is retained as a post-anchor 12-month cross-check. Median absolute timing gap: {cash_audit['median_abs_gap']*100:.2f}pp; max: {cash_audit['max_abs_gap']*100:.2f}pp.",
+            "answer": (
+                "No. 040 adds the anchor month to canonical 014 post12 cash so the hurdle uses the "
+                "same t-1 to t+12 endpoint grid as asset returns. "
+                f"Median absolute timing gap: {cash_audit['median_abs_gap']*100:.2f}pp; "
+                f"max: {cash_audit['max_abs_gap']*100:.2f}pp."
+            ),
             "boundary": "MEASUREMENT_CONVENTION",
         },
         {
             "question_id": "040-Q04",
             "question": "Are limited-history BTC and REIT rows allowed to upgrade themselves in this module?",
-            "answer": "No. BTC remains LIMITED_DESCRIPTIVE and VGSIX remains LIMITED_PROXY_DESCRIPTIVE regardless of attractive or unattractive hurdle-adjusted values.",
+            "answer": (
+                "No. BTC remains LIMITED_DESCRIPTIVE and VGSIX remains LIMITED_PROXY_DESCRIPTIVE "
+                "regardless of hurdle-adjusted values."
+            ),
             "boundary": "EVIDENCE_TIER_LOCK",
         },
         {
             "question_id": "040-Q05",
             "question": "Does a positive real return mean low path risk?",
-            "answer": "No. 040 reports real endpoint outcomes and 12M MDD side by side; it does not collapse them into a single risk-adjusted score.",
+            "answer": (
+                "No. 040 reports real endpoint outcomes and 12M MDD side by side and does not "
+                "collapse them into a single risk-adjusted score."
+            ),
             "boundary": "ENDPOINT_NOT_PATH",
         },
         {
             "question_id": "040-Q06",
             "question": "Can PandaAI call one phase or asset best?",
-            "answer": "No. Fixed display order is used and no performance ranking, optimizer, expected return, allocation weight or trade instruction is generated.",
+            "answer": (
+                "No. Fixed display order is used and no performance ranking, optimizer, expected "
+                "return, allocation weight or trade instruction is generated."
+            ),
             "boundary": "NO_RANKING",
         },
     ]
 
-    # Add a compact factual supported-universe readout without selecting a winner.
     for phase in PHASES:
         g = core_supported[core_supported["anchor"] == phase]
-        rows.append({
-            "question_id": f"040-{phase}-SUPPORTED",
-            "question": f"What should be shown for supported evidence in {phase}?",
-            "answer": " | ".join(
-                f"{r.asset}: nominal {fmt_pct(r.weighted_median_nominal_ret_12m)}, "
-                f"vs cash {fmt_pct(r.weighted_median_asset_vs_cash)}, "
-                f"real {fmt_pct(r.weighted_median_real_asset_return)}, "
-                f"MDD {fmt_pct(r.weighted_median_mdd_12m)}"
-                for r in g.itertuples()
-            ),
-            "boundary": "SUPPORTED_DESCRIPTIVE_FIXED_ORDER",
-        })
+        rows.append(
+            {
+                "question_id": f"040-{phase}-SUPPORTED",
+                "question": f"What should be shown for supported evidence in {phase}?",
+                "answer": " | ".join(
+                    f"{r.asset}: nominal {fmt_pct(r.weighted_median_nominal_ret_12m)}, "
+                    f"vs cash {fmt_pct(r.weighted_median_asset_vs_cash)}, "
+                    f"real {fmt_pct(r.weighted_median_real_asset_return)}, "
+                    f"MDD {fmt_pct(r.weighted_median_mdd_12m)}"
+                    for r in g.itertuples()
+                ),
+                "boundary": "SUPPORTED_DESCRIPTIVE_FIXED_ORDER",
+            }
+        )
     return pd.DataFrame(rows)
 
 
@@ -379,16 +458,19 @@ def write_report(summary: pd.DataFrame, panel: pd.DataFrame, qc: dict):
         "",
         "## Status",
         "",
-        "**QC PASS / EVENT-MATCHED CASH-HURDLE + EX-POST REAL-RETURN MAP / NOT CAUSAL / NOT A FORECAST / NOT DEPLOYABLE**"
-        if qc["qc_gate"] == "PASS"
-        else "**QC FAIL**",
+        (
+            "**QC PASS / EVENT-MATCHED CASH-HURDLE + EX-POST REAL-RETURN MAP / "
+            "NOT CAUSAL / NOT A FORECAST / NOT DEPLOYABLE**"
+            if qc["qc_gate"] == "PASS"
+            else "**QC FAIL**"
+        ),
         "",
         "## Method boundary",
         "",
         "- Asset nominal endpoints and MDD are inherited from canonical public modules.",
-        "- Primary cash hurdle is a same-month-grid mechanical DFF benchmark over anchor month through +12.",
+        "- The primary cash hurdle adds the anchor-month official monthly effective federal-funds rate to canonical 014 post12 cash, exactly aligning the t-1 to t+12 asset endpoint grid.",
         "- CPI purchasing-power adjustment uses current-vintage CPIAUCSL from baseline month t-1 to endpoint t+12.",
-        "- Existing 014 post-anchor 12M cash carry is retained only as a timing-convention cross-check.",
+        "- The 37 event-level rate/CPI inputs are frozen in-repo under AMENDMENT 02 to remove live-network dependence.",
         "- No p-values, ranking, optimizer, expected-return forecast or trade instruction are generated.",
         "",
         "## Fixed-order phase map",
@@ -409,15 +491,12 @@ def write_report(summary: pd.DataFrame, panel: pd.DataFrame, qc: dict):
             )
         lines.append("")
 
-    n_pos = int(panel["nominal_positive"].sum())
-    n_pos_fail_cash = int(panel["positive_nominal_but_not_cash"].sum())
-    n_pos_fail_infl = int(panel["positive_nominal_but_not_inflation"].sum())
     lines += [
         "## Cross-cutting diagnostic",
         "",
-        f"- event rows with positive nominal endpoint: {n_pos}",
-        f"- positive nominal but failed matched cash hurdle: {n_pos_fail_cash}",
-        f"- positive nominal but failed matched inflation hurdle: {n_pos_fail_infl}",
+        f"- event rows with positive nominal endpoint: {int(panel['nominal_positive'].sum())}",
+        f"- positive nominal but failed matched cash hurdle: {int(panel['positive_nominal_but_not_cash'].sum())}",
+        f"- positive nominal but failed matched inflation hurdle: {int(panel['positive_nominal_but_not_inflation'].sum())}",
         "",
         "These are row counts, not independent statistical observations; broad-episode weighting remains the summary convention.",
         "",
@@ -433,61 +512,55 @@ def write_report(summary: pd.DataFrame, panel: pd.DataFrame, qc: dict):
 
 def main():
     upstream = assert_upstream_qc()
+    sources = source_registry()
+    sources.to_csv(OUT / "SOURCE_REGISTRY.csv", index=False)
+
+    cash_df = pd.read_csv(INPUT_FILES["CASH_PHASE_METRICS"])
+    event_inputs, input_qc = load_and_validate_event_inputs(cash_df)
     events = load_asset_events()
-
-    dff_raw, dff_meta = fetch_fred("DFF")
-    cpi_raw, cpi_meta = fetch_fred("CPIAUCSL")
-    dff_m = monthly_average(dff_raw)
-    cpi_m = monthly_average(cpi_raw)
-
-    source_registry = pd.DataFrame([dff_meta, cpi_meta])
-    source_registry.to_csv(OUT / "SOURCE_REGISTRY.csv", index=False)
-
-    panel = attach_hurdles(events, dff_m, cpi_m)
+    panel = attach_hurdles(events, cash_df, event_inputs)
     panel.to_csv(OUT / "EVENT_HURDLE_REAL_RETURN_PANEL.csv", index=False)
 
     summary = summarize(panel)
     summary.to_csv(OUT / "ASSET_PHASE_HURDLE_REAL_RETURN_SUMMARY.csv", index=False)
 
-    misleading = panel[
+    counter = panel[
         panel["positive_nominal_but_not_cash"] | panel["positive_nominal_but_not_inflation"]
     ].copy()
-    misleading.to_csv(OUT / "POSITIVE_NOMINAL_COUNTEREXAMPLES.csv", index=False)
+    counter.to_csv(OUT / "POSITIVE_NOMINAL_COUNTEREXAMPLES.csv", index=False)
 
-    # QC: preserve upstream broad-episode weights exactly.
     weight_violations = 0
     for (asset, anchor, bid), g in panel.groupby(["asset", "anchor", "broad_episode_id"]):
         if abs(float(g["episode_weight"].sum()) - 1.0) > 1e-10:
             weight_violations += 1
 
     identity_violations = int((~panel["asset"].isin(ASSET_ORDER)).sum())
-    missing_metric_rows = int(
-        panel[
-            [
-                "ret_12m", "mdd_12m", "matched_cash_carry", "matched_inflation",
-                "asset_vs_cash", "real_asset_return", "real_cash_return",
-            ]
-        ].isna().any(axis=1).sum()
-    )
+    metric_cols = [
+        "ret_12m",
+        "mdd_12m",
+        "matched_cash_carry",
+        "matched_inflation",
+        "asset_vs_cash",
+        "real_asset_return",
+        "real_cash_return",
+    ]
+    missing_metric_rows = int(panel[metric_cols].isna().any(axis=1).sum())
     rejected_proxy_rows = int(panel["asset"].str.contains("FRESX", case=False, na=False).sum())
     target_etf_dup_rows = int(panel["asset"].isin(["TLT", "VNQ"]).sum())
     housing_rows = int(panel["asset"].str.contains("HOUS", case=False, na=False).sum())
 
-    # Tier locks.
     tier_bad = 0
     for asset, expected in EVIDENCE_TIER.items():
         vals = set(panel.loc[panel["asset"] == asset, "evidence_tier"])
         if vals != {expected}:
             tier_bad += 1
 
-    # Supported core/proxy minimum-support audit. This is a consistency check, not promotion logic.
     support_count_bad = 0
     for r in summary.itertuples():
         if r.evidence_tier in ["CORE_SUPPORTED", "SUPPORTED_PROXY_DESCRIPTIVE"]:
             if r.n_legs < 5 or r.n_broad_episodes < 4:
                 support_count_bad += 1
 
-    # Cash timing audit uses unique event keys so repeated asset rows do not multiply the diagnostic.
     c = panel[
         ["anchor", "cycle_id", "matched_cash_carry", "canonical_cash_014_post12", "cash_timing_gap"]
     ].drop_duplicates(["anchor", "cycle_id"])
@@ -499,37 +572,46 @@ def main():
     }
     pd.DataFrame([cash_audit]).to_csv(OUT / "CASH_TIMING_CONVENTION_AUDIT.csv", index=False)
 
-    hard_fail = any([
-        weight_violations != 0,
-        identity_violations != 0,
-        missing_metric_rows != 0,
-        rejected_proxy_rows != 0,
-        target_etf_dup_rows != 0,
-        housing_rows != 0,
-        tier_bad != 0,
-        support_count_bad != 0,
-        len(summary) != len(ASSET_ORDER) * len(PHASES),
-        len(source_registry) != 2,
-        source_registry["sha256"].str.len().ne(64).any(),
-    ])
+    source_hash_bad = int(sources["sha256"].astype(str).str.len().ne(64).sum())
+    hard_fail = any(
+        [
+            weight_violations != 0,
+            identity_violations != 0,
+            missing_metric_rows != 0,
+            rejected_proxy_rows != 0,
+            target_etf_dup_rows != 0,
+            housing_rows != 0,
+            tier_bad != 0,
+            support_count_bad != 0,
+            len(summary) != len(ASSET_ORDER) * len(PHASES),
+            len(panel) != 232,
+            input_qc["event_input_rows"] != 37,
+            input_qc["event_input_broad_episode_violations"] != 0,
+            input_qc["event_input_period_alignment_violations"] != 0,
+            input_qc["event_input_numeric_missing_rows"] != 0,
+            input_qc["event_input_nonpositive_cpi_rows"] != 0,
+            source_hash_bad != 0,
+        ]
+    )
 
     qc = {
         "qc_gate": "FAIL" if hard_fail else "PASS",
         "module": "FED-CYCLE-CASH-HURDLE-REAL-RETURN-MAP-040",
         "upstream_qc": upstream,
         "event_rows": int(len(panel)),
+        "expected_event_rows": 232,
         "summary_rows": int(len(summary)),
         "expected_summary_rows": len(ASSET_ORDER) * len(PHASES),
         "assets": ASSET_ORDER,
         "phases": PHASES,
-        "source_hashes_complete": bool(source_registry["sha256"].str.len().eq(64).all()),
-        "dff_first_date": dff_meta["first_date"],
-        "dff_last_date": dff_meta["last_date"],
-        "cpi_first_date": cpi_meta["first_date"],
-        "cpi_last_date": cpi_meta["last_date"],
+        "source_registry_rows": int(len(sources)),
+        "source_hashes_complete": source_hash_bad == 0,
+        "frozen_event_input_sha256": sha256_file(EVENT_INPUT_PATH),
+        "frozen_event_input_source": "FRED FEDFUNDS + CPIAUCSL official monthly tables captured 2026-09-27",
+        "live_external_fetch_required": False,
         "current_vintage_cpi_not_pit": True,
         "matched_cash_months": 13,
-        "canonical_cash_014_is_crosscheck_only": True,
+        "canonical_cash_014_is_crosscheck_and_t_plus_1_to_t_plus_12_component": True,
         "cash_timing_unique_events": cash_audit["unique_event_keys"],
         "cash_timing_median_abs_gap": cash_audit["median_abs_gap"],
         "cash_timing_max_abs_gap": cash_audit["max_abs_gap"],
@@ -541,9 +623,12 @@ def main():
         "housing_rows_in_12m_panel": housing_rows,
         "evidence_tier_lock_violations": tier_bad,
         "supported_minimum_count_violations": support_count_bad,
+        **input_qc,
         "positive_nominal_event_rows": int(panel["nominal_positive"].sum()),
         "positive_nominal_but_not_cash_rows": int(panel["positive_nominal_but_not_cash"].sum()),
-        "positive_nominal_but_not_inflation_rows": int(panel["positive_nominal_but_not_inflation"].sum()),
+        "positive_nominal_but_not_inflation_rows": int(
+            panel["positive_nominal_but_not_inflation"].sum()
+        ),
         "new_pvalues_generated": False,
         "optimized_thresholds_or_horizons": False,
         "asset_rankings_generated": False,
@@ -555,7 +640,9 @@ def main():
         "oos_status": "NOT_A_FORECASTING_MODEL",
         "deployment_status": "NOT_DEPLOYABLE",
     }
-    (OUT / "QC.json").write_text(json.dumps(qc, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    (OUT / "QC.json").write_text(
+        json.dumps(qc, indent=2, ensure_ascii=False) + "\n", encoding="utf-8"
+    )
 
     questions = make_question_registry(summary, panel, cash_audit)
     questions.to_csv(OUT / "INVESTOR_QUESTION_REGISTRY.csv", index=False)
@@ -585,6 +672,7 @@ def main():
             "causal_fed_claim",
         ],
         "cpi_status": "CURRENT_VINTAGE_EXPOST_NOT_PIT",
+        "cash_input_status": "FROZEN_OFFICIAL_MONTHLY_FEDFUNDS_PLUS_CANONICAL_014_POST12",
         "causal_status": "NONE",
         "oos_status": "NOT_A_FORECASTING_MODEL",
         "deployment_status": "NOT_DEPLOYABLE",
