@@ -1,0 +1,7 @@
+# GOLD-MDD-EXPLAINER-045 — fixed visualization specification
+
+Date: 2026-09-27 Sydney. Purpose: illustrate the frozen 004 FIRST_HIKE 12M MDD of gold without representing monthly average prices as OHLC candles. No new investment hypothesis or sample selection for inference.
+
+Use exactly `results/fed_cycle_phase_clock_v1/PHASE_PATHS.csv` and `PHASE_CYCLE_ASSET_METRICS.csv` and retain their M-1 baseline, omitted event month M0 and M+1..M+12 monthly average prices. Normalize M-1 to 100. Three demonstrations declared before chart generation: T07_1999, whose path MDD equals the weighted sample median; T10_2022, a positive endpoint with a large drawdown; T01_1983, the most severe observed monthly MDD among the 10 mechanical first-hike legs. Do not call a normalized monthly-average path a true candlestick/OHLC chart. For each path recompute peak preceding trough, drawdown, and terminal change from committed path data, compare to frozen metrics within 1e-10.
+
+Publish a visual guide in Chinese specifying that 10 mechanical legs correspond to 7 broad episodes and that 11.6% is a weighted median of ten separately measured 12M within-path drawdowns, not the loss in every event or a month-on-month return. The 1999 illustrative path has +12.7% peak above baseline, -11.6% from that peak to subsequent trough, +3.6% terminal versus baseline. Document source World Bank Pink Sheet / pinned gold-prices monthly data from existing registry, no OHLC claim or raw market data committed.

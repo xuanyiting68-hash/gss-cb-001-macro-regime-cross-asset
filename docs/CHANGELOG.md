@@ -702,3 +702,9 @@
 - Disambiguated gold FIRST_HIKE nominal +3.1%, MDD 11.6%, real about -2.8%, matched-cash excess about -2.4%, versus LAST_HIKE nominal -2.8% / MDD 9.1%. Gold's 10 mechanical FIRST_HIKE legs include 5 negative 12M endpoints and a 24.4% worst individual monthly MDD.
 - Exact-match 1994–2022 gold/corn table retains all 5 broad episodes: gold positive/corn negative in 4/5; 1994 both negative. This is descriptive, not a long-gold/short-corn hedge test.
 - Added Sydney-time pending USDA 9/28 and 9/30, EIA 9/30, and release-lagged CFTC watch cards. Preserved 004 energy 0/4 supported primary tests, 009 zero post-event confirmations as of 9/27, and 008 gold preliminary OOS limitations. No live trade signal.
+
+## 2026-09-27 — GOLD-MDD-EXPLAINER-045
+
+- Added a fixed-spec, reproducible explanatory gold monthly price chart from canonical 004 event paths, highlighting 1999 weighted-median example and 2022/1983 contrasts.
+- Reconstructed every highlighted peak, later trough and endpoint with <1e-12 agreement to existing 004 return/MDD records; committed a 10-event derived metrics table, plotting script, QC and Chinese explanation.
+- Explicitly labeled monthly average path and omitted event month; external candlestick chart is a different OHLC/source convention. No new inference or trade signal.

@@ -876,3 +876,9 @@ results/gold_commodity_event_wait_044/GOLD_COMMODITY_EVENT_WAIT_044_REPORT_ZH.md
 results/gold_commodity_event_wait_044/MATCHED_GOLD_CORN_FIRST_HIKE.csv,Five common-cycle matched gold and corn derived metrics,QC_PASS_DESCRIPTIVE_ONLY,PUBLIC_SAFE
 results/gold_commodity_event_wait_044/GOLD_ENDPOINT_VS_DRAWDOWN_MATCHED_CORN.png,Gold endpoint versus path risk and matched corn chart,QC_PASS_DESCRIPTIVE_ONLY,PUBLIC_SAFE
 results/gold_commodity_event_wait_044/QC.json,Descriptive episode and exact-match QC,QC_PASS_DESCRIPTIVE_ONLY,PUBLIC_SAFE
+research/GOLD_MDD_EXPLAINER_045_SPEC.md,Fixed illustration design and non-OHLC boundary,QC_PASS_VISUAL_ONLY,PUBLIC_SAFE
+scripts/plot_gold_mdd_explainer_045.py,Reproducible plot from canonical 004 derived paths,QC_PASS_VISUAL_ONLY,PUBLIC_SAFE
+results/gold_mdd_explainer_045/GOLD_MDD_SECONDTOSUNDERSTAND_ZH.md,Chinese annotated path explanation,QC_PASS_VISUAL_ONLY,PUBLIC_SAFE
+results/gold_mdd_explainer_045/GOLD_FIRST_HIKE_MDD_SEE_THE_PATH.png,Gold normalized 1999 2022 1983 monthly path chart,QC_PASS_VISUAL_ONLY,PUBLIC_SAFE
+results/gold_mdd_explainer_045/GOLD_FIRST_HIKE_ALL_TEN.csv,Ten derived first-hike gold leg outcomes and MDDs,QC_PASS_VISUAL_ONLY,PUBLIC_SAFE
+results/gold_mdd_explainer_045/QC.json,Three-path reproducibility and non-OHLC QC,QC_PASS_VISUAL_ONLY,PUBLIC_SAFE

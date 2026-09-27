@@ -1501,6 +1501,10 @@ Next research priority: **041 Opportunity-Cost Path / Breakeven Timing Map** —
 
 新增 USDA 9/28、9/30，EIA 9/30、CFTC 周二头寸周五发布的悉尼时区等待卡。原 009 9/23 能源事件仍属 TIGHT_OR_MIXED，后续发布在 9/27 仍未发生；004 能源严格 PIT 主检验 0/4 达支持门槛。黄金 008 只有四个后续 OOS 宽泛周期且未通过净交易收益验证。正式事件时间、现实确认、竞争机制和否决条件在 `results/gold_commodity_event_wait_044/GOLD_COMMODITY_EVENT_WAIT_044_REPORT_ZH.md`；无价格入场点位或自动交易指令。
 
+## 黄金首次加息月度回撤直观图：045（2026-09-27）
+
+状态：**QC PASS / VISUAL ONLY / NO NEW TRADE CLAIM**。直接读取冻结 004 逐月相对价格和逐事件指标；用世界银行月均价 M-1=100 绘出 1999、2022、1983 三段已预定示例，不把月均价伪装成蜡烛 K 线。1999：100→M+4 最高 112.7→M+11 后续最低 99.6→M+12 终点 103.6；其最高至后续最低跌 11.6%，恰是十个机械段、七个宽泛周期加权后的 MDD 中位数实例，而终点仍上涨 3.6%。2022 同时呈现路径跌 14.1%、终点涨 3.1%；1983 路径跌 24.4%、终点跌 19.8%。逐点结果与 004 精确对齐，真实 OHLC 历史图仅作为不同数据口径外部入口。中文说明与图在 `results/gold_mdd_explainer_045/`。
+
 ## Cash-hurdle discrete-horizon map — 041
 
 Status: **QC PASS / 3M–6M–12M DISCRETE-HORIZON DESCRIPTIVE / NOT CAUSAL / NOT A FORECAST / NOT DEPLOYABLE**.

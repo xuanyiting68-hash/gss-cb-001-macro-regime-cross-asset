@@ -1,0 +1,45 @@
+{
+  "status": "PASS_VISUAL_ONLY",
+  "source": "canonical 004 PHASE_PATHS and PHASE_CYCLE_ASSET_METRICS",
+  "all_first_hike_mechanical_legs": 10,
+  "broad_episodes": 7,
+  "chosen_cases": [
+    "1999 weighted median MDD example",
+    "2022 positive endpoint / large MDD",
+    "1983 largest MDD"
+  ],
+  "checks": [
+    {
+      "cycle_id": "T07_1999",
+      "baseline": 100.0,
+      "peak_index": 4,
+      "peak_indexed_price": 112.68116,
+      "trough_index": 11,
+      "trough_indexed_price": 99.63768,
+      "mdd_pct": 11.57556,
+      "endpoint_pct": 3.62319
+    },
+    {
+      "cycle_id": "T10_2022",
+      "baseline": 100.0,
+      "peak_index": 1,
+      "peak_indexed_price": 104.36422,
+      "trough_index": 7,
+      "trough_indexed_price": 89.65517,
+      "mdd_pct": 14.09396,
+      "endpoint_pct": 3.07112
+    },
+    {
+      "cycle_id": "T01_1983",
+      "baseline": 100.0,
+      "peak_index": -1,
+      "peak_indexed_price": 100.0,
+      "trough_index": 10,
+      "trough_indexed_price": 75.56008,
+      "mdd_pct": 24.43992,
+      "endpoint_pct": -19.7556
+    }
+  ],
+  "no_ohlc": true,
+  "no_new_trading_inference": true
+}
