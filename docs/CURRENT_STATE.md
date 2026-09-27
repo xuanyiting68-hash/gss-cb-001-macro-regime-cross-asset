@@ -1,4 +1,8 @@
-# Current state — 2026-09-27
+# Current state — 2026-09-28
+
+## 046 Gold daily OHLC educational comparison — 2026-09-28 Sydney
+
+**QC PASS / DESCRIPTIVE VISUAL / NOT DEPLOYABLE.** Stooq XAUUSD daily closing prices for the prespecified 1999-05–2000-06 and 2022-02–2023-03 windows show within-window peak-to-later-trough declines of -16.96% and -20.84%. The latter peak is 2022-03-08, eight days *before* the official 2022-03-16 first hike; starting on the next session yields a distinct -17.99% drawdown. First closing-price recoveries after troughs occurred 2002-05-31 and 2023-05-04 respectively, with five-consecutive-close checks only by 2002-12-18 and 2023-12-29. These are chosen illustrations, not the 004/045 World Bank monthly-average median or a causal Fed/strategy estimate. Stooq §5.3 bars data redistribution without consent: raw files and the two full-OHLC personal-review figures are outside this repo. Only an aggregate statistical figure, methods, code requiring privately obtained CSVs, and QC summary are public in `results/gold_daily_drawdown_046/`.
 
 ## Repository role
 

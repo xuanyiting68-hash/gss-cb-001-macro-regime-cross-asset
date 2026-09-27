@@ -882,3 +882,8 @@ results/gold_mdd_explainer_045/GOLD_MDD_SECONDTOSUNDERSTAND_ZH.md,Chinese annota
 results/gold_mdd_explainer_045/GOLD_FIRST_HIKE_MDD_SEE_THE_PATH.png,Gold normalized 1999 2022 1983 monthly path chart,QC_PASS_VISUAL_ONLY,PUBLIC_SAFE
 results/gold_mdd_explainer_045/GOLD_FIRST_HIKE_ALL_TEN.csv,Ten derived first-hike gold leg outcomes and MDDs,QC_PASS_VISUAL_ONLY,PUBLIC_SAFE
 results/gold_mdd_explainer_045/QC.json,Three-path reproducibility and non-OHLC QC,QC_PASS_VISUAL_ONLY,PUBLIC_SAFE
+research/GOLD_DAILY_DRAWDOWN_046_SPEC.md,Predeclared daily OHLC chart definitions and vendor redistribution boundary,QC_PASS_VISUAL_ONLY,PUBLIC_SAFE
+scripts/gold_daily_candle_046.py,OHLC QA and personal/private versus public derived-summary rendering code; requires separately sourced CSV,QC_PASS_VISUAL_ONLY,PUBLIC_SAFE
+results/gold_daily_drawdown_046/GOLD_DAILY_DRAWDOWN_REPORT_ZH.md,Chinese historical daily drawdown interpretation and price-source boundaries,QC_PASS_VISUAL_ONLY,PUBLIC_SAFE
+results/gold_daily_drawdown_046/GOLD_DAILY_DRAWDOWN_PUBLIC_SUMMARY.png,Public card with two derived historical drawdown summaries only,QC_PASS_VISUAL_ONLY,PUBLIC_SAFE
+results/gold_daily_drawdown_046/QC.json,Source hashes and derived event-level audit with no vendor rows,QC_PASS_VISUAL_ONLY,PUBLIC_SAFE

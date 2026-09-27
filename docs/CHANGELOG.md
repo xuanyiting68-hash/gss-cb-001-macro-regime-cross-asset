@@ -708,3 +708,9 @@
 - Added a fixed-spec, reproducible explanatory gold monthly price chart from canonical 004 event paths, highlighting 1999 weighted-median example and 2022/1983 contrasts.
 - Reconstructed every highlighted peak, later trough and endpoint with <1e-12 agreement to existing 004 return/MDD records; committed a 10-event derived metrics table, plotting script, QC and Chinese explanation.
 - Explicitly labeled monthly average path and omitted event month; external candlestick chart is a different OHLC/source convention. No new inference or trade signal.
+
+## 2026-09-28 — GOLD-DAILY-DRAWDOWN-046
+
+- Audited two user-selected 301-session XAUUSD daily OHLC windows, with actual daily close-to-close peak/trough, decline duration, first recovery and five-close confirmation. Fixed 2022 post-hike window shows -17.99%, distinct from full Feb 2022–Mar 2023 window -20.84% whose peak predates the first hike.
+- Separately documented intraday-wick drawdown versus closing-basis drawdown and vendor/LBMA/World Bank source discrepancies. Included 1999 Washington gold agreement and 2022 Russia-Ukraine context; no Fed-causality claim or new trading signal.
+- Stooq redistribution restriction kept vendor CSV and complete daily candle figures outside the public repository. Public repository receives only derived summary statistics/image, reproducible code accepting separately sourced CSV, QC, and research report.
