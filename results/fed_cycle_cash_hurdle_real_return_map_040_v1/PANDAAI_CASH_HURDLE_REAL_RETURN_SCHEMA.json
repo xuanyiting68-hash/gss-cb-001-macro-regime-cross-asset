@@ -1,0 +1,44 @@
+{
+  "module": "FED-CYCLE-CASH-HURDLE-REAL-RETURN-MAP-040",
+  "fixed_asset_order": [
+    "GOLD",
+    "SP500",
+    "NASDAQ",
+    "WTI",
+    "DXY",
+    "VUSTX_LONG_TREASURY_PROXY",
+    "VGSIX_REIT_PROXY",
+    "BTC_USD"
+  ],
+  "fixed_phase_order": [
+    "FIRST_HIKE",
+    "LAST_HIKE",
+    "PAUSE_START",
+    "FIRST_CUT"
+  ],
+  "allowed_outputs": [
+    "nominal_return_distribution",
+    "matched_cash_hurdle",
+    "matched_expost_inflation",
+    "real_return_distribution",
+    "mdd_path_risk",
+    "support_tier",
+    "counterexample_cases",
+    "measurement_convention_audit"
+  ],
+  "prohibited_outputs": [
+    "best_asset",
+    "best_phase",
+    "asset_rank",
+    "allocation_weight",
+    "expected_return",
+    "current_analog",
+    "buy_sell_instruction",
+    "causal_fed_claim"
+  ],
+  "cpi_status": "CURRENT_VINTAGE_EXPOST_NOT_PIT",
+  "cash_input_status": "FROZEN_OFFICIAL_MONTHLY_FEDFUNDS_PLUS_CANONICAL_014_POST12",
+  "causal_status": "NONE",
+  "oos_status": "NOT_A_FORECASTING_MODEL",
+  "deployment_status": "NOT_DEPLOYABLE"
+}
