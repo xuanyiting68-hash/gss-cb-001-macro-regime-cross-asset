@@ -60,7 +60,7 @@ SOURCE_MODULE = {
     "VGSIX_REIT_PROXY": "036_LISTED_REIT_PROXY",
 }
 FRED = {
-    "DFF": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DFF&cosd=1983-01-01",
+    "DFF": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=FEDFUNDS&cosd=1983-01-01",
     "CPIAUCSL": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=CPIAUCSL&cosd=1983-01-01",
 }
 
@@ -117,6 +117,7 @@ def fetch_fred(series: str):
         raise RuntimeError(f"{series} history too short: {len(x)}")
     meta = {
         "series": series,
+        "acquired_fred_series": ("FEDFUNDS" if series == "DFF" else series),
         "url": url,
         "retrieved_utc": datetime.now(timezone.utc).isoformat(),
         "sha256": hashlib.sha256(raw).hexdigest(),
