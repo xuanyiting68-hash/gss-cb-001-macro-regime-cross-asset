@@ -651,3 +651,25 @@
 - Preserved REIT evidence boundaries: VGSIX bridge-valid but limited; FRESX deep-history candidate not promoted after the 037 dual-bridge fail.
 - Preserved housing DECLINE_24M and Gold multi-mechanism non-ranking guardrails.
 - Kept Bitcoin LIMITED_DESCRIPTIVE and explicitly prohibited synthetic historical backfill.
+
+## 2026-09-26 — BTC-LIQUIDITY-RISK-REGIME-MECHANISM-039
+
+- Replaced synthetic-history temptation with a genuine 2014+ Bitcoin mechanism map: 142 complete monthly return observations from 2014-11 through 2026-08.
+- Frozen seven mechanism variables and three eras before interpretation; no optimized lag, p-value family, forecast or ranking was introduced.
+- Nasdaq, DXY, VIX and NFCI Pearson signs are stable across the three fixed eras; DFII10, WALCL and M2 are era-dependent.
+- Added a post-run state-support audit without changing the frozen zero cutoffs or 18/9 support thresholds; M2 cross-era state comparability is WEAK and WALCL/VIX/NFCI state comparisons retain their support caveats.
+- Preserved WALCL as balance-sheet-scale context rather than an identified liquidity shock and retained the 2020 M2 definition/composition caveat.
+- No synthetic Bitcoin backfill, expected-return forecast, causal Fed claim, mechanism winner or trading instruction was produced.
+
+## 2026-09-27 — FED-CYCLE-CASH-HURDLE-REAL-RETURN-MAP-040
+
+- Froze an event-matched opportunity-cost / purchasing-power design before canonical result generation: eight fixed assets, four Fed-cycle phase labels, canonical broad-episode weights, matched cash, matched CPI and 12M MDD.
+- Initial GitHub-hosted runs documented FRED DFF transport timeouts. AMENDMENT 01 and AMENDMENT 02 changed acquisition/reproducibility only: the final runner consumes a frozen 37-row official FEDFUNDS/CPIAUCSL event-input table and does not depend on live network access.
+- The empirical design, event identities, horizon, formulas, weights, thresholds and evidence tiers were not altered by the acquisition amendments.
+- Canonical main workflow output commit: `2aed4fd7fca06e6702e06dfb1fb139bede73703f`; independent diagnostic reproduction run `36299046081` passed and uploaded the same nine-file result package.
+- Final QC: 232/232 asset-event rows, 32/32 summaries, 37/37 event inputs, complete hashes, zero identity/weight/tier/missing-data/proxy-leakage violations.
+- Of 136 positive nominal 12M endpoints, 30 still fail the matched cash hurdle and 14 fail matched inflation. This creates a new explicit knowledge layer: positive nominal return is not synonymous with opportunity-cost outperformance or purchasing-power preservation.
+- Cash timing convention matters: adding the anchor month to canonical 014 post12 cash changes the hurdle by 0.55pp median and 1.06pp maximum absolute.
+- Representative supported findings include Gold FIRST_HIKE +3.1% nominal but -2.4% versus cash and -2.8% real; Nasdaq FIRST_CUT +6.0% nominal but -3.4% versus cash with 17.5% MDD; VUSTX FIRST_HIKE +1.0% nominal but -3.6% versus cash.
+- VGSIX remains LIMITED_PROXY_DESCRIPTIVE and Bitcoin remains LIMITED_DESCRIPTIVE; attractive hurdle-adjusted values do not promote small samples.
+- No best asset/phase, current analog, expected return, optimizer, allocation recommendation, causal Fed claim or trade instruction was produced.
