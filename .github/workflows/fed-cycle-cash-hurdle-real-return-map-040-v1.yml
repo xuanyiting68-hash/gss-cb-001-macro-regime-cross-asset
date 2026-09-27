@@ -1,4 +1,4 @@
-# retrigger: 2026-09-27
+# retrigger: 2026-09-27 frozen-input canonical run
 name: fed-cycle-cash-hurdle-real-return-map-040-v1
 
 on:
@@ -7,6 +7,8 @@ on:
     paths:
       - "research/FED_CYCLE_CASH_HURDLE_REAL_RETURN_MAP_040_LOCK.md"
       - "data/public/CASH_HURDLE_REAL_RETURN_SOURCE_SPEC_20260927.csv"
+      - "data/public/CASH_HURDLE_REAL_RETURN_EVENT_INPUTS_20260927.csv"
+      - "research/FED_CYCLE_CASH_HURDLE_REAL_RETURN_MAP_040_AMENDMENT_*.md"
       - "scripts/run_fed_cycle_cash_hurdle_real_return_map_040_v1.py"
       - "results/fed_cycle_phase_clock_v1/**"
       - "results/fed_cycle_cross_asset_expansion_v1/**"
