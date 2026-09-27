@@ -1,0 +1,31 @@
+name: fed-cycle-cash-hurdle-horizon-crossing-041-v1
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "research/FED_CYCLE_CASH_HURDLE_HORIZON_CROSSING_041_LOCK.md"
+      - "data/public/CASH_HURDLE_HORIZON_CROSSING_SOURCE_SPEC_20260927.csv"
+      - "scripts/run_fed_cycle_cash_hurdle_horizon_crossing_041_v1.py"
+      - ".github/workflows/fed-cycle-cash-hurdle-horizon-crossing-041-v1.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  reproduce:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m pip install pandas numpy
+      - run: python scripts/run_fed_cycle_cash_hurdle_horizon_crossing_041_v1.py
+      - name: Check committed outputs match clean reproduction
+        run: git diff --exit-code -- results/fed_cycle_cash_hurdle_horizon_crossing_041_v1
+      - uses: actions/upload-artifact@v4
+        with:
+          name: fed-cycle-cash-hurdle-horizon-crossing-041
+          path: results/fed_cycle_cash_hurdle_horizon_crossing_041_v1/

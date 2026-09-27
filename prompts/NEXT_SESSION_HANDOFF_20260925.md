@@ -599,3 +599,11 @@ Design requirements:
 - housing remains on its separate slow-moving 24M object unless a separately frozen housing-specific opportunity-cost design is created.
 
 Before starting 041, always reread latest `main`; GitHub may have advanced beyond the commits listed here.
+
+## Post-handoff update — 041 completed
+
+FED-CYCLE-CASH-HURDLE-HORIZON-CROSSING-041 follows the actual frozen lock, which specifies three observed horizons (3M/6M/12M). It does **not** compute month-by-month crossover or CPI-adjusted path statistics from the earlier candidate task description above.
+
+QC passes for 232 event rows / 696 horizon rows / 32 summaries / 256 pattern cells. 12M cash and excess reproduce 040 to 1e-12. Among positive nominal event rows, 18/133 at 3M, 27/138 at 6M and 30/136 at 12M fail cash. Twenty-five overlapping asset-event rows fail cash at 3M but beat it at 12M; 39 gain at 3M or 6M and lose it by 12M. These are descriptive rows, not independent tests or forecasts. The limited VGSIX and BTC tiers remain limited.
+
+Next useful research choice is either a separately frozen, source-audited monthly-path and purchasing-power design, or a different macro/cross-asset evidence gap. First check current `main`, preserve the 041 lock, and do not infer intervening crossover months or rank assets/phases.

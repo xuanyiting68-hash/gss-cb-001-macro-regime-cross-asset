@@ -1,0 +1,39 @@
+{
+  "module": "FED-CYCLE-CASH-HURDLE-HORIZON-CROSSING-041",
+  "qc_gate": "PASS",
+  "upstream_qc": {
+    "004": "PASS",
+    "014": "PASS",
+    "035": "PASS",
+    "036": "PASS",
+    "040": "PASS"
+  },
+  "event_rows": 232,
+  "horizon_rows": 696,
+  "summary_rows": 32,
+  "pattern_rows": 256,
+  "unique_macro_event_keys": 37,
+  "max_abs_040_cash_delta": 8.326672684688674e-17,
+  "max_abs_040_asset_vs_cash_delta": 2.220446049250313e-16,
+  "source_hashes": {
+    "004": "f8f727893f6cc1103bcac8ee3ab422ef15a0780e4b6347b53b5bb5df62c02f77",
+    "014_MARKET": "7c99506dcee830ef48fec104e7c4f9dbfa0921a28d3172e97a92180f9a96b3bc",
+    "035": "eb163995ad2fdd6032684b9ee32ffb9a8aa205ed5ce9fb55888d122040ff92d1",
+    "036": "b68f2f6d3c434dc15ecbc33a084e0ba042613ec4ec335b251535e58006c57636",
+    "014_CASH": "2fdb1c25915c4b6f6199c869d066c9875d27e717d537adb40929d20a3435dba4",
+    "040_FROZEN_INPUT": "4717a52938ef9e200492607bbac7febbe54e508100564be56c4482e821c6c34b",
+    "040_PANEL": "ade381a1102da421f12baae175ae16a06bb8359422e04b1f2f67c693bed035d7"
+  },
+  "horizons_months": [
+    3,
+    6,
+    12
+  ],
+  "monthly_crossover_estimated": false,
+  "new_p_values": false,
+  "optimized_horizon": false,
+  "causal_claim": false,
+  "forecast": false,
+  "deployable": false,
+  "private_paper_inputs": false
+}

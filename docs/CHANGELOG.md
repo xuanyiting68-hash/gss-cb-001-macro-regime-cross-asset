@@ -673,3 +673,10 @@
 - Representative supported findings include Gold FIRST_HIKE +3.1% nominal but -2.4% versus cash and -2.8% real; Nasdaq FIRST_CUT +6.0% nominal but -3.4% versus cash with 17.5% MDD; VUSTX FIRST_HIKE +1.0% nominal but -3.6% versus cash.
 - VGSIX remains LIMITED_PROXY_DESCRIPTIVE and Bitcoin remains LIMITED_DESCRIPTIVE; attractive hurdle-adjusted values do not promote small samples.
 - No best asset/phase, current analog, expected return, optimizer, allocation recommendation, causal Fed claim or trade instruction was produced.
+
+## 2026-09-27 — FED-CYCLE-CASH-HURDLE-HORIZON-CROSSING-041
+
+- Executed the existing frozen 3M/6M/12M discrete-horizon lock with repository-only public inputs; no new horizon was chosen after results.
+- QC passed: 232 event rows, 696 horizon rows, 32 asset-phase summaries, 256 fixed-pattern rows and 37 official event inputs; 12M cash and excess values exactly reproduce 040 within 1e-12.
+- Found 18/133, 27/138 and 30/136 positive nominal rows still below matched cash at 3M/6M/12M respectively. Across the full overlapping panel, 25 rows improve by 12M after 3M underperformance and 39 lose an earlier advantage by 12M.
+- Preserved VUSTX proxy identity, VGSIX/BTC limited tiers, episode weights, and the boundary between observed horizons and unknown intervening crossover months. No inferential, forecasting, ranking or trading claims were added.

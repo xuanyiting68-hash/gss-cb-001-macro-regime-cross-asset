@@ -1478,3 +1478,13 @@ VGSIX remains LIMITED_PROXY_DESCRIPTIVE and BTC remains LIMITED_DESCRIPTIVE; hur
 040 is reproducible without live FRED transport. After GitHub-hosted DFF downloads repeatedly timed out, transparent acquisition amendments froze the exact 37 official monthly FEDFUNDS/CPIAUCSL event inputs. The empirical design, events, formulas, weights and thresholds did not change. Canonical output commit: `2aed4fd7fca06e6702e06dfb1fb139bede73703f`.
 
 Next research priority: **041 Opportunity-Cost Path / Breakeven Timing Map** — extend 040 from endpoint-only hurdle comparison to the monthly path: cumulative asset-vs-cash and real-purchasing-power gaps, first/last hurdle crossover, maximum opportunity-cost deficit, and recovery above the hurdle, while preserving evidence tiers and forbidding best-phase/asset ranking.
+
+## Cash-hurdle discrete-horizon map — 041
+
+Status: **QC PASS / 3M–6M–12M DISCRETE-HORIZON DESCRIPTIVE / NOT CAUSAL / NOT A FORECAST / NOT DEPLOYABLE**.
+
+The current frozen 041 lock scopes this module to three observed horizons, rather than monthly crossover timing or monthly inflation paths. Canonical outputs contain 232 asset-event rows, 696 horizon rows, 32 asset-phase summaries and 256 pattern cells. All upstream QC passes, all 37 frozen event keys are present, and 12M cash-relative results reproduce 040 within 1e-12.
+
+Of positive nominal asset-event endpoints, 18/133 at 3M, 27/138 at 6M and 30/136 at 12M still fail matched mechanical cash. Among all 232 rows, 25 fail at 3M but beat cash at 12M; 39 beat at 3M or 6M but fail at 12M. The rows overlap across assets and phases and are not independent observations. Nasdaq FIRST_CUT weighted median cash-relative return changes from +2.5% at 3M to -2.2% at 6M and -3.4% at 12M, a descriptive example of horizon sensitivity.
+
+Observed 3M/6M/12M labels cannot establish the intervening crossover month. VGSIX and BTC remain limited, housing retains its separate 24M object, and no cross-asset ranking or timing signal follows. A true monthly crossing/recovery analysis would need a separately frozen monthly input and timing design; this module does not claim to supply one.
