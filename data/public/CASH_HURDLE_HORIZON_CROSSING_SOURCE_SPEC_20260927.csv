@@ -1,0 +1,8 @@
+source_id,kind,locator,role,network_required,notes
+PHASE_CYCLE_ASSET_METRICS,REPO_FILE,results/fed_cycle_phase_clock_v1/PHASE_CYCLE_ASSET_METRICS.csv,GOLD SP500 NASDAQ WTI 3M/6M/12M metrics,False,Canonical 004
+MARKET_PHASE_METRICS,REPO_FILE,results/fed_cycle_cross_asset_expansion_v1/MARKET_PHASE_METRICS.csv,DXY BTC 3M/6M/12M metrics,False,Canonical 014
+VUSTX_EXTENDED_PHASE_METRICS,REPO_FILE,results/fed_cycle_long_treasury_proxy_bridge_035_v1/VUSTX_EXTENDED_PHASE_METRICS.csv,Supported long-duration Treasury proxy 3M/6M/12M metrics,False,Canonical 035
+VGSIX_EXTENDED_PHASE_METRICS,REPO_FILE,results/fed_cycle_listed_reit_proxy_bridge_036_v1/VGSIX_EXTENDED_PHASE_METRICS.csv,Limited REIT proxy 3M/6M/12M metrics,False,Canonical 036
+CASH_PHASE_METRICS,REPO_FILE,results/fed_cycle_cross_asset_expansion_v1/CASH_PHASE_METRICS.csv,Canonical post-anchor 3M/6M/12M DFF mechanical cash carry,False,Canonical 014
+FROZEN_FEDFUNDS_EVENT_INPUTS,REPO_FILE,data/public/CASH_HURDLE_REAL_RETURN_EVENT_INPUTS_20260927.csv,Anchor-month official monthly FEDFUNDS,False,Canonical 040 frozen input
+EVENT_HURDLE_REAL_RETURN_PANEL_040,REPO_FILE,results/fed_cycle_cash_hurdle_real_return_map_040_v1/EVENT_HURDLE_REAL_RETURN_PANEL.csv,Exact 12M matched-cash reproduction gate,False,Canonical 040
