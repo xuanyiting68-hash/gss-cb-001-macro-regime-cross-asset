@@ -500,3 +500,102 @@ Current evidence states:
 - Asia: diagnostic only.
 
 Next priority: 039 Bitcoin Liquidity / Risk-Regime Mechanism Map using real 2014+ data for DXY, real yields, Nasdaq/risk beta, VIX/NFCI and Fed liquidity/balance-sheet proxies.
+
+## Post-handoff update — 039 completed
+
+BTC-LIQUIDITY-RISK-REGIME-MECHANISM-039 is complete and QC-passed.
+
+Use the genuine 2014+ Bitcoin history only. The final monthly analysis spans 2014-11 through 2026-08, n=142 complete return months. Three fixed eras are preserved.
+
+Key evidence:
+- Nasdaq Pearson sign is positive in all three eras: +0.211 / +0.388 / +0.555;
+- DXY is negative in all three fixed-era Pearson estimates, but rolling magnitude is weak/time-varying;
+- VIX_CHANGE and NFCI_CHANGE are negative in all three eras;
+- DFII10_CHANGE_PP, WALCL_3M_PCT and M2SL_3M_PCT are ERA_DEPENDENT;
+- M2 cross-era state comparability is WEAK because ERA_1 and ERA_2 contain zero frozen contracting/flat observations;
+- WALCL is balance-sheet-scale context, not an identified liquidity shock.
+
+Do not create synthetic pre-2014 Bitcoin history, optimize lags, create a dominant-liquidity score, forecast BTC returns or turn contemporaneous associations into Fed causality.
+
+039's recommended next task was 040 Cash Hurdle / Inflation-Adjusted Cross-Asset Opportunity Map.
+
+## Post-handoff update — 040 completed
+
+FED-CYCLE-CASH-HURDLE-REAL-RETURN-MAP-040 is complete and QC-passed.
+
+Canonical output commit:
+`2aed4fd7fca06e6702e06dfb1fb139bede73703f`
+
+Closeout commit:
+`c4e08fd81bfccdad39ae2e23834d0cca26a1d887`
+
+Final design/result:
+- 8 fixed assets × 4 phases = 32 asset-phase summaries;
+- 232 asset-event rows;
+- 37 canonical phase-cycle macro input rows;
+- cash hurdle is matched to the same t-1 to t+12 endpoint grid as asset returns;
+- CPI is current-vintage ex-post purchasing-power context, not ALFRED PIT;
+- broad-episode weights are preserved;
+- VUSTX remains a separately named long-duration Treasury proxy;
+- VGSIX remains LIMITED_PROXY_DESCRIPTIVE;
+- Bitcoin remains LIMITED_DESCRIPTIVE.
+
+Central finding:
+- 136 event rows have positive nominal 12M endpoints;
+- 30 of those still fail matched cash;
+- 14 still fail matched inflation.
+
+Therefore the canonical public claim is:
+
+**positive nominal endpoint != cash opportunity-cost win != purchasing-power win != low-risk path.**
+
+Representative supported rows:
+- Gold FIRST_HIKE: +3.1% nominal, -2.4% vs cash, -2.8% real, 11.6% MDD;
+- Gold PAUSE_START: +4.9% nominal, -1.3% vs cash, +1.9% real;
+- Nasdaq FIRST_CUT: +6.0% nominal, -3.4% vs cash, +1.0% real, 17.5% MDD;
+- S&P 500 FIRST_CUT: +11.0% nominal, +2.1% vs cash, +8.2% real, 14.0% MDD;
+- VUSTX_LONG_TREASURY_PROXY FIRST_HIKE: +1.0% nominal, -3.6% vs cash, -0.9% real, 10.7% MDD;
+- WTI FIRST_CUT: -16.9% nominal, -24.3% vs cash, -20.9% real, 22.2% MDD.
+
+The cash timing-convention audit shows median/max absolute difference of about 0.55pp / 1.06pp versus the original canonical-014 post12 convention.
+
+Acquisition/reproducibility note:
+- live FRED DFF downloads timed out on GitHub-hosted runners;
+- AMENDMENT 01/02 are transport-only, not result-selection changes;
+- final 040 runner freezes the exact 37 official monthly FEDFUNDS/CPIAUCSL event inputs in-repo and is network-independent;
+- independent GitHub Actions reproduction run `36299046081` passed;
+- frozen event-input SHA256 = `4717a52938ef9e200492607bbac7febbe54e508100564be56c4482e821c6c34b`.
+
+Do not convert 040 into best-asset/best-phase rankings, expected returns, allocation weights, current analogs or trade instructions.
+
+## Recommended next research task — 041
+
+**FED-CYCLE-OPPORTUNITY-COST-PATH-BREAKEVEN-041**
+
+Goal:
+extend 040 from endpoint-only hurdle comparison to the monthly path.
+
+Candidate frozen objects to preregister before results:
+- monthly cumulative asset return from the canonical pre-anchor baseline;
+- cumulative matched mechanical cash return;
+- cumulative matched CPI purchasing-power change;
+- asset-minus-cash cumulative gap;
+- real asset cumulative gap;
+- first month above cash hurdle;
+- last month below cash hurdle;
+- maximum opportunity-cost deficit;
+- month of maximum opportunity-cost deficit;
+- end-of-window cash-relative recovery status;
+- analogous purchasing-power crossover/recovery statistics;
+- MDD retained separately rather than collapsed into a score.
+
+Design requirements:
+- preserve the same fixed asset identities and evidence tiers as 040;
+- use existing canonical event anchors and broad-episode weighting;
+- do not optimize horizons or crossover definitions after seeing outcomes;
+- no best asset / best phase / expected return / allocation / current analog;
+- no causal language;
+- limited-history VGSIX/BTC remain limited regardless of attractive path metrics;
+- housing remains on its separate slow-moving 24M object unless a separately frozen housing-specific opportunity-cost design is created.
+
+Before starting 041, always reread latest `main`; GitHub may have advanced beyond the commits listed here.
