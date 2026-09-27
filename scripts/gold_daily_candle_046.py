@@ -124,7 +124,7 @@ def private_chart(d, m, year, hike, path):
 def public_card(a,b,path):
     fig=plt.figure(figsize=(9,13),facecolor="#F6F5F0")
     ax=fig.add_axes([.06,.06,.88,.89]);ax.axis('off')
-    ax.text(0,1.04,'Gold after the first Fed hike',fontsize=28,weight='bold',color='#173047',transform=ax.transAxes)
+    ax.text(0,1.04,'Gold around the first Fed hike',fontsize=28,weight='bold',color='#173047',transform=ax.transAxes)
     ax.text(0,1.00,'The final return can hide the pain in between.',fontsize=15,color='#526475',transform=ax.transAxes)
     def block(top,title,m,accent,notice=None):
         ax.add_patch(Rectangle((0,top-.405),1,.40,transform=ax.transAxes,fc='white',ec='#E6E5DD',lw=1))
