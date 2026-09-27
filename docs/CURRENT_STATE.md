@@ -1495,6 +1495,12 @@ Next research priority: **041 Opportunity-Cost Path / Breakeven Timing Map** —
 
 首次加息后 12 月玉米五次皆跌、加权中位 -9.4%，小麦 -11.0%、大豆 -6.2%；首次降息后玉米 +15.9%、小麦 -2.4%、大豆 +1.9%。五轮样本小，其他阶段无统一方向；2022 玉米途中最高 +19.1% 后 12 月 -2.6%，显示回撤/不利路径。旧 004/040 对照首次降息 WTI -16.9%、S&P 500 +11.0% 但月度 MDD 14.0%。全球现货不是期货收益，LAST_HIKE/PAUSE_START 标签依赖未来，未作 PIT、OOS、交易成本或多重检验。三张条件式机会卡均为研究假说，不授权具体下单。报告及面向粉丝的七条选题见 `results/commodity_fed_cycle_phase_043/` 与 `content/COMMODITY_FED_CYCLE_043_TOPICS_ZH.md`。
 
+## 黄金／玉米测量纠偏与可等待事件：044（2026-09-27 悉尼）
+
+状态：**QC PASS / DESCRIPTIVE EVENT WATCH / NOT DEPLOYABLE**。044 明确黄金首次加息后 +3.1% 是名义 12M 端点加权中位数、11.6% 是月度路径 MDD 中位数、约 -2.8% 是 040 的实际回报中位数、约 -2.4% 是 040 的现金相对中位数；用户图中的“最后加息 -2.8%”则是另一个阶段的名义 12M 中位数（相应 MDD 9.1%）。黄金十个机械首加息段中五个名义终点为负、按七个宽泛周期加权负值份额 38.1%，最深单笔月度 MDD 24.4%。与全球玉米共同覆盖的五轮首加息中，黄金正／玉米负为 4/5，1994 两者同跌；玉米 5/5 仅指事后固定月度现货终点，不能移作期货做空胜率。
+
+新增 USDA 9/28、9/30，EIA 9/30、CFTC 周二头寸周五发布的悉尼时区等待卡。原 009 9/23 能源事件仍属 TIGHT_OR_MIXED，后续发布在 9/27 仍未发生；004 能源严格 PIT 主检验 0/4 达支持门槛。黄金 008 只有四个后续 OOS 宽泛周期且未通过净交易收益验证。正式事件时间、现实确认、竞争机制和否决条件在 `results/gold_commodity_event_wait_044/GOLD_COMMODITY_EVENT_WAIT_044_REPORT_ZH.md`；无价格入场点位或自动交易指令。
+
 ## Cash-hurdle discrete-horizon map — 041
 
 Status: **QC PASS / 3M–6M–12M DISCRETE-HORIZON DESCRIPTIVE / NOT CAUSAL / NOT A FORECAST / NOT DEPLOYABLE**.

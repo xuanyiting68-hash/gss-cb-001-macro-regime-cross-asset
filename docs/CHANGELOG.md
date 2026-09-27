@@ -695,3 +695,10 @@
 - Added reproducible acquisition-and-analysis script (raw IMF/FRED monthly observations are not redistributed), 60 event rows, 12 full-distribution cells, 12 fixed-case rows, chart, provenance hashes, Chinese investor report and seven public-safe education topics.
 - Every grain phase cell has 5 legs / 5 broad episodes. Corn FIRST_HIKE 12M median -9.4%, negative in all five retrospective spot examples; 2022 path still ran +19.1% above baseline before ending -2.6%. Full negative examples preserved.
 - Explicitly separated 004/035/040 cross-asset samples from new world-grain history, retrospective LAST_HIKE/PAUSE labels from live triggers, spot prices from futures returns, and descriptive opportunity hypotheses from cost-adjusted deployment. Independent 2022 corn endpoint check against official FRED table passed.
+
+## 2026-09-27 — GOLD-COMMODITY-EVENT-WAIT-044
+
+- Froze an exact-match gold/corn diagnostic and four release-aware waiting cards before new matched exposure calculations; all inputs are public repo modules plus official USDA/EIA/CFTC schedules.
+- Disambiguated gold FIRST_HIKE nominal +3.1%, MDD 11.6%, real about -2.8%, matched-cash excess about -2.4%, versus LAST_HIKE nominal -2.8% / MDD 9.1%. Gold's 10 mechanical FIRST_HIKE legs include 5 negative 12M endpoints and a 24.4% worst individual monthly MDD.
+- Exact-match 1994–2022 gold/corn table retains all 5 broad episodes: gold positive/corn negative in 4/5; 1994 both negative. This is descriptive, not a long-gold/short-corn hedge test.
+- Added Sydney-time pending USDA 9/28 and 9/30, EIA 9/30, and release-lagged CFTC watch cards. Preserved 004 energy 0/4 supported primary tests, 009 zero post-event confirmations as of 9/27, and 008 gold preliminary OOS limitations. No live trade signal.

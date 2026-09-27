@@ -1,0 +1,17 @@
+{
+  "status": "PASS_DESCRIPTIVE_ONLY",
+  "gold_first_hike_legs": 10,
+  "gold_broad_episodes": 7,
+  "gold_negative_legs": 5,
+  "gold_weighted_negative_share": 0.38095238095238093,
+  "gold_weighted_median_nominal_12m_pct": 3.07112068965518,
+  "gold_weighted_median_mdd_pct": 11.57556270096462,
+  "gold_largest_individual_mdd_pct": 24.439918533604878,
+  "matched_rows": 5,
+  "matched_gold_positive_corn_negative": 4,
+  "limitations": [
+    "post-1994 subgroup is diagnostic and only five independent broad episodes",
+    "index/futures/commodity spot metrics are not directly tradable",
+    "no publication-time OOS net-cost gold-vs-corn trade test"
+  ]
+}
