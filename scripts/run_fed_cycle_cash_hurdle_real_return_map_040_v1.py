@@ -60,8 +60,8 @@ SOURCE_MODULE = {
     "VGSIX_REIT_PROXY": "036_LISTED_REIT_PROXY",
 }
 FRED = {
-    "DFF": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DFF",
-    "CPIAUCSL": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=CPIAUCSL",
+    "DFF": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DFF&cosd=1983-01-01",
+    "CPIAUCSL": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=CPIAUCSL&cosd=1983-01-01",
 }
 
 
