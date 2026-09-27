@@ -1,0 +1,8 @@
+source_id,kind,locator,role,raw_committed,notes
+PHASE_CYCLE_ASSET_METRICS,REPO_FILE,results/fed_cycle_phase_clock_v1/PHASE_CYCLE_ASSET_METRICS.csv,Core GOLD/SP500/NASDAQ/WTI event metrics,False,Canonical 004 output
+MARKET_PHASE_METRICS,REPO_FILE,results/fed_cycle_cross_asset_expansion_v1/MARKET_PHASE_METRICS.csv,DXY and BTC event metrics,False,Canonical 014 output
+VUSTX_EXTENDED_PHASE_METRICS,REPO_FILE,results/fed_cycle_long_treasury_proxy_bridge_035_v1/VUSTX_EXTENDED_PHASE_METRICS.csv,Supported long-duration Treasury proxy event metrics,False,Canonical 035 output
+VGSIX_EXTENDED_PHASE_METRICS,REPO_FILE,results/fed_cycle_listed_reit_proxy_bridge_036_v1/VGSIX_EXTENDED_PHASE_METRICS.csv,Limited listed-REIT proxy event metrics,False,Canonical 036 output
+CASH_PHASE_METRICS,REPO_FILE,results/fed_cycle_cross_asset_expansion_v1/CASH_PHASE_METRICS.csv,Canonical 014 post-anchor cash cross-check,False,Not primary hurdle
+DFF,FRED_DIRECT_CSV,https://fred.stlouisfed.org/graph/fredgraph.csv?id=DFF,Matched-grid mechanical cash hurdle,False,Fresh bytes SHA256 registered
+CPIAUCSL,FRED_DIRECT_CSV,https://fred.stlouisfed.org/graph/fredgraph.csv?id=CPIAUCSL,Ex-post matched purchasing-power inflation,False,Current-vintage CPI; not ALFRED PIT
