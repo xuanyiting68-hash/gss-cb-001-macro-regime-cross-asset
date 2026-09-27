@@ -1,4 +1,4 @@
-# Current state — 2026-09-25
+# Current state — 2026-09-27
 
 ## Repository role
 
@@ -1441,3 +1441,40 @@ Status: **QC-PASSED POST-032 EVIDENCE ROUTING / NO NEW ESTIMATION / NOT A FORECA
 038 is now the canonical routing layer for evidence changes introduced by 033-037. Gold remains CORE_SUPPORTED with a multi-mechanism map; U.S. housing remains SUPPORTED_SLOW_MOVING with the 034 financing/activity/price timing layer; VUSTX provides SUPPORTED_PROXY_DESCRIPTIVE long-duration Treasury history while TLT itself remains a limited-history target ETF; VNQ remains limited, VGSIX is a bridge-valid but LIMITED_PROXY_DESCRIPTIVE extension, and FRESX is NOT_PROMOTED after the frozen 037 dual-bridge fail. Bitcoin remains LIMITED_DESCRIPTIVE with no synthetic backfill.
 
 Next research priority: **039 Bitcoin Liquidity / Risk-Regime Mechanism Map** using genuine 2014+ history and explicit mechanism/state analysis rather than pretending a longer Fed-cycle sample exists.
+
+## Bitcoin Liquidity / Risk-Regime Mechanism Map — 039
+
+Status: **QC PASS / GENUINE-2014+ BITCOIN MECHANISM MAP / ERA-DEPENDENT / NOT CAUSAL / NOT A FORECAST / NOT DEPLOYABLE**
+
+039 keeps Bitcoin on its genuine 2014+ history rather than manufacturing synthetic Fed-cycle backfill. The final monthly analysis covers 142 complete return months from 2014-11 through 2026-08 and seven fixed mechanism variables.
+
+Fixed-era Pearson signs are stable across all three eras for Nasdaq (positive), DXY (negative), VIX change (negative) and NFCI change (negative), while DFII10 change, WALCL 3M change and M2 3M change are era-dependent. Nasdaq co-movement rises from +0.211 in the early era to +0.555 post-2022; VIX/NFCI stress associations remain negative in all three fixed eras. M2 and WALCL remain contextual scale variables, not identified liquidity shocks; M2 cross-era state comparability is weak because the first two fixed eras contain no contracting/flat 3M M2 state under the frozen definition.
+
+No p-values, optimized lag, mechanism ranking, expected BTC return, causal Fed claim or synthetic history is produced. 039 is the canonical Bitcoin mechanism map; Bitcoin remains LIMITED_DESCRIPTIVE in the shorter Fed-phase atlas.
+
+Next research priority from 039: **040 Cash Hurdle / Inflation-Adjusted Cross-Asset Opportunity Map**.
+
+## Cash Hurdle / Inflation-Adjusted Cross-Asset Opportunity Map — 040
+
+Status: **QC PASS / EVENT-MATCHED CASH-HURDLE + EX-POST REAL-RETURN MAP / NOT CAUSAL / NOT A FORECAST / NOT DEPLOYABLE**
+
+040 adds opportunity cost and purchasing power to the four-phase investor atlas. It uses 232 asset-event rows, 32 asset-phase summaries and 37 canonical Fed phase-cycle event inputs. All upstream 004/014/035/036 QC gates pass; source hashes are complete; no identity, weighting, tier, missing-data or rejected-proxy leakage violation is present.
+
+The central result is a measurement distinction rather than a ranking. Of 136 asset-event rows with a positive nominal 12M endpoint, 30 still fail the event-matched mechanical cash hurdle and 14 fail matched CPI inflation. Positive nominal return therefore cannot be treated as synonymous with opportunity-cost outperformance or purchasing-power preservation.
+
+Matched cash uses the same t-1 to t+12 endpoint grid as asset returns by adding the anchor-month official monthly effective-funds rate to canonical 014 post12 cash. Relative to the older 014 timing convention, the median absolute hurdle difference is 0.55pp and the maximum is 1.06pp. CPI is current-vintage ex-post purchasing-power information, not ALFRED point-in-time policy information.
+
+Important supported examples:
+- Gold FIRST_HIKE: nominal +3.1%, but vs cash -2.4%, real -2.8%, MDD 11.6%.
+- Gold PAUSE_START: nominal +4.9%, vs cash -1.3%, real +1.9%, MDD 7.6%.
+- Gold FIRST_CUT: nominal +4.1%, approximately flat/slightly negative vs cash (-0.05%), real +2.2%.
+- S&P 500 FIRST_CUT: nominal +11.0%, vs cash +2.1%, real +8.2%, but MDD 14.0%.
+- Nasdaq FIRST_CUT: nominal +6.0%, vs cash -3.4%, real +1.0%, MDD 17.5%.
+- VUSTX_LONG_TREASURY_PROXY FIRST_HIKE: nominal +1.0%, vs cash -3.6%, real -0.9%, MDD 10.7%.
+- WTI FIRST_CUT: nominal -16.9%, vs cash -24.3%, real -20.9%, MDD 22.2%.
+
+VGSIX remains LIMITED_PROXY_DESCRIPTIVE and BTC remains LIMITED_DESCRIPTIVE; hurdle-adjusted values do not upgrade evidence tiers. No best asset, best phase, optimizer, allocation, expected-return forecast, current analog or trade instruction is generated.
+
+040 is reproducible without live FRED transport. After GitHub-hosted DFF downloads repeatedly timed out, transparent acquisition amendments froze the exact 37 official monthly FEDFUNDS/CPIAUCSL event inputs. The empirical design, events, formulas, weights and thresholds did not change. Canonical output commit: `2aed4fd7fca06e6702e06dfb1fb139bede73703f`.
+
+Next research priority: **041 Opportunity-Cost Path / Breakeven Timing Map** — extend 040 from endpoint-only hurdle comparison to the monthly path: cumulative asset-vs-cash and real-purchasing-power gaps, first/last hurdle crossover, maximum opportunity-cost deficit, and recovery above the hurdle, while preserving evidence tiers and forbidding best-phase/asset ranking.
